@@ -1,4 +1,4 @@
-/* DESIGN "PRIME RADIANT" V7 - FINAL */
+/* DESIGN "PRIME RADIANT" V8 - FINAL */
 
 * { box-sizing: border-box; }
 :root { 
@@ -18,31 +18,41 @@ body {
     font-family: 'Rajdhani', sans-serif; 
     margin: 0; padding: 20px; 
     min-height: 100vh; overflow-x: hidden;
+    /* GRILLE DE FOND */
     background-image: 
-        linear-gradient(rgba(0, 243, 255, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 243, 255, 0.03) 1px, transparent 1px);
-    background-size: 40px 40px;
+        linear-gradient(rgba(0, 243, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 243, 255, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+    /* L'ANIMATION DU FOND */
+    animation: moveGrid 20s linear infinite;
+}
+
+/* Animation de défilement infini du fond */
+@keyframes moveGrid {
+    0% { background-position: 0 0; }
+    100% { background-position: 50px 50px; }
 }
 
 .container { max-width: 1400px; margin: 0 auto; width: 100%; position: relative; z-index: 2; }
 
 /* HEADER */
-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--glass-border); padding-bottom: 20px; margin-bottom: 40px; position: relative; }
+header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--glass-border); padding-bottom: 20px; margin-bottom: 30px; position: relative; }
 header::after { content: ''; position: absolute; bottom: -5px; right: 0; width: 100px; height: 5px; background: var(--neon-blue); }
 h1 { font-family: 'Orbitron', sans-serif; font-weight: 900; font-size: clamp(1.5rem, 4vw, 3rem); margin: 0; text-transform: uppercase; letter-spacing: 4px; background: linear-gradient(90deg, #fff, var(--neon-blue)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 0 0 20px rgba(0, 243, 255, 0.4); }
 
 .status-pill { font-family: 'Share Tech Mono', monospace; background: rgba(0, 243, 255, 0.05); padding: 8px 16px; border: 1px solid var(--neon-blue); font-size: 0.8em; color: var(--neon-blue); box-shadow: 0 0 10px rgba(0, 243, 255, 0.2); max-width: 100%; word-wrap: break-word;}
 
-/* RADIANT ANIMATION (Taille Augmentée) */
+/* RADIANT ANIMATION (CORRIGÉE : PLUS GROS, MOINS DE VIDE) */
 .radiant-wrapper { 
     display: flex; justify-content: center; align-items: center; 
-    height: 350px; /* Augmenté */
-    margin-bottom: 20px; perspective: 1000px; 
+    height: 320px; /* Réduit pour enlever le vide inutile (était 350px) */
+    margin-bottom: 10px; 
+    perspective: 1000px; 
 }
 .radiant-core { 
     position: relative; 
-    width: 280px;  /* Augmenté */
-    height: 280px; /* Augmenté */
+    width: 320px;  /* AGRANDI (était 280px) */
+    height: 320px; /* AGRANDI (était 280px) */
     display: flex; flex-direction: column; justify-content: center; align-items: center; transform-style: preserve-3d; 
 }
 .ring { position: absolute; border-radius: 50%; border: 1px solid var(--neon-blue); box-shadow: 0 0 15px rgba(0, 243, 255, 0.3); opacity: 0.7; }
@@ -51,8 +61,13 @@ h1 { font-family: 'Orbitron', sans-serif; font-weight: 900; font-size: clamp(1.5
 .r3 { width: 60%; height: 60%; border-left: 2px solid var(--neon-red); animation: spin 15s linear infinite; }
 @keyframes spin { from { transform: rotate(0deg) rotateX(20deg); } to { transform: rotate(360deg) rotateX(20deg); } }
 
-.big-number { font-family: 'Orbitron', sans-serif; font-size: 4rem; font-weight: 700; color: #fff; text-shadow: 0 0 30px var(--neon-blue); z-index: 10; }
-.radiant-label { margin-top: 10px; font-family: 'Share Tech Mono', monospace; letter-spacing: 2px; color: var(--neon-blue); font-size: 0.9em; }
+/* Ajustement police pour que ça rentre dans le cercle */
+.big-number { 
+    font-family: 'Orbitron', sans-serif; 
+    font-size: 3.5rem; /* Légèrement réduit pour ne pas dépasser (était 4rem) */
+    font-weight: 700; color: #fff; text-shadow: 0 0 30px var(--neon-blue); z-index: 10; 
+}
+.radiant-label { margin-top: 5px; font-family: 'Share Tech Mono', monospace; letter-spacing: 2px; color: var(--neon-blue); font-size: 0.9em; }
 
 /* TERMINAL & ALERTS */
 .terminal-box { background: linear-gradient(180deg, rgba(10,15,20,0.95) 0%, rgba(5,5,10,0.95) 100%); border: 1px solid var(--glass-border); border-top: 4px solid var(--neon-blue); padding: 30px; margin-bottom: 40px; position: relative; box-shadow: 0 0 50px rgba(0,0,0,0.5); background-image: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 243, 255, 0.03) 3px); }
@@ -102,5 +117,5 @@ h1 { font-family: 'Orbitron', sans-serif; font-weight: 900; font-size: clamp(1.5
 .info-icon:hover .tooltip-text { visibility: visible; opacity: 1; bottom: 130%; }
 @media (max-width: 600px) { .info-icon .tooltip-text { width: 250px; left: -100px; } }
 
-footer { margin-top: 60px; text-align: center; color: #444; font-family: 'Share Tech Mono'; font-size: 0.7em; letter-s
-    pacing: 2px; }
+footer { margin-top: 60px; text-align: center; color: #444; font-family: 'Share Tech Mono'; font-size: 0.7em; letter-
+    spacing: 2px; }
