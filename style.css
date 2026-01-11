@@ -1,4 +1,4 @@
-/* DESIGN "PRIME RADIANT" V20 - TOOLTIPS FIX & DARK FILTER 50% */
+/* DESIGN "PRIME RADIANT" V21 - TOOLTIP FIX & Z-INDEX */
 
 /* 1. RESET & VARIABLES */
 * { box-sizing: border-box; }
@@ -24,22 +24,21 @@ body {
     
     background-color: var(--bg-deep);
     background-image: url('bg.gif'); 
-    
     background-size: contain; 
     background-position: center top; 
     background-repeat: no-repeat;
     background-attachment: scroll; 
-    position: relative; /* Nécessaire pour le filtre */
+    position: relative;
 }
 
-/* --- LE FILTRE SOMBRE (50%) EST DE RETOUR ICI --- */
+/* FILTRE SOMBRE 50% */
 body::after {
     content: '';
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(2, 2, 5, 0.5); /* Noir à 50% d'opacité */
-    z-index: -1; /* Derrière le contenu */
-    pointer-events: none; /* Laisse passer les clics */
+    background: rgba(2, 2, 5, 0.5); 
+    z-index: -1; 
+    pointer-events: none; 
 }
 
 .container { max-width: 1400px; margin: 0 auto; width: 100%; position: relative; z-index: 2; }
@@ -103,7 +102,7 @@ h1 {
     backdrop-filter: blur(10px); 
     border: 1px solid var(--glass-border); 
     padding: 20px; margin-bottom: 40px; border-radius: 4px; position: relative; 
-    z-index: 10; /* S'assure qu'il est sous les tooltips */
+    z-index: 10; 
 }
 .chart-wrapper::after { 
     content: "TIME SERIES PROJECTION // SELDON_ALGO_V5"; 
@@ -117,7 +116,7 @@ h1 {
     border: 1px solid var(--glass-border); border-left: 4px solid var(--neon-blue); 
     padding: 30px; margin-bottom: 40px; position: relative; 
     box-shadow: 0 0 50px rgba(0,0,0,0.5); 
-    z-index: 10; /* S'assure qu'il est sous les tooltips */
+    z-index: 10; 
 }
 .terminal-header { 
     color: var(--neon-blue); font-family: 'Orbitron'; 
@@ -157,18 +156,38 @@ h1 {
 @keyframes shine { 0% { left: -100%; } 20% { left: 200%; } 100% { left: 200%; } }
 
 /* 8. GRID & CARDS */
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; position: relative; z-index: 20; }
+.grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 25px; 
+    position: relative; 
+    z-index: 20; 
+}
 
 .card { 
     background: var(--glass); backdrop-filter: blur(5px); 
     border: 1px solid var(--glass-border); padding: 20px; 
     position: relative; 
-    /* overflow: hidden;  <-- J'AI RETIRÉ ÇA POUR QUE LES TOOLTIPS PUISSENT DÉPASSER */
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
-    z-index: 1; /* Important pour le contexte d'empilement */
+    
+    /* --- LE CORRECTIF PRINCIPAL EST ICI --- */
+    /* On autorise le dépassement (visible) */
+    overflow: visible; 
+    clip-path: none; /* Le clip-path coupait aussi parfois */
+    
+    /* On définit un z-index de base */
+    z-index: 1; 
+    transition: transform 0.2s, z-index 0s;
 }
+
+/* LORQU'ON SURVOLE LA CARTE, ELLE PASSE AU PREMIER PLAN */
+.card:hover {
+    z-index: 500; /* Passe devant tout le monde */
+    transform: translateY(-2px); /* Petit effet de soulèvement sympa */
+    background: rgba(15, 25, 35, 0.95); 
+    border-color: var(--neon-blue);
+}
+
 .card::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--neon-blue); opacity: 0.5; }
-.card:hover { background: rgba(15, 25, 35, 0.9); border-color: var(--neon-blue); }
 
 .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
 .card-title { font-family: 'Orbitron'; font-size: 0.8em; letter-spacing: 1px; color: #888; }
@@ -182,26 +201,34 @@ h1 {
 .c-mid { color: var(--neon-yellow); } .bg-mid { background-color: var(--neon-yellow); }
 .c-bad { color: var(--neon-red); } .bg-bad { background-color: var(--neon-red); }
 
-/* 9. TOOLTIPS (CORRIGÉS) */
+/* 9. TOOLTIPS */
 .info-icon { 
     display: inline-flex; justify-content: center; align-items: center; 
     width: 18px; height: 18px; border: 1px solid var(--neon-blue); 
     color: var(--neon-blue); font-size: 10px; margin-left: 10px; 
     cursor: help; position: relative; 
-    z-index: 100; /* S'assure que l'icône est au-dessus */
+    /* Pas de z-index ici, c'est la carte qui gère */
 }
 .info-icon:hover { background: var(--neon-blue); color: #000; }
 
 .info-icon .tooltip-text { 
     visibility: hidden; width: 320px; background-color: #0a0f14; color: #fff; 
     border: 1px solid var(--neon-blue); padding: 15px; 
+    
     position: absolute; 
-    z-index: 99999; /* TRÈS HAUT Z-INDEX POUR PASSER AU DESSUS DE TOUT */
-    bottom: 140%; left: -20px; opacity: 0; transition: all 0.2s ease; 
-    font-size: 0.85rem; line-height: 1.4; box-shadow: 0 0 30px rgba(0, 243, 255, 0.3); 
+    bottom: 140%; left: -20px; 
+    
+    opacity: 0; transition: all 0.2s ease; 
+    font-size: 0.85rem; line-height: 1.4; 
+    box-shadow: 0 0 30px rgba(0, 243, 255, 0.3); 
     text-align: left; 
+    pointer-events: none;
 }
-.info-icon:hover .tooltip-text { visibility: visible; opacity: 1; bottom: 130%; }
+
+.info-icon:hover .tooltip-text { 
+    visibility: visible; opacity: 1; bottom: 130%; 
+}
+
 @media (max-width: 600px) { .info-icon .tooltip-text { width: 250px; left: -100px; } }
 
 footer { margin-top: 60px; text-align: center; color: #444; font-family: 'Share Tech Mono'; font-size: 0.7em; letter-spacing: 2px; }
