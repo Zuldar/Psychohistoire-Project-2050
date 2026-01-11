@@ -1,4 +1,4 @@
-/* DANS style.css */
+/* DESIGN "COMMAND HUD" V14 - MOBILE FIX */
 
 * { box-sizing: border-box; }
 :root { 
@@ -13,36 +13,36 @@
 }
 
 body { 
-    background-color: var(--bg-deep); 
+    /* IMPORTANT : Le body doit être transparent pour voir l'animation derrière */
+    background-color: transparent; 
     color: #e0e0e0; 
     font-family: 'Rajdhani', sans-serif; 
     margin: 0; padding: 20px; 
     min-height: 100vh; 
     overflow-x: hidden;
-    position: relative;
-    /* On enlève le background d'ici pour le mettre dans la div dédiée */
 }
 
-/* --- LE NOUVEAU FOND QUI MARCHE SUR MOBILE --- */
+/* --- LE FOND ANIMÉ (CORRIGÉ) --- */
 .animated-bg {
-    position: fixed; /* Reste collé à l'écran même quand on scrolle */
-    top: 0; 
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: -999; /* Tout au fond */
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    z-index: -1; /* Juste derrière le contenu */
+    
+    /* La couleur de fond est ICI maintenant */
+    background-color: var(--bg-deep);
     
     background-image: 
         radial-gradient(circle at 50% 50%, transparent 20%, #020205 90%),
-        linear-gradient(rgba(0, 243, 255, 0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 243, 255, 0.04) 1px, transparent 1px);
+        linear-gradient(rgba(0, 243, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 243, 255, 0.05) 1px, transparent 1px);
     
     background-size: 100% 100%, 40px 40px, 40px 40px;
     
-    /* L'ASTUCE POUR FIREFOX ANDROID : */
+    /* Optimisation Mobile */
     will-change: background-position;
-    transform: translateZ(0); /* Active la carte graphique du téléphone */
-    animation: flight 20s linear infinite;
+    transform: translate3d(0,0,0); 
+    animation: flight 30s linear infinite;
 }
 
 @keyframes flight {
@@ -50,21 +50,22 @@ body {
     100% { background-position: 0 0, 40px 40px, 40px 40px; }
 }
 
-/* Le reste du CSS reste identique... */
 .container { max-width: 1400px; margin: 0 auto; width: 100%; position: relative; z-index: 2; }
-/* ... copie le reste de ton ancien style.css ici ... */
-/* HEADER, HUD, etc... */
+
+/* HEADER */
 header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--glass-border); padding-bottom: 20px; margin-bottom: 40px; position: relative; }
 header::after { content: ''; position: absolute; bottom: -5px; right: 0; width: 100px; height: 5px; background: var(--neon-blue); }
 h1 { font-family: 'Orbitron', sans-serif; font-weight: 900; font-size: clamp(1.5rem, 4vw, 3rem); margin: 0; text-transform: uppercase; letter-spacing: 4px; background: linear-gradient(90deg, #fff, var(--neon-blue)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 0 0 20px rgba(0, 243, 255, 0.4); }
 
 .status-pill { font-family: 'Share Tech Mono', monospace; background: rgba(0, 243, 255, 0.05); padding: 8px 16px; border: 1px solid var(--neon-blue); font-size: 0.8em; color: var(--neon-blue); box-shadow: 0 0 10px rgba(0, 243, 255, 0.2); }
 
+/* HUD SCORE */
 .score-hud { display: flex; flex-direction: column; align-items: center; justify-content: center; background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0, 243, 255, 0.05) 50%, rgba(0,0,0,0) 100%); border-top: 1px solid var(--glass-border); border-bottom: 1px solid var(--glass-border); padding: 30px 0; margin-bottom: 40px; position: relative; }
 .score-hud::before { content: "[  SYSTEM STATUS  ]"; position: absolute; top: -10px; font-family: 'Share Tech Mono'; font-size: 0.8em; color: var(--neon-blue); background: var(--bg-deep); padding: 0 10px; }
 .big-number { font-family: 'Orbitron', sans-serif; font-size: clamp(3rem, 8vw, 6rem); font-weight: 700; color: #fff; text-shadow: 0 0 20px rgba(255,255,255,0.5); line-height: 1; margin: 10px 0; }
 .hud-label { font-family: 'Share Tech Mono', monospace; letter-spacing: 4px; color: #888; font-size: 0.9em; text-transform: uppercase; }
 
+/* TERMINAL & ALERTS */
 .terminal-box { background: linear-gradient(180deg, rgba(10,15,20,0.95) 0%, rgba(5,5,10,0.95) 100%); border: 1px solid var(--glass-border); border-left: 4px solid var(--neon-blue); padding: 30px; margin-bottom: 40px; position: relative; box-shadow: 0 0 50px rgba(0,0,0,0.5); background-image: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 243, 255, 0.03) 3px); }
 .terminal-header { color: var(--neon-blue); font-family: 'Orbitron'; font-size: 1.1em; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
 .blink { animation: blinker 1s linear infinite; } @keyframes blinker { 50% { opacity: 0; } }
@@ -111,5 +112,5 @@ h1 { font-family: 'Orbitron', sans-serif; font-weight: 900; font-size: clamp(1.5
 .info-icon:hover .tooltip-text { visibility: visible; opacity: 1; bottom: 130%; }
 @media (max-width: 600px) { .info-icon .tooltip-text { width: 250px; left: -100px; } }
 
-footer { margin-top: 60px; text-align: center; color: #444; font-family: 'Share Tech Mono'; font-size: 0.7em; letter-s
-    pacing: 2px; }
+footer { margin-top: 60px; text-align: center; color: #444; font-family: 'Share Tech Mono'; font-size: 0.7em; letter-
+    spacing: 2px; }
