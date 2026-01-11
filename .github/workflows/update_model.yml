@@ -23,7 +23,7 @@ jobs:
 
     - name: 🧠 Exécution du modèle Psychohistorique
       run: |
-        python src/main_analyzer.py
+        python src/Seldon.py
 
     - name: 💾 Commit et Push (Mode Robuste)
       run: |
