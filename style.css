@@ -19,21 +19,39 @@ body {
     min-height: 100vh; 
     overflow-x: hidden;
     
-    /* COULEUR DE FOND (Au cas où l'image met du temps à charger) */
+    /* FOND NOIR DE SÉCURITÉ */
     background-color: #020205;
     
-    /* L'IMAGE LOCALE (C'est ça qui change tout) */
-    background-image: url('bg.gif');
+    /* TON IMAGE LOCALE (C'est le nom exact du fichier sur GitHub) */
+    background-image: url('radiant.gif');
     
-    /* REGLAGES IMPORTANTS POUR MOBILE */
+    /* --- RÉGLAGES MOBILE CRITIQUES --- */
+    
+    /* 1. Centre l'image */
     background-position: center center;
+    
+    /* 2. L'image couvre tout l'écran sans se déformer */
     background-size: cover; 
+    
+    /* 3. Empêche la répétition moche */
     background-repeat: no-repeat;
     
-    /* On enlève 'fixed' qui bug souvent sur mobile. 
-       L'image va scroller avec le texte, mais elle s'affichera à coup sûr. */
+    /* 4. IMPORTANT : On laisse le fond scroller avec le texte sur mobile.
+       C'est moins "style", mais ça garantit que l'image s'affiche à 100% 
+       sans être bloquée par le navigateur Android/iOS. */
     background-attachment: scroll; 
 }
+
+/* OPTIONNEL : Ajoute un voile sombre par-dessus pour que le texte reste lisible */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(2, 2, 5, 0.6); /* 60% de noir par dessus l'image */
+    z-index: -1;
+}
+
 
 
 /* On ajoute un voile noir par-dessus l'image pour que le texte reste lisible */
