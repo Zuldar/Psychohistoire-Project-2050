@@ -10,41 +10,44 @@
     <style>
         /* CSS IDENTIQUE */
         * { box-sizing: border-box; }
-        :root { --bg-dark: #05050b; --glass: rgba(20, 20, 35, 0.8); --glass-solid: #0d0d15; --border: rgba(255, 255, 255, 0.15); --neon-blue: #00f3ff; --neon-green: #00ff9d; --neon-red: #ff0055; --neon-yellow: #ffee00; }
+        :root { --bg-dark: #05050b; --glass: rgba(20, 20, 35, 0.9); --glass-solid: #0d0d15; --border: rgba(255, 255, 255, 0.15); --neon-blue: #00f3ff; --neon-green: #00ff9d; --neon-red: #ff0055; --neon-yellow: #ffee00; }
         body { background-color: var(--bg-dark); background-image: radial-gradient(circle at 50% 0%, #1a1a3a 0%, var(--bg-dark) 80%); color: #e0e0e0; font-family: 'Rajdhani', sans-serif; margin: 0; padding: 20px; min-height: 100vh; overflow-x: hidden; }
         .container { max-width: 1400px; margin: 0 auto; width: 100%; }
 
-        /* TOOLTIP AMÉLIORÉE */
+        /* TOOLTIP AGRANDIE */
         .info-icon { display: inline-flex; justify-content: center; align-items: center; width: 20px; height: 20px; border-radius: 50%; border: 1px solid #666; color: #aaa; font-size: 12px; margin-left: 10px; cursor: help; position: relative; transition: 0.3s; background: rgba(0,0,0,0.3); }
         .info-icon:hover { border-color: var(--neon-blue); color: #fff; background: var(--neon-blue); color: #000; }
+        
+        /* Bulle plus large et plus haute pour contenir les deux textes */
         .info-icon .tooltip-text { 
-            visibility: hidden; width: 300px; /* Plus large pour les phrases */
+            visibility: hidden; width: 320px; 
             background-color: var(--glass-solid); color: #fff; 
             border: 1px solid var(--neon-blue); padding: 15px; border-radius: 8px; 
             position: absolute; z-index: 100; bottom: 135%; left: 50%; transform: translateX(-50%); 
-            opacity: 0; transition: all 0.3s ease; font-size: 0.9rem; line-height: 1.5;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.9); text-align: left;
+            opacity: 0; transition: all 0.3s ease; font-size: 0.85rem; line-height: 1.5;
+            box-shadow: 0 10px 50px rgba(0,0,0,0.95); text-align: left;
         }
         .info-icon .tooltip-text::after { content: ""; position: absolute; top: 100%; left: 50%; margin-left: -5px; border-width: 5px; border-style: solid; border-color: var(--neon-blue) transparent transparent transparent; }
         .info-icon:hover .tooltip-text { visibility: visible; opacity: 1; bottom: 125%; }
 
-        /* RESTE DU DESIGN */
+        /* HEADER & CHART */
         header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 30px; flex-wrap: wrap; gap: 20px; }
         h1 { font-family: 'Orbitron', sans-serif; font-weight: 900; font-size: clamp(1.5rem, 4vw, 2.5rem); margin: 0; background: linear-gradient(90deg, #fff, var(--neon-blue)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-transform: uppercase; letter-spacing: 2px; }
         .status-pill { background: var(--glass); padding: 8px 16px; border-radius: 20px; border: 1px solid var(--border); font-size: 0.8em; color: var(--neon-blue); text-shadow: 0 0 10px rgba(0, 243, 255, 0.5); }
         .chart-wrapper { background: var(--glass); backdrop-filter: blur(10px); border: 1px solid var(--border); border-radius: 16px; padding: 15px; margin-bottom: 30px; box-shadow: 0 0 40px rgba(0,0,0,0.5); height: 400px; position: relative; }
+        
+        /* SCORE & TERMINAL */
         .big-score-card { text-align: center; padding: 20px 10px; background: radial-gradient(circle, rgba(0,243,255,0.05) 0%, transparent 70%); margin-bottom: 30px; }
         .score-title-row { display: flex; justify-content: center; align-items: center; margin-bottom: 10px; color: #666; letter-spacing: 2px; font-size: 0.9em; }
         .big-number { font-family: 'Orbitron', sans-serif; font-size: clamp(4rem, 8vw, 6rem); font-weight: 700; line-height: 1; margin-bottom: 10px; text-shadow: 0 0 30px rgba(255,255,255,0.2); }
-        
-        /* TERMINAL STYLE */
-        .terminal-box { background: rgba(0, 0, 0, 0.6); border: 1px solid var(--border); border-left: 4px solid var(--neon-blue); border-radius: 8px; padding: 20px; margin-bottom: 40px; font-family: 'Courier New', Courier, monospace; box-shadow: 0 0 20px rgba(0,0,0,0.5); }
+        .terminal-box { background: rgba(0, 0, 0, 0.8); border: 1px solid var(--border); border-left: 4px solid var(--neon-blue); border-radius: 8px; padding: 20px; margin-bottom: 40px; font-family: 'Courier New', Courier, monospace; box-shadow: 0 0 20px rgba(0,0,0,0.5); }
         .terminal-header { color: var(--neon-blue); font-family: 'Orbitron'; text-transform: uppercase; font-size: 0.9em; margin-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 5px; }
         .analysis-text { color: #fff; margin-bottom: 15px; font-size: 1.1em; line-height: 1.5; }
         .alerts-list { list-style: none; padding: 0; margin: 0; }
         .alert-item { padding: 8px 0; border-top: 1px solid rgba(255,255,255,0.05); color: var(--neon-yellow); display: flex; align-items: center; gap: 10px; }
         .alert-critical { color: var(--neon-red); text-shadow: 0 0 5px var(--neon-red); }
 
+        /* GRID */
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
         .card { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 12px; padding: 20px; position: relative; transition: 0.3s; }
         .card:hover { transform: translateY(-5px); background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.3); }
@@ -65,7 +68,7 @@
         <header>
             <div>
                 <h1>Psychohistoire</h1>
-                <div style="color: #666; letter-spacing: 2px; font-size: 0.8rem;">ANALYSE DYNAMIQUE V3.1</div>
+                <div style="color: #666; letter-spacing: 2px; font-size: 0.8rem;">ANALYSE DYNAMIQUE V3.2 (FINAL)</div>
             </div>
             <div id="last-update" class="status-pill">INITIALISATION...</div>
         </header>
@@ -99,15 +102,15 @@
         const names = { "energie": "⚡ ÉNERGIE", "environnement": "🌍 CLIMAT", "espace": "🚀 ESPACE", "demographie_social": "👥 SOCIAL", "sante_bio": "🧬 BIO-SANTÉ", "geopolitique": "⚔️ GÉOPOLITIQUE", "technologie_ia": "🤖 TECH & IA", "finance": "💰 FINANCE", "information": "🧠 NOOSPHÈRE" };
         const colors = { "energie": "#ffee00", "environnement": "#ff0055", "espace": "#00d4ff", "demographie_social": "#ff9100", "sante_bio": "#00ff9d", "geopolitique": "#ff0000", "technologie_ia": "#bc13fe", "finance": "#ffffff", "information": "#7a7a7a" };
         
-        // --- NOUVEAU : Dictionnaire de définitions complètes (Phrases) ---
+        // --- DÉFINITIONS LONGUES (STATIQUES) ---
         const definitions = { 
             "energie": "Mesure la capacité de production mondiale. Un score bas signifie rationnement et blackouts, un score haut signifie énergie illimitée (Fusion).", 
-            "environnement": "Santé de la biosphère et du climat. Un score inférieur à 30% signale un effondrement écologique irréversible et des pénuries d'eau.", 
+            "environnement": "Santé de la biosphère et du climat. Un score < 30% signale un effondrement écologique irréversible et des pénuries d'eau.", 
             "espace": "Niveau d'expansion hors de la Terre. Indique la capacité de l'humanité à devenir une espèce multi-planétaire.", 
             "demographie_social": "Indicateur de cohésion. Mesure les risques d'émeutes, les inégalités et la confiance des populations envers l'avenir.", 
             "sante_bio": "Résilience biologique humaine. Prend en compte l'espérance de vie, les pandémies et les avancées génétiques.", 
             "geopolitique": "Stabilité des relations internationales. Un score bas annonce des conflits majeurs ou une Guerre Mondiale.", 
-            "technologie_ia": "Vitesse d'innovation. ATTENTION : un score supérieur à 90% signale une perte de contrôle humain (Singularité).", 
+            "technologie_ia": "Vitesse d'innovation. ATTENTION : un score > 90% signale une perte de contrôle humain (Singularité).", 
             "finance": "Santé du système économique. Un score bas indique une hyperinflation ou une crise de la dette mondiale.", 
             "information": "Qualité de la Noosphère (Vérité). Un score bas signifie que le réel est indistingable du faux (Deepfakes/Propagande)." 
         };
@@ -195,16 +198,25 @@
                 grid.innerHTML = '';
                 
                 for (const [key, valueObj] of Object.entries(current.pillars)) {
-                    let scoreVal, comment;
-                    // Logique intelligente : Si le robot a donné un commentaire, on le prend. Sinon, on prend la définition.
-                    if (typeof valueObj === 'object' && valueObj !== null && 'score' in valueObj && valueObj.comment) { 
+                    // --- C'EST ICI QUE JE CHANGE LA LOGIQUE POUR TOUT AFFICHER ---
+                    let scoreVal, dynamicComment;
+                    
+                    if (typeof valueObj === 'object' && valueObj !== null && 'score' in valueObj) { 
                          scoreVal = valueObj.score; 
-                         comment = valueObj.comment; // Le commentaire dynamique du robot
+                         dynamicComment = valueObj.comment || ""; 
                     } else { 
                          scoreVal = valueObj; 
-                         comment = definitions[key]; // La définition complète par défaut
+                         dynamicComment = "";
                     }
                     
+                    // ON CONSTRUIT LE TEXTE COMBINÉ
+                    // 1. Définition statique (longue)
+                    let fullText = definitions[key] || "Définition indisponible.";
+                    // 2. Si le robot a ajouté un commentaire, on l'ajoute en dessous
+                    if(dynamicComment && dynamicComment.length > 2) {
+                        fullText += "<br><hr style='border:0; border-top:1px solid #444; margin:8px 0;'>👉 <em style='color:var(--neon-blue)'>" + dynamicComment + "</em>";
+                    }
+
                     let cleanValue = Math.round(scoreVal);
                     let state = 'good';
                     if (cleanValue < 40) state = 'bad'; else if (cleanValue < 60) state = 'mid';
@@ -218,7 +230,7 @@
                                 <div class="info-icon">?
                                     <span class="tooltip-text">
                                         <strong style="color:var(--neon-blue); text-transform:uppercase; display:block; margin-bottom:5px;">${names[key]} (${cleanValue}%)</strong>
-                                        ${comment}
+                                        ${fullText}
                                     </span>
                                 </div>
                             </div>
