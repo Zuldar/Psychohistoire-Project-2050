@@ -56,11 +56,10 @@
     </div>
 
     <script>
-        // --- MOUCHARD D'ERREUR ---
         window.onerror = function(msg, url, lineNo, columnNo, error) {
             const errorBox = document.getElementById('error-box');
             errorBox.style.display = 'block';
-            errorBox.innerHTML = `<strong>⛔ ERREUR CRITIQUE DÉTECTÉE :</strong><br>${msg}<br><small>${error}</small>`;
+            errorBox.innerHTML = `<strong>⛔ ERREUR CRITIQUE :</strong><br>${msg}<br><small>${error}</small>`;
             document.getElementById('last-update').textContent = "CRASH";
             document.getElementById('last-update').style.color = "red";
             return false;
@@ -82,9 +81,8 @@
             try {
                 const time = new Date().getTime(); 
                 
-                // CHARGEMENT
                 let response_current = await fetch('data/current_state.json?v=' + time);
-                if (!response_current.ok) throw new Error("Fichier 'current_state.json' introuvable. Lancez le Workflow.");
+                if (!response_current.ok) throw new Error("Fichier 'current_state.json' introuvable.");
                 const current = await response_current.json();
 
                 let response_hist = await fetch('data/history_2020_2025.json?v=' + time);
@@ -96,7 +94,25 @@
                     if (response_proj.ok) projection = await response_proj.json();
                 } catch(e) {}
 
-                // AFFICHAGE
+                // --- LOGIQUE D'ACTIVATION DES COURBES ---
+                // Par défaut, on affiche IA et Climat
+                let activePillars = new Set(['technologie_ia', 'environnement']);
+                
+                // On scanne les alertes pour voir quelles courbes activer
+                if(current.alerts) {
+                    current.alerts.forEach(alert => {
+                        let text = alert.toLowerCase();
+                        if(text.includes('env')) activePillars.add('environnement');
+                        if(text.includes('géo')) activePillars.add('geopolitique');
+                        if(text.includes('tech') || text.includes('ia')) activePillars.add('technologie_ia');
+                        if(text.includes('social') || text.includes('luddite')) activePillars.add('demographie_social');
+                        if(text.includes('finance') || text.includes('défaut')) activePillars.add('finance');
+                        if(text.includes('bio') || text.includes('pandémie')) activePillars.add('sante_bio');
+                        if(text.includes('énergie')) activePillars.add('energie');
+                    });
+                }
+                // ------------------------------------------
+
                 document.getElementById('analysis-text').textContent = current.global_analysis || "Analyse indisponible.";
                 
                 const listCrisis = document.getElementById('list-crisis'); listCrisis.innerHTML = '';
@@ -167,7 +183,10 @@
                     let cData; if(current.pillars[key].score !== undefined) cData = current.pillars[key].score; else cData = current.pillars[key];
                     const pData = projection.map(p => p.pillars[key]);
                     const fullData = [...hData, cData, ...pData];
-                    let isVisible = (key === 'technologie_ia' || key === 'environnement');
+                    
+                    // ICI : ON UTILISE LA LOGIQUE DYNAMIQUE
+                    let isVisible = activePillars.has(key);
+                    
                     datasets.push({
                         label: names[key], data: fullData, borderColor: colors[key],
                         borderWidth: 1.5, tension: 0.4, hidden: !isVisible, pointRadius: 0,
@@ -212,7 +231,7 @@
                     grid.appendChild(card);
                 }
             } catch (error) { 
-                throw error; // Renvoie au mouchard global
+                throw error; 
             }
         }
         loadData();
