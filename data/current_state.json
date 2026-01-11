@@ -1,6 +1,6 @@
 {
   "date": "2026-01-11",
-  "stability_index": 44.82,
+  "stability_index": 44.84,
   "global_analysis": "\u26a0\ufe0f STABILIT\u00c9 PR\u00c9CAIRE.",
   "alerts": [
     "\u26a0\ufe0f SINGULARIT\u00c9 (Tech)",
@@ -10,39 +10,39 @@
   ],
   "pillars": {
     "energie": {
-      "score": 66.05,
+      "score": 65.71,
       "comment": "\u26a1 Transition instable."
     },
     "environnement": {
-      "score": 14.28,
+      "score": 14.1,
       "comment": "\u2620\ufe0f Effondrement."
     },
     "espace": {
-      "score": 80.48,
+      "score": 81.0,
       "comment": "\ud83c\udf0c Multi-plan\u00e9taire."
     },
     "demographie_social": {
-      "score": 30.1,
+      "score": 29.75,
       "comment": "\ud83d\udd25 Guerre Civile."
     },
     "sante_bio": {
-      "score": 85.77,
+      "score": 85.78,
       "comment": "\ud83e\uddec Transhumanisme."
     },
     "geopolitique": {
-      "score": 25.4,
+      "score": 25.31,
       "comment": "\u2622\ufe0f Guerre Mondiale."
     },
     "technologie_ia": {
-      "score": 97.73,
+      "score": 97.77,
       "comment": "\u26a0\ufe0f SINGULARIT\u00c9."
     },
     "finance": {
-      "score": 44.36,
+      "score": 44.64,
       "comment": "\ud83d\udcc9 R\u00e9cession."
     },
     "information": {
-      "score": 9.18,
+      "score": 9.72,
       "comment": "\ud83e\udde0 Obscurantisme."
     }
   }
