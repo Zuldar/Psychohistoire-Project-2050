@@ -1,19 +1,20 @@
 import json
 import os
 import random
+import copy
 from datetime import datetime
 
-# --- CONFIGURATION DU MODELE ---
+# --- CONFIGURATION ---
 HISTORY_FILE = 'data/history_2020_2025.json'
 CURRENT_STATE_FILE = 'data/current_state.json'
+PROJECTION_FILE = 'data/projection_2036.json' # Nouveau fichier
 REPORT_DIR = 'reports'
 REPORT_OUTPUT = os.path.join(REPORT_DIR, 'rapport_mensuel.md')
 
-# Les 9 Piliers de la Psychohistoire
 PILLARS = [
-    "energie", "environnement", "espace",              # Physique
-    "demographie_social", "sante_bio", "geopolitique", # Humain
-    "technologie_ia", "finance", "information"         # Abstrait
+    "energie", "environnement", "espace",
+    "demographie_social", "sante_bio", "geopolitique",
+    "technologie_ia", "finance", "information"
 ]
 
 class PsychohistoryModel:
@@ -21,151 +22,114 @@ class PsychohistoryModel:
         self.history = self.load_json(HISTORY_FILE)
         
     def load_json(self, filepath):
-        if not os.path.exists(filepath):
-            print(f"Attention: Fichier {filepath} introuvable. Utilisation de données vides.")
-            return []
-        with open(filepath, 'r', encoding='utf-8') as f:
-            return json.load(f)
+        if not os.path.exists(filepath): return []
+        with open(filepath, 'r', encoding='utf-8') as f: return json.load(f)
 
-    def calculate_momentum(self, pillar_name):
-        """Calcule la vitesse de changement d'un pilier sur les 3 dernières années."""
-        if len(self.history) < 3:
-            return 0
-        
-        # Récupération des scores des 3 dernières années
-        last_3_years = self.history[-3:]
-        # Sécurité si un pilier manque dans l'historique
+    def calculate_momentum(self, history_data, pillar_name):
+        """Calcule la vitesse basée sur les 3 dernières années connues"""
+        if len(history_data) < 3: return 0
+        last_3 = history_data[-3:]
         try:
-            scores = [year['pillars'][pillar_name]['score'] for year in last_3_years]
-        except KeyError:
-            return 0
+            scores = [year['pillars'][pillar_name]['score'] if 'score' in year['pillars'][pillar_name] else year['pillars'][pillar_name] for year in last_3]
+            return (scores[2] - scores[0]) / 2
+        except: return 0
+
+    def apply_interdependencies(self, state):
+        """Les Lois de la Psychohistoire (Version Simulation)"""
+        # Loi 1 : Effondrement Climatique = Guerre + Crise Sociale
+        if state['environnement'] < 20:
+            state['geopolitique'] -= 2
+            state['demographie_social'] -= 1.5
+
+        # Loi 2 : Singularité IA = Chaos Social mais Boom Spatial
+        if state['technologie_ia'] > 95:
+            state['demographie_social'] -= 2 # Chômage de masse
+            state['espace'] += 3             # Robots dans l'espace
+            state['information'] -= 3        # On ne sait plus ce qui est vrai
+            state['sante_bio'] += 2          # L'IA trouve des remèdes
+
+        # Loi 3 : Boom Spatial = Energie infinie
+        if state['espace'] > 90:
+            state['energie'] += 2
+
+        # Bornage 0-100
+        for k in state: state[k] = max(0, min(100, state[k]))
+        return state
+
+    def simulate_future(self, start_state):
+        print("--- Démarrage Simulation 2026-2036 ---")
+        future_timeline = []
         
-        # Vélocité : (Dernière année - Année-2) + tendance récente
-        velocity = (scores[2] - scores[0]) / 2
-        return velocity
-
-    def apply_interdependencies(self, future_scores):
-        """
-        Le coeur du modèle : Comment les piliers s'influencent.
-        """
-        # Loi 1 : Si l'Environnement chute, le Social et la Géopolitique chutent
-        if future_scores['environnement'] < 30:
-            future_scores['demographie_social'] -= 5
-            future_scores['geopolitique'] -= 3
-
-        # Loi 2 : Si la Technologie/IA explose (>90), le Social chute (choc du futur) mais l'Espace monte
-        if future_scores['technologie_ia'] > 90:
-            future_scores['demographie_social'] -= 2
-            future_scores['espace'] += 4
-            future_scores['information'] -= 5 # (Confusion réel/virtuel)
-
-        # Loi 3 : Si l'Énergie monte (>60), la Finance se stabilise
-        if future_scores['energie'] > 60:
-            future_scores['finance'] += 2
-
-        return future_scores
-
-    def predict_next_month(self):
-        # Sécurité si l'historique est vide
-        if not self.history:
-            print("Erreur critique : Pas d'historique chargé.")
-            return {}, 0
-
-        last_year = self.history[-1]
-        future_state = {}
+        # On clone l'état de départ pour ne pas le modifier
+        current_sim_state = copy.deepcopy(start_state)
         
-        # 1. Projection linéaire basée sur le momentum historique
-        print("--- Calcul des trajectoires ---")
-        for pillar in PILLARS:
-            momentum = self.calculate_momentum(pillar)
-            current_score = last_year['pillars'][pillar]['score']
+        # On simule 10 ans
+        for year in range(2027, 2037):
+            next_step = {}
+            for pillar in PILLARS:
+                # 1. Inertie (Momentum)
+                momentum = self.calculate_momentum(self.history, pillar)
+                # On atténue le momentum avec le temps (l'histoire ne va pas toujours tout droit)
+                decay = 0.9 
+                
+                # 2. Ajout d'un Chaos croissant (plus on va loin, moins on est sûr)
+                chaos = random.uniform(-3, 3)
+                
+                new_val = current_sim_state[pillar] + (momentum * decay) + chaos
+                next_step[pillar] = max(0, min(100, new_val))
+
+            # 3. Application des lois
+            next_step = self.apply_interdependencies(next_step)
             
-            # Facteur Chaos (incertitude de l'avenir) +/- 2%
-            chaos = random.uniform(-2, 2)
+            # 4. Calcul Stabilité
+            weighted_sum = sum(next_step.values()) + next_step['geopolitique'] + next_step['environnement']
+            stability = round(weighted_sum / (len(PILLARS) + 2), 2)
+
+            # Enregistrement
+            future_timeline.append({
+                "year": year,
+                "stability_index": stability,
+                "pillars": copy.deepcopy(next_step)
+            })
             
-            # Projection (divisé par 12 pour ramener à une échelle mensuelle)
-            next_score = current_score + (momentum / 12) + chaos
-            
-            # Bornage entre 0 et 100
-            next_score = max(0, min(100, next_score))
-            future_state[pillar] = round(next_score, 2)
-            
-            print(f"Pilier {pillar}: {current_score} -> {future_state[pillar]} (Momentum: {momentum:.2f})")
+            # L'état de cette année devient le départ de l'année suivante
+            current_sim_state = next_step
+            self.history.append({'pillars': next_step}) # On nourrit l'histoire temporaire pour le momentum
 
-        # 2. Application des interdépendances systémiques
-        future_state = self.apply_interdependencies(future_state)
-        
-        # 3. Calcul de l'Indice de Stabilité Mondiale (Moyenne pondérée)
-        # La géopolitique et l'environnement pèsent double dans la stabilité
-        weighted_sum = sum(future_state.values()) + future_state['geopolitique'] + future_state['environnement']
-        stability_index = round(weighted_sum / (len(PILLARS) + 2), 2)
-        
-        return future_state, stability_index
-
-    def generate_report(self, future_state, stability_index):
-        now = datetime.now().strftime("%Y-%m-%d")
-        
-        # Détection des alertes
-        alerts = []
-        if stability_index < 40: alerts.append("🔴 ALERTE ROUGE : Risque d'effondrement systémique.")
-        if future_state['technologie_ia'] > 95: alerts.append("⚠️ ALERTE SINGULARITÉ : L'IA dépasse les seuils de régulation.")
-        if future_state['geopolitique'] < 20: alerts.append("⚔️ ALERTE GUERRE : Tensions critiques.")
-
-        report = f"""
-# 🔮 Rapport Psychohistorique - {now}
-
-## 📊 Indice de Stabilité Mondiale : {stability_index}/100
-
-### 🚨 Alertes Prioritaires
-{chr(10).join(['- ' + a for a in alerts]) if alerts else "- Aucune alerte critique."}
-
-### 📈 État des 9 Piliers (Prévision M+1)
-| Pilier | Score | Tendance |
-|--------|-------|----------|
-| ⚡ Énergie | {future_state['energie']} | {'🟢' if future_state['energie'] > 50 else '🔴'} |
-| 🌍 Environnement | {future_state['environnement']} | {'🟢' if future_state['environnement'] > 50 else '🔴'} |
-| 🚀 Espace | {future_state['espace']} | {'🟢' if future_state['espace'] > 50 else '🔴'} |
-| 👥 Social | {future_state['demographie_social']} | {'🟢' if future_state['demographie_social'] > 50 else '🔴'} |
-| 🧬 Santé | {future_state['sante_bio']} | {'🟢' if future_state['sante_bio'] > 50 else '🔴'} |
-| ⚔️ Géopolitique | {future_state['geopolitique']} | {'🟢' if future_state['geopolitique'] > 50 else '🔴'} |
-| 🤖 Tech & IA | {future_state['technologie_ia']} | {'🟢' if future_state['technologie_ia'] < 90 else '⚠️'} |
-| 💰 Finance | {future_state['finance']} | {'🟢' if future_state['finance'] > 50 else '🔴'} |
-| 🧠 Information | {future_state['information']} | {'🟢' if future_state['information'] > 50 else '🔴'} |
-
----
-*Généré par le Noyau Psychohistorique V1*
-"""
-        return report
+        return future_timeline
 
     def run(self):
-        print("Initialisation du modèle...")
-        
-        # Création du dossier reports s'il n'existe pas
-        if not os.path.exists(REPORT_DIR):
-            os.makedirs(REPORT_DIR)
-            
-        future_state, stability_index = self.predict_next_month()
-        
-        if not future_state:
-            return
+        # 1. Calcul du mois prochain (Janvier 2026) comme avant
+        # (J'ai simplifié ici pour utiliser la logique de simulation directement)
+        current_year_state = self.history[-1]['pillars']
+        # On extrait les valeurs brutes
+        clean_start = {}
+        for p in PILLARS:
+            clean_start[p] = current_year_state[p]['score'] if isinstance(current_year_state[p], dict) else current_year_state[p]
 
-        # Sauvegarde des données JSON
-        output_data = {
+        # Simulation sur 10 ans
+        projection = self.simulate_future(clean_start)
+        
+        # Le premier élément de la projection est notre "Mois Prochain" (State Actuel)
+        current_state_data = {
             "date": datetime.now().strftime("%Y-%m-%d"),
-            "stability_index": stability_index,
-            "pillars": future_state
+            "stability_index": projection[0]['stability_index'],
+            "pillars": projection[0]['pillars']
         }
+        
+        # Sauvegardes
+        if not os.path.exists('data'): os.makedirs('data')
+        
+        # Save Current
         with open(CURRENT_STATE_FILE, 'w', encoding='utf-8') as f:
-            json.dump(output_data, f, indent=2)
+            json.dump(current_state_data, f, indent=2)
             
-        # Génération du rapport Markdown
-        report_content = self.generate_report(future_state, stability_index)
-        with open(REPORT_OUTPUT, 'w', encoding='utf-8') as f:
-            f.write(report_content)
-            
-        print("✅ Analyse terminée. Rapport généré.")
+        # Save Projection 10 ans
+        with open(PROJECTION_FILE, 'w', encoding='utf-8') as f:
+            json.dump(projection, f, indent=2)
+
+        print("✅ Simulation 2036 terminée.")
 
 if __name__ == "__main__":
-    model = PsychohistoryModel()
-    model.run()
+    PsychohistoryModel().run()
     
