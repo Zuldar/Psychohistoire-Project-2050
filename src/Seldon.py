@@ -3,17 +3,29 @@ import random
 from datetime import datetime
 
 # --- CONFIGURATION ---
-# Facteurs d'influence (Poids des piliers)
 WEIGHTS = {
-    "technologie_ia": 1.5,      # L'IA accélère tout
-    "environnement": 1.2,       # Le mur climatique
+    "technologie_ia": 1.5,
+    "environnement": 1.2,
     "energie": 1.0,
-    "geopolitique": 1.3,        # Facteur de chaos
+    "geopolitique": 1.3,
     "demographie_social": 1.0,
     "finance": 1.1,
     "sante_bio": 1.0,
     "espace": 0.8,
     "information": 0.9
+}
+
+# DICTIONNAIRE DE PHRASÉ SELDONIEN (Narratif)
+SELDON_TERMS = {
+    "energie": "l'épuisement énergétique",
+    "environnement": "l'entropie climatique",
+    "espace": "la stagnation exosphérique",
+    "demographie_social": "la dissonance sociale",
+    "sante_bio": "la dégradation biologique",
+    "geopolitique": "l'instabilité géopolitique",
+    "technologie_ia": "la variance technologique non-contrôlée",
+    "finance": "l'effondrement des vecteurs économiques",
+    "information": "la corruption de la noosphère"
 }
 
 # --- FONCTIONS ---
@@ -27,82 +39,46 @@ def load_json(filename):
 
 def save_json(filename, data):
     with open(filename, 'w') as f:
-        json.dump(data, f, indent=4)
+        json.dump(data, f, indent=4, ensure_ascii=False)
 
 def calculate_stability(pillars):
-    """Calcule l'index de stabilité global (0-100)"""
     total_score = 0
     total_weight = 0
-    
     for key, val in pillars.items():
-        # Gère si c'est un objet ou un int direct
         score = val['score'] if isinstance(val, dict) else val
         weight = WEIGHTS.get(key, 1.0)
-        
         total_score += score * weight
         total_weight += weight
-        
     return round(total_score / total_weight)
 
 def analyze_trend(history):
-    """Analyse simple de la tendance sur les 3 dernières années"""
-    if len(history) < 2:
-        return 0
+    if len(history) < 2: return 0
     last = calculate_stability(history[-1]['pillars'])
     prev = calculate_stability(history[-2]['pillars'])
     return last - prev
 
 def generate_projections(current_state, years=10):
-    """
-    Génère 3 scénarios (Optimiste, Tendantielle, Pessimiste)
-    Basé sur la tendance actuelle + facteur chaos grandissant avec le temps
-    """
     current_score = current_state['stability_index']
-    current_year = 2026 # Année de départ de la projection
+    current_year = 2026
+    projections = { "optimiste": [], "tendantielle": [], "pessimiste": [] }
     
-    # Structure de sortie
-    projections = {
-        "optimiste": [],
-        "tendantielle": [],
-        "pessimiste": []
-    }
-    
-    # Simulation
     for i in range(1, years + 1):
         year = str(current_year + i)
-        
-        # Facteur d'incertitude (Le cône s'élargit avec le temps)
         uncertainty = i * 1.5 
         
-        # 1. TENDANTIELLE (Baseline)
-        # On suppose une légère dégradation cyclique (entropie) si rien ne change
+        # Tendantielle
         trend_drift = -0.5 * i 
         base_val = max(0, min(100, current_score + trend_drift))
+        if i in [2, 3]: base_val -= 5 # Choc 2028
+        projections["tendantielle"].append({ "year": year, "stability_index": round(base_val) })
         
-        # Ajout d'une "Crise cyclique" autour de 2028-2029 (i=2 ou 3)
-        if i in [2, 3]: 
-            base_val -= 5 # Choc temporaire
-
-        projections["tendantielle"].append({
-            "year": year,
-            "stability_index": round(base_val)
-        })
-        
-        # 2. OPTIMISTE (Tech Salvation)
-        # La technologie résout les problèmes + Sursaut conscience
+        # Optimiste
         opti_val = base_val + (uncertainty * 1.2) + (i * 0.5)
-        projections["optimiste"].append({
-            "year": year,
-            "stability_index": round(min(98, opti_val)) # Max 98%
-        })
+        projections["optimiste"].append({ "year": year, "stability_index": round(min(98, opti_val)) })
         
-        # 3. PESSIMISTE (Collapse)
-        # Effet domino négatif
+        # Pessimiste
         pess_val = base_val - (uncertainty * 1.5) - (i * 0.5)
-        projections["pessimiste"].append({
-            "year": year,
-            "stability_index": round(max(5, pess_val)) # Min 5%
-        })
+        projections["pessimiste"].append({ "year": year, "stability_index": round(max(5, pess_val)) })
         
     return {"scenarios": projections}
 
@@ -111,53 +87,64 @@ def generate_projections(current_state, years=10):
 def update_seldon():
     print("🔮 Seldon Bot Initialized...")
     
-    # 1. Charger l'état actuel et l'historique
     current = load_json('data/current_state.json')
     history = load_json('data/history_2020_2025.json')
     
-    if not current:
-        print("❌ Erreur: current_state.json introuvable")
-        return
+    if not current: return
 
-    # 2. Recalculer le score global actuel (au cas où)
+    # 1. Recalcul score
     new_score = calculate_stability(current['pillars'])
     current['stability_index'] = new_score
     current['date'] = datetime.now().strftime("%Y-%m-%d %H:%M")
     
-    # 3. Générer des alertes intelligentes
+    # 2. Construction de la phrase Prophétique
+    stress_factors = []
+    for key, val in current['pillars'].items():
+        score = val['score'] if isinstance(val, dict) else val
+        
+        # On identifie les vecteurs de faiblesse
+        if key != 'technologie_ia' and score < 50: # Seuil un peu relevé pour capter plus de causes
+            stress_factors.append((key, score))
+        elif key == 'technologie_ia' and score > 85:
+            stress_factors.append((key, score))
+
+    stress_factors.sort(key=lambda x: x[1]) # Les pires d'abord
+    
+    # On prend les 2 causes principales
+    if len(stress_factors) >= 2:
+        cause_1 = SELDON_TERMS.get(stress_factors[0][0], "l'inconnu")
+        cause_2 = SELDON_TERMS.get(stress_factors[1][0], "l'inconnu")
+        
+        prophecy = f"Les équations du Radiant sont formelles : la résonance entre {cause_1} et {cause_2} atteint un seuil critique, rendant la rupture systémique mathématiquement inévitable."
+    
+    elif len(stress_factors) == 1:
+        cause_1 = SELDON_TERMS.get(stress_factors[0][0], "l'inconnu")
+        prophecy = f"Les équations du Radiant sont formelles : l'amplification exponentielle de {cause_1} mène à une asymptote de rupture inévitable."
+    
+    else:
+        prophecy = "Les équations montrent une stabilité précaire, mais aucune convergence critique immédiate n'est détectée dans le Prime Radiant."
+
+    # 3. Générer alertes
     alerts = []
     trend = analyze_trend(history)
     
-    # Alertes basées sur les scores
-    if current['pillars']['environnement']['score'] < 40:
-        alerts.append("⚠️ CLIMAT : Point de bascule imminent")
-    if current['pillars']['geopolitique']['score'] < 35:
-        alerts.append("⚔️ GÉOPOLITIQUE : Risque de conflit majeur élevé")
-    if current['pillars']['technologie_ia']['score'] > 85:
-        alerts.append("📈 SINGULARITÉ : Accélération technologique critique")
-    if current['pillars']['demographie_social']['score'] < 45:
-        alerts.append("🔥 SOCIAL : Tensions civiles détectées")
-
-    # Alerte Tendance
-    if trend < -2:
-        alerts.append("📉 DÉGRADATION RAPIDE DU SYSTÈME (-2% / an)")
-    elif trend > 1:
-        alerts.append("✅ RÉTABLISSEMENT PROGRESSIF")
-        
-    # Prédiction de crise (Hardcodée pour la narration Seldon)
-    # Dans un vrai système IA, ceci viendrait d'un modèle prédictif complexe
-    alerts.append("📅 2028 : Convergence des courbes de stress (Risque 88%)")
+    # Alertes secondaires (classiques)
+    if current['pillars']['environnement']['score'] < 40: alerts.append("⚠️ Ω_BIOSPHERE : Seuil critique atteint")
+    if current['pillars']['geopolitique']['score'] < 35: alerts.append("⚔️ Σ_CONFLICT : Friction tectonique max")
+    if current['pillars']['technologie_ia']['score'] > 85: alerts.append("📈 Δ_SINGULARITY : Variance exponentielle")
+    
+    # LA PROPHÉTIE FINALE (Formatée pour le front-end)
+    # Le format "📅 2028 :" permet au HTML de créer le badge doré
+    alerts.append(f"📅 2028 : {prophecy}")
 
     current['alerts'] = alerts
     
-    # 4. Sauvegarder l'état actuel mis à jour
     save_json('data/current_state.json', current)
-    print(f"✅ État actuel mis à jour (Score: {new_score}%)")
+    print(f"✅ Prophétie générée : {prophecy}")
 
-    # 5. Générer et Sauvegarder les Projections (Le Trident)
     projections = generate_projections(current, years=10)
     save_json('data/projection_2036.json', projections)
-    print("✅ Projections 2026-2036 générées (3 Scénarios)")
 
 if __name__ == "__main__":
     update_seldon()
+    
