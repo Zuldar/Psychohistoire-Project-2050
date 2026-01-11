@@ -1,10 +1,8 @@
 name: Mise à jour Mensuelle Psychohistoire
 
 on:
-  # 1. Déclenchement automatique le 1er de chaque mois à 08:00 UTC
   schedule:
     - cron: '0 8 1 * *'
-  # 2. Bouton manuel pour tester quand tu veux (onglet "Actions")
   workflow_dispatch:
 
 permissions:
@@ -15,27 +13,22 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    # Étape 1 : Le robot télécharge ton code
     - name: 📥 Récupération du dépôt
       uses: actions/checkout@v3
 
-    # Étape 2 : Le robot installe Python
     - name: 🐍 Installation de Python
       uses: actions/setup-python@v4
       with:
         python-version: '3.9'
 
-    # Étape 3 : Le robot lance le calcul
     - name: 🧠 Exécution du modèle Psychohistorique
       run: |
         python src/main_analyzer.py
 
-    # Étape 4 : Le robot sauvegarde les résultats sur ton GitHub
     - name: 💾 Commit et Push des résultats
       run: |
         git config --global user.name 'Psychohistory Bot'
         git config --global user.email 'bot@psychohistory.com'
         git add data/current_state.json reports/
-        git commit -m "🔮 Mise à jour mensuelle automatique" || echo "Aucun changement à valider"
-        git
-        push
+        # On vérifie s'il y a des changements avant de commit
+        git diff --quiet && git diff --staged --quiet || (git commit -m "🔮 Mise à jour mensuelle automatique" && git push origin HEAD:main)
