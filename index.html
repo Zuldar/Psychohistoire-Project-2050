@@ -8,211 +8,72 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
     
     <style>
-        /* --- 1. CONFIGURATION UNIVERS --- */
+        /* CONFIGURATION UNIVERS */
         * { box-sizing: border-box; }
-        :root { 
-            --bg-deep: #020205; 
-            --neon-blue: #00f3ff; 
-            --neon-green: #00ff9d; 
-            --neon-red: #ff0055; 
-            --neon-yellow: #ffee00; 
-            --gold: #ffd700;
-            --glass: rgba(10, 20, 30, 0.7);
-            --glass-border: rgba(0, 243, 255, 0.2);
-        }
-        
-        body { 
-            background-color: var(--bg-deep); 
-            color: #e0e0e0; 
-            font-family: 'Rajdhani', sans-serif; 
-            margin: 0; padding: 20px; 
-            min-height: 100vh; overflow-x: hidden;
-            /* Effet de Grille Mathématique de fond */
-            background-image: 
-                linear-gradient(rgba(0, 243, 255, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 243, 255, 0.03) 1px, transparent 1px);
-            background-size: 40px 40px;
-        }
-
+        :root { --bg-deep: #020205; --neon-blue: #00f3ff; --neon-green: #00ff9d; --neon-red: #ff0055; --neon-yellow: #ffee00; --gold: #ffd700; --glass: rgba(10, 20, 30, 0.7); --glass-border: rgba(0, 243, 255, 0.2); }
+        body { background-color: var(--bg-deep); color: #e0e0e0; font-family: 'Rajdhani', sans-serif; margin: 0; padding: 20px; min-height: 100vh; overflow-x: hidden; background-image: linear-gradient(rgba(0, 243, 255, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 243, 255, 0.03) 1px, transparent 1px); background-size: 40px 40px; }
         .container { max-width: 1400px; margin: 0 auto; width: 100%; position: relative; z-index: 2; }
 
-        /* --- 2. HEADER TECH --- */
-        header { 
-            display: flex; justify-content: space-between; align-items: center; 
-            border-bottom: 2px solid var(--glass-border); 
-            padding-bottom: 20px; margin-bottom: 40px; 
-            position: relative;
-        }
-        /* Décoration sous le header */
-        header::after {
-            content: ''; position: absolute; bottom: -5px; right: 0; 
-            width: 100px; height: 5px; background: var(--neon-blue);
-        }
-
-        h1 { 
-            font-family: 'Orbitron', sans-serif; font-weight: 900; 
-            font-size: clamp(1.5rem, 4vw, 3rem); margin: 0; 
-            text-transform: uppercase; letter-spacing: 4px;
-            background: linear-gradient(90deg, #fff, var(--neon-blue)); 
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 20px rgba(0, 243, 255, 0.4);
-        }
+        /* HEADER */
+        header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--glass-border); padding-bottom: 20px; margin-bottom: 40px; position: relative; }
+        header::after { content: ''; position: absolute; bottom: -5px; right: 0; width: 100px; height: 5px; background: var(--neon-blue); }
+        h1 { font-family: 'Orbitron', sans-serif; font-weight: 900; font-size: clamp(1.5rem, 4vw, 3rem); margin: 0; text-transform: uppercase; letter-spacing: 4px; background: linear-gradient(90deg, #fff, var(--neon-blue)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 0 0 20px rgba(0, 243, 255, 0.4); }
         
-        .status-pill { 
-            font-family: 'Share Tech Mono', monospace;
-            background: rgba(0, 243, 255, 0.05); 
-            padding: 8px 16px; border: 1px solid var(--neon-blue); 
-            font-size: 0.8em; color: var(--neon-blue); 
-            box-shadow: 0 0 10px rgba(0, 243, 255, 0.2);
-        }
+        .status-pill { font-family: 'Share Tech Mono', monospace; background: rgba(0, 243, 255, 0.05); padding: 8px 16px; border: 1px solid var(--neon-blue); font-size: 0.8em; color: var(--neon-blue); box-shadow: 0 0 10px rgba(0, 243, 255, 0.2); max-width: 50%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
-        /* --- 3. LE CŒUR RADIANT (ANIMATION 3D) --- */
-        .radiant-wrapper {
-            display: flex; justify-content: center; align-items: center;
-            height: 250px; margin-bottom: 40px; perspective: 1000px;
-        }
-        .radiant-core {
-            position: relative; width: 200px; height: 200px;
-            display: flex; flex-direction: column;
-            justify-content: center; align-items: center;
-            transform-style: preserve-3d;
-        }
-        /* Les anneaux holographiques */
-        .ring {
-            position: absolute; border-radius: 50%;
-            border: 1px solid var(--neon-blue);
-            box-shadow: 0 0 15px rgba(0, 243, 255, 0.3);
-            opacity: 0.7;
-        }
+        /* RADIANT CORE */
+        .radiant-wrapper { display: flex; justify-content: center; align-items: center; height: 250px; margin-bottom: 40px; perspective: 1000px; }
+        .radiant-core { position: relative; width: 200px; height: 200px; display: flex; flex-direction: column; justify-content: center; align-items: center; transform-style: preserve-3d; }
+        .ring { position: absolute; border-radius: 50%; border: 1px solid var(--neon-blue); box-shadow: 0 0 15px rgba(0, 243, 255, 0.3); opacity: 0.7; }
         .r1 { width: 100%; height: 100%; border-color: rgba(0,243,255,0.3); animation: spin 10s linear infinite; }
         .r2 { width: 80%; height: 80%; border-top: 2px solid var(--neon-blue); animation: spin 5s linear infinite reverse; }
         .r3 { width: 60%; height: 60%; border-left: 2px solid var(--neon-red); animation: spin 15s linear infinite; }
-
         @keyframes spin { from { transform: rotate(0deg) rotateX(20deg); } to { transform: rotate(360deg) rotateX(20deg); } }
+        .big-number { font-family: 'Orbitron', sans-serif; font-size: 4rem; font-weight: 700; color: #fff; text-shadow: 0 0 30px var(--neon-blue); z-index: 10; }
+        .radiant-label { margin-top: 10px; font-family: 'Share Tech Mono', monospace; letter-spacing: 2px; color: var(--neon-blue); font-size: 0.9em; }
 
-        .big-number { 
-            font-family: 'Orbitron', sans-serif; font-size: 4rem; font-weight: 700; 
-            color: #fff; text-shadow: 0 0 30px var(--neon-blue); z-index: 10;
-        }
-        .radiant-label {
-            margin-top: 10px; font-family: 'Share Tech Mono', monospace; 
-            letter-spacing: 2px; color: var(--neon-blue); font-size: 0.9em;
-        }
-
-        /* --- 4. TERMINAL DE DONNÉES --- */
-        .terminal-box { 
-            background: linear-gradient(180deg, rgba(10,15,20,0.95) 0%, rgba(5,5,10,0.95) 100%);
-            border: 1px solid var(--glass-border);
-            border-top: 4px solid var(--neon-blue);
-            padding: 30px; margin-bottom: 40px; position: relative;
-            box-shadow: 0 0 50px rgba(0,0,0,0.5);
-            /* Effet de scanline discret */
-            background-image: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 243, 255, 0.03) 3px);
-        }
-        /* Coins décoratifs Tech */
-        .terminal-box::before { content: '+'; position: absolute; top: 10px; right: 10px; color: var(--neon-blue); }
-        .terminal-box::after { content: '+'; position: absolute; bottom: 10px; left: 10px; color: var(--neon-blue); }
-
-        .terminal-header { 
-            color: var(--neon-blue); font-family: 'Orbitron'; font-size: 1.1em; margin-bottom: 20px; 
-            display: flex; align-items: center; gap: 10px;
-        }
-        .blink { animation: blinker 1s linear infinite; }
-        @keyframes blinker { 50% { opacity: 0; } }
-
+        /* TERMINAL */
+        .terminal-box { background: linear-gradient(180deg, rgba(10,15,20,0.95) 0%, rgba(5,5,10,0.95) 100%); border: 1px solid var(--glass-border); border-top: 4px solid var(--neon-blue); padding: 30px; margin-bottom: 40px; position: relative; box-shadow: 0 0 50px rgba(0,0,0,0.5); background-image: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 243, 255, 0.03) 3px); }
+        .terminal-header { color: var(--neon-blue); font-family: 'Orbitron'; font-size: 1.1em; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .blink { animation: blinker 1s linear infinite; } @keyframes blinker { 50% { opacity: 0; } }
         .analysis-text { font-size: 1.2em; line-height: 1.6; margin-bottom: 30px; border-left: 2px solid #333; padding-left: 15px; }
-
-        .alert-item { 
-            background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); 
-            padding: 15px; margin-bottom: 10px; display: flex; align-items: center; gap: 15px; 
-            font-family: 'Share Tech Mono', monospace; transition: 0.3s;
-        }
-        .alert-item:hover { background: rgba(255,255,255,0.05); transform: translateX(5px); }
         
-        /* COULEURS ALERTES */
-        .alert-crit { border-left: 3px solid var(--neon-red); box-shadow: -10px 0 20px -10px rgba(255,0,85,0.2); }
+        .alert-item { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 15px; margin-bottom: 10px; display: flex; align-items: center; gap: 15px; font-family: 'Share Tech Mono', monospace; }
+        .alert-crit { border-left: 3px solid var(--neon-red); }
         .alert-warn { border-left: 3px solid var(--neon-yellow); }
         .alert-info { border-left: 3px solid var(--neon-green); }
         .alert-crisis { border: 1px solid var(--gold); background: rgba(255, 215, 0, 0.05); box-shadow: inset 0 0 20px rgba(255, 215, 0, 0.1); }
-
+        
         .badge { padding: 4px 8px; font-weight: bold; font-size: 0.8em; font-family: 'Orbitron'; min-width: 90px; text-align: center; letter-spacing: 1px; }
         .b-red { background: var(--neon-red); color: #000; }
         .b-orange { background: var(--neon-yellow); color: #000; }
         .b-green { background: var(--neon-green); color: #000; }
-        
-        /* BADGE OR ANIMÉ */
-        .b-gold {
-            background: linear-gradient(135deg, #b8860b, #ffd700, #b8860b); color: #000;
-            box-shadow: 0 0 15px rgba(255, 215, 0, 0.6); position: relative; overflow: hidden; border: 1px solid #fff;
-        }
-        .b-gold::before {
-            content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent); animation: shine 3s infinite;
-        }
+        .b-gold { background: linear-gradient(135deg, #b8860b, #ffd700, #b8860b); color: #000; box-shadow: 0 0 15px rgba(255, 215, 0, 0.6); position: relative; overflow: hidden; border: 1px solid #fff; }
+        .b-gold::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent); animation: shine 3s infinite; }
         @keyframes shine { 0% { left: -100%; } 20% { left: 200%; } 100% { left: 200%; } }
 
-        /* --- 5. GRID & CARDS (GLASS TECH) --- */
+        /* GRID & CARDS */
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
-        
-        .card { 
-            background: rgba(15, 25, 35, 0.6); 
-            backdrop-filter: blur(5px);
-            border: 1px solid var(--glass-border); 
-            padding: 20px; position: relative; overflow: hidden;
-            /* Le "Corner Cut" (coin coupé) typique Sci-Fi */
-            clip-path: polygon(
-                0 0, 
-                100% 0, 
-                100% calc(100% - 20px), 
-                calc(100% - 20px) 100%, 
-                0 100%
-            );
-        }
+        .card { background: rgba(15, 25, 35, 0.6); backdrop-filter: blur(5px); border: 1px solid var(--glass-border); padding: 20px; position: relative; overflow: hidden; clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%); }
         .card::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--neon-blue); opacity: 0.5; }
-        .card:hover { background: rgba(15, 25, 35, 0.9); border-color: var(--neon-blue); }
-
         .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
         .card-title { font-family: 'Orbitron'; font-size: 0.8em; letter-spacing: 1px; color: #888; }
         .card-score { font-family: 'Orbitron'; font-size: 1.8em; font-weight: bold; text-shadow: 0 0 10px currentColor; }
-
         .progress-container { height: 4px; background: rgba(255,255,255,0.1); width: 100%; position: relative; }
         .progress-bar { height: 100%; transition: width 1.5s ease; box-shadow: 0 0 10px currentColor; position: relative; }
-        /* Petit point lumineux au bout de la barre */
         .progress-bar::after { content: ''; position: absolute; right: 0; top: -3px; width: 2px; height: 10px; background: #fff; box-shadow: 0 0 5px #fff; }
-
         .c-good { color: var(--neon-green); } .bg-good { background-color: var(--neon-green); }
         .c-mid { color: var(--neon-yellow); } .bg-mid { background-color: var(--neon-yellow); }
         .c-bad { color: var(--neon-red); } .bg-bad { background-color: var(--neon-red); }
 
         /* CHART BOX */
-        .chart-wrapper { 
-            background: rgba(10, 15, 20, 0.8); border: 1px solid var(--glass-border); padding: 20px; 
-            margin-bottom: 40px; border-radius: 4px; position: relative;
-        }
-        /* Grille décorative sur le chart */
-        .chart-wrapper::after {
-            content: "TIME SERIES PROJECTION // SELDON_ALGO_V5";
-            position: absolute; bottom: 5px; right: 10px;
-            font-family: 'Share Tech Mono'; font-size: 0.7em; color: rgba(0, 243, 255, 0.3);
-        }
+        .chart-wrapper { background: rgba(10, 15, 20, 0.8); border: 1px solid var(--glass-border); padding: 20px; margin-bottom: 40px; border-radius: 4px; position: relative; }
+        .chart-wrapper::after { content: "TIME SERIES PROJECTION // SELDON_ALGO_V5"; position: absolute; bottom: 5px; right: 10px; font-family: 'Share Tech Mono'; font-size: 0.7em; color: rgba(0, 243, 255, 0.3); }
 
         /* TOOLTIP */
-        .info-icon { 
-            display: inline-flex; justify-content: center; align-items: center; 
-            width: 18px; height: 18px; border: 1px solid var(--neon-blue); 
-            color: var(--neon-blue); font-size: 10px; margin-left: 10px; 
-            cursor: help; position: relative; transition: 0.3s; 
-        }
+        .info-icon { display: inline-flex; justify-content: center; align-items: center; width: 18px; height: 18px; border: 1px solid var(--neon-blue); color: var(--neon-blue); font-size: 10px; margin-left: 10px; cursor: help; position: relative; transition: 0.3s; }
         .info-icon:hover { background: var(--neon-blue); color: #000; }
-        .info-icon .tooltip-text { 
-            visibility: hidden; width: 320px; 
-            background-color: #0a0f14; color: #fff; 
-            border: 1px solid var(--neon-blue); padding: 15px; 
-            position: absolute; z-index: 9999; bottom: 140%; left: -20px; 
-            opacity: 0; transition: all 0.2s ease; font-size: 0.85rem; line-height: 1.4; 
-            box-shadow: 0 0 30px rgba(0, 243, 255, 0.15); text-align: left;
-            font-family: 'Rajdhani', sans-serif;
-        }
+        .info-icon .tooltip-text { visibility: hidden; width: 320px; background-color: #0a0f14; color: #fff; border: 1px solid var(--neon-blue); padding: 15px; position: absolute; z-index: 9999; bottom: 140%; left: -20px; opacity: 0; transition: all 0.2s ease; font-size: 0.85rem; line-height: 1.4; box-shadow: 0 0 30px rgba(0, 243, 255, 0.15); text-align: left; font-family: 'Rajdhani', sans-serif; }
         .info-icon:hover .tooltip-text { visibility: visible; opacity: 1; bottom: 130%; }
         @media (max-width: 600px) { .info-icon .tooltip-text { width: 250px; left: -100px; } }
 
@@ -248,34 +109,15 @@
         <div class="terminal-box">
             <div class="terminal-header"><span class="blink">█</span> ANALYSE STRATÉGIQUE DU NOYAU</div>
             <div id="analysis-text" class="analysis-text">Chargement du flux de données...</div>
-            
-            <div id="container-crisis" style="display:none">
-                <div class="alert-group-title" style="color:var(--gold); font-family:'Orbitron';">🔮 SCÉNARIOS DE RUPTURE</div>
-                <ul id="list-crisis" class="alerts-list"></ul>
-            </div>
-
-            <div id="container-critical" style="display:none">
-                <div class="alert-group-title" style="color:var(--neon-red); font-family:'Orbitron';">🚨 MENACES IMMÉDIATES</div>
-                <ul id="list-critical" class="alerts-list"></ul>
-            </div>
-            
-            <div id="container-warning" style="display:none">
-                <div class="alert-group-title" style="font-family:'Orbitron';">⚠️ VIGILANCE</div>
-                <ul id="list-warning" class="alerts-list"></ul>
-            </div>
-
-            <div id="container-info" style="display:none">
-                <div class="alert-group-title" style="font-family:'Orbitron';">ℹ️ STABLE</div>
-                <ul id="list-info" class="alerts-list"></ul>
-            </div>
+            <div id="container-crisis" style="display:none"><div class="alert-group-title" style="color:var(--gold); font-family:'Orbitron';">🔮 SCÉNARIOS DE RUPTURE</div><ul id="list-crisis" class="alerts-list"></ul></div>
+            <div id="container-critical" style="display:none"><div class="alert-group-title" style="color:var(--neon-red); font-family:'Orbitron';">🚨 MENACES IMMÉDIATES</div><ul id="list-critical" class="alerts-list"></ul></div>
+            <div id="container-warning" style="display:none"><div class="alert-group-title" style="font-family:'Orbitron';">⚠️ VIGILANCE</div><ul id="list-warning" class="alerts-list"></ul></div>
+            <div id="container-info" style="display:none"><div class="alert-group-title" style="font-family:'Orbitron';">ℹ️ STABLE</div><ul id="list-info" class="alerts-list"></ul></div>
         </div>
 
         <div id="pillars-grid" class="grid"></div>
 
-        <footer>
-            PROJECTION GENERATED BY PSYCHOHISTORY_BOT // GITHUB ACTIONS<br>
-            TERMINAL SESSION ID: 0X-SELDON-V7
-        </footer>
+        <footer>PROJECTION GENERATED BY PSYCHOHISTORY_BOT // GITHUB ACTIONS<br>TERMINAL SESSION ID: 0X-SELDON-V7</footer>
     </div>
 
     <script>
@@ -293,17 +135,21 @@
 
         async function loadData() {
             try {
+                // SYSTEME DE CACHE BUSTING (Force le rechargement des données)
                 const time = new Date().getTime(); 
-                const [histRes, currRes, projRes] = await Promise.all([
-                    fetch('data/history_2020_2025.json?v=' + time),
-                    fetch('data/current_state.json?v=' + time),
-                    fetch('data/projection_2036.json?v=' + time)
-                ]);
+                
+                // Récupération des données avec gestion d'erreur
+                const r1 = await fetch('data/history_2020_2025.json?v=' + time);
+                const r2 = await fetch('data/current_state.json?v=' + time);
+                const r3 = await fetch('data/projection_2036.json?v=' + time);
 
-                const history = await histRes.json();
-                const current = await currRes.json();
-                let projection = []; try { projection = await projRes.json(); } catch(e) {}
+                if (!r1.ok || !r2.ok || !r3.ok) throw new Error("Fichiers JSON introuvables. Vérifier GitHub Actions.");
 
+                const history = await r1.json();
+                const current = await r2.json();
+                let projection = []; try { projection = await r3.json(); } catch(e) {}
+
+                // --- LOGIQUE D'AFFICHAGE ---
                 document.getElementById('analysis-text').textContent = current.global_analysis || "Flux interrompu.";
                 
                 const listCrisis = document.getElementById('list-crisis'); listCrisis.innerHTML = '';
@@ -313,7 +159,8 @@
 
                 let hasCrisis = false, hasCrit = false, hasWarn = false, hasInfo = false;
 
-                if(current.alerts && current.alerts.length > 0) {
+                // SECURISE : On vérifie que current.alerts existe bien
+                if(current.alerts && Array.isArray(current.alerts)) {
                     current.alerts.forEach(alert => {
                         const li = document.createElement('li');
                         const isCrisis = alert.includes("📅");
@@ -322,8 +169,8 @@
 
                         if (isCrisis) {
                             let parts = alert.replace("📅", "").split(":");
-                            let year = parts[0].trim();
-                            let msg = parts[1] ? parts[1].trim() : "";
+                            let year = parts[0] ? parts[0].trim() : "FUTUR";
+                            let msg = parts[1] ? parts[1].trim() : alert;
                             li.className = 'alert-item alert-crisis';
                             li.innerHTML = `<span class="badge b-gold">${year}</span> <span>${msg}</span>`;
                             listCrisis.appendChild(li); hasCrisis = true;
@@ -354,6 +201,7 @@
                 document.getElementById('container-warning').style.display = hasWarn ? 'block' : 'none';
                 document.getElementById('container-info').style.display = hasInfo ? 'block' : 'none';
 
+                // CHART
                 const labels = [...history.map(h => h.year), "2026"];
                 projection.forEach(p => labels.push(p.year));
                 const histData = history.map(h => calculateStability(h.pillars));
@@ -364,4 +212,28 @@
                 const datasets = [{
                     label: 'STABILITÉ GLOBALE', data: fullStabilityData,
                     borderColor: '#ffffff', backgroundColor: 'rgba(0, 243, 255, 0.05)',
-                    borderWidth: 2, fill: true, 
+                    borderWidth: 2, fill: true, tension: 0.4, pointRadius: 0, hitRadius: 20,
+                    segment: { borderDash: ctx => ctx.p0.parsed.x >= (labels.length - projection.length - 1) ? [5, 5] : undefined, borderColor: ctx => ctx.p0.parsed.x >= (labels.length - projection.length - 1) ? 'rgba(255,255,255,0.5)' : '#ffffff' }, order: 0
+                }];
+
+                for (const key of Object.keys(names)) {
+                    // Gestion de la compatibilité ancien format / nouveau format
+                    const hData = history.map(h => h.pillars[key].score || h.pillars[key]);
+                    let cData; if(current.pillars[key].score !== undefined) cData = current.pillars[key].score; else cData = current.pillars[key];
+                    const pData = projection.map(p => p.pillars[key]);
+                    const fullData = [...hData, cData, ...pData];
+                    let isVisible = (key === 'technologie_ia' || key === 'environnement');
+                    datasets.push({
+                        label: names[key], data: fullData, borderColor: colors[key],
+                        borderWidth: 1.5, tension: 0.4, hidden: !isVisible, pointRadius: 0,
+                        segment: { borderDash: ctx => ctx.p0.parsed.x >= (labels.length - projection.length - 1) ? [2, 2] : undefined, borderColor: ctx => ctx.p0.parsed.x >= (labels.length - projection.length - 1) ? 'rgba(255,255,255,0.2)' : colors[key] }
+                    });
+                }
+
+                Chart.defaults.color = '#555'; Chart.defaults.font.family = "'Share Tech Mono', monospace";
+                new Chart(document.getElementById('trendChart'), {
+                    type: 'line', data: { labels: labels, datasets: datasets },
+                    options: { responsive: true, maintainAspectRatio: false, interaction: { mode: 'index', intersect: false }, plugins: { legend: { position: 'top', labels: { color: '#888', usePointStyle: true, boxWidth: 6, font: { family: 'Orbitron' } } } }, scales: { y: { grid: { color: 'rgba(255,255,255,0.05)' }, beginAtZero: true, max: 100 }, x: { grid: { display: false } } } }
+                });
+
+                document.getElementById('last-update').textContent = "DATA:
