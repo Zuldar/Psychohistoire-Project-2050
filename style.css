@@ -1,6 +1,8 @@
-/* DESIGN "COMMAND HUD" V17 - IMAGE DE FOND (SIMPLE & STABLE) */
+/* DESIGN "PRIME RADIANT" V18 - STABLE & MOBILE READY */
 
+/* 1. RESET & VARIABLES */
 * { box-sizing: border-box; }
+
 :root { 
     --bg-deep: #020205; 
     --neon-blue: #00f3ff; 
@@ -8,119 +10,181 @@
     --neon-red: #ff0055; 
     --neon-yellow: #ffee00; 
     --gold: #ffd700;
-    --glass: rgba(10, 20, 30, 0.85); /* Un peu plus opaque pour lisibilité sur image */
+    --glass: rgba(10, 20, 30, 0.85); /* Fond semi-transparent pour les boites */
     --glass-border: rgba(0, 243, 255, 0.3);
 }
 
+/* 2. CONFIGURATION DU BODY & FOND */
 body { 
     color: #e0e0e0; 
     font-family: 'Rajdhani', sans-serif; 
     margin: 0; padding: 20px; 
     min-height: 100vh; 
-    overflow-x: hidden;
+    overflow-x: hidden; /* Évite le scroll horizontal */
     
-    /* FOND NOIR DE SÉCURITÉ */
-    background-color: #020205;
+    /* COULEUR DE SECURITÉ (Si l'image ne charge pas) */
+    background-color: var(--bg-deep);
     
-    /* TON IMAGE LOCALE (C'est le nom exact du fichier sur GitHub) */
-    background-image: url('bg.gif');
+    /* L'IMAGE DE FOND */
+    background-image: url('bg.gif'); 
     
-    /* --- RÉGLAGES MOBILE CRITIQUES --- */
-    
-    /* 1. Centre l'image */
+    /* REGLAGES MOBILES IMPORTANTS */
     background-position: center center;
-    
-    /* 2. L'image couvre tout l'écran sans se déformer */
     background-size: cover; 
-    
-    /* 3. Empêche la répétition moche */
     background-repeat: no-repeat;
-    
-    /* 4. IMPORTANT : On laisse le fond scroller avec le texte sur mobile.
-       C'est moins "style", mais ça garantit que l'image s'affiche à 100% 
-       sans être bloquée par le navigateur Android/iOS. */
-    background-attachment: scroll; 
+    background-attachment: scroll; /* Scroll = Compatible tous mobiles */
 }
 
-/* OPTIONNEL : Ajoute un voile sombre par-dessus pour que le texte reste lisible */
-body::before {
-    content: "";
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(2, 2, 5, 0.6); /* 60% de noir par dessus l'image */
-    z-index: -1;
-}
-
-
-
-/* On ajoute un voile noir par-dessus l'image pour que le texte reste lisible */
+/* 3. VOILE SOMBRE (Pour lire le texte sur l'image) */
 body::after {
     content: '';
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(2, 2, 5, 0.7); /* Assombrit l'image de fond de 70% */
+    background: rgba(2, 2, 5, 0.7); /* 70% d'opacité noire */
     z-index: -1;
+    pointer-events: none; /* Laisse passer les clics */
 }
 
 .container { max-width: 1400px; margin: 0 auto; width: 100%; position: relative; z-index: 2; }
 
-/* LE RESTE EST IDENTIQUE... */
-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--glass-border); padding-bottom: 20px; margin-bottom: 40px; position: relative; }
-header::after { content: ''; position: absolute; bottom: -5px; right: 0; width: 100px; height: 5px; background: var(--neon-blue); }
-h1 { font-family: 'Orbitron', sans-serif; font-weight: 900; font-size: clamp(1.5rem, 4vw, 3rem); margin: 0; text-transform: uppercase; letter-spacing: 4px; background: linear-gradient(90deg, #fff, var(--neon-blue)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 0 0 20px rgba(0, 243, 255, 0.4); }
+/* 4. HEADER */
+header { 
+    display: flex; justify-content: space-between; align-items: center; 
+    border-bottom: 2px solid var(--glass-border); 
+    padding-bottom: 20px; margin-bottom: 40px; position: relative; 
+}
+header::after { 
+    content: ''; position: absolute; bottom: -5px; right: 0; 
+    width: 100px; height: 5px; background: var(--neon-blue); 
+}
 
-.status-pill { font-family: 'Share Tech Mono', monospace; background: rgba(0, 243, 255, 0.05); padding: 8px 16px; border: 1px solid var(--neon-blue); font-size: 0.8em; color: var(--neon-blue); box-shadow: 0 0 10px rgba(0, 243, 255, 0.2); }
+h1 { 
+    font-family: 'Orbitron', sans-serif; font-weight: 900; 
+    font-size: clamp(1.5rem, 4vw, 3rem); margin: 0; 
+    text-transform: uppercase; letter-spacing: 4px; 
+    background: linear-gradient(90deg, #fff, var(--neon-blue)); 
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; 
+    text-shadow: 0 0 20px rgba(0, 243, 255, 0.4); 
+}
 
-/* HUD SCORE */
-.score-hud { display: flex; flex-direction: column; align-items: center; justify-content: center; background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0, 243, 255, 0.05) 50%, rgba(0,0,0,0) 100%); border-top: 1px solid var(--glass-border); border-bottom: 1px solid var(--glass-border); padding: 30px 0; margin-bottom: 40px; position: relative; }
-.score-hud::before { content: "[  SYSTEM STATUS  ]"; position: absolute; top: -10px; font-family: 'Share Tech Mono'; font-size: 0.8em; color: var(--neon-blue); background: var(--bg-deep); padding: 0 10px; }
-.big-number { font-family: 'Orbitron', sans-serif; font-size: clamp(3rem, 8vw, 6rem); font-weight: 700; color: #fff; text-shadow: 0 0 20px rgba(255,255,255,0.5); line-height: 1; margin: 10px 0; }
-.hud-label { font-family: 'Share Tech Mono', monospace; letter-spacing: 4px; color: #888; font-size: 0.9em; text-transform: uppercase; }
+.status-pill { 
+    font-family: 'Share Tech Mono', monospace; 
+    background: rgba(0, 243, 255, 0.05); 
+    padding: 8px 16px; border: 1px solid var(--neon-blue); 
+    font-size: 0.8em; color: var(--neon-blue); 
+    box-shadow: 0 0 10px rgba(0, 243, 255, 0.2); 
+}
 
-/* TERMINAL & ALERTS */
-.terminal-box { background: linear-gradient(180deg, rgba(10,15,20,0.8) 0%, rgba(5,5,10,0.9) 100%); backdrop-filter: blur(10px); border: 1px solid var(--glass-border); border-left: 4px solid var(--neon-blue); padding: 30px; margin-bottom: 40px; position: relative; box-shadow: 0 0 50px rgba(0,0,0,0.5); }
-.terminal-header { color: var(--neon-blue); font-family: 'Orbitron'; font-size: 1.1em; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
-.blink { animation: blinker 1s linear infinite; } @keyframes blinker { 50% { opacity: 0; } }
+/* 5. SCORE HUD (BANDEAU CENTRAL) */
+.score-hud { 
+    display: flex; flex-direction: column; align-items: center; justify-content: center; 
+    background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0, 243, 255, 0.1) 50%, rgba(0,0,0,0) 100%); 
+    border-top: 1px solid var(--glass-border); 
+    border-bottom: 1px solid var(--glass-border); 
+    padding: 30px 0; margin-bottom: 40px; position: relative; 
+}
+.score-hud::before { 
+    content: "[  SYSTEM STATUS  ]"; position: absolute; top: -12px; 
+    font-family: 'Share Tech Mono'; font-size: 0.8em; 
+    color: var(--neon-blue); background: #000; padding: 0 10px; 
+}
+
+.big-number { 
+    font-family: 'Orbitron', sans-serif; 
+    font-size: clamp(3rem, 8vw, 6rem); font-weight: 700; 
+    color: #fff; text-shadow: 0 0 20px rgba(255,255,255,0.5); 
+    line-height: 1; margin: 10px 0; 
+}
+.hud-label { 
+    font-family: 'Share Tech Mono', monospace; letter-spacing: 4px; 
+    color: #888; font-size: 0.9em; text-transform: uppercase; 
+}
+
+/* 6. CHART WRAPPER */
+.chart-wrapper { 
+    background: var(--glass); 
+    backdrop-filter: blur(10px); /* Flou moderne */
+    border: 1px solid var(--glass-border); 
+    padding: 20px; margin-bottom: 40px; border-radius: 4px; position: relative; 
+}
+.chart-wrapper::after { 
+    content: "TIME SERIES PROJECTION // SELDON_ALGO_V5"; 
+    position: absolute; bottom: 5px; right: 10px; 
+    font-family: 'Share Tech Mono'; font-size: 0.7em; color: rgba(0, 243, 255, 0.3); 
+}
+
+/* 7. TERMINAL & ALERTS */
+.terminal-box { 
+    background: linear-gradient(180deg, rgba(10,15,20,0.9) 0%, rgba(5,5,10,0.95) 100%); 
+    border: 1px solid var(--glass-border); border-left: 4px solid var(--neon-blue); 
+    padding: 30px; margin-bottom: 40px; position: relative; 
+    box-shadow: 0 0 50px rgba(0,0,0,0.5); 
+}
+.terminal-header { 
+    color: var(--neon-blue); font-family: 'Orbitron'; 
+    font-size: 1.1em; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; 
+}
+.blink { animation: blinker 1s linear infinite; } 
+@keyframes blinker { 50% { opacity: 0; } }
+
 .analysis-text { font-size: 1.2em; line-height: 1.6; margin-bottom: 30px; border-left: 2px solid #333; padding-left: 15px; }
 
 .alert-group-title { margin-top: 20px; margin-bottom: 10px; font-weight: bold; font-family: 'Orbitron'; letter-spacing: 1px; }
 .alerts-list { list-style: none; padding: 0; margin: 0; }
-.alert-item { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 15px; margin-bottom: 10px; display: flex; align-items: center; gap: 15px; font-family: 'Share Tech Mono', monospace; transition: 0.3s; }
-.alert-item:hover { background: rgba(255,255,255,0.05); transform: translateX(5px); }
-.alert-crit { border-left: 3px solid var(--neon-red); box-shadow: -10px 0 20px -10px rgba(255,0,85,0.2); }
+
+.alert-item { 
+    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); 
+    padding: 15px; margin-bottom: 10px; display: flex; align-items: center; gap: 15px; 
+    font-family: 'Share Tech Mono', monospace; transition: 0.3s; 
+}
+.alert-crit { border-left: 3px solid var(--neon-red); }
 .alert-warn { border-left: 3px solid var(--neon-yellow); }
 .alert-info { border-left: 3px solid var(--neon-green); }
-.alert-crisis { border: 1px solid var(--gold); background: rgba(255, 215, 0, 0.05); box-shadow: inset 0 0 20px rgba(255, 215, 0, 0.1); }
+.alert-crisis { border: 1px solid var(--gold); background: rgba(255, 215, 0, 0.05); }
 
-.badge { padding: 4px 8px; font-weight: bold; font-size: 0.8em; font-family: 'Orbitron'; min-width: 90px; text-align: center; letter-spacing: 1px; }
+.badge { padding: 4px 8px; font-weight: bold; font-size: 0.8em; font-family: 'Orbitron'; min-width: 90px; text-align: center; }
 .b-red { background: var(--neon-red); color: #000; }
 .b-orange { background: var(--neon-yellow); color: #000; }
 .b-green { background: var(--neon-green); color: #000; }
-.b-gold { background: linear-gradient(135deg, #b8860b, #ffd700, #b8860b); color: #000; box-shadow: 0 0 15px rgba(255, 215, 0, 0.6); position: relative; overflow: hidden; border: 1px solid #fff; }
-.b-gold::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent); animation: shine 3s infinite; }
+.b-gold { 
+    background: linear-gradient(135deg, #b8860b, #ffd700, #b8860b); color: #000; 
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.6); position: relative; overflow: hidden; 
+}
+.b-gold::before { 
+    content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; 
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent); 
+    animation: shine 3s infinite; 
+}
 @keyframes shine { 0% { left: -100%; } 20% { left: 200%; } 100% { left: 200%; } }
 
+/* 8. GRID & CARDS */
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
-.card { background: rgba(15, 25, 35, 0.6); backdrop-filter: blur(5px); border: 1px solid var(--glass-border); padding: 20px; position: relative; overflow: hidden; clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%); }
+
+.card { 
+    background: var(--glass); backdrop-filter: blur(5px); 
+    border: 1px solid var(--glass-border); padding: 20px; 
+    position: relative; overflow: hidden; 
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%); 
+}
 .card::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--neon-blue); opacity: 0.5; }
 .card:hover { background: rgba(15, 25, 35, 0.9); border-color: var(--neon-blue); }
+
 .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
 .card-title { font-family: 'Orbitron'; font-size: 0.8em; letter-spacing: 1px; color: #888; }
 .card-score { font-family: 'Orbitron'; font-size: 1.8em; font-weight: bold; text-shadow: 0 0 10px currentColor; }
+
 .progress-container { height: 4px; background: rgba(255,255,255,0.1); width: 100%; position: relative; }
 .progress-bar { height: 100%; transition: width 1.5s ease; box-shadow: 0 0 10px currentColor; position: relative; }
 .progress-bar::after { content: ''; position: absolute; right: 0; top: -3px; width: 2px; height: 10px; background: #fff; box-shadow: 0 0 5px #fff; }
+
 .c-good { color: var(--neon-green); } .bg-good { background-color: var(--neon-green); }
 .c-mid { color: var(--neon-yellow); } .bg-mid { background-color: var(--neon-yellow); }
 .c-bad { color: var(--neon-red); } .bg-bad { background-color: var(--neon-red); }
 
-.chart-wrapper { background: rgba(10, 15, 20, 0.8); border: 1px solid var(--glass-border); padding: 20px; margin-bottom: 40px; border-radius: 4px; position: relative; }
-.chart-wrapper::after { content: "TIME SERIES PROJECTION // SELDON_ALGO_V5"; position: absolute; bottom: 5px; right: 10px; font-family: 'Share Tech Mono'; font-size: 0.7em; color: rgba(0, 243, 255, 0.3); }
-
-.info-icon { display: inline-flex; justify-content: center; align-items: center; width: 18px; height: 18px; border: 1px solid var(--neon-blue); color: var(--neon-blue); font-size: 10px; margin-left: 10px; cursor: help; position: relative; transition: 0.3s; }
+/* 9. TOOLTIPS */
+.info-icon { display: inline-flex; justify-content: center; align-items: center; width: 18px; height: 18px; border: 1px solid var(--neon-blue); color: var(--neon-blue); font-size: 10px; margin-left: 10px; cursor: help; position: relative; }
 .info-icon:hover { background: var(--neon-blue); color: #000; }
-.info-icon .tooltip-text { visibility: hidden; width: 320px; background-color: #0a0f14; color: #fff; border: 1px solid var(--neon-blue); padding: 15px; position: absolute; z-index: 9999; bottom: 140%; left: -20px; opacity: 0; transition: all 0.2s ease; font-size: 0.85rem; line-height: 1.4; box-shadow: 0 0 30px rgba(0, 243, 255, 0.15); text-align: left; font-family: 'Rajdhani', sans-serif; }
+.info-icon .tooltip-text { visibility: hidden; width: 320px; background-color: #0a0f14; color: #fff; border: 1px solid var(--neon-blue); padding: 15px; position: absolute; z-index: 9999; bottom: 140%; left: -20px; opacity: 0; transition: all 0.2s ease; font-size: 0.85rem; line-height: 1.4; box-shadow: 0 0 30px rgba(0, 243, 255, 0.15); text-align: left; }
 .info-icon:hover .tooltip-text { visibility: visible; opacity: 1; bottom: 130%; }
 @media (max-width: 600px) { .info-icon .tooltip-text { width: 250px; left: -100px; } }
 
