@@ -1,0 +1,92 @@
+[
+  {
+    "year": 2020,
+    "summary": "L'année du Grand Confinement. Choc systémique global.",
+    "pillars": {
+      "energie": { "score": 40, "event": "Effondrement prix pétrole, baisse consommation." },
+      "environnement": { "score": 80, "event": "Baisse temporaire CO2, nature respire." },
+      "espace": { "score": 30, "event": "SpaceX Crew Dragon (retour vols habités US)." },
+      "demographie_social": { "score": 20, "event": "Confinements, BLM protests, chômage partiel." },
+      "sante_bio": { "score": 10, "event": "Pandémie COVID-19, saturation hôpitaux." },
+      "geopolitique": { "score": 50, "event": "Tensions US-Chine (Trade War), repli national." },
+      "technologie_ia": { "score": 45, "event": "Explosion du télétravail (Zoom), digitalisation forcée." },
+      "finance": { "score": 35, "event": "Stimulus massifs (Planche à billets), Krach puis reprise." },
+      "information": { "score": 30, "event": "Infodémie massive, théories du complot." }
+    }
+  },
+  {
+    "year": 2021,
+    "summary": "La reprise chaotique et la bulle numérique.",
+    "pillars": {
+      "energie": { "score": 45, "event": "Reprise demande, début tensions gaz." },
+      "environnement": { "score": 40, "event": "COP26, retour émissions niveau pré-covid." },
+      "espace": { "score": 45, "event": "Tourisme spatial (Bezos/Branson), James Webb lancé." },
+      "demographie_social": { "score": 40, "event": "Grande Démission (Great Resignation)." },
+      "sante_bio": { "score": 60, "event": "Campagnes vaccination ARNm mondiales." },
+      "geopolitique": { "score": 45, "event": "Retrait Afghanistan, tensions frontières Est." },
+      "technologie_ia": { "score": 55, "event": "Hype Métavers, NFT, Crypto boom." },
+      "finance": { "score": 80, "event": "Bitcoin ATH, Euphorie boursière." },
+      "information": { "score": 40, "event": "Censure réseaux sociaux (Trump ban)." }
+    }
+  },
+  {
+    "year": 2022,
+    "summary": "Le retour de la guerre haute intensité et l'inflation.",
+    "pillars": {
+      "energie": { "score": 20, "event": "Crise énergétique Europe, sabotage NordStream." },
+      "environnement": { "score": 35, "event": "Canicules historiques Europe/Chine." },
+      "espace": { "score": 50, "event": "Artemis I (Lune), Starlink en Ukraine." },
+      "demographie_social": { "score": 30, "event": "Grèves coût de la vie, révoltes Iran." },
+      "sante_bio": { "score": 70, "event": "Fin progressive restrictions Covid." },
+      "geopolitique": { "score": 10, "event": "Invasion Ukraine, retour blocs Ouest vs Est." },
+      "technologie_ia": { "score": 85, "event": "Sortie ChatGPT (Nov), Choc IA générative." },
+      "finance": { "score": 30, "event": "Chute Crypto (FTX), retour Inflation forte." },
+      "information": { "score": 25, "event": "Guerre hybride, propagande russe/occidentale." }
+    }
+  },
+  {
+    "year": 2023,
+    "summary": "L'accélération technologique vs la fragmentation du monde.",
+    "pillars": {
+      "energie": { "score": 50, "event": "Boom solaire Chine, stabilisation prix gaz." },
+      "environnement": { "score": 25, "event": "Année la plus chaude jamais enregistrée." },
+      "espace": { "score": 60, "event": "Inde sur la Lune, Starship tests." },
+      "demographie_social": { "score": 35, "event": "Émeutes France, crise migratoire US/Europe." },
+      "sante_bio": { "score": 75, "event": "Avancées ARNm cancer, perte poids (Ozempic)." },
+      "geopolitique": { "score": 15, "event": "Conflit Israël-Gaza, expansion BRICS." },
+      "technologie_ia": { "score": 95, "event": "Course aux armements IA (GPT-4, Gemini)." },
+      "finance": { "score": 50, "event": "Taux d'intérêts élevés, faillites banques US." },
+      "information": { "score": 20, "event": "Deepfakes réalistes, perte confiance médias." }
+    }
+  },
+  {
+    "year": 2024,
+    "summary": "L'année électorale mondiale et les tensions critiques.",
+    "pillars": {
+      "energie": { "score": 60, "event": "Transition forcée, record investissements verts." },
+      "environnement": { "score": 20, "event": "Catastrophes climatiques multiples, seuil 1.5°C." },
+      "espace": { "score": 70, "event": "Retour US sur Lune (privé), militarisation orbite." },
+      "demographie_social": { "score": 25, "event": "Polarisation extrême (Élections US/Inde/EU)." },
+      "sante_bio": { "score": 80, "event": "IA en biologie (AlphaFold 3)." },
+      "geopolitique": { "score": 20, "event": "Enlisement fronts, tensions Mer de Chine." },
+      "technologie_ia": { "score": 90, "event": "Intégration IA dans robots (Humanoids)." },
+      "finance": { "score": 55, "event": "Volatilité dettes souveraines, Bitcoin ETF." },
+      "information": { "score": 15, "event": "Désinformation électorale massive par IA." }
+    }
+  },
+  {
+    "year": 2025,
+    "summary": "Le prélude au changement de paradigme (Simulé).",
+    "pillars": {
+      "energie": { "score": 65, "event": "Percée stockage batteries solides." },
+      "environnement": { "score": 15, "event": "Crises de l'eau majeures, migration climatique." },
+      "espace": { "score": 80, "event": "Station spatiale privée, préparation Mars." },
+      "demographie_social": { "score": 30, "event": "Crise du sens au travail (impact IA)." },
+      "sante_bio": { "score": 85, "event": "Premiers tests rajeunissement cellulaire." },
+      "geopolitique": { "score": 25, "event": "Nouveau traité ou rupture alliance majeure." },
+      "technologie_ia": { "score": 98, "event": "IA quasi-autonome (Agents), régulation mondiale échoue." },
+      "finance": { "score": 45, "event": "Fragilité dollar, montée monnaies numériques." },
+      "information": { "score": 10, "event": "Impossibilité de distinguer réel/virtuel en vidéo." }
+    }
+  }
+]
