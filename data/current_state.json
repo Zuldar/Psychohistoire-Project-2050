@@ -1,15 +1,15 @@
 {
   "date": "2026-01-11",
-  "stability_index": 45.69,
+  "stability_index": 45.55,
   "pillars": {
-    "energie": 71.22081921762037,
-    "environnement": 8.553333090097443,
-    "espace": 92.02572220145764,
-    "demographie_social": 26.831883724617704,
-    "sante_bio": 92.73909663506245,
-    "geopolitique": 27.104596484864622,
-    "technologie_ia": 99.66126857461335,
-    "finance": 43.43895610162272,
-    "information": 5.344340784336747
+    "energie": 74.43642394865729,
+    "environnement": 11.416671070944531,
+    "espace": 90.9111622616458,
+    "demographie_social": 27.045122758182274,
+    "sante_bio": 93.56177184734167,
+    "geopolitique": 25.79089767936886,
+    "technologie_ia": 98.22195613498859,
+    "finance": 40.44083252417508,
+    "information": 1.964182172167284
   }
 }

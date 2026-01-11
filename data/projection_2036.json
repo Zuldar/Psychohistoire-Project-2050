@@ -1,0 +1,152 @@
+[
+  {
+    "year": 2027,
+    "stability_index": 45.55,
+    "pillars": {
+      "energie": 74.43642394865729,
+      "environnement": 11.416671070944531,
+      "espace": 90.9111622616458,
+      "demographie_social": 27.045122758182274,
+      "sante_bio": 93.56177184734167,
+      "geopolitique": 25.79089767936886,
+      "technologie_ia": 98.22195613498859,
+      "finance": 40.44083252417508,
+      "information": 1.964182172167284
+    }
+  },
+  {
+    "year": 2028,
+    "stability_index": 45.23,
+    "pillars": {
+      "energie": 75.94130095971167,
+      "environnement": 11.698379328259108,
+      "espace": 93.68791010611652,
+      "demographie_social": 23.05981781320309,
+      "sante_bio": 96.80181318574577,
+      "geopolitique": 23.677172970024724,
+      "technologie_ia": 98.01561511454716,
+      "finance": 39.25708790231328,
+      "information": 0
+    }
+  },
+  {
+    "year": 2029,
+    "stability_index": 44.68,
+    "pillars": {
+      "energie": 75.80835839532276,
+      "environnement": 12.075411791924328,
+      "espace": 94.7676216276389,
+      "demographie_social": 17.325208182544763,
+      "sante_bio": 99.72122486635584,
+      "geopolitique": 21.33701229385746,
+      "technologie_ia": 99.85208547175066,
+      "finance": 37.15448656883228,
+      "information": 0
+    }
+  },
+  {
+    "year": 2030,
+    "stability_index": 44.54,
+    "pillars": {
+      "energie": 78.98724408913017,
+      "environnement": 11.262233932521521,
+      "espace": 96.7932648791652,
+      "demographie_social": 10.859043407493939,
+      "sante_bio": 100,
+      "geopolitique": 21.292358806848693,
+      "technologie_ia": 99.0697385359972,
+      "finance": 39.09162314942918,
+      "information": 0
+    }
+  },
+  {
+    "year": 2031,
+    "stability_index": 45.44,
+    "pillars": {
+      "energie": 82.51779205414404,
+      "environnement": 13.720387079402666,
+      "espace": 100,
+      "demographie_social": 9.184129025846453,
+      "sante_bio": 100,
+      "geopolitique": 21.546086702295522,
+      "technologie_ia": 99.45170150899308,
+      "finance": 38.2047801780781,
+      "information": 0
+    }
+  },
+  {
+    "year": 2032,
+    "stability_index": 45.31,
+    "pillars": {
+      "energie": 85.32976775160282,
+      "environnement": 16.67704359626534,
+      "espace": 100,
+      "demographie_social": 3.7209596356266053,
+      "sante_bio": 100,
+      "geopolitique": 18.488520916995036,
+      "technologie_ia": 100,
+      "finance": 39.05765788743252,
+      "information": 0
+    }
+  },
+  {
+    "year": 2033,
+    "stability_index": 43.95,
+    "pillars": {
+      "energie": 88.36890735031919,
+      "environnement": 14.318912371499247,
+      "espace": 100,
+      "demographie_social": 1.370400987182145,
+      "sante_bio": 99.79419338606127,
+      "geopolitique": 14.673440248044407,
+      "technologie_ia": 99.79481519232573,
+      "finance": 36.13764761847342,
+      "information": 0
+    }
+  },
+  {
+    "year": 2034,
+    "stability_index": 43.14,
+    "pillars": {
+      "energie": 89.67721585718594,
+      "environnement": 15.656106962377184,
+      "espace": 100,
+      "demographie_social": 0,
+      "sante_bio": 99.0203213780492,
+      "geopolitique": 11.342489892469228,
+      "technologie_ia": 97.49980539288288,
+      "finance": 34.37207406936877,
+      "information": 0
+    }
+  },
+  {
+    "year": 2035,
+    "stability_index": 42.79,
+    "pillars": {
+      "energie": 91.19573118143761,
+      "environnement": 13.75328942309964,
+      "espace": 100,
+      "demographie_social": 0,
+      "sante_bio": 100,
+      "geopolitique": 9.090971047034152,
+      "technologie_ia": 98.2587671504001,
+      "finance": 35.58682542046243,
+      "information": 0
+    }
+  },
+  {
+    "year": 2036,
+    "stability_index": 43.29,
+    "pillars": {
+      "energie": 90.98729763129384,
+      "environnement": 16.272290656959683,
+      "espace": 100,
+      "demographie_social": 0,
+      "sante_bio": 100,
+      "geopolitique": 9.310753691283214,
+      "technologie_ia": 99.04138205405603,
+      "finance": 34.987577364651635,
+      "information": 0
+    }
+  }
+]
