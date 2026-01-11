@@ -8,65 +8,72 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
     
     <style>
-        /* CSS RESET */
+        /* CSS RESET & BASICS */
         * { box-sizing: border-box; }
-        :root { --bg-dark: #05050b; --glass: rgba(20, 20, 35, 0.9); --glass-solid: #0d0d15; --border: rgba(255, 255, 255, 0.15); --neon-blue: #00f3ff; --neon-green: #00ff9d; --neon-red: #ff0055; --neon-yellow: #ffee00; }
+        :root { --bg-dark: #05050b; --glass: rgba(20, 20, 35, 0.95); --glass-solid: #0d0d15; --border: rgba(255, 255, 255, 0.15); --neon-blue: #00f3ff; --neon-green: #00ff9d; --neon-red: #ff0055; --neon-yellow: #ffee00; }
         body { background-color: var(--bg-dark); background-image: radial-gradient(circle at 50% 0%, #1a1a3a 0%, var(--bg-dark) 80%); color: #e0e0e0; font-family: 'Rajdhani', sans-serif; margin: 0; padding: 20px; min-height: 100vh; overflow-x: hidden; }
         .container { max-width: 1400px; margin: 0 auto; width: 100%; }
 
-        /* --- TOOLTIP CORRIGÉE (POSITIONNEMENT) --- */
-        .info-icon { display: inline-flex; justify-content: center; align-items: center; width: 20px; height: 20px; border-radius: 50%; border: 1px solid #666; color: #aaa; font-size: 12px; margin-left: 10px; cursor: help; position: relative; transition: 0.3s; background: rgba(0,0,0,0.3); }
-        .info-icon:hover { border-color: var(--neon-blue); color: #fff; background: var(--neon-blue); color: #000; }
-        
-        .info-icon .tooltip-text { 
-            visibility: hidden; 
-            width: 280px; /* Largeur un peu réduite pour sécurité */
-            background-color: var(--glass-solid); color: #fff; 
-            border: 1px solid var(--neon-blue); padding: 15px; border-radius: 8px; 
-            
-            /* C'EST ICI QUE CA CHANGE */
-            position: absolute; 
-            z-index: 9999; /* Très haut pour passer au dessus de tout */
-            bottom: 140%; /* Un peu plus haut */
-            left: -20px; /* On commence quasi aligné à l'icône (plus de centrage qui déborde) */
-            /* transform: translateX(-50%);  <-- ON A SUPPRIMÉ CETTE LIGNE QUI CAUSAIT LE BUG */
-            
-            opacity: 0; transition: all 0.2s ease; font-size: 0.85rem; line-height: 1.4;
-            box-shadow: 0 10px 50px rgba(0,0,0,0.95); text-align: left;
-        }
-        
-        /* Petite flèche en bas de la bulle */
-        .info-icon .tooltip-text::after { 
-            content: ""; position: absolute; top: 100%; 
-            left: 20px; /* La flèche suit l'alignement gauche */
-            border-width: 6px; border-style: solid; border-color: var(--neon-blue) transparent transparent transparent; 
-        }
-        
-        .info-icon:hover .tooltip-text { visibility: visible; opacity: 1; bottom: 130%; }
-
-        /* CORRECTION MOBILE : Si l'écran est petit, on décale pour ne pas sortir à droite */
-        @media (max-width: 600px) {
-            .info-icon .tooltip-text {
-                width: 250px;
-                left: -100px; /* Sur mobile on recentre un peu car l'écran est étroit */
-            }
-            .info-icon .tooltip-text::after { left: 108px; } /* On bouge la flèche */
-        }
-
-        /* RESTE DU DESIGN (Header, Chart, Cards...) */
+        /* HEADER & STATUS */
         header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 30px; flex-wrap: wrap; gap: 20px; }
         h1 { font-family: 'Orbitron', sans-serif; font-weight: 900; font-size: clamp(1.5rem, 4vw, 2.5rem); margin: 0; background: linear-gradient(90deg, #fff, var(--neon-blue)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-transform: uppercase; letter-spacing: 2px; }
         .status-pill { background: var(--glass); padding: 8px 16px; border-radius: 20px; border: 1px solid var(--border); font-size: 0.8em; color: var(--neon-blue); text-shadow: 0 0 10px rgba(0, 243, 255, 0.5); }
+
+        /* CHART */
         .chart-wrapper { background: var(--glass); backdrop-filter: blur(10px); border: 1px solid var(--border); border-radius: 16px; padding: 15px; margin-bottom: 30px; box-shadow: 0 0 40px rgba(0,0,0,0.5); height: 400px; position: relative; }
+        
+        /* SCORE */
         .big-score-card { text-align: center; padding: 20px 10px; background: radial-gradient(circle, rgba(0,243,255,0.05) 0%, transparent 70%); margin-bottom: 30px; }
         .score-title-row { display: flex; justify-content: center; align-items: center; margin-bottom: 10px; color: #666; letter-spacing: 2px; font-size: 0.9em; }
         .big-number { font-family: 'Orbitron', sans-serif; font-size: clamp(4rem, 8vw, 6rem); font-weight: 700; line-height: 1; margin-bottom: 10px; text-shadow: 0 0 30px rgba(255,255,255,0.2); }
-        .terminal-box { background: rgba(0, 0, 0, 0.8); border: 1px solid var(--border); border-left: 4px solid var(--neon-blue); border-radius: 8px; padding: 20px; margin-bottom: 40px; font-family: 'Courier New', Courier, monospace; box-shadow: 0 0 20px rgba(0,0,0,0.5); }
-        .terminal-header { color: var(--neon-blue); font-family: 'Orbitron'; text-transform: uppercase; font-size: 0.9em; margin-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 5px; }
-        .analysis-text { color: #fff; margin-bottom: 15px; font-size: 1.1em; line-height: 1.5; }
+        
+        /* --- NOUVEAU STYLE TERMINAL --- */
+        .terminal-box { 
+            background: rgba(10, 10, 15, 0.9); 
+            border: 1px solid var(--border); 
+            border-left: 4px solid var(--neon-blue); 
+            border-radius: 8px; 
+            padding: 25px; 
+            margin-bottom: 40px; 
+            font-family: 'Rajdhani', sans-serif; /* Plus lisible que Courier */
+            box-shadow: 0 0 30px rgba(0,0,0,0.6); 
+        }
+        .terminal-header { 
+            color: var(--neon-blue); font-family: 'Orbitron'; text-transform: uppercase; font-size: 1em; 
+            border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px; margin-bottom: 15px; letter-spacing: 1px;
+        }
+        .analysis-text { color: #fff; margin-bottom: 25px; font-size: 1.2em; line-height: 1.6; font-weight: 500; }
+        
+        /* Groupes d'alertes */
+        .alert-group-title {
+            font-size: 0.9em; text-transform: uppercase; color: #888; margin-top: 20px; margin-bottom: 10px; letter-spacing: 1px; font-weight: bold;
+        }
         .alerts-list { list-style: none; padding: 0; margin: 0; }
-        .alert-item { padding: 8px 0; border-top: 1px solid rgba(255,255,255,0.05); color: var(--neon-yellow); display: flex; align-items: center; gap: 10px; }
-        .alert-critical { color: var(--neon-red); text-shadow: 0 0 5px var(--neon-red); }
+        
+        .alert-item { 
+            padding: 12px 15px; 
+            margin-bottom: 8px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 6px;
+            color: #fff; /* TEXTE BLANC PAR DEFAUT */
+            display: flex; align-items: center; gap: 15px;
+            font-size: 1.05em;
+            border-left: 3px solid transparent;
+        }
+        
+        /* Styles spécifiques selon urgence */
+        .alert-crit { border-left-color: var(--neon-red); background: rgba(255, 0, 85, 0.1); }
+        .alert-warn { border-left-color: var(--neon-yellow); background: rgba(255, 238, 0, 0.05); }
+        .alert-info { border-left-color: var(--neon-green); }
+
+        .badge {
+            padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 0.8em; font-family: 'Orbitron'; min-width: 80px; text-align: center;
+        }
+        .b-red { background: var(--neon-red); color: #000; box-shadow: 0 0 10px rgba(255,0,85,0.4); }
+        .b-orange { background: var(--neon-yellow); color: #000; box-shadow: 0 0 10px rgba(255,238,0,0.4); }
+        .b-green { background: var(--neon-green); color: #000; }
+
+        /* GRID & CARDS */
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
         .card { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 12px; padding: 20px; position: relative; transition: 0.3s; }
         .card:hover { transform: translateY(-5px); background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.3); }
@@ -79,6 +86,15 @@
         .c-good { color: var(--neon-green); } .bg-good { background-color: var(--neon-green); }
         .c-mid { color: var(--neon-yellow); } .bg-mid { background-color: var(--neon-yellow); }
         .c-bad { color: var(--neon-red); } .bg-bad { background-color: var(--neon-red); }
+        
+        /* TOOLTIP */
+        .info-icon { display: inline-flex; justify-content: center; align-items: center; width: 20px; height: 20px; border-radius: 50%; border: 1px solid #666; color: #aaa; font-size: 12px; margin-left: 10px; cursor: help; position: relative; transition: 0.3s; background: rgba(0,0,0,0.3); }
+        .info-icon:hover { border-color: var(--neon-blue); color: #fff; background: var(--neon-blue); color: #000; }
+        .info-icon .tooltip-text { visibility: hidden; width: 320px; background-color: var(--glass-solid); color: #fff; border: 1px solid var(--neon-blue); padding: 15px; border-radius: 8px; position: absolute; z-index: 9999; bottom: 140%; left: -20px; opacity: 0; transition: all 0.2s ease; font-size: 0.85rem; line-height: 1.4; box-shadow: 0 10px 50px rgba(0,0,0,0.95); text-align: left; }
+        .info-icon .tooltip-text::after { content: ""; position: absolute; top: 100%; left: 20px; border-width: 6px; border-style: solid; border-color: var(--neon-blue) transparent transparent transparent; }
+        .info-icon:hover .tooltip-text { visibility: visible; opacity: 1; bottom: 130%; }
+        @media (max-width: 600px) { .info-icon .tooltip-text { width: 250px; left: -100px; } .info-icon .tooltip-text::after { left: 108px; } }
+
         footer { margin-top: 50px; text-align: center; color: #555; font-size: 0.8em; }
     </style>
 </head>
@@ -87,7 +103,7 @@
         <header>
             <div>
                 <h1>Psychohistoire</h1>
-                <div style="color: #666; letter-spacing: 2px; font-size: 0.8rem;">ANALYSE HYBRIDE</div>
+                <div style="color: #666; letter-spacing: 2px; font-size: 0.8rem;">COMMAND CENTER V5</div>
             </div>
             <div id="last-update" class="status-pill">INITIALISATION...</div>
         </header>
@@ -99,17 +115,30 @@
         <div class="big-score-card">
             <div class="score-title-row">
                 INDICE DE STABILITÉ 2026
-                <div class="info-icon">?<span class="tooltip-text">Analyse globale de la résilience de la civilisation humaine face aux chocs technologiques et environnementaux.</span></div>
+                <div class="info-icon">?<span class="tooltip-text">Analyse globale de la résilience.</span></div>
             </div>
             <div id="global-score" class="big-number pulse-anim">--%</div>
             <div id="global-status" style="font-size: 1.2em; letter-spacing: 2px;">CALCUL...</div>
         </div>
 
         <div class="terminal-box">
-            <div class="terminal-header">📊 Analyse du Noyau</div>
+            <div class="terminal-header">📊 Analyse Stratégique</div>
             <div id="analysis-text" class="analysis-text">Chargement de l'analyse...</div>
-            <div class="terminal-header" style="margin-top:20px; color:var(--neon-red)">🚨 Alertes Prioritaires</div>
-            <ul id="alerts-list" class="alerts-list"></ul>
+            
+            <div id="container-critical" style="display:none">
+                <div class="alert-group-title">🚨 MENACES IMMÉDIATES</div>
+                <ul id="list-critical" class="alerts-list"></ul>
+            </div>
+            
+            <div id="container-warning" style="display:none">
+                <div class="alert-group-title">⚠️ POINTS DE VIGILANCE</div>
+                <ul id="list-warning" class="alerts-list"></ul>
+            </div>
+
+            <div id="container-info" style="display:none">
+                <div class="alert-group-title">ℹ️ INDICATEURS STABLES</div>
+                <ul id="list-info" class="alerts-list"></ul>
+            </div>
         </div>
 
         <div id="pillars-grid" class="grid"></div>
@@ -120,19 +149,7 @@
     <script>
         const names = { "energie": "⚡ ÉNERGIE", "environnement": "🌍 CLIMAT", "espace": "🚀 ESPACE", "demographie_social": "👥 SOCIAL", "sante_bio": "🧬 BIO-SANTÉ", "geopolitique": "⚔️ GÉOPOLITIQUE", "technologie_ia": "🤖 TECH & IA", "finance": "💰 FINANCE", "information": "🧠 NOOSPHÈRE" };
         const colors = { "energie": "#ffee00", "environnement": "#ff0055", "espace": "#00d4ff", "demographie_social": "#ff9100", "sante_bio": "#00ff9d", "geopolitique": "#ff0000", "technologie_ia": "#bc13fe", "finance": "#ffffff", "information": "#7a7a7a" };
-        
-        // DÉFINITIONS STATIQUES (Explicatif HTML)
-        const definitions = { 
-            "energie": "Mesure la capacité de production mondiale. Un score bas signifie rationnement, un score haut signifie abondance (Fusion).", 
-            "environnement": "Santé de la biosphère. < 30% signale un effondrement écologique irréversible et des pénuries d'eau.", 
-            "espace": "Niveau d'expansion hors de la Terre. Indique la capacité de l'humanité à devenir multi-planétaire.", 
-            "demographie_social": "Cohésion sociale. Mesure les risques d'émeutes, les inégalités et la confiance en l'avenir.", 
-            "sante_bio": "Résilience biologique. Espérance de vie, pandémies et avancées génétiques.", 
-            "geopolitique": "Stabilité internationale. Un score bas annonce des conflits majeurs ou une Guerre Mondiale.", 
-            "technologie_ia": "Vitesse d'innovation. ATTENTION : > 90% signale une perte de contrôle humain (Singularité).", 
-            "finance": "Système économique. Un score bas indique une hyperinflation ou une crise de la dette.", 
-            "information": "Vérité et Noosphère. Un score bas signifie que le réel est indistingable du faux (Deepfakes)." 
-        };
+        const definitions = { "energie": "Capacité de production mondiale.", "environnement": "Santé de la biosphère.", "espace": "Expansion hors-Terre.", "demographie_social": "Cohésion sociale.", "sante_bio": "Résilience biologique.", "geopolitique": "Stabilité internationale.", "technologie_ia": "Vitesse d'innovation.", "finance": "Système économique.", "information": "Vérité et Noosphère." };
 
         function calculateStability(pillars) {
             let sum = 0, count = 0;
@@ -155,18 +172,48 @@
                 const current = await currRes.json();
                 let projection = []; try { projection = await projRes.json(); } catch(e) {}
 
-                document.getElementById('analysis-text').textContent = current.global_analysis || "Données d'analyse non disponibles.";
-                const alertsEl = document.getElementById('alerts-list');
-                alertsEl.innerHTML = ''; 
+                // --- LOGIQUE DE TRI DES ALERTES ---
+                document.getElementById('analysis-text').textContent = current.global_analysis || "Données indisponibles.";
+                
+                // Vider les listes
+                const listCrit = document.getElementById('list-critical'); listCrit.innerHTML = '';
+                const listWarn = document.getElementById('list-warning'); listWarn.innerHTML = '';
+                const listInfo = document.getElementById('list-info'); listInfo.innerHTML = '';
+
+                let hasCrit = false, hasWarn = false, hasInfo = false;
+
                 if(current.alerts && current.alerts.length > 0) {
                     current.alerts.forEach(alert => {
                         const li = document.createElement('li');
-                        li.className = (alert.includes("SINGULARITÉ") || alert.includes("CLIMAT") || alert.includes("GUERRE")) ? 'alert-item alert-critical' : 'alert-item';
-                        li.textContent = alert;
-                        alertsEl.appendChild(li);
-                    });
-                } else { alertsEl.innerHTML = '<li class="alert-item" style="color:#666">Aucune alerte.</li>'; }
+                        // Détection du type d'alerte selon les mots clés
+                        const isCritical = (alert.includes("SINGULARITÉ") || alert.includes("CLIMAT") || alert.includes("GUERRE") || alert.includes("KRACH") || alert.includes("📅"));
+                        const isSafe = alert.includes("Aucune alerte") || alert.includes("✅");
 
+                        if (isSafe) {
+                            li.className = 'alert-item alert-info';
+                            li.innerHTML = `<span class="badge b-green">RAS</span> <span>${alert}</span>`;
+                            listInfo.appendChild(li); hasInfo = true;
+                        } else if (isCritical) {
+                            li.className = 'alert-item alert-crit';
+                            // On enlève les émojis du texte brut pour éviter les doublons avec le badge
+                            let cleanText = alert.replace("⚠️", "").replace("🔴", "").replace("⚔️", "").replace("📅", "");
+                            li.innerHTML = `<span class="badge b-red">CRITIQUE</span> <span>${cleanText}</span>`;
+                            listCrit.appendChild(li); hasCrit = true;
+                        } else {
+                            li.className = 'alert-item alert-warn';
+                            let cleanText = alert.replace("⚠️", "");
+                            li.innerHTML = `<span class="badge b-orange">ATTENTION</span> <span>${cleanText}</span>`;
+                            listWarn.appendChild(li); hasWarn = true;
+                        }
+                    });
+                }
+
+                // Afficher les conteneurs seulement s'ils sont remplis
+                document.getElementById('container-critical').style.display = hasCrit ? 'block' : 'none';
+                document.getElementById('container-warning').style.display = hasWarn ? 'block' : 'none';
+                document.getElementById('container-info').style.display = hasInfo ? 'block' : 'none';
+
+                // --- CHART & GRID (Inchangé) ---
                 const labels = [...history.map(h => h.year), "2026"];
                 projection.forEach(p => labels.push(p.year));
                 const histData = history.map(h => calculateStability(h.pillars));
@@ -213,21 +260,12 @@
                 grid.innerHTML = '';
                 
                 for (const [key, valueObj] of Object.entries(current.pillars)) {
-                    // LOGIQUE HYBRIDE : COMBINAISON
                     let scoreVal, dynamicComment;
-                    if (typeof valueObj === 'object' && valueObj !== null && 'score' in valueObj) { 
-                         scoreVal = valueObj.score; 
-                         dynamicComment = valueObj.comment || ""; 
-                    } else { 
-                         scoreVal = valueObj; 
-                         dynamicComment = "";
-                    }
+                    if (typeof valueObj === 'object' && valueObj !== null && 'score' in valueObj) { scoreVal = valueObj.score; dynamicComment = valueObj.comment || ""; } 
+                    else { scoreVal = valueObj; dynamicComment = ""; }
                     
-                    // CONCATÉNATION
                     let fullText = definitions[key] || "";
-                    if(dynamicComment) {
-                        fullText += "<br><hr style='border:0; border-top:1px solid #444; margin:8px 0;'>👉 <em style='color:var(--neon-blue)'>" + dynamicComment + "</em>";
-                    }
+                    if(dynamicComment) fullText += "<br><hr style='border:0; border-top:1px solid #444; margin:8px 0;'>👉 <em style='color:var(--neon-blue)'>" + dynamicComment + "</em>";
 
                     let cleanValue = Math.round(scoreVal);
                     let state = 'good';
@@ -235,21 +273,7 @@
                     if (key === 'technologie_ia' && cleanValue > 90) state = 'mid';
 
                     const card = document.createElement('div'); card.className = `card`;
-                    card.innerHTML = `
-                        <div class="card-header">
-                            <div class="card-title-box">
-                                <span class="card-title">${names[key] || key}</span>
-                                <div class="info-icon">?
-                                    <span class="tooltip-text">
-                                        <strong style="color:var(--neon-blue); text-transform:uppercase; display:block; margin-bottom:5px;">${names[key]} (${cleanValue}%)</strong>
-                                        ${fullText}
-                                    </span>
-                                </div>
-                            </div>
-                            <span class="card-score c-${state}">${cleanValue}%</span>
-                        </div>
-                        <div class="progress-container"><div class="progress-bar bg-${state}" style="width: ${cleanValue}%"></div></div>
-                    `;
+                    card.innerHTML = `<div class="card-header"><div class="card-title-box"><span class="card-title">${names[key] || key}</span><div class="info-icon">?<span class="tooltip-text"><strong style="color:var(--neon-blue); text-transform:uppercase; display:block; margin-bottom:5px;">${names[key]} (${cleanValue}%)</strong>${fullText}</span></div></div><span class="card-score c-${state}">${cleanValue}%</span></div><div class="progress-container"><div class="progress-bar bg-${state}" style="width: ${cleanValue}%"></div></div>`;
                     grid.appendChild(card);
                 }
             } catch (error) { console.error(error); }
