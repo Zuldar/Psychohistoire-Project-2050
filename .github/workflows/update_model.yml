@@ -2,8 +2,8 @@ name: Mise à jour Mensuelle Psychohistoire
 
 on:
   schedule:
-    - cron: '0 8 1 * *'
-  workflow_dispatch:
+    - cron: '0 8 1 * *' # Tous les 1er du mois à 8h
+  workflow_dispatch:      # Permet de lancer manuellement
 
 permissions:
   contents: write
@@ -29,6 +29,8 @@ jobs:
       run: |
         git config --global user.name 'Psychohistory Bot'
         git config --global user.email 'bot@psychohistory.com'
-        git add data/current_state.json reports/
-        # On vérifie s'il y a des changements avant de commit
-        git diff --quiet && git diff --staged --quiet || (git commit -m "🔮 Mise à jour mensuelle automatique" && git push origin HEAD:main)
+        # ICI : J'ai ajouté data/projection_2036.json
+        git add data/current_state.json data/projection_2036.json reports/
+        # On ne commit que si ça a changé
+        git diff --quiet && git diff --staged --quiet || (git commit -m "🔮 Mise à jour : Projection Seldon 2036" && git push origin HEAD:
+        main)
