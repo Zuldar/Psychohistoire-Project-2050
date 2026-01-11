@@ -1,48 +1,48 @@
 {
   "date": "2026-01-11",
-  "stability_index": 44.84,
+  "stability_index": 44.91,
   "global_analysis": "\u26a0\ufe0f STABILIT\u00c9 PR\u00c9CAIRE.",
   "alerts": [
     "\u26a0\ufe0f SINGULARIT\u00c9 (Tech)",
     "\ud83d\udd34 CLIMAT (Env)",
     "\u2694\ufe0f GUERRE (G\u00e9o)",
-    "\ud83d\udcc5 2027 : GUERRE DE L'EAU (Env < 20% + G\u00e9o < 30%)"
+    "\ud83d\udcc5 2027 : GUERRE DE L'EAU (Env < 25% + G\u00e9o < 35%)"
   ],
   "pillars": {
     "energie": {
-      "score": 65.71,
+      "score": 66.06,
       "comment": "\u26a1 Transition instable."
     },
     "environnement": {
-      "score": 14.1,
+      "score": 14.51,
       "comment": "\u2620\ufe0f Effondrement."
     },
     "espace": {
-      "score": 81.0,
+      "score": 80.42,
       "comment": "\ud83c\udf0c Multi-plan\u00e9taire."
     },
     "demographie_social": {
-      "score": 29.75,
+      "score": 30.22,
       "comment": "\ud83d\udd25 Guerre Civile."
     },
     "sante_bio": {
-      "score": 85.78,
+      "score": 84.93,
       "comment": "\ud83e\uddec Transhumanisme."
     },
     "geopolitique": {
-      "score": 25.31,
+      "score": 25.43,
       "comment": "\u2622\ufe0f Guerre Mondiale."
     },
     "technologie_ia": {
-      "score": 97.77,
+      "score": 97.92,
       "comment": "\u26a0\ufe0f SINGULARIT\u00c9."
     },
     "finance": {
-      "score": 44.64,
+      "score": 44.76,
       "comment": "\ud83d\udcc9 R\u00e9cession."
     },
     "information": {
-      "score": 9.72,
+      "score": 9.83,
       "comment": "\ud83e\udde0 Obscurantisme."
     }
   }
