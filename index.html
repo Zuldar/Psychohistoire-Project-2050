@@ -30,7 +30,7 @@
 
         .container { max-width: 1200px; margin: 0 auto; }
 
-        /* HEADER */
+        /* HEADER AVEC BOUTON AIDE */
         header {
             display: flex;
             justify-content: space-between;
@@ -50,6 +50,32 @@
             -webkit-text-fill-color: transparent;
             text-transform: uppercase;
             letter-spacing: 4px;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .help-btn {
+            text-decoration: none;
+            border: 1px solid rgba(255,255,255,0.2);
+            width: 30px; 
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: #fff;
+            font-family: 'Orbitron';
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .help-btn:hover {
+            background: var(--neon-blue);
+            color: #000;
+            box-shadow: 0 0 15px var(--neon-blue);
         }
 
         .status-pill {
@@ -188,9 +214,12 @@
 
     <div class="container">
         <header>
-            <div>
-                <h1>Psychohistoire</h1>
-                <div style="color: #666; letter-spacing: 2px;">MODÈLE PRÉDICTIF SELDON</div>
+            <div class="header-left">
+                <div>
+                    <h1>Psychohistoire</h1>
+                    <div style="color: #666; letter-spacing: 2px;">MODÈLE PRÉDICTIF SELDON</div>
+                </div>
+                <a href="aide.html" class="help-btn" title="Guide des métriques">?</a>
             </div>
             <div id="last-update" class="status-pill">INITIALISATION...</div>
         </header>
@@ -309,20 +338,23 @@
                 grid.innerHTML = '';
 
                 for (const [key, value] of Object.entries(current.pillars)) {
+                    // CORRECTION ICI : On arrondit le chiffre pour éviter les virgules infinies
+                    let cleanValue = Math.round(value);
+
                     let state = 'good';
-                    if (value < 40) state = 'bad';
-                    else if (value < 60) state = 'mid';
-                    if (key === 'technologie_ia' && value > 90) state = 'mid';
+                    if (cleanValue < 40) state = 'bad';
+                    else if (cleanValue < 60) state = 'mid';
+                    if (key === 'technologie_ia' && cleanValue > 90) state = 'mid';
 
                     const card = document.createElement('div');
                     card.className = `card`;
                     card.innerHTML = `
                         <div class="card-header">
                             <span class="card-title">${names[key] || key}</span>
-                            <span class="card-score c-${state}">${value}</span>
+                            <span class="card-score c-${state}">${cleanValue}%</span>
                         </div>
                         <div class="progress-container">
-                            <div class="progress-bar bg-${state}" style="width: ${value}%"></div>
+                            <div class="progress-bar bg-${state}" style="width: ${cleanValue}%"></div>
                         </div>
                     `;
                     grid.appendChild(card);
