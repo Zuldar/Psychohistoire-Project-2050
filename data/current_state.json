@@ -1,15 +1,42 @@
 {
   "date": "2026-01-11",
-  "stability_index": 45.55,
+  "stability_index": 45.08,
   "pillars": {
-    "energie": 74.43642394865729,
-    "environnement": 11.416671070944531,
-    "espace": 90.9111622616458,
-    "demographie_social": 27.045122758182274,
-    "sante_bio": 93.56177184734167,
-    "geopolitique": 25.79089767936886,
-    "technologie_ia": 98.22195613498859,
-    "finance": 40.44083252417508,
-    "information": 1.964182172167284
+    "energie": {
+      "score": 66.5,
+      "comment": "\u26a1 Transition instable. Prix \u00e9lev\u00e9s, tensions sur les ressources fossiles."
+    },
+    "environnement": {
+      "score": 15.07,
+      "comment": "\u2620\ufe0f Effondrement. Zones tropicales inhabitables, r\u00e9fugi\u00e9s climatiques massifs."
+    },
+    "espace": {
+      "score": 81.27,
+      "comment": "\ud83c\udf0c Civilisation Multi-plan\u00e9taire. Colonies sur Mars et la Lune autonomes."
+    },
+    "demographie_social": {
+      "score": 30.77,
+      "comment": "\ud83d\udd25 Guerre Civile. \u00c9meutes de la faim, effondrement des \u00e9tats-providence."
+    },
+    "sante_bio": {
+      "score": 85.76,
+      "comment": "\ud83e\uddec Transhumanisme. Maladies \u00e9radiqu\u00e9es, esp\u00e9rance de vie > 120 ans."
+    },
+    "geopolitique": {
+      "score": 24.93,
+      "comment": "\u2622\ufe0f Guerre Mondiale. Conflits nucl\u00e9aires tactiques ou invasions massives."
+    },
+    "technologie_ia": {
+      "score": 98.49,
+      "comment": "\u26a0\ufe0f SINGULARIT\u00c9. L'IA s'am\u00e9liore seule. L'humain n'a plus le contr\u00f4le."
+    },
+    "finance": {
+      "score": 43.99,
+      "comment": "\ud83d\udcc9 R\u00e9cession. Dette insoutenable, krachs boursiers fr\u00e9quents."
+    },
+    "information": {
+      "score": 9.07,
+      "comment": "\ud83e\udde0 Obscurantisme. Impossible de distinguer le vrai du faux (Deepfakes totaux)."
+    }
   }
 }
