@@ -19,18 +19,22 @@ body {
     min-height: 100vh; 
     overflow-x: hidden;
     
-    /* --- C'EST ICI QUE CA SE PASSE --- */
-    background-color: #000;
+    /* COULEUR DE FOND (Au cas où l'image met du temps à charger) */
+    background-color: #020205;
     
-    /* Met ici le lien de ton image (GIF ou JPG) */
-    background-image: url('https://i.pinimg.com/originals/3d/08/e0/3d08e03cb40252526fee2036a67f07f1.gif');
+    /* L'IMAGE LOCALE (C'est ça qui change tout) */
+    background-image: url('bg.gif');
     
-    /* Réglages pour que l'image couvre tout bien */
-    background-position: center;
+    /* REGLAGES IMPORTANTS POUR MOBILE */
+    background-position: center center;
     background-size: cover; 
-    background-attachment: fixed; /* Sur mobile, ça peut désactiver le scroll du fond, mais l'image reste */
     background-repeat: no-repeat;
+    
+    /* On enlève 'fixed' qui bug souvent sur mobile. 
+       L'image va scroller avec le texte, mais elle s'affichera à coup sûr. */
+    background-attachment: scroll; 
 }
+
 
 /* On ajoute un voile noir par-dessus l'image pour que le texte reste lisible */
 body::after {
