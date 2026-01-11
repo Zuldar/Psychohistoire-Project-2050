@@ -1,1 +1,16 @@
-{}
+{
+  "last_update": "2026-01-11",
+  "global_stability_index": 72.4,
+  "pillars": {
+    "energy": { "trend": "positive", "focus": "Hydrogène vert & Fusion exp." },
+    "geopolitics": { "trend": "negative", "hotspots": ["Ukraine", "Taiwan", "Sahel"] },
+    "technology": { "trend": "exponential", "driver": "IA Générative v5" },
+    "space": { "trend": "boom", "launches_this_month": 12 },
+    "health": { "trend": "stable", "risk": "Zoonose post-hivernale" },
+    "finance": { "trend": "volatile", "signal": "Adoption MNBC" },
+    "environment": { "trend": "critical", "anomaly": "+1.6C" },
+    "society": { "trend": "tense", "unrest_level": "High" },
+    "information": { "trend": "chaotic", "fake_news_ratio": 0.35 }
+  }
+}
+
