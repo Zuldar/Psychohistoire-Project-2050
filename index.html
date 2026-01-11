@@ -3,163 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seldon Project | Horizon 2050</title>
+    <title>Seldon Project | Horizon 2036</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
     
     <style>
-        /* RESET & BASICS */
+        /* CSS IDENTIQUE A LA VERSION PRECEDENTE */
         * { box-sizing: border-box; }
-        :root {
-            --bg-dark: #05050b;
-            --glass: rgba(20, 20, 35, 0.8);
-            --glass-solid: #151525;
-            --border: rgba(255, 255, 255, 0.15);
-            --neon-blue: #00f3ff;
-            --neon-green: #00ff9d;
-            --neon-red: #ff0055;
-            --neon-yellow: #ffee00;
-        }
-
-        body {
-            background-color: var(--bg-dark);
-            background-image: radial-gradient(circle at 50% 0%, #1a1a3a 0%, var(--bg-dark) 80%);
-            color: #e0e0e0;
-            font-family: 'Rajdhani', sans-serif;
-            margin: 0;
-            padding: 20px;
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
-
+        :root { --bg-dark: #05050b; --glass: rgba(20, 20, 35, 0.8); --glass-solid: #151525; --border: rgba(255, 255, 255, 0.15); --neon-blue: #00f3ff; --neon-green: #00ff9d; --neon-red: #ff0055; --neon-yellow: #ffee00; }
+        body { background-color: var(--bg-dark); background-image: radial-gradient(circle at 50% 0%, #1a1a3a 0%, var(--bg-dark) 80%); color: #e0e0e0; font-family: 'Rajdhani', sans-serif; margin: 0; padding: 20px; min-height: 100vh; overflow-x: hidden; }
         .container { max-width: 1400px; margin: 0 auto; width: 100%; }
-
-        /* --- TOOLTIP SYSTEM (NOUVEAU) --- */
-        .info-icon {
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            width: 18px; height: 18px;
-            border-radius: 50%;
-            border: 1px solid #666;
-            color: #aaa;
-            font-size: 12px;
-            font-family: 'Orbitron', sans-serif;
-            margin-left: 8px;
-            cursor: help;
-            position: relative;
-            transition: 0.3s;
-        }
-        .info-icon:hover {
-            border-color: var(--neon-blue);
-            color: var(--neon-blue);
-            box-shadow: 0 0 5px var(--neon-blue);
-            background: rgba(0, 243, 255, 0.1);
-        }
-
-        /* La bulle d'aide elle-même */
-        .info-icon .tooltip-text {
-            visibility: hidden;
-            width: 250px;
-            background-color: var(--glass-solid);
-            color: #fff;
-            text-align: left;
-            border: 1px solid var(--neon-blue);
-            padding: 15px;
-            border-radius: 6px;
-            position: absolute;
-            z-index: 100;
-            bottom: 125%; /* Position au-dessus */
-            left: 50%;
-            transform: translateX(-50%); /* Centrer */
-            opacity: 0;
-            transition: opacity 0.3s;
-            font-size: 0.85rem;
-            line-height: 1.4;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
-            font-weight: normal;
-            text-transform: none;
-            letter-spacing: 0.5px;
-        }
-
-        /* Flèche du bas de la bulle */
-        .info-icon .tooltip-text::after {
-            content: "";
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            margin-left: -5px;
-            border-width: 5px;
-            border-style: solid;
-            border-color: var(--neon-blue) transparent transparent transparent;
-        }
-
-        .info-icon:hover .tooltip-text {
-            visibility: visible;
-            opacity: 1;
-        }
+        
+        /* TOOLTIP */
+        .info-icon { display: inline-flex; justify-content: center; align-items: center; width: 18px; height: 18px; border-radius: 50%; border: 1px solid #666; color: #aaa; font-size: 12px; margin-left: 8px; cursor: help; position: relative; }
+        .info-icon:hover .tooltip-text { visibility: visible; opacity: 1; }
+        .info-icon .tooltip-text { visibility: hidden; width: 250px; background-color: var(--glass-solid); color: #fff; border: 1px solid var(--neon-blue); padding: 15px; border-radius: 6px; position: absolute; z-index: 100; bottom: 125%; left: 50%; transform: translateX(-50%); opacity: 0; transition: opacity 0.3s; font-size: 0.85rem; box-shadow: 0 10px 30px rgba(0,0,0,0.8); }
 
         /* HEADER */
-        header {
-            display: flex; justify-content: space-between; align-items: center;
-            border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 30px;
-            flex-wrap: wrap; gap: 20px;
-        }
+        header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 30px; flex-wrap: wrap; gap: 20px; }
+        h1 { font-family: 'Orbitron', sans-serif; font-weight: 900; font-size: clamp(1.5rem, 4vw, 2.5rem); margin: 0; background: linear-gradient(90deg, #fff, var(--neon-blue)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-transform: uppercase; letter-spacing: 2px; }
+        .status-pill { background: var(--glass); padding: 8px 16px; border-radius: 20px; border: 1px solid var(--border); font-size: 0.8em; color: var(--neon-blue); text-shadow: 0 0 10px rgba(0, 243, 255, 0.5); white-space: nowrap; }
 
-        h1 {
-            font-family: 'Orbitron', sans-serif; font-weight: 900;
-            font-size: clamp(1.5rem, 4vw, 2.5rem); margin: 0;
-            background: linear-gradient(90deg, #fff, var(--neon-blue));
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            text-transform: uppercase; letter-spacing: 2px;
-        }
+        /* CHART */
+        .chart-wrapper { background: var(--glass); backdrop-filter: blur(10px); border: 1px solid var(--border); border-radius: 16px; padding: 15px; margin-bottom: 30px; box-shadow: 0 0 40px rgba(0,0,0,0.5); height: 400px; position: relative; }
 
-        .status-pill {
-            background: var(--glass); padding: 8px 16px; border-radius: 20px;
-            border: 1px solid var(--border); font-size: 0.8em; color: var(--neon-blue);
-            text-shadow: 0 0 10px rgba(0, 243, 255, 0.5); white-space: nowrap;
-        }
-
-        /* CHART & STATS */
-        .chart-wrapper {
-            background: var(--glass); backdrop-filter: blur(10px);
-            border: 1px solid var(--border); border-radius: 16px; padding: 15px;
-            margin-bottom: 30px; box-shadow: 0 0 40px rgba(0,0,0,0.5);
-            height: 400px; position: relative;
-        }
-
-        .big-score-card {
-            text-align: center; padding: 20px 10px;
-            background: radial-gradient(circle, rgba(0,243,255,0.05) 0%, transparent 70%);
-            margin-bottom: 30px;
-        }
-        
-        .score-title-row {
-            display: flex; justify-content: center; align-items: center;
-            margin-bottom: 10px; color: #666; letter-spacing: 2px; font-size: 0.9em;
-        }
-
-        .big-number {
-            font-family: 'Orbitron', sans-serif;
-            font-size: clamp(4rem, 8vw, 6rem); font-weight: 700; line-height: 1;
-            margin-bottom: 10px; text-shadow: 0 0 30px rgba(255,255,255,0.2);
-        }
+        /* STATS */
+        .big-score-card { text-align: center; padding: 20px 10px; background: radial-gradient(circle, rgba(0,243,255,0.05) 0%, transparent 70%); margin-bottom: 30px; }
+        .score-title-row { display: flex; justify-content: center; align-items: center; margin-bottom: 10px; color: #666; letter-spacing: 2px; font-size: 0.9em; }
+        .big-number { font-family: 'Orbitron', sans-serif; font-size: clamp(4rem, 8vw, 6rem); font-weight: 700; line-height: 1; margin-bottom: 10px; text-shadow: 0 0 30px rgba(255,255,255,0.2); }
 
         /* GRID */
-        .grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;
-        }
-
-        .card {
-            background: rgba(255,255,255,0.03); border: 1px solid var(--border);
-            border-radius: 12px; padding: 20px; position: relative;
-        }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .card { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 12px; padding: 20px; position: relative; }
         .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
-        
-        /* Titre de carte avec icône */
         .card-title-box { display: flex; align-items: center; }
         .card-title { font-size: 0.9em; text-transform: uppercase; letter-spacing: 1px; color: #888; font-weight: 700; }
-        
         .card-score { font-family: 'Orbitron', sans-serif; font-size: 1.8em; font-weight: bold; }
         .progress-container { height: 6px; background: rgba(0,0,0,0.5); border-radius: 3px; overflow: hidden; }
         .progress-bar { height: 100%; border-radius: 3px; width: 0%; transition: width 1.5s ease; box-shadow: 0 0 10px currentColor; }
@@ -167,22 +45,15 @@
         .c-good { color: var(--neon-green); } .bg-good { background-color: var(--neon-green); }
         .c-mid { color: var(--neon-yellow); } .bg-mid { background-color: var(--neon-yellow); }
         .c-bad { color: var(--neon-red); } .bg-bad { background-color: var(--neon-red); }
-
         footer { margin-top: 50px; text-align: center; color: #555; font-size: 0.8em; }
-
-        /* Mobile adjust */
-        @media (max-width: 600px) {
-            .info-icon .tooltip-text { width: 200px; left: -50px; transform: none; }
-        }
     </style>
 </head>
 <body>
-
     <div class="container">
         <header>
             <div>
                 <h1>Psychohistoire</h1>
-                <div style="color: #666; letter-spacing: 2px; font-size: 0.8rem;">MODÈLE PRÉDICTIF SELDON</div>
+                <div style="color: #666; letter-spacing: 2px; font-size: 0.8rem;">SIMULATION HORIZON 2036</div>
             </div>
             <div id="last-update" class="status-pill">INITIALISATION...</div>
         </header>
@@ -193,16 +64,8 @@
 
         <div class="big-score-card">
             <div class="score-title-row">
-                INDICE DE STABILITÉ MONDIALE
-                <div class="info-icon">?
-                    <span class="tooltip-text">
-                        <strong style="color:var(--neon-blue)">Moyenne pondérée (0-100%).</strong><br><br>
-                        Il calcule la résilience de notre civilisation.<br>
-                        • <b>> 50%</b> : Système robuste.<br>
-                        • <b>< 50%</b> : Risque de rupture.<br>
-                        Attention : L'environnement et la Géopolitique comptent double.
-                    </span>
-                </div>
+                INDICE DE STABILITÉ 2026
+                <div class="info-icon">?<span class="tooltip-text">Moyenne pondérée de résilience.</span></div>
             </div>
             <div id="global-score" class="big-number pulse-anim">--</div>
             <div id="global-status" style="font-size: 1.2em; letter-spacing: 2px;">CALCUL...</div>
@@ -210,36 +73,13 @@
 
         <div id="pillars-grid" class="grid"></div>
 
-        <footer>
-            SYSTÈME AUTO-GÉNÉRÉ PAR GITHUB ACTIONS
-        </footer>
+        <footer>SYSTÈME AUTO-GÉNÉRÉ PAR GITHUB ACTIONS</footer>
     </div>
 
     <script>
-        const names = {
-            "energie": "⚡ ÉNERGIE", "environnement": "🌍 CLIMAT", "espace": "🚀 ESPACE",
-            "demographie_social": "👥 SOCIAL", "sante_bio": "🧬 BIO-SANTÉ", "geopolitique": "⚔️ GÉOPOLITIQUE",
-            "technologie_ia": "🤖 TECH & IA", "finance": "💰 FINANCE", "information": "🧠 NOOSPHÈRE"
-        };
-        
-        // --- NOUVEAU : Les textes explicatifs pour chaque pilier ---
-        const descriptions = {
-            "energie": "Coût et abondance de l'énergie. Un score bas indique une pénurie ou un prix trop élevé freinant la civilisation.",
-            "environnement": "Santé de la biosphère. < 20% indique un risque d'effondrement écosystémique irréversible.",
-            "espace": "Niveau de conquête spatiale. Un score élevé indique une économie en expansion hors-Terre.",
-            "demographie_social": "Cohésion des populations. Mesure les émeutes, les inégalités et la confiance en l'avenir.",
-            "sante_bio": "Résilience biologique. Capacité à vaincre les pandémies et augmenter l'espérance de vie.",
-            "geopolitique": "Risque de guerre. 0% = Guerre Mondiale Totale. 100% = Paix Perpétuelle.",
-            "technologie_ia": "Vitesse d'innovation. ATTENTION : Un score > 90% signale une 'Singularité' (Perte de contrôle humain).",
-            "finance": "Stabilité du système monétaire. Un score bas signale hyperinflation ou crise de la dette.",
-            "information": "Hygiène de l'information. Un score bas signifie que la 'Vérité' n'existe plus (Deepfakes/Propagande)."
-        };
-
-        const colors = {
-            "energie": "#ffee00", "environnement": "#ff0055", "espace": "#00d4ff",
-            "demographie_social": "#ff9100", "sante_bio": "#00ff9d", "geopolitique": "#ff0000",
-            "technologie_ia": "#bc13fe", "finance": "#ffffff", "information": "#7a7a7a"
-        };
+        const names = { "energie": "⚡ ÉNERGIE", "environnement": "🌍 CLIMAT", "espace": "🚀 ESPACE", "demographie_social": "👥 SOCIAL", "sante_bio": "🧬 BIO-SANTÉ", "geopolitique": "⚔️ GÉOPOLITIQUE", "technologie_ia": "🤖 TECH & IA", "finance": "💰 FINANCE", "information": "🧠 NOOSPHÈRE" };
+        const descriptions = { "energie": "Abondance énergétique.", "environnement": "Stabilité écologique.", "espace": "Expansion hors-Terre.", "demographie_social": "Cohésion sociale.", "sante_bio": "Espérance de vie.", "geopolitique": "Risque de guerre.", "technologie_ia": "Vitesse innovation.", "finance": "Stabilité monétaire.", "information": "Vérité consensus." };
+        const colors = { "energie": "#ffee00", "environnement": "#ff0055", "espace": "#00d4ff", "demographie_social": "#ff9100", "sante_bio": "#00ff9d", "geopolitique": "#ff0000", "technologie_ia": "#bc13fe", "finance": "#ffffff", "information": "#7a7a7a" };
 
         function calculateStability(pillars) {
             let sum = 0, count = 0;
@@ -251,33 +91,74 @@
 
         async function loadData() {
             try {
-                // Astuce Anti-Cache
                 const time = new Date().getTime(); 
-                const [histRes, currRes] = await Promise.all([
+                // CHARGEMENT DES 3 FICHIERS : HISTOIRE, ACTUEL, PROJECTION
+                const [histRes, currRes, projRes] = await Promise.all([
                     fetch('data/history_2020_2025.json?v=' + time),
-                    fetch('data/current_state.json?v=' + time)
+                    fetch('data/current_state.json?v=' + time),
+                    fetch('data/projection_2036.json?v=' + time) // Nouveau !
                 ]);
+
                 const history = await histRes.json();
                 const current = await currRes.json();
-                const labels = [...history.map(h => h.year), "2026"];
+                
+                // Gestion d'erreur si le fichier projection n'est pas encore créé par le robot
+                let projection = [];
+                try { projection = await projRes.json(); } catch(e) { console.log("Pas de projection encore."); }
 
-                // CHART
-                const dataStability = [...history.map(h => calculateStability(h.pillars)), current.stability_index];
+                // CONSTRUCTION DES LABELS (2000 -> 2036)
+                const labels = [...history.map(h => h.year), "2026"];
+                projection.forEach(p => labels.push(p.year));
+
+                // CONSTRUCTION DATASET STABILITÉ
+                const histData = history.map(h => calculateStability(h.pillars));
+                const currData = current.stability_index;
+                const projData = projection.map(p => p.stability_index);
+                
+                const fullStabilityData = [...histData, currData, ...projData];
+
                 const datasets = [{
-                    label: 'STABILITÉ GLOBALE', data: dataStability,
-                    borderColor: '#ffffff', backgroundColor: 'rgba(255,255,255,0.05)',
-                    borderWidth: 3, fill: true, tension: 0.4, order: 0
+                    label: 'STABILITÉ GLOBALE',
+                    data: fullStabilityData,
+                    borderColor: '#ffffff',
+                    backgroundColor: 'rgba(255,255,255,0.05)',
+                    borderWidth: 3,
+                    fill: true,
+                    tension: 0.4,
+                    // Segment pour faire des pointillés sur le futur
+                    segment: {
+                        borderDash: ctx => ctx.p0.parsed.x >= (labels.length - projection.length - 1) ? [5, 5] : undefined,
+                        borderColor: ctx => ctx.p0.parsed.x >= (labels.length - projection.length - 1) ? 'rgba(255,255,255,0.5)' : '#ffffff'
+                    },
+                    order: 0
                 }];
 
+                // CONSTRUCTION DES 9 PILIERS
                 for (const key of Object.keys(names)) {
-                    const dataPoints = [...history.map(h => h.pillars[key].score || h.pillars[key]), current.pillars[key]];
+                    const hData = history.map(h => h.pillars[key].score || h.pillars[key]);
+                    const cData = current.pillars[key];
+                    const pData = projection.map(p => p.pillars[key]);
+                    
+                    const fullData = [...hData, cData, ...pData];
+
                     let isVisible = (key === 'technologie_ia' || key === 'environnement');
+                    
                     datasets.push({
-                        label: names[key], data: dataPoints, borderColor: colors[key],
-                        borderWidth: 2, tension: 0.4, borderDash: (key === 'technologie_ia') ? [5,5] : [], hidden: !isVisible
+                        label: names[key],
+                        data: fullData,
+                        borderColor: colors[key],
+                        borderWidth: 2,
+                        tension: 0.4,
+                        hidden: !isVisible,
+                        // Pointillés sur le futur
+                        segment: {
+                            borderDash: ctx => ctx.p0.parsed.x >= (labels.length - projection.length - 1) ? [2, 2] : undefined,
+                            borderColor: ctx => ctx.p0.parsed.x >= (labels.length - projection.length - 1) ? 'rgba(255,255,255,0.3)' : colors[key]
+                        }
                     });
                 }
 
+                // CONFIG CHART
                 Chart.defaults.color = '#888';
                 Chart.defaults.font.family = "'Rajdhani', sans-serif";
                 
@@ -295,7 +176,7 @@
                     }
                 });
 
-                // DOM UPDATES
+                // UPDATE DOM
                 document.getElementById('last-update').textContent = "SCAN: " + current.date;
                 const score = current.stability_index;
                 const scoreEl = document.getElementById('global-score');
@@ -308,32 +189,14 @@
 
                 const grid = document.getElementById('pillars-grid');
                 grid.innerHTML = '';
-                
                 for (const [key, value] of Object.entries(current.pillars)) {
                     let cleanValue = Math.round(value);
                     let state = 'good';
-                    if (cleanValue < 40) state = 'bad';
-                    else if (cleanValue < 60) state = 'mid';
+                    if (cleanValue < 40) state = 'bad'; else if (cleanValue < 60) state = 'mid';
                     if (key === 'technologie_ia' && cleanValue > 90) state = 'mid';
 
-                    const card = document.createElement('div');
-                    card.className = `card`;
-                    
-                    // INJECTION DE LA TOOLTIP ICI
-                    card.innerHTML = `
-                        <div class="card-header">
-                            <div class="card-title-box">
-                                <span class="card-title">${names[key] || key}</span>
-                                <div class="info-icon">?
-                                    <span class="tooltip-text">${descriptions[key] || "Pas de description."}</span>
-                                </div>
-                            </div>
-                            <span class="card-score c-${state}">${cleanValue}%</span>
-                        </div>
-                        <div class="progress-container">
-                            <div class="progress-bar bg-${state}" style="width: ${cleanValue}%"></div>
-                        </div>
-                    `;
+                    const card = document.createElement('div'); card.className = `card`;
+                    card.innerHTML = `<div class="card-header"><div class="card-title-box"><span class="card-title">${names[key] || key}</span><div class="info-icon">?<span class="tooltip-text">${descriptions[key]}</span></div></div><span class="card-score c-${state}">${cleanValue}%</span></div><div class="progress-container"><div class="progress-bar bg-${state}" style="width: ${cleanValue}%"></div></div>`;
                     grid.appendChild(card);
                 }
             } catch (error) { console.error(error); }
