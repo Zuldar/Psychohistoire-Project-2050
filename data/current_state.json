@@ -1,42 +1,50 @@
 {
   "date": "2026-01-11",
-  "stability_index": 45.08,
+  "stability_index": 44.77,
+  "global_analysis": "\u26a0\ufe0f STABILIT\u00c9 PR\u00c9CAIRE. La puissance technologique masque des fractures sociales et environnementales profondes. Risque de d\u00e9crochage.",
+  "alerts": [
+    "\u26a0\ufe0f ALERTE SINGULARIT\u00c9 (Tech) : L'IA atteint un seuil critique d'autonomie. Risque syst\u00e9mique pour l'emploi.",
+    "\ud83d\udd34 ALERTE CLIMAT (Env) : Anomalies thermiques irr\u00e9versibles. Crises de l'eau imminentes.",
+    "\u2694\ufe0f TENSION MAXIMALE (G\u00e9o) : Les fronts sont volatils. Risque d'escalade conventionnelle.",
+    "\ud83d\udd25 RUPTURE SOCIALE : Le contrat social est rompu. Risque d'insurrection coordonn\u00e9e.",
+    "\ud83e\udde0 DISSOLUTION DU R\u00c9EL : Impossible de distinguer la v\u00e9rit\u00e9. La Noosph\u00e8re est satur\u00e9e."
+  ],
   "pillars": {
     "energie": {
-      "score": 66.5,
-      "comment": "\u26a1 Transition instable. Prix \u00e9lev\u00e9s, tensions sur les ressources fossiles."
+      "score": 64.97,
+      "comment": "Transition difficile."
     },
     "environnement": {
-      "score": 15.07,
-      "comment": "\u2620\ufe0f Effondrement. Zones tropicales inhabitables, r\u00e9fugi\u00e9s climatiques massifs."
+      "score": 13.97,
+      "comment": "Effondrement \u00e9cologique."
     },
     "espace": {
-      "score": 81.27,
-      "comment": "\ud83c\udf0c Civilisation Multi-plan\u00e9taire. Colonies sur Mars et la Lune autonomes."
+      "score": 81.45,
+      "comment": "Multi-plan\u00e9taire."
     },
     "demographie_social": {
-      "score": 30.77,
-      "comment": "\ud83d\udd25 Guerre Civile. \u00c9meutes de la faim, effondrement des \u00e9tats-providence."
+      "score": 29.46,
+      "comment": "Guerre civile."
     },
     "sante_bio": {
-      "score": 85.76,
-      "comment": "\ud83e\uddec Transhumanisme. Maladies \u00e9radiqu\u00e9es, esp\u00e9rance de vie > 120 ans."
+      "score": 85.27,
+      "comment": "Transhumanisme."
     },
     "geopolitique": {
-      "score": 24.93,
-      "comment": "\u2622\ufe0f Guerre Mondiale. Conflits nucl\u00e9aires tactiques ou invasions massives."
+      "score": 24.94,
+      "comment": "Guerre Mondiale."
     },
     "technologie_ia": {
-      "score": 98.49,
-      "comment": "\u26a0\ufe0f SINGULARIT\u00c9. L'IA s'am\u00e9liore seule. L'humain n'a plus le contr\u00f4le."
+      "score": 98.11,
+      "comment": "SINGULARIT\u00c9."
     },
     "finance": {
-      "score": 43.99,
-      "comment": "\ud83d\udcc9 R\u00e9cession. Dette insoutenable, krachs boursiers fr\u00e9quents."
+      "score": 45.15,
+      "comment": "R\u00e9cession."
     },
     "information": {
-      "score": 9.07,
-      "comment": "\ud83e\udde0 Obscurantisme. Impossible de distinguer le vrai du faux (Deepfakes totaux)."
+      "score": 10.23,
+      "comment": "Obscurantisme."
     }
   }
 }
