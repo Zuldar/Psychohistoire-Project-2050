@@ -8,6 +8,7 @@ from datetime import datetime
 HISTORY_FILE = 'data/history_2020_2025.json'
 CURRENT_STATE_FILE = 'data/current_state.json'
 PROJECTION_FILE = 'data/projection_2036.json'
+ARCHIVE_DIR = 'data/archives' # Nouveau dossier pour l'historique
 
 PILLARS = [
     "energie", "environnement", "espace",
@@ -71,33 +72,20 @@ class PsychohistoryModel:
             self.history.append({'pillars': next_step})
         return future_timeline
 
-    # --- NOUVEAU : LE DÉTECTEUR DE DATES DE CRISE ---
     def detect_crisis_dates(self, projection):
-        """Scanne le futur pour trouver l'année exacte de la rupture."""
         crisis_calendar = []
-        
         for year_data in projection:
             yr = year_data['year']
             p = year_data['pillars']
-            
-            # Scénario 1 : La Crise de l'Eau (Environnement + Géo)
             if p['environnement'] < 20 and p['geopolitique'] < 30:
                 crisis_calendar.append(f"📅 {yr} : GUERRE DE L'EAU (Env < 20% + Géo < 30%)")
-                break # On ne signale la crise qu'une fois
-            
-            # Scénario 2 : La Grande Révolte (IA + Social)
+                break 
             if p['technologie_ia'] > 99 and p['demographie_social'] < 25:
                 crisis_calendar.append(f"📅 {yr} : RÉVOLTE LUDDITE (IA > 99% + Social < 25%)")
                 break
-                
-            # Scénario 3 : L'Effondrement Financier
             if p['finance'] < 20:
                 crisis_calendar.append(f"📅 {yr} : LE GRAND DÉFAUT (Finance < 20%)")
                 break
-
-        if not crisis_calendar:
-            crisis_calendar.append("Aucune crise majeure datée sur 10 ans.")
-            
         return crisis_calendar
 
     def generate_global_analysis(self, stability_index):
@@ -126,31 +114,47 @@ class PsychohistoryModel:
             clean_start[p] = next_val
             output_pillars[p] = { "score": round(next_val, 2), "comment": self.get_analysis_text(p, next_val) }
 
-        # Simulation du futur
         projection = self.simulate_future(clean_start)
-        
-        # Détection des dates de crise
         crisis_dates = self.detect_crisis_dates(projection)
 
         weighted_sum = sum([v['score'] for v in output_pillars.values()]) + output_pillars['geopolitique']['score'] + output_pillars['environnement']['score']
         stability_index = round(weighted_sum / (len(PILLARS) + 2), 2)
 
-        # On ajoute les dates de crise aux alertes pour l'affichage
         final_alerts = self.generate_alerts(output_pillars)
-        final_alerts.extend(crisis_dates) # On fusionne les alertes immédiates et les prédictions futures
+        final_alerts.extend(crisis_dates)
 
+        # 1. Données "LIVE" pour le site web
         current_state_data = {
             "date": datetime.now().strftime("%Y-%m-%d"),
             "stability_index": stability_index,
             "global_analysis": self.generate_global_analysis(stability_index),
-            "alerts": final_alerts, # Contient maintenant les dates !
+            "alerts": final_alerts,
             "pillars": output_pillars
         }
         
         if not os.path.exists('data'): os.makedirs('data')
+        
+        # Sauvegarde pour le site
         with open(CURRENT_STATE_FILE, 'w', encoding='utf-8') as f: json.dump(current_state_data, f, indent=2)
         with open(PROJECTION_FILE, 'w', encoding='utf-8') as f: json.dump(projection, f, indent=2)
-        print("✅ Rapport Seldon avec DATATION généré.")
+
+        # 2. ARCHIVAGE (La "Boîte Noire")
+        if not os.path.exists(ARCHIVE_DIR): os.makedirs(ARCHIVE_DIR)
+        
+        # Nom du fichier : rapport_2026-02-01.json (par exemple)
+        archive_filename = f"rapport_{datetime.now().strftime('%Y-%m-%d')}.json"
+        archive_path = os.path.join(ARCHIVE_DIR, archive_filename)
+        
+        full_archive = {
+            "meta_date": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+            "current_state": current_state_data,
+            "projection_10_years": projection
+        }
+        
+        with open(archive_path, 'w', encoding='utf-8') as f:
+            json.dump(full_archive, f, indent=2)
+
+        print(f"✅ Rapport généré et archivé dans : {archive_path}")
 
 if __name__ == "__main__":
     PsychohistoryModel().run()
