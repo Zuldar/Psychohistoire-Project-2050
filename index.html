@@ -213,10 +213,13 @@
 
         async function loadData() {
             try {
+                                // Astuce : on ajoute "?v=" + l'heure actuelle pour forcer le téléchargement
+                const time = new Date().getTime(); 
                 const [histRes, currRes] = await Promise.all([
-                    fetch('data/history_2020_2025.json'),
-                    fetch('data/current_state.json')
+                    fetch('data/history_2020_2025.json?v=' + time),
+                    fetch('data/current_state.json?v=' + time)
                 ]);
+
                 const history = await histRes.json();
                 const current = await currRes.json();
                 const labels = [...history.map(h => h.year), "2026"];
