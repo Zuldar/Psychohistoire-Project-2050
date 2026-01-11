@@ -1,4 +1,4 @@
-/* DESIGN "COMMAND HUD" V15 - MOBILE GPU FORCE */
+/* DESIGN "COMMAND HUD" V17 - IMAGE DE FOND (SIMPLE & STABLE) */
 
 * { box-sizing: border-box; }
 :root { 
@@ -8,54 +8,42 @@
     --neon-red: #ff0055; 
     --neon-yellow: #ffee00; 
     --gold: #ffd700;
-    --glass: rgba(10, 20, 30, 0.7);
-    --glass-border: rgba(0, 243, 255, 0.2);
+    --glass: rgba(10, 20, 30, 0.85); /* Un peu plus opaque pour lisibilité sur image */
+    --glass-border: rgba(0, 243, 255, 0.3);
 }
 
 body { 
-    background-color: #020205; /* On remet la couleur ici au cas où */
     color: #e0e0e0; 
     font-family: 'Rajdhani', sans-serif; 
     margin: 0; padding: 20px; 
     min-height: 100vh; 
     overflow-x: hidden;
+    
+    /* --- C'EST ICI QUE CA SE PASSE --- */
+    background-color: #000;
+    
+    /* Met ici le lien de ton image (GIF ou JPG) */
+    background-image: url('https://i.pinimg.com/originals/24/a2/47/24a24727144410a0a5796c05d7616698.gif');
+    
+    /* Réglages pour que l'image couvre tout bien */
+    background-position: center;
+    background-size: cover; 
+    background-attachment: fixed; /* Sur mobile, ça peut désactiver le scroll du fond, mais l'image reste */
+    background-repeat: no-repeat;
 }
 
-/* --- LE FOND ANIMÉ (MÉTHODE GPU) --- */
-.animated-bg {
+/* On ajoute un voile noir par-dessus l'image pour que le texte reste lisible */
+body::after {
+    content: '';
     position: fixed;
-    top: -50%; /* On le décale vers le haut */
-    left: 0;
-    width: 100%; 
-    height: 200%; /* Il fait 2x la hauteur de l'écran */
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(2, 2, 5, 0.7); /* Assombrit l'image de fond de 70% */
     z-index: -1;
-    
-    background-color: var(--bg-deep);
-    
-    /* GRILLE */
-    background-image: 
-        radial-gradient(circle at 50% 50%, transparent 20%, #020205 90%),
-        linear-gradient(rgba(0, 243, 255, 0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 243, 255, 0.05) 1px, transparent 1px);
-    
-    background-size: 100% 50%, 40px 40px, 40px 40px; /* Ajusté */
-    background-repeat: repeat;
-    
-    /* L'ANIMATION GPU (Fluide sur mobile) */
-    transform: translateZ(0); 
-    will-change: transform;
-    animation: flight 20s linear infinite;
-}
-
-/* On déplace physiquement le calque de 0 à 40px */
-@keyframes flight {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(40px); }
 }
 
 .container { max-width: 1400px; margin: 0 auto; width: 100%; position: relative; z-index: 2; }
 
-/* HEADER */
+/* LE RESTE EST IDENTIQUE... */
 header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--glass-border); padding-bottom: 20px; margin-bottom: 40px; position: relative; }
 header::after { content: ''; position: absolute; bottom: -5px; right: 0; width: 100px; height: 5px; background: var(--neon-blue); }
 h1 { font-family: 'Orbitron', sans-serif; font-weight: 900; font-size: clamp(1.5rem, 4vw, 3rem); margin: 0; text-transform: uppercase; letter-spacing: 4px; background: linear-gradient(90deg, #fff, var(--neon-blue)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 0 0 20px rgba(0, 243, 255, 0.4); }
@@ -69,7 +57,7 @@ h1 { font-family: 'Orbitron', sans-serif; font-weight: 900; font-size: clamp(1.5
 .hud-label { font-family: 'Share Tech Mono', monospace; letter-spacing: 4px; color: #888; font-size: 0.9em; text-transform: uppercase; }
 
 /* TERMINAL & ALERTS */
-.terminal-box { background: linear-gradient(180deg, rgba(10,15,20,0.95) 0%, rgba(5,5,10,0.95) 100%); border: 1px solid var(--glass-border); border-left: 4px solid var(--neon-blue); padding: 30px; margin-bottom: 40px; position: relative; box-shadow: 0 0 50px rgba(0,0,0,0.5); background-image: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 243, 255, 0.03) 3px); }
+.terminal-box { background: linear-gradient(180deg, rgba(10,15,20,0.8) 0%, rgba(5,5,10,0.9) 100%); backdrop-filter: blur(10px); border: 1px solid var(--glass-border); border-left: 4px solid var(--neon-blue); padding: 30px; margin-bottom: 40px; position: relative; box-shadow: 0 0 50px rgba(0,0,0,0.5); }
 .terminal-header { color: var(--neon-blue); font-family: 'Orbitron'; font-size: 1.1em; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
 .blink { animation: blinker 1s linear infinite; } @keyframes blinker { 50% { opacity: 0; } }
 .analysis-text { font-size: 1.2em; line-height: 1.6; margin-bottom: 30px; border-left: 2px solid #333; padding-left: 15px; }
@@ -78,7 +66,6 @@ h1 { font-family: 'Orbitron', sans-serif; font-weight: 900; font-size: clamp(1.5
 .alerts-list { list-style: none; padding: 0; margin: 0; }
 .alert-item { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 15px; margin-bottom: 10px; display: flex; align-items: center; gap: 15px; font-family: 'Share Tech Mono', monospace; transition: 0.3s; }
 .alert-item:hover { background: rgba(255,255,255,0.05); transform: translateX(5px); }
-
 .alert-crit { border-left: 3px solid var(--neon-red); box-shadow: -10px 0 20px -10px rgba(255,0,85,0.2); }
 .alert-warn { border-left: 3px solid var(--neon-yellow); }
 .alert-info { border-left: 3px solid var(--neon-green); }
@@ -115,5 +102,4 @@ h1 { font-family: 'Orbitron', sans-serif; font-weight: 900; font-size: clamp(1.5
 .info-icon:hover .tooltip-text { visibility: visible; opacity: 1; bottom: 130%; }
 @media (max-width: 600px) { .info-icon .tooltip-text { width: 250px; left: -100px; } }
 
-footer { margin-top: 60px; text-align: center; color: #444; font-family: 'Share Tech Mono'; font-size: 0.7em; letter-
-    spacing: 2px; }
+footer { margin-top: 60px; text-align: center; color: #444; font-family: 'Share Tech Mono'; font-size: 0.7em; letter-spacing: 2px; }
