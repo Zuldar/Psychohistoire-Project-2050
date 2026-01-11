@@ -3,147 +3,279 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seldon Project | Analyste IA</title>
+    <title>Seldon Project | Prime Radiant</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
     
     <style>
-        /* CSS RESET & BASICS */
+        /* --- 1. CONFIGURATION UNIVERS --- */
         * { box-sizing: border-box; }
-        :root { --bg-dark: #05050b; --glass: rgba(20, 20, 35, 0.95); --glass-solid: #0d0d15; --border: rgba(255, 255, 255, 0.15); --neon-blue: #00f3ff; --neon-green: #00ff9d; --neon-red: #ff0055; --neon-yellow: #ffee00; }
-        body { background-color: var(--bg-dark); background-image: radial-gradient(circle at 50% 0%, #1a1a3a 0%, var(--bg-dark) 80%); color: #e0e0e0; font-family: 'Rajdhani', sans-serif; margin: 0; padding: 20px; min-height: 100vh; overflow-x: hidden; }
-        .container { max-width: 1400px; margin: 0 auto; width: 100%; }
-
-        /* HEADER & STATUS */
-        header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 30px; flex-wrap: wrap; gap: 20px; }
-        h1 { font-family: 'Orbitron', sans-serif; font-weight: 900; font-size: clamp(1.5rem, 4vw, 2.5rem); margin: 0; background: linear-gradient(90deg, #fff, var(--neon-blue)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-transform: uppercase; letter-spacing: 2px; }
-        .status-pill { background: var(--glass); padding: 8px 16px; border-radius: 20px; border: 1px solid var(--border); font-size: 0.8em; color: var(--neon-blue); text-shadow: 0 0 10px rgba(0, 243, 255, 0.5); }
-
-        /* CHART */
-        .chart-wrapper { background: var(--glass); backdrop-filter: blur(10px); border: 1px solid var(--border); border-radius: 16px; padding: 15px; margin-bottom: 30px; box-shadow: 0 0 40px rgba(0,0,0,0.5); height: 400px; position: relative; }
+        :root { 
+            --bg-deep: #020205; 
+            --neon-blue: #00f3ff; 
+            --neon-green: #00ff9d; 
+            --neon-red: #ff0055; 
+            --neon-yellow: #ffee00; 
+            --gold: #ffd700;
+            --glass: rgba(10, 20, 30, 0.7);
+            --glass-border: rgba(0, 243, 255, 0.2);
+        }
         
-        /* SCORE */
-        .big-score-card { text-align: center; padding: 20px 10px; background: radial-gradient(circle, rgba(0,243,255,0.05) 0%, transparent 70%); margin-bottom: 30px; }
-        .score-title-row { display: flex; justify-content: center; align-items: center; margin-bottom: 10px; color: #666; letter-spacing: 2px; font-size: 0.9em; }
-        .big-number { font-family: 'Orbitron', sans-serif; font-size: clamp(4rem, 8vw, 6rem); font-weight: 700; line-height: 1; margin-bottom: 10px; text-shadow: 0 0 30px rgba(255,255,255,0.2); }
+        body { 
+            background-color: var(--bg-deep); 
+            color: #e0e0e0; 
+            font-family: 'Rajdhani', sans-serif; 
+            margin: 0; padding: 20px; 
+            min-height: 100vh; overflow-x: hidden;
+            /* Effet de Grille Mathématique de fond */
+            background-image: 
+                linear-gradient(rgba(0, 243, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 243, 255, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        .container { max-width: 1400px; margin: 0 auto; width: 100%; position: relative; z-index: 2; }
+
+        /* --- 2. HEADER TECH --- */
+        header { 
+            display: flex; justify-content: space-between; align-items: center; 
+            border-bottom: 2px solid var(--glass-border); 
+            padding-bottom: 20px; margin-bottom: 40px; 
+            position: relative;
+        }
+        /* Décoration sous le header */
+        header::after {
+            content: ''; position: absolute; bottom: -5px; right: 0; 
+            width: 100px; height: 5px; background: var(--neon-blue);
+        }
+
+        h1 { 
+            font-family: 'Orbitron', sans-serif; font-weight: 900; 
+            font-size: clamp(1.5rem, 4vw, 3rem); margin: 0; 
+            text-transform: uppercase; letter-spacing: 4px;
+            background: linear-gradient(90deg, #fff, var(--neon-blue)); 
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 20px rgba(0, 243, 255, 0.4);
+        }
         
-        /* --- NOUVEAU STYLE TERMINAL --- */
+        .status-pill { 
+            font-family: 'Share Tech Mono', monospace;
+            background: rgba(0, 243, 255, 0.05); 
+            padding: 8px 16px; border: 1px solid var(--neon-blue); 
+            font-size: 0.8em; color: var(--neon-blue); 
+            box-shadow: 0 0 10px rgba(0, 243, 255, 0.2);
+        }
+
+        /* --- 3. LE CŒUR RADIANT (ANIMATION 3D) --- */
+        .radiant-wrapper {
+            display: flex; justify-content: center; align-items: center;
+            height: 250px; margin-bottom: 40px; perspective: 1000px;
+        }
+        .radiant-core {
+            position: relative; width: 200px; height: 200px;
+            display: flex; flex-direction: column;
+            justify-content: center; align-items: center;
+            transform-style: preserve-3d;
+        }
+        /* Les anneaux holographiques */
+        .ring {
+            position: absolute; border-radius: 50%;
+            border: 1px solid var(--neon-blue);
+            box-shadow: 0 0 15px rgba(0, 243, 255, 0.3);
+            opacity: 0.7;
+        }
+        .r1 { width: 100%; height: 100%; border-color: rgba(0,243,255,0.3); animation: spin 10s linear infinite; }
+        .r2 { width: 80%; height: 80%; border-top: 2px solid var(--neon-blue); animation: spin 5s linear infinite reverse; }
+        .r3 { width: 60%; height: 60%; border-left: 2px solid var(--neon-red); animation: spin 15s linear infinite; }
+
+        @keyframes spin { from { transform: rotate(0deg) rotateX(20deg); } to { transform: rotate(360deg) rotateX(20deg); } }
+
+        .big-number { 
+            font-family: 'Orbitron', sans-serif; font-size: 4rem; font-weight: 700; 
+            color: #fff; text-shadow: 0 0 30px var(--neon-blue); z-index: 10;
+        }
+        .radiant-label {
+            margin-top: 10px; font-family: 'Share Tech Mono', monospace; 
+            letter-spacing: 2px; color: var(--neon-blue); font-size: 0.9em;
+        }
+
+        /* --- 4. TERMINAL DE DONNÉES --- */
         .terminal-box { 
-            background: rgba(10, 10, 15, 0.9); 
-            border: 1px solid var(--border); 
-            border-left: 4px solid var(--neon-blue); 
-            border-radius: 8px; 
-            padding: 25px; 
-            margin-bottom: 40px; 
-            font-family: 'Rajdhani', sans-serif; /* Plus lisible que Courier */
-            box-shadow: 0 0 30px rgba(0,0,0,0.6); 
+            background: linear-gradient(180deg, rgba(10,15,20,0.95) 0%, rgba(5,5,10,0.95) 100%);
+            border: 1px solid var(--glass-border);
+            border-top: 4px solid var(--neon-blue);
+            padding: 30px; margin-bottom: 40px; position: relative;
+            box-shadow: 0 0 50px rgba(0,0,0,0.5);
+            /* Effet de scanline discret */
+            background-image: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 243, 255, 0.03) 3px);
         }
+        /* Coins décoratifs Tech */
+        .terminal-box::before { content: '+'; position: absolute; top: 10px; right: 10px; color: var(--neon-blue); }
+        .terminal-box::after { content: '+'; position: absolute; bottom: 10px; left: 10px; color: var(--neon-blue); }
+
         .terminal-header { 
-            color: var(--neon-blue); font-family: 'Orbitron'; text-transform: uppercase; font-size: 1em; 
-            border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px; margin-bottom: 15px; letter-spacing: 1px;
+            color: var(--neon-blue); font-family: 'Orbitron'; font-size: 1.1em; margin-bottom: 20px; 
+            display: flex; align-items: center; gap: 10px;
         }
-        .analysis-text { color: #fff; margin-bottom: 25px; font-size: 1.2em; line-height: 1.6; font-weight: 500; }
-        
-        /* Groupes d'alertes */
-        .alert-group-title {
-            font-size: 0.9em; text-transform: uppercase; color: #888; margin-top: 20px; margin-bottom: 10px; letter-spacing: 1px; font-weight: bold;
-        }
-        .alerts-list { list-style: none; padding: 0; margin: 0; }
-        
+        .blink { animation: blinker 1s linear infinite; }
+        @keyframes blinker { 50% { opacity: 0; } }
+
+        .analysis-text { font-size: 1.2em; line-height: 1.6; margin-bottom: 30px; border-left: 2px solid #333; padding-left: 15px; }
+
         .alert-item { 
-            padding: 12px 15px; 
-            margin-bottom: 8px;
-            background: rgba(255,255,255,0.05);
-            border-radius: 6px;
-            color: #fff; /* TEXTE BLANC PAR DEFAUT */
-            display: flex; align-items: center; gap: 15px;
-            font-size: 1.05em;
-            border-left: 3px solid transparent;
+            background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); 
+            padding: 15px; margin-bottom: 10px; display: flex; align-items: center; gap: 15px; 
+            font-family: 'Share Tech Mono', monospace; transition: 0.3s;
         }
+        .alert-item:hover { background: rgba(255,255,255,0.05); transform: translateX(5px); }
         
-        /* Styles spécifiques selon urgence */
-        .alert-crit { border-left-color: var(--neon-red); background: rgba(255, 0, 85, 0.1); }
-        .alert-warn { border-left-color: var(--neon-yellow); background: rgba(255, 238, 0, 0.05); }
-        .alert-info { border-left-color: var(--neon-green); }
+        /* COULEURS ALERTES */
+        .alert-crit { border-left: 3px solid var(--neon-red); box-shadow: -10px 0 20px -10px rgba(255,0,85,0.2); }
+        .alert-warn { border-left: 3px solid var(--neon-yellow); }
+        .alert-info { border-left: 3px solid var(--neon-green); }
+        .alert-crisis { border: 1px solid var(--gold); background: rgba(255, 215, 0, 0.05); box-shadow: inset 0 0 20px rgba(255, 215, 0, 0.1); }
 
-        .badge {
-            padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 0.8em; font-family: 'Orbitron'; min-width: 80px; text-align: center;
-        }
-        .b-red { background: var(--neon-red); color: #000; box-shadow: 0 0 10px rgba(255,0,85,0.4); }
-        .b-orange { background: var(--neon-yellow); color: #000; box-shadow: 0 0 10px rgba(255,238,0,0.4); }
+        .badge { padding: 4px 8px; font-weight: bold; font-size: 0.8em; font-family: 'Orbitron'; min-width: 90px; text-align: center; letter-spacing: 1px; }
+        .b-red { background: var(--neon-red); color: #000; }
+        .b-orange { background: var(--neon-yellow); color: #000; }
         .b-green { background: var(--neon-green); color: #000; }
+        
+        /* BADGE OR ANIMÉ */
+        .b-gold {
+            background: linear-gradient(135deg, #b8860b, #ffd700, #b8860b); color: #000;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.6); position: relative; overflow: hidden; border: 1px solid #fff;
+        }
+        .b-gold::before {
+            content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent); animation: shine 3s infinite;
+        }
+        @keyframes shine { 0% { left: -100%; } 20% { left: 200%; } 100% { left: 200%; } }
 
-        /* GRID & CARDS */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .card { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 12px; padding: 20px; position: relative; transition: 0.3s; }
-        .card:hover { transform: translateY(-5px); background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.3); }
+        /* --- 5. GRID & CARDS (GLASS TECH) --- */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        
+        .card { 
+            background: rgba(15, 25, 35, 0.6); 
+            backdrop-filter: blur(5px);
+            border: 1px solid var(--glass-border); 
+            padding: 20px; position: relative; overflow: hidden;
+            /* Le "Corner Cut" (coin coupé) typique Sci-Fi */
+            clip-path: polygon(
+                0 0, 
+                100% 0, 
+                100% calc(100% - 20px), 
+                calc(100% - 20px) 100%, 
+                0 100%
+            );
+        }
+        .card::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--neon-blue); opacity: 0.5; }
+        .card:hover { background: rgba(15, 25, 35, 0.9); border-color: var(--neon-blue); }
+
         .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
-        .card-title-box { display: flex; align-items: center; }
-        .card-title { font-size: 0.9em; text-transform: uppercase; letter-spacing: 1px; color: #888; font-weight: 700; }
-        .card-score { font-family: 'Orbitron', sans-serif; font-size: 1.8em; font-weight: bold; }
-        .progress-container { height: 6px; background: rgba(0,0,0,0.5); border-radius: 3px; overflow: hidden; }
-        .progress-bar { height: 100%; border-radius: 3px; width: 0%; transition: width 1.5s ease; box-shadow: 0 0 10px currentColor; }
+        .card-title { font-family: 'Orbitron'; font-size: 0.8em; letter-spacing: 1px; color: #888; }
+        .card-score { font-family: 'Orbitron'; font-size: 1.8em; font-weight: bold; text-shadow: 0 0 10px currentColor; }
+
+        .progress-container { height: 4px; background: rgba(255,255,255,0.1); width: 100%; position: relative; }
+        .progress-bar { height: 100%; transition: width 1.5s ease; box-shadow: 0 0 10px currentColor; position: relative; }
+        /* Petit point lumineux au bout de la barre */
+        .progress-bar::after { content: ''; position: absolute; right: 0; top: -3px; width: 2px; height: 10px; background: #fff; box-shadow: 0 0 5px #fff; }
+
         .c-good { color: var(--neon-green); } .bg-good { background-color: var(--neon-green); }
         .c-mid { color: var(--neon-yellow); } .bg-mid { background-color: var(--neon-yellow); }
         .c-bad { color: var(--neon-red); } .bg-bad { background-color: var(--neon-red); }
-        
-        /* TOOLTIP */
-        .info-icon { display: inline-flex; justify-content: center; align-items: center; width: 20px; height: 20px; border-radius: 50%; border: 1px solid #666; color: #aaa; font-size: 12px; margin-left: 10px; cursor: help; position: relative; transition: 0.3s; background: rgba(0,0,0,0.3); }
-        .info-icon:hover { border-color: var(--neon-blue); color: #fff; background: var(--neon-blue); color: #000; }
-        .info-icon .tooltip-text { visibility: hidden; width: 320px; background-color: var(--glass-solid); color: #fff; border: 1px solid var(--neon-blue); padding: 15px; border-radius: 8px; position: absolute; z-index: 9999; bottom: 140%; left: -20px; opacity: 0; transition: all 0.2s ease; font-size: 0.85rem; line-height: 1.4; box-shadow: 0 10px 50px rgba(0,0,0,0.95); text-align: left; }
-        .info-icon .tooltip-text::after { content: ""; position: absolute; top: 100%; left: 20px; border-width: 6px; border-style: solid; border-color: var(--neon-blue) transparent transparent transparent; }
-        .info-icon:hover .tooltip-text { visibility: visible; opacity: 1; bottom: 130%; }
-        @media (max-width: 600px) { .info-icon .tooltip-text { width: 250px; left: -100px; } .info-icon .tooltip-text::after { left: 108px; } }
 
-        footer { margin-top: 50px; text-align: center; color: #555; font-size: 0.8em; }
+        /* CHART BOX */
+        .chart-wrapper { 
+            background: rgba(10, 15, 20, 0.8); border: 1px solid var(--glass-border); padding: 20px; 
+            margin-bottom: 40px; border-radius: 4px; position: relative;
+        }
+        /* Grille décorative sur le chart */
+        .chart-wrapper::after {
+            content: "TIME SERIES PROJECTION // SELDON_ALGO_V5";
+            position: absolute; bottom: 5px; right: 10px;
+            font-family: 'Share Tech Mono'; font-size: 0.7em; color: rgba(0, 243, 255, 0.3);
+        }
+
+        /* TOOLTIP */
+        .info-icon { 
+            display: inline-flex; justify-content: center; align-items: center; 
+            width: 18px; height: 18px; border: 1px solid var(--neon-blue); 
+            color: var(--neon-blue); font-size: 10px; margin-left: 10px; 
+            cursor: help; position: relative; transition: 0.3s; 
+        }
+        .info-icon:hover { background: var(--neon-blue); color: #000; }
+        .info-icon .tooltip-text { 
+            visibility: hidden; width: 320px; 
+            background-color: #0a0f14; color: #fff; 
+            border: 1px solid var(--neon-blue); padding: 15px; 
+            position: absolute; z-index: 9999; bottom: 140%; left: -20px; 
+            opacity: 0; transition: all 0.2s ease; font-size: 0.85rem; line-height: 1.4; 
+            box-shadow: 0 0 30px rgba(0, 243, 255, 0.15); text-align: left;
+            font-family: 'Rajdhani', sans-serif;
+        }
+        .info-icon:hover .tooltip-text { visibility: visible; opacity: 1; bottom: 130%; }
+        @media (max-width: 600px) { .info-icon .tooltip-text { width: 250px; left: -100px; } }
+
+        footer { margin-top: 60px; text-align: center; color: #444; font-family: 'Share Tech Mono'; font-size: 0.7em; letter-spacing: 2px; }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
             <div>
-                <h1>Psychohistoire</h1>
-                <div style="color: #666; letter-spacing: 2px; font-size: 0.8rem;">COMMAND CENTER V5</div>
+                <h1>SELDON PROJECT</h1>
+                <div style="color: var(--neon-blue); letter-spacing: 4px; font-size: 0.8rem; font-family: 'Share Tech Mono';">PRIME RADIANT TERMINAL</div>
             </div>
-            <div id="last-update" class="status-pill">INITIALISATION...</div>
+            <div id="last-update" class="status-pill">INITIALIZING...</div>
         </header>
 
-        <div class="chart-wrapper">
-            <canvas id="trendChart"></canvas>
+        <div class="radiant-wrapper">
+            <div class="radiant-core">
+                <div class="ring r1"></div>
+                <div class="ring r2"></div>
+                <div class="ring r3"></div>
+                <div id="global-score" class="big-number">--%</div>
+            </div>
+        </div>
+        <div style="text-align:center; margin-bottom:50px;">
+            <div id="global-status" class="radiant-label">SYSTEM CHECK...</div>
         </div>
 
-        <div class="big-score-card">
-            <div class="score-title-row">
-                INDICE DE STABILITÉ 2026
-                <div class="info-icon">?<span class="tooltip-text">Analyse globale de la résilience.</span></div>
-            </div>
-            <div id="global-score" class="big-number pulse-anim">--%</div>
-            <div id="global-status" style="font-size: 1.2em; letter-spacing: 2px;">CALCUL...</div>
+        <div class="chart-wrapper">
+            <canvas id="trendChart" height="300"></canvas>
         </div>
 
         <div class="terminal-box">
-            <div class="terminal-header">📊 Analyse Stratégique</div>
-            <div id="analysis-text" class="analysis-text">Chargement de l'analyse...</div>
+            <div class="terminal-header"><span class="blink">█</span> ANALYSE STRATÉGIQUE DU NOYAU</div>
+            <div id="analysis-text" class="analysis-text">Chargement du flux de données...</div>
             
+            <div id="container-crisis" style="display:none">
+                <div class="alert-group-title" style="color:var(--gold); font-family:'Orbitron';">🔮 SCÉNARIOS DE RUPTURE</div>
+                <ul id="list-crisis" class="alerts-list"></ul>
+            </div>
+
             <div id="container-critical" style="display:none">
-                <div class="alert-group-title">🚨 MENACES IMMÉDIATES</div>
+                <div class="alert-group-title" style="color:var(--neon-red); font-family:'Orbitron';">🚨 MENACES IMMÉDIATES</div>
                 <ul id="list-critical" class="alerts-list"></ul>
             </div>
             
             <div id="container-warning" style="display:none">
-                <div class="alert-group-title">⚠️ POINTS DE VIGILANCE</div>
+                <div class="alert-group-title" style="font-family:'Orbitron';">⚠️ VIGILANCE</div>
                 <ul id="list-warning" class="alerts-list"></ul>
             </div>
 
             <div id="container-info" style="display:none">
-                <div class="alert-group-title">ℹ️ INDICATEURS STABLES</div>
+                <div class="alert-group-title" style="font-family:'Orbitron';">ℹ️ STABLE</div>
                 <ul id="list-info" class="alerts-list"></ul>
             </div>
         </div>
 
         <div id="pillars-grid" class="grid"></div>
 
-        <footer>SYSTÈME AUTO-GÉNÉRÉ PAR GITHUB ACTIONS</footer>
+        <footer>
+            PROJECTION GENERATED BY PSYCHOHISTORY_BOT // GITHUB ACTIONS<br>
+            TERMINAL SESSION ID: 0X-SELDON-V7
+        </footer>
     </div>
 
     <script>
@@ -172,48 +304,56 @@
                 const current = await currRes.json();
                 let projection = []; try { projection = await projRes.json(); } catch(e) {}
 
-                // --- LOGIQUE DE TRI DES ALERTES ---
-                document.getElementById('analysis-text').textContent = current.global_analysis || "Données indisponibles.";
+                document.getElementById('analysis-text').textContent = current.global_analysis || "Flux interrompu.";
                 
-                // Vider les listes
+                const listCrisis = document.getElementById('list-crisis'); listCrisis.innerHTML = '';
                 const listCrit = document.getElementById('list-critical'); listCrit.innerHTML = '';
                 const listWarn = document.getElementById('list-warning'); listWarn.innerHTML = '';
                 const listInfo = document.getElementById('list-info'); listInfo.innerHTML = '';
 
-                let hasCrit = false, hasWarn = false, hasInfo = false;
+                let hasCrisis = false, hasCrit = false, hasWarn = false, hasInfo = false;
 
                 if(current.alerts && current.alerts.length > 0) {
                     current.alerts.forEach(alert => {
                         const li = document.createElement('li');
-                        // Détection du type d'alerte selon les mots clés
-                        const isCritical = (alert.includes("SINGULARITÉ") || alert.includes("CLIMAT") || alert.includes("GUERRE") || alert.includes("KRACH") || alert.includes("📅"));
+                        const isCrisis = alert.includes("📅");
                         const isSafe = alert.includes("Aucune alerte") || alert.includes("✅");
+                        const isAutoCorrect = alert.includes("AUTO-DIAGNOSTIC") || alert.includes("trop optimiste") || alert.includes("trop pessimiste");
 
-                        if (isSafe) {
+                        if (isCrisis) {
+                            let parts = alert.replace("📅", "").split(":");
+                            let year = parts[0].trim();
+                            let msg = parts[1] ? parts[1].trim() : "";
+                            li.className = 'alert-item alert-crisis';
+                            li.innerHTML = `<span class="badge b-gold">${year}</span> <span>${msg}</span>`;
+                            listCrisis.appendChild(li); hasCrisis = true;
+                        } else if (isAutoCorrect) {
                             li.className = 'alert-item alert-info';
-                            li.innerHTML = `<span class="badge b-green">RAS</span> <span>${alert}</span>`;
+                            li.innerHTML = `<span class="badge b-green" style="background:#444; color:#fff">IA LOG</span> <span style="font-style:italic; color:#888">${alert}</span>`;
                             listInfo.appendChild(li); hasInfo = true;
-                        } else if (isCritical) {
+                        } else if (isSafe) {
+                            li.className = 'alert-item alert-info';
+                            li.innerHTML = `<span class="badge b-green">STABLE</span> <span>${alert}</span>`;
+                            listInfo.appendChild(li); hasInfo = true;
+                        } else if (alert.includes("SINGULARITÉ") || alert.includes("CLIMAT") || alert.includes("GUERRE") || alert.includes("KRACH")) {
                             li.className = 'alert-item alert-crit';
-                            // On enlève les émojis du texte brut pour éviter les doublons avec le badge
-                            let cleanText = alert.replace("⚠️", "").replace("🔴", "").replace("⚔️", "").replace("📅", "");
+                            let cleanText = alert.replace("⚠️", "").replace("🔴", "").replace("⚔️", "");
                             li.innerHTML = `<span class="badge b-red">CRITIQUE</span> <span>${cleanText}</span>`;
                             listCrit.appendChild(li); hasCrit = true;
                         } else {
                             li.className = 'alert-item alert-warn';
-                            let cleanText = alert.replace("⚠️", "");
-                            li.innerHTML = `<span class="badge b-orange">ATTENTION</span> <span>${cleanText}</span>`;
+                            let cleanText = alert.replace("⚠️", "").replace("📈", "").replace("📉", "");
+                            li.innerHTML = `<span class="badge b-orange">WARN</span> <span>${cleanText}</span>`;
                             listWarn.appendChild(li); hasWarn = true;
                         }
                     });
                 }
 
-                // Afficher les conteneurs seulement s'ils sont remplis
+                document.getElementById('container-crisis').style.display = hasCrisis ? 'block' : 'none';
                 document.getElementById('container-critical').style.display = hasCrit ? 'block' : 'none';
                 document.getElementById('container-warning').style.display = hasWarn ? 'block' : 'none';
                 document.getElementById('container-info').style.display = hasInfo ? 'block' : 'none';
 
-                // --- CHART & GRID (Inchangé) ---
                 const labels = [...history.map(h => h.year), "2026"];
                 projection.forEach(p => labels.push(p.year));
                 const histData = history.map(h => calculateStability(h.pillars));
@@ -223,62 +363,5 @@
 
                 const datasets = [{
                     label: 'STABILITÉ GLOBALE', data: fullStabilityData,
-                    borderColor: '#ffffff', backgroundColor: 'rgba(255,255,255,0.05)',
-                    borderWidth: 3, fill: true, tension: 0.4,
-                    segment: { borderDash: ctx => ctx.p0.parsed.x >= (labels.length - projection.length - 1) ? [5, 5] : undefined, borderColor: ctx => ctx.p0.parsed.x >= (labels.length - projection.length - 1) ? 'rgba(255,255,255,0.5)' : '#ffffff' }, order: 0
-                }];
-
-                for (const key of Object.keys(names)) {
-                    const hData = history.map(h => h.pillars[key].score || h.pillars[key]);
-                    let cData; if(current.pillars[key].score !== undefined) cData = current.pillars[key].score; else cData = current.pillars[key];
-                    const pData = projection.map(p => p.pillars[key]);
-                    const fullData = [...hData, cData, ...pData];
-                    let isVisible = (key === 'technologie_ia' || key === 'environnement');
-                    datasets.push({
-                        label: names[key], data: fullData, borderColor: colors[key],
-                        borderWidth: 2, tension: 0.4, hidden: !isVisible,
-                        segment: { borderDash: ctx => ctx.p0.parsed.x >= (labels.length - projection.length - 1) ? [2, 2] : undefined, borderColor: ctx => ctx.p0.parsed.x >= (labels.length - projection.length - 1) ? 'rgba(255,255,255,0.3)' : colors[key] }
-                    });
-                }
-
-                Chart.defaults.color = '#888'; Chart.defaults.font.family = "'Rajdhani', sans-serif";
-                new Chart(document.getElementById('trendChart'), {
-                    type: 'line', data: { labels: labels, datasets: datasets },
-                    options: { responsive: true, maintainAspectRatio: false, interaction: { mode: 'index', intersect: false }, plugins: { legend: { position: 'top', labels: { color: '#fff', usePointStyle: true, boxWidth: 6 } } }, scales: { y: { grid: { color: 'rgba(255,255,255,0.05)' }, beginAtZero: true, max: 100 }, x: { grid: { display: false } } } }
-                });
-
-                document.getElementById('last-update').textContent = "SCAN: " + current.date;
-                const score = current.stability_index;
-                const scoreEl = document.getElementById('global-score');
-                const statusEl = document.getElementById('global-status');
-                scoreEl.textContent = score + "%";
-                if(score > 60) { scoreEl.className += " c-good"; statusEl.textContent = "STABLE"; statusEl.className = "c-good"; }
-                else if(score > 40) { scoreEl.className += " c-mid"; statusEl.textContent = "INCERTAIN"; statusEl.className = "c-mid"; }
-                else { scoreEl.className += " c-bad"; statusEl.textContent = "CRITIQUE"; statusEl.className = "c-bad"; }
-
-                const grid = document.getElementById('pillars-grid');
-                grid.innerHTML = '';
-                
-                for (const [key, valueObj] of Object.entries(current.pillars)) {
-                    let scoreVal, dynamicComment;
-                    if (typeof valueObj === 'object' && valueObj !== null && 'score' in valueObj) { scoreVal = valueObj.score; dynamicComment = valueObj.comment || ""; } 
-                    else { scoreVal = valueObj; dynamicComment = ""; }
-                    
-                    let fullText = definitions[key] || "";
-                    if(dynamicComment) fullText += "<br><hr style='border:0; border-top:1px solid #444; margin:8px 0;'>👉 <em style='color:var(--neon-blue)'>" + dynamicComment + "</em>";
-
-                    let cleanValue = Math.round(scoreVal);
-                    let state = 'good';
-                    if (cleanValue < 40) state = 'bad'; else if (cleanValue < 60) state = 'mid';
-                    if (key === 'technologie_ia' && cleanValue > 90) state = 'mid';
-
-                    const card = document.createElement('div'); card.className = `card`;
-                    card.innerHTML = `<div class="card-header"><div class="card-title-box"><span class="card-title">${names[key] || key}</span><div class="info-icon">?<span class="tooltip-text"><strong style="color:var(--neon-blue); text-transform:uppercase; display:block; margin-bottom:5px;">${names[key]} (${cleanValue}%)</strong>${fullText}</span></div></div><span class="card-score c-${state}">${cleanValue}%</span></div><div class="progress-container"><div class="progress-bar bg-${state}" style="width: ${cleanValue}%"></div></div>`;
-                    grid.appendChild(card);
-                }
-            } catch (error) { console.error(error); }
-        }
-        loadData();
-    </script>
-</body>
-</html>
+                    borderColor: '#ffffff', backgroundColor: 'rgba(0, 243, 255, 0.05)',
+                    borderWidth: 2, fill: true, 
