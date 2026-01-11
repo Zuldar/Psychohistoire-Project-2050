@@ -1,4 +1,4 @@
-/* DESIGN "PRIME RADIANT" V18 - STABLE & MOBILE READY */
+/* DESIGN "PRIME RADIANT" V19 - NO ZOOM, NO FILTER */
 
 /* 1. RESET & VARIABLES */
 * { box-sizing: border-box; }
@@ -10,7 +10,7 @@
     --neon-red: #ff0055; 
     --neon-yellow: #ffee00; 
     --gold: #ffd700;
-    --glass: rgba(10, 20, 30, 0.85); /* Fond semi-transparent pour les boites */
+    --glass: rgba(10, 20, 30, 0.85);
     --glass-border: rgba(0, 243, 255, 0.3);
 }
 
@@ -20,30 +20,26 @@ body {
     font-family: 'Rajdhani', sans-serif; 
     margin: 0; padding: 20px; 
     min-height: 100vh; 
-    overflow-x: hidden; /* Évite le scroll horizontal */
+    overflow-x: hidden;
     
-    /* COULEUR DE SECURITÉ (Si l'image ne charge pas) */
+    /* COULEUR DE FOND (Visible si l'image ne remplit pas tout) */
     background-color: var(--bg-deep);
     
     /* L'IMAGE DE FOND */
     background-image: url('bg.gif'); 
     
-    /* REGLAGES MOBILES IMPORTANTS */
-    background-position: center center;
-    background-size: cover; 
+    /* --- CORRECTIONS ICI --- */
+    /* Affiche l'image entière sans la couper */
+    background-size: contain; 
+    /* Centre l'image horizontalement et la colle en haut */
+    background-position: center top; 
+    /* Empêche l'image de se répéter en mosaïque */
     background-repeat: no-repeat;
-    background-attachment: scroll; /* Scroll = Compatible tous mobiles */
+    /* Permet le scroll naturel sur mobile */
+    background-attachment: scroll; 
 }
 
-/* 3. VOILE SOMBRE (Pour lire le texte sur l'image) */
-body::after {
-    content: '';
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(2, 2, 5, 0.7); /* 70% d'opacité noire */
-    z-index: -1;
-    pointer-events: none; /* Laisse passer les clics */
-}
+/* NOTE: Le bloc "body::after" qui créait le voile sombre a été supprimé ici. */
 
 .container { max-width: 1400px; margin: 0 auto; width: 100%; position: relative; z-index: 2; }
 
@@ -75,7 +71,7 @@ h1 {
     box-shadow: 0 0 10px rgba(0, 243, 255, 0.2); 
 }
 
-/* 5. SCORE HUD (BANDEAU CENTRAL) */
+/* 5. SCORE HUD */
 .score-hud { 
     display: flex; flex-direction: column; align-items: center; justify-content: center; 
     background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0, 243, 255, 0.1) 50%, rgba(0,0,0,0) 100%); 
@@ -103,7 +99,7 @@ h1 {
 /* 6. CHART WRAPPER */
 .chart-wrapper { 
     background: var(--glass); 
-    backdrop-filter: blur(10px); /* Flou moderne */
+    backdrop-filter: blur(10px); 
     border: 1px solid var(--glass-border); 
     padding: 20px; margin-bottom: 40px; border-radius: 4px; position: relative; 
 }
