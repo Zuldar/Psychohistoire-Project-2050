@@ -8,6 +8,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
     
     <style>
+        /* RESET CSS pour éviter les débordements */
+        * { box-sizing: border-box; }
+
         :root {
             --bg-dark: #05050b;
             --glass: rgba(20, 20, 35, 0.7);
@@ -24,109 +27,102 @@
             color: #e0e0e0;
             font-family: 'Rajdhani', sans-serif;
             margin: 0;
-            padding: 40px 20px;
+            padding: 20px; /* Réduit pour mobile */
             min-height: 100vh;
+            overflow-x: hidden; /* Empêche le scroll horizontal */
         }
 
-        .container { max-width: 1200px; margin: 0 auto; }
+        .container { max-width: 1400px; margin: 0 auto; width: 100%; }
 
-        /* HEADER AVEC BOUTON AIDE */
+        /* HEADER RESPONSIVE */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             border-bottom: 1px solid var(--border);
             padding-bottom: 20px;
-            margin-bottom: 40px;
-        }
-
-        h1 {
-            font-family: 'Orbitron', sans-serif;
-            font-weight: 900;
-            font-size: 2.5rem;
-            margin: 0;
-            background: linear-gradient(90deg, #fff, var(--neon-blue));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-transform: uppercase;
-            letter-spacing: 4px;
+            margin-bottom: 30px;
+            flex-wrap: wrap; /* PERMET LE RETOUR À LA LIGNE */
+            gap: 20px; /* Espace entre les éléments quand ils s'empilent */
         }
 
         .header-left {
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 900;
+            font-size: clamp(1.5rem, 4vw, 2.5rem); /* TAILLE DYNAMIQUE */
+            margin: 0;
+            background: linear-gradient(90deg, #fff, var(--neon-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            color: #666; 
+            letter-spacing: 2px; 
+            font-size: 0.8rem;
+            white-space: nowrap;
         }
 
         .help-btn {
             text-decoration: none;
             border: 1px solid rgba(255,255,255,0.2);
-            width: 30px; 
-            height: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            width: 32px; height: 32px;
+            display: flex; align-items: center; justify-content: center;
             border-radius: 50%;
-            color: #fff;
-            font-family: 'Orbitron';
-            font-weight: bold;
+            color: #fff; font-family: 'Orbitron'; font-weight: bold;
             transition: 0.3s;
+            flex-shrink: 0; /* Empêche le bouton de s'écraser */
         }
-        .help-btn:hover {
-            background: var(--neon-blue);
-            color: #000;
-            box-shadow: 0 0 15px var(--neon-blue);
-        }
+        .help-btn:hover { background: var(--neon-blue); color: #000; box-shadow: 0 0 15px var(--neon-blue); }
 
         .status-pill {
             background: var(--glass);
             padding: 8px 16px;
             border-radius: 20px;
             border: 1px solid var(--border);
-            font-size: 0.9em;
+            font-size: 0.8em;
             color: var(--neon-blue);
             text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+            white-space: nowrap;
         }
 
-        /* CHART SECTION */
+        /* CHART RESPONSIVE */
         .chart-wrapper {
             background: var(--glass);
             backdrop-filter: blur(10px);
             border: 1px solid var(--border);
             border-radius: 16px;
-            padding: 20px;
-            margin-bottom: 40px;
+            padding: 15px;
+            margin-bottom: 30px;
             box-shadow: 0 0 40px rgba(0,0,0,0.5);
+            height: 500px;
+            position: relative;
         }
 
-        /* SCORE CENTRAL */
-        .dashboard-stats {
-            display: grid;
-            grid-template-columns: 1fr;
-            margin-bottom: 40px;
-        }
-
+        /* SCORE CENTRAL RESPONSIVE */
         .big-score-card {
             text-align: center;
-            padding: 40px;
-            position: relative;
+            padding: 30px 10px;
             background: radial-gradient(circle, rgba(0,243,255,0.05) 0%, transparent 70%);
+            margin-bottom: 40px;
         }
 
         .big-number {
             font-family: 'Orbitron', sans-serif;
-            font-size: 6rem;
+            font-size: clamp(4rem, 10vw, 6rem); /* TAILLE DYNAMIQUE */
             font-weight: 700;
             line-height: 1;
             margin-bottom: 10px;
             text-shadow: 0 0 30px rgba(255,255,255,0.2);
-        }
-
-        .pulse-anim { animation: pulse 2s infinite; }
-        @keyframes pulse {
-            0% { transform: scale(1); text-shadow: 0 0 20px currentColor; }
-            50% { transform: scale(1.02); text-shadow: 0 0 40px currentColor; }
-            100% { transform: scale(1); text-shadow: 0 0 20px currentColor; }
         }
 
         /* GRILLE */
@@ -141,72 +137,26 @@
             border: 1px solid var(--border);
             border-radius: 12px;
             padding: 20px;
-            transition: all 0.3s ease;
             position: relative;
-            overflow: hidden;
         }
-
-        .card:hover {
-            transform: translateY(-5px);
-            background: rgba(255,255,255,0.06);
-            border-color: rgba(255,255,255,0.3);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-
-        .card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 15px;
-        }
-
-        .card-title {
-            font-size: 0.9em;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #888;
-            font-weight: 700;
-        }
-
-        .card-score {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.8em;
-            font-weight: bold;
-        }
-
-        .progress-container {
-            height: 6px;
-            background: rgba(0,0,0,0.5);
-            border-radius: 3px;
-            overflow: hidden;
-        }
-
-        .progress-bar {
-            height: 100%;
-            border-radius: 3px;
-            width: 0%;
-            transition: width 1.5s cubic-bezier(0.22, 1, 0.36, 1);
-            box-shadow: 0 0 10px currentColor;
-        }
-
-        /* COLORS */
-        .c-good { color: var(--neon-green); }
-        .bg-good { background-color: var(--neon-green); }
+        .card-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 15px; }
+        .card-title { font-size: 0.9em; text-transform: uppercase; letter-spacing: 1px; color: #888; font-weight: 700; }
+        .card-score { font-family: 'Orbitron', sans-serif; font-size: 1.8em; font-weight: bold; }
         
-        .c-mid { color: var(--neon-yellow); }
-        .bg-mid { background-color: var(--neon-yellow); }
-        
-        .c-bad { color: var(--neon-red); }
-        .bg-bad { background-color: var(--neon-red); }
-        
-        .c-blue { color: var(--neon-blue); }
+        .progress-container { height: 6px; background: rgba(0,0,0,0.5); border-radius: 3px; overflow: hidden; }
+        .progress-bar { height: 100%; border-radius: 3px; width: 0%; transition: width 1.5s ease; box-shadow: 0 0 10px currentColor; }
 
-        footer {
-            margin-top: 60px;
-            text-align: center;
-            color: #555;
-            font-size: 0.8em;
-            letter-spacing: 2px;
+        .c-good { color: var(--neon-green); } .bg-good { background-color: var(--neon-green); }
+        .c-mid { color: var(--neon-yellow); } .bg-mid { background-color: var(--neon-yellow); }
+        .c-bad { color: var(--neon-red); } .bg-bad { background-color: var(--neon-red); }
+
+        footer { margin-top: 50px; text-align: center; color: #555; font-size: 0.8em; letter-spacing: 1px; }
+
+        /* AJUSTEMENTS MOBILE SPECIFIQUES */
+        @media (max-width: 600px) {
+            header { flex-direction: column; align-items: flex-start; gap: 15px; }
+            .header-left { width: 100%; justify-content: space-between; }
+            .chart-wrapper { height: 350px; } /* Moins haut sur mobile */
         }
     </style>
 </head>
@@ -217,7 +167,7 @@
             <div class="header-left">
                 <div>
                     <h1>Psychohistoire</h1>
-                    <div style="color: #666; letter-spacing: 2px;">MODÈLE PRÉDICTIF SELDON</div>
+                    <div class="subtitle">MODÈLE PRÉDICTIF SELDON</div>
                 </div>
                 <a href="aide.html" class="help-btn" title="Guide des métriques">?</a>
             </div>
@@ -225,15 +175,13 @@
         </header>
 
         <div class="chart-wrapper">
-            <canvas id="trendChart" height="80"></canvas>
+            <canvas id="trendChart"></canvas>
         </div>
 
-        <div class="dashboard-stats">
-            <div class="big-score-card">
-                <div style="letter-spacing: 4px; color: #666; margin-bottom: 20px;">INDICE DE STABILITÉ MONDIALE</div>
-                <div id="global-score" class="big-number pulse-anim">--</div>
-                <div id="global-status" style="font-size: 1.5em; letter-spacing: 3px;">CALCUL...</div>
-            </div>
+        <div class="big-score-card">
+            <div style="letter-spacing: 2px; color: #666; margin-bottom: 10px; font-size: 0.9em;">INDICE DE STABILITÉ MONDIALE</div>
+            <div id="global-score" class="big-number pulse-anim">--</div>
+            <div id="global-status" style="font-size: 1.2em; letter-spacing: 2px;">CALCUL...</div>
         </div>
 
         <div id="pillars-grid" class="grid"></div>
@@ -249,13 +197,15 @@
             "demographie_social": "👥 SOCIAL", "sante_bio": "🧬 BIO-SANTÉ", "geopolitique": "⚔️ GÉOPOLITIQUE",
             "technologie_ia": "🤖 TECH & IA", "finance": "💰 FINANCE", "information": "🧠 NOOSPHÈRE"
         };
+        const colors = {
+            "energie": "#ffee00", "environnement": "#ff0055", "espace": "#00d4ff",
+            "demographie_social": "#ff9100", "sante_bio": "#00ff9d", "geopolitique": "#ff0000",
+            "technologie_ia": "#bc13fe", "finance": "#ffffff", "information": "#7a7a7a"
+        };
 
         function calculateStability(pillars) {
             let sum = 0, count = 0;
-            for (const key in pillars) {
-                sum += pillars[key].score || pillars[key];
-                count++;
-            }
+            for (const key in pillars) { sum += pillars[key].score || pillars[key]; count++; }
             sum += (pillars['geopolitique'].score || pillars['geopolitique']);
             sum += (pillars['environnement'].score || pillars['environnement']);
             return Math.round(sum / (count + 2));
@@ -267,54 +217,38 @@
                     fetch('data/history_2020_2025.json'),
                     fetch('data/current_state.json')
                 ]);
-
                 const history = await histRes.json();
                 const current = await currRes.json();
-
-                // SETUP CHART
                 const labels = [...history.map(h => h.year), "2026"];
-                const dataStability = [...history.map(h => calculateStability(h.pillars)), current.stability_index];
-                const dataIA = [...history.map(h => h.pillars.technologie_ia.score), current.pillars.technologie_ia];
-                const dataEnv = [...history.map(h => h.pillars.environnement.score), current.pillars.environnement];
 
-                // Chart.js Dark Theme Config
-                Chart.defaults.color = '#666';
+                const dataStability = [...history.map(h => calculateStability(h.pillars)), current.stability_index];
+                const datasets = [{
+                    label: 'STABILITÉ GLOBALE', data: dataStability,
+                    borderColor: '#ffffff', backgroundColor: 'rgba(255,255,255,0.05)',
+                    borderWidth: 3, fill: true, tension: 0.4, order: 0
+                }];
+
+                for (const key of Object.keys(names)) {
+                    const dataPoints = [...history.map(h => h.pillars[key].score || h.pillars[key]), current.pillars[key]];
+                    let isVisible = (key === 'technologie_ia' || key === 'environnement');
+                    datasets.push({
+                        label: names[key], data: dataPoints, borderColor: colors[key],
+                        borderWidth: 2, tension: 0.4, borderDash: (key === 'technologie_ia') ? [5,5] : [], hidden: !isVisible
+                    });
+                }
+
+                Chart.defaults.color = '#888';
                 Chart.defaults.font.family = "'Rajdhani', sans-serif";
                 
                 new Chart(document.getElementById('trendChart'), {
                     type: 'line',
-                    data: {
-                        labels: labels,
-                        datasets: [
-                            {
-                                label: 'Stabilité Globale',
-                                data: dataStability,
-                                borderColor: '#ffffff',
-                                backgroundColor: 'rgba(255,255,255,0.1)',
-                                borderWidth: 3,
-                                fill: true,
-                                tension: 0.4
-                            },
-                            {
-                                label: 'Accélération IA',
-                                data: dataIA,
-                                borderColor: '#00ff9d',
-                                borderDash: [5, 5],
-                                borderWidth: 2,
-                                tension: 0.4
-                            },
-                            {
-                                label: 'État Climat',
-                                data: dataEnv,
-                                borderColor: '#ff0055',
-                                borderWidth: 2,
-                                tension: 0.4
-                            }
-                        ]
-                    },
+                    data: { labels: labels, datasets: datasets },
                     options: {
-                        responsive: true,
-                        plugins: { legend: { labels: { color: '#fff', font: { size: 14 } } } },
+                        responsive: true, maintainAspectRatio: false,
+                        interaction: { mode: 'index', intersect: false },
+                        plugins: { 
+                            legend: { position: 'top', labels: { color: '#fff', font: { size: 11 }, usePointStyle: true, boxWidth: 8 } } 
+                        },
                         scales: {
                             y: { grid: { color: 'rgba(255,255,255,0.05)' }, beginAtZero: true, max: 100 },
                             x: { grid: { display: false } }
@@ -322,25 +256,20 @@
                     }
                 });
 
-                // UPDATE DOM
                 document.getElementById('last-update').textContent = "SCAN: " + current.date;
                 const score = current.stability_index;
                 const scoreEl = document.getElementById('global-score');
                 const statusEl = document.getElementById('global-status');
                 
                 scoreEl.textContent = score + "%";
-                
-                if(score > 60) { scoreEl.className += " c-good"; statusEl.textContent = "SYSTÈME STABLE"; statusEl.className = "c-good"; }
-                else if(score > 40) { scoreEl.className += " c-mid"; statusEl.textContent = "INCERTITUDE ÉLEVÉE"; statusEl.className = "c-mid"; }
-                else { scoreEl.className += " c-bad"; statusEl.textContent = "RUPTURE IMMINENTE"; statusEl.className = "c-bad"; }
+                if(score > 60) { scoreEl.className += " c-good"; statusEl.textContent = "STABLE"; statusEl.className = "c-good"; }
+                else if(score > 40) { scoreEl.className += " c-mid"; statusEl.textContent = "INCERTAIN"; statusEl.className = "c-mid"; }
+                else { scoreEl.className += " c-bad"; statusEl.textContent = "CRITIQUE"; statusEl.className = "c-bad"; }
 
                 const grid = document.getElementById('pillars-grid');
                 grid.innerHTML = '';
-
                 for (const [key, value] of Object.entries(current.pillars)) {
-                    // CORRECTION ICI : On arrondit le chiffre pour éviter les virgules infinies
                     let cleanValue = Math.round(value);
-
                     let state = 'good';
                     if (cleanValue < 40) state = 'bad';
                     else if (cleanValue < 60) state = 'mid';
@@ -359,10 +288,7 @@
                     `;
                     grid.appendChild(card);
                 }
-
-            } catch (error) {
-                console.error(error);
-            }
+            } catch (error) { console.error(error); }
         }
         loadData();
     </script>
