@@ -2,33 +2,31 @@
 
 > "La seule façon de prédire l'avenir est de le calculer."
 
-Ce projet vise à modéliser les trajectoires de l'humanité de 2026 à 2050 en analysant 9 flux de données critiques.
+Ce projet vise à modéliser les trajectoires de l'humanité de 2026 à 2050 en analysant **9 flux de données critiques** (Piliers).
 
-## 🏗 Architecture du Modèle (Les 9 Piliers)
+## 🏗 Les 9 Piliers du Modèle
 
-Le modèle agrège des données mensuelles pour calculer un **Indice de Stabilité Mondiale**.
+Le modèle agrège des données mensuelles pour calculer un **Indice de Stabilité Mondiale** et détecter les points de rupture.
 
-### 1. Piliers Physiques (Le "Hardware" de la civilisation)
-* **⚡ Énergie :** Transition fossile vs renouvelable, fusion nucléaire.
-* **🌍 Environnement :** Anomalies climatiques, ressources critiques.
-* **🚀 Espace :** Militarisation orbitale, colonisation, ressources astéroïdales.
+### I. La Base Physique (Le "Hardware")
+1. **⚡ Énergie :** Coût du kWh, réserves hydrogène, avancées fusion. *Le moteur de la civilisation.*
+2. **🌍 Environnement :** Climat, ressources critiques (lithium/eau), anomalies. *La contrainte indépassable.*
+3. **🚀 Espace :** Satellites, militarisation orbitale, colonisation. *La nouvelle frontière économique.*
 
-### 2. Piliers Humains (Le "Software" biologique)
-* **👥 Démographie & Social :** Migrations, inégalités, tensions civiles.
-* **🧬 Santé & Biologie :** Pandémies, augmentation humaine, santé mentale.
-* **⚔️ Géopolitique :** Conflits armés, alliances, cyber-guerre.
+### II. La Base Humaine (Le "Software")
+4. **👥 Démographie & Social :** Mouvements de foule, migrations, inégalités. *L'inertie des masses.*
+5. **🧬 Santé & Biologie :** Pandémies, santé mentale globale, bio-ingénierie. *La vitalité de l'espèce.*
+6. **⚔️ Géopolitique :** Conflits armés, alliances, risque nucléaire. *Les frictions entre blocs.*
 
-### 3. Piliers Abstraits (Les systèmes de contrôle)
-* **🤖 Technologie & IA :** Singularité, automatisation, informatique quantique.
-* **💰 Finance :** Crypto-économie, dette, dé-dollarisation.
-* **🧠 Information :** Vérité vs Désinformation, polarisation.
+### III. La Base Abstraite (Le Système d'Exploitation)
+7. **🤖 Technologie & IA :** Singularité, automatisation, quantique. *L'accélérateur de temps.*
+8. **💰 Finance :** Dette mondiale, crypto-monnaies, dé-dollarisation. *Le sang du système.*
+9. **🧠 Information :** Polarisation, Fake News, contrôle numérique. *La perception du réel.*
 
-## 📅 Méthodologie
-Ce dépôt est mis à jour automatiquement chaque mois par un algorithme qui :
-1.  Collecte les signaux faibles.
-2.  Calcule les probabilités de rupture.
-3.  Génère un rapport prédictif.
+## 📅 Méthodologie & Mises à jour
+Ce dépôt est mis à jour chaque mois.
+- **Cycle :** Mensuel (Janvier 2026 - Janvier 2027 pour la phase 1).
+- **Objectif :** Fournir des probabilités (%) sur les scénarios de rupture (Guerre, Saut Technologique, Effondrement).
 
 ---
-*Projet initié en Janvi
-er 2026.*
+*Projet Open Source - Initié en Janvier 2026.*
