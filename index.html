@@ -66,7 +66,17 @@
         };
 
         const names = { "energie": "⚡ ÉNERGIE", "environnement": "🌍 CLIMAT", "espace": "🚀 ESPACE", "demographie_social": "👥 SOCIAL", "sante_bio": "🧬 BIO-SANTÉ", "geopolitique": "⚔️ GÉOPOLITIQUE", "technologie_ia": "🤖 TECH & IA", "finance": "💰 FINANCE", "information": "🧠 NOOSPHÈRE" };
-        const colors = { "energie": "#ffee00", "environnement": "#ff0055", "espace": "#00d4ff", "demographie_social": "#ff9100", "sante_bio": "#00ff9d", "geopolitique": "#ff0000", "technologie_ia": "#bc13fe", "finance": "#ffffff", "information": "#7a7a7a" };
+                const colors = { 
+            "energie": "#FFD700",          // ⚡ OR (Tranchant sur fond noir)
+            "environnement": "#32CD32",    // 🌍 VERT LIME (Distinct du Bio)
+            "espace": "#00BFFF",           // 🚀 BLEU AZUR (Différent du Cyan)
+            "demographie_social": "#FF8C00", // 👥 ORANGE FONCÉ (Distinct du Jaune)
+            "sante_bio": "#FF00FF",        // 🧬 MAGENTA (Distinct du Rouge)
+            "geopolitique": "#FF0000",     // ⚔️ ROUGE PUR (Alerte max)
+            "technologie_ia": "#9932CC",   // 🤖 VIOLET FONCÉ (Tech mystérieuse)
+            "finance": "#FFFFFF",          // 💰 BLANC (Neutre et très visible)
+            "information": "#00FA9A"       // 🧠 TURQUOISE (Distinct du Vert et du Bleu)
+        };
         const definitions = { "energie": "Capacité de production mondiale.", "environnement": "Santé de la biosphère.", "espace": "Expansion hors-Terre.", "demographie_social": "Cohésion sociale.", "sante_bio": "Résilience biologique.", "geopolitique": "Stabilité internationale.", "technologie_ia": "Vitesse d'innovation.", "finance": "Système économique.", "information": "Vérité et Noosphère." };
 
         function calculateStability(pillars) {
@@ -187,11 +197,16 @@
                     // ICI : ON UTILISE LA LOGIQUE DYNAMIQUE
                     let isVisible = activePillars.has(key);
                     
-                    datasets.push({
-                        label: names[key], data: fullData, borderColor: colors[key],
-                        borderWidth: 1.5, tension: 0.4, hidden: !isVisible, pointRadius: 0,
-                        segment: { borderDash: ctx => ctx.p0.parsed.x >= (labels.length - projection.length - 1) ? [2, 2] : undefined, borderColor: ctx => ctx.p0.parsed.x >= (labels.length - projection.length - 1) ? 'rgba(255,255,255,0.2)' : colors[key] }
-                    });
+                                        datasets.push({
+                        label: names[key], 
+                        data: fullData, 
+                        borderColor: colors[key],
+                        borderWidth: 2.5, // <--- PASSE DE 1.5 À 2.5 POUR MIEUX VOIR LES COULEURS
+                        tension: 0.4, 
+                        hidden: !isVisible, 
+                        pointRadius: 0,
+                        // ... le reste ne change pas
+
                 }
 
                 Chart.defaults.color = '#555'; Chart.defaults.font.family = "'Share Tech Mono', monospace";
