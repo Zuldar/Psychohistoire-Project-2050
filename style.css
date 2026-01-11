@@ -201,34 +201,33 @@ h1 {
 .c-mid { color: var(--neon-yellow); } .bg-mid { background-color: var(--neon-yellow); }
 .c-bad { color: var(--neon-red); } .bg-bad { background-color: var(--neon-red); }
 
-/* 9. TOOLTIPS */
+/* 9. TOOLTIPS INTELLIGENTS (JS) */
 .info-icon { 
     display: inline-flex; justify-content: center; align-items: center; 
     width: 18px; height: 18px; border: 1px solid var(--neon-blue); 
     color: var(--neon-blue); font-size: 10px; margin-left: 10px; 
-    cursor: help; position: relative; 
-    /* Pas de z-index ici, c'est la carte qui gère */
+    cursor: help; 
 }
 .info-icon:hover { background: var(--neon-blue); color: #000; }
 
-.info-icon .tooltip-text { 
-    visibility: hidden; width: 320px; background-color: #0a0f14; color: #fff; 
-    border: 1px solid var(--neon-blue); padding: 15px; 
+/* On cache l'ancienne infobulle CSS par défaut */
+.info-icon .tooltip-text { display: none; }
+
+/* La nouvelle boîte générée par JS qui flotte au-dessus de tout */
+#floating-tooltip {
+    position: fixed; /* Fixé par rapport à l'écran, ignore les cartes */
+    z-index: 10000; /* Au-dessus de TOUT, vraiment tout */
+    background-color: rgba(10, 15, 20, 0.98);
+    border: 1px solid var(--neon-blue);
+    color: #fff;
+    padding: 15px;
+    width: 300px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    box-shadow: 0 0 30px rgba(0, 243, 255, 0.2);
+    pointer-events: none; /* La souris passe au travers */
+    border-radius: 4px;
+    backdrop-filter: blur(5px);
     
-    position: absolute; 
-    bottom: 140%; left: -20px; 
-    
-    opacity: 0; transition: all 0.2s ease; 
-    font-size: 0.85rem; line-height: 1.4; 
-    box-shadow: 0 0 30px rgba(0, 243, 255, 0.3); 
-    text-align: left; 
-    pointer-events: none;
 }
-
-.info-icon:hover .tooltip-text { 
-    visibility: visible; opacity: 1; bottom: 130%; 
-}
-
-@media (max-width: 600px) { .info-icon .tooltip-text { width: 250px; left: -100px; } }
-
-footer { margin-top: 60px; text-align: center; color: #444; font-family: 'Share Tech Mono'; font-size: 0.7em; letter-spacing: 2px; }
