@@ -1,4 +1,4 @@
-/* DESIGN "PRIME RADIANT" V19 - NO ZOOM, NO FILTER */
+/* DESIGN "PRIME RADIANT" V20 - TOOLTIPS FIX & DARK FILTER 50% */
 
 /* 1. RESET & VARIABLES */
 * { box-sizing: border-box; }
@@ -22,24 +22,25 @@ body {
     min-height: 100vh; 
     overflow-x: hidden;
     
-    /* COULEUR DE FOND (Visible si l'image ne remplit pas tout) */
     background-color: var(--bg-deep);
-    
-    /* L'IMAGE DE FOND */
     background-image: url('bg.gif'); 
     
-    /* --- CORRECTIONS ICI --- */
-    /* Affiche l'image entière sans la couper */
     background-size: contain; 
-    /* Centre l'image horizontalement et la colle en haut */
     background-position: center top; 
-    /* Empêche l'image de se répéter en mosaïque */
     background-repeat: no-repeat;
-    /* Permet le scroll naturel sur mobile */
     background-attachment: scroll; 
+    position: relative; /* Nécessaire pour le filtre */
 }
 
-/* NOTE: Le bloc "body::after" qui créait le voile sombre a été supprimé ici. */
+/* --- LE FILTRE SOMBRE (50%) EST DE RETOUR ICI --- */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(2, 2, 5, 0.5); /* Noir à 50% d'opacité */
+    z-index: -1; /* Derrière le contenu */
+    pointer-events: none; /* Laisse passer les clics */
+}
 
 .container { max-width: 1400px; margin: 0 auto; width: 100%; position: relative; z-index: 2; }
 
@@ -102,6 +103,7 @@ h1 {
     backdrop-filter: blur(10px); 
     border: 1px solid var(--glass-border); 
     padding: 20px; margin-bottom: 40px; border-radius: 4px; position: relative; 
+    z-index: 10; /* S'assure qu'il est sous les tooltips */
 }
 .chart-wrapper::after { 
     content: "TIME SERIES PROJECTION // SELDON_ALGO_V5"; 
@@ -115,6 +117,7 @@ h1 {
     border: 1px solid var(--glass-border); border-left: 4px solid var(--neon-blue); 
     padding: 30px; margin-bottom: 40px; position: relative; 
     box-shadow: 0 0 50px rgba(0,0,0,0.5); 
+    z-index: 10; /* S'assure qu'il est sous les tooltips */
 }
 .terminal-header { 
     color: var(--neon-blue); font-family: 'Orbitron'; 
@@ -154,13 +157,15 @@ h1 {
 @keyframes shine { 0% { left: -100%; } 20% { left: 200%; } 100% { left: 200%; } }
 
 /* 8. GRID & CARDS */
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; position: relative; z-index: 20; }
 
 .card { 
     background: var(--glass); backdrop-filter: blur(5px); 
     border: 1px solid var(--glass-border); padding: 20px; 
-    position: relative; overflow: hidden; 
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%); 
+    position: relative; 
+    /* overflow: hidden;  <-- J'AI RETIRÉ ÇA POUR QUE LES TOOLTIPS PUISSENT DÉPASSER */
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
+    z-index: 1; /* Important pour le contexte d'empilement */
 }
 .card::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--neon-blue); opacity: 0.5; }
 .card:hover { background: rgba(15, 25, 35, 0.9); border-color: var(--neon-blue); }
@@ -177,10 +182,25 @@ h1 {
 .c-mid { color: var(--neon-yellow); } .bg-mid { background-color: var(--neon-yellow); }
 .c-bad { color: var(--neon-red); } .bg-bad { background-color: var(--neon-red); }
 
-/* 9. TOOLTIPS */
-.info-icon { display: inline-flex; justify-content: center; align-items: center; width: 18px; height: 18px; border: 1px solid var(--neon-blue); color: var(--neon-blue); font-size: 10px; margin-left: 10px; cursor: help; position: relative; }
+/* 9. TOOLTIPS (CORRIGÉS) */
+.info-icon { 
+    display: inline-flex; justify-content: center; align-items: center; 
+    width: 18px; height: 18px; border: 1px solid var(--neon-blue); 
+    color: var(--neon-blue); font-size: 10px; margin-left: 10px; 
+    cursor: help; position: relative; 
+    z-index: 100; /* S'assure que l'icône est au-dessus */
+}
 .info-icon:hover { background: var(--neon-blue); color: #000; }
-.info-icon .tooltip-text { visibility: hidden; width: 320px; background-color: #0a0f14; color: #fff; border: 1px solid var(--neon-blue); padding: 15px; position: absolute; z-index: 9999; bottom: 140%; left: -20px; opacity: 0; transition: all 0.2s ease; font-size: 0.85rem; line-height: 1.4; box-shadow: 0 0 30px rgba(0, 243, 255, 0.15); text-align: left; }
+
+.info-icon .tooltip-text { 
+    visibility: hidden; width: 320px; background-color: #0a0f14; color: #fff; 
+    border: 1px solid var(--neon-blue); padding: 15px; 
+    position: absolute; 
+    z-index: 99999; /* TRÈS HAUT Z-INDEX POUR PASSER AU DESSUS DE TOUT */
+    bottom: 140%; left: -20px; opacity: 0; transition: all 0.2s ease; 
+    font-size: 0.85rem; line-height: 1.4; box-shadow: 0 0 30px rgba(0, 243, 255, 0.3); 
+    text-align: left; 
+}
 .info-icon:hover .tooltip-text { visibility: visible; opacity: 1; bottom: 130%; }
 @media (max-width: 600px) { .info-icon .tooltip-text { width: 250px; left: -100px; } }
 
