@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psychohistoire - Dashboard 2050</title>
+    <style>
+        :root {
+            --bg-color: #050505;
+            --card-bg: #111111;
+            --text-main: #e0e0e0;
+            --accent: #00ff9d; /* Vert Matrix */
+            --danger: #ff0055;
+            --warning: #ffbe0b;
+            --dim: #444;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            border-bottom: 1px solid var(--dim);
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+        }
+
+        h1 { margin: 0; text-transform: uppercase; letter-spacing: 2px; }
+        .subtitle { color: var(--dim); font-size: 0.9em; }
+
+        /* JAUGE CENTRALE */
+        .stability-box {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 40px;
+            border: 1px solid var(--dim);
+            background: radial-gradient(circle, #1a1a1a 0%, #000 100%);
+        }
+
+        .big-number { font-size: 5em; font-weight: bold; }
+        .label { text-transform: uppercase; letter-spacing: 1px; color: var(--dim); }
+
+        /* GRILLE DES PILIERS */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid #333;
+            padding: 20px;
+            border-left: 4px solid var(--dim);
+            transition: transform 0.2s;
+        }
+        .card:hover { transform: translateY(-5px); border-color: var(--accent); }
+
+        .card-header { display: flex; justify-content: space-between; margin-bottom: 15px; }
+        .card-score { font-size: 2em; font-weight: bold; }
+        .card-title { text-transform: uppercase; font-size: 0.8em; color: #888; }
+
+        .progress-bar {
+            height: 4px;
+            background: #333;
+            width: 100%;
+            margin-top: 10px;
+        }
+        .progress-fill { height: 100%; width: 0%; transition: width 1s ease; }
+
+        /* COULEURS DYNAMIQUES */
+        .good { color: var(--accent); }
+        .bad { color: var(--danger); }
+        .mid { color: var(--warning); }
+        
+        .border-good { border-left-color: var(--accent); }
+        .border-bad { border-left-color: var(--danger); }
+        .border-mid { border-left-color: var(--warning); }
+
+        .bg-good { background-color: var(--accent); }
+        .bg-bad { background-color: var(--danger); }
+        .bg-mid { background-color: var(--warning); }
+
+        footer { margin-top: 50px; text-align: center; color: var(--dim); font-size: 0.8em; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div>
+                <h1>Psychohistoire V1</h1>
+                <div class="subtitle">Modèle Prédictif Seldon // Horizon 2050</div>
+            </div>
+            <div id="last-update" class="subtitle">Chargement...</div>
+        </header>
+
+        <div class="stability-box">
+            <div class="label">Indice de Stabilité Mondiale</div>
+            <div id="global-score" class="big-number">--</div>
+            <div id="global-status" style="margin-top: 10px;">Analyse en cours...</div>
+        </div>
+
+        <div id="pillars-grid" class="grid">
+            </div>
+
+        <footer>
+            Données open-source générées par IA via GitHub Actions.<br>
+            <a href="https://github.com/TON_USER/TON_REPO" style="color: #666;">Voir le code source</a>
+        </footer>
+    </div>
+
+    <script>
+        // MAPPING : Pour afficher de jolis noms au lieu des clés techniques
+        const names = {
+            "energie": "⚡ Énergie",
+            "environnement": "🌍 Environnement",
+            "espace": "🚀 Espace",
+            "demographie_social": "👥 Démographie & Social",
+            "sante_bio": "🧬 Santé & Bio",
+            "geopolitique": "⚔️ Géopolitique",
+            "technologie_ia": "🤖 Tech & IA",
+            "finance": "💰 Finance",
+            "information": "🧠 Information"
+        };
+
+        // CHARGEMENT DES DONNÉES
+        async function loadData() {
+            try {
+                // On va chercher le JSON généré par le robot
+                const response = await fetch('data/current_state.json');
+                const data = await response.json();
+
+                // 1. Mise à jour Header & Global
+                document.getElementById('last-update').textContent = "Dernier scan : " + data.date;
+                const score = data.stability_index;
+                const scoreEl = document.getElementById('global-score');
+                scoreEl.textContent = score + "%";
+                
+                // Couleur du score global
+                if(score > 60) { scoreEl.className += " good"; document.getElementById('global-status').textContent = "STABLE"; }
+                else if(score > 40) { scoreEl.className += " mid"; document.getElementById('global-status').textContent = "INCERTAIN"; }
+                else { scoreEl.className += " bad"; document.getElementById('global-status').textContent = "CRITIQUE"; }
+
+                // 2. Génération des cartes
+                const grid = document.getElementById('pillars-grid');
+                grid.innerHTML = ''; // Nettoyage
+
+                for (const [key, value] of Object.entries(data.pillars)) {
+                    // Définition état (Bon/Mauvais)
+                    let state = 'good';
+                    if (value < 40) state = 'bad';
+                    else if (value < 60) state = 'mid';
+                    
+                    // Exception pour IA : Si > 90 c'est dangereux (Alert)
+                    if (key === 'technologie_ia' && value > 90) state = 'mid'; 
+
+                    const card = document.createElement('div');
+                    card.className = `card border-${state}`;
+                    card.innerHTML = `
+                        <div class="card-header">
+                            <span class="card-title">${names[key] || key}</span>
+                            <span class="card-score ${state}">${value}</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill bg-${state}" style="width: ${value}%"></div>
+                        </div>
+                    `;
+                    grid.appendChild(card);
+                }
+
+            } catch (error) {
+                console.error("Erreur:", error);
+                document.getElementById('global-status').textContent = "Erreur de chargement des données. Vérifiez que data/current_state.json existe.";
+            }
+        }
+
+        loadData();
+    </script>
+</body>
+</html>
