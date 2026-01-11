@@ -1,14 +1,15 @@
 import json
 import os
 import random
+import glob
 import copy
-from datetime import datetime
+from datetime import datetime, timedelta
 
 # --- CONFIGURATION ---
 HISTORY_FILE = 'data/history_2020_2025.json'
 CURRENT_STATE_FILE = 'data/current_state.json'
 PROJECTION_FILE = 'data/projection_2036.json'
-ARCHIVE_DIR = 'data/archives' # Nouveau dossier pour l'historique
+ARCHIVE_DIR = 'data/archives'
 
 PILLARS = [
     "energie", "environnement", "espace",
@@ -24,7 +25,57 @@ class PsychohistoryModel:
         if not os.path.exists(filepath): return []
         with open(filepath, 'r', encoding='utf-8') as f: return json.load(f)
 
-    # --- TEXTES COURTS ---
+    # --- ANALYSE DE L'ERREUR PASSÉE (NOUVEAU) ---
+    def analyze_prediction_error(self, current_pillars):
+        """Compare la réalité d'aujourd'hui avec les prédictions passées."""
+        if not os.path.exists(ARCHIVE_DIR): return []
+        
+        # On cherche le fichier d'archive le plus récent (mais pas celui d'aujourd'hui)
+        list_of_files = glob.glob(f'{ARCHIVE_DIR}/*.json')
+        if not list_of_files: return []
+        
+        latest_file = max(list_of_files, key=os.path.getctime)
+        try:
+            with open(latest_file, 'r') as f:
+                past_data = json.load(f)
+        except: return []
+
+        # On regarde ce que l'archive prédisait pour l'année en cours
+        current_year = int(datetime.now().year)
+        predicted_state = None
+        
+        # On cherche l'année correspondante dans la projection passée
+        for year_proj in past_data.get('projection_10_years', []):
+            if year_proj['year'] == current_year:
+                predicted_state = year_proj['pillars']
+                break
+        
+        if not predicted_state: return []
+
+        corrections = []
+        total_error = 0
+        
+        for p in PILLARS:
+            real_val = current_pillars[p]['score']
+            pred_val = predicted_state[p]
+            delta = real_val - pred_val
+            
+            # Si l'écart est significatif (> 5%)
+            if abs(delta) > 5:
+                if delta < 0:
+                    corrections.append(f"📉 {p.upper()} : J'étais trop optimiste de {abs(round(delta))}%.")
+                else:
+                    corrections.append(f"📈 {p.upper()} : J'étais trop pessimiste de {round(delta)}%.")
+                total_error += abs(delta)
+
+        if total_error > 0:
+            corrections.insert(0, f"⚙️ AUTO-DIAGNOSTIC : Marge d'erreur totale de {round(total_error)} points.")
+        else:
+            corrections.append("⚙️ AUTO-DIAGNOSTIC : Prédictions parfaitement alignées avec la réalité.")
+            
+        return corrections
+
+    # --- REST OF THE LOGIC (TEXTES, SIMULATION...) ---
     def get_analysis_text(self, pillar, score):
         analyses = {
             "energie": { "low": "⚠️ Pénurie Critique.", "mid": "⚡ Transition instable.", "high": "🟢 Abondance (Fusion)." },
@@ -58,15 +109,11 @@ class PsychohistoryModel:
                 momentum = self.calculate_momentum(self.history, pillar)
                 new_val = current_sim_state[pillar] + (momentum * 0.9) + random.uniform(-2, 2)
                 next_step[pillar] = max(0, min(100, new_val))
-            
-            # Lois de simulation
             if next_step['environnement'] < 25: next_step['geopolitique'] -= 3
             if next_step['technologie_ia'] > 98: next_step['demographie_social'] -= 3
             if next_step['finance'] < 30: next_step['demographie_social'] -= 2
-
             weighted_sum = sum(next_step.values()) + next_step['geopolitique'] + next_step['environnement']
             stability = round(weighted_sum / (len(PILLARS) + 2), 2)
-            
             future_timeline.append({"year": year, "stability_index": stability, "pillars": copy.deepcopy(next_step)})
             current_sim_state = next_step
             self.history.append({'pillars': next_step})
@@ -93,8 +140,12 @@ class PsychohistoryModel:
         elif stability_index > 40: return "⚠️ STABILITÉ PRÉCAIRE."
         else: return "🚨 DANGER CRITIQUE."
 
-    def generate_alerts(self, pillars):
+    def generate_alerts(self, pillars, corrections):
         alerts = []
+        # On ajoute d'abord les corrections de l'IA (Auto-Critique)
+        if corrections:
+            alerts.extend(corrections)
+            
         if pillars['technologie_ia']['score'] > 95: alerts.append("⚠️ SINGULARITÉ (Tech)")
         if pillars['environnement']['score'] < 30: alerts.append("🔴 CLIMAT (Env)")
         if pillars['geopolitique']['score'] < 30: alerts.append("⚔️ GUERRE (Géo)")
@@ -110,20 +161,21 @@ class PsychohistoryModel:
             val = current_year_state[p]['score'] if isinstance(current_year_state[p], dict) else current_year_state[p]
             momentum = self.calculate_momentum(self.history, p)
             next_val = max(0, min(100, val + (momentum/12) + random.uniform(-0.5, 0.5)))
-            
             clean_start[p] = next_val
             output_pillars[p] = { "score": round(next_val, 2), "comment": self.get_analysis_text(p, next_val) }
 
         projection = self.simulate_future(clean_start)
         crisis_dates = self.detect_crisis_dates(projection)
+        
+        # --- LANCEMENT DE L'AUTO-CRITIQUE ---
+        correction_msgs = self.analyze_prediction_error(output_pillars)
 
         weighted_sum = sum([v['score'] for v in output_pillars.values()]) + output_pillars['geopolitique']['score'] + output_pillars['environnement']['score']
         stability_index = round(weighted_sum / (len(PILLARS) + 2), 2)
 
-        final_alerts = self.generate_alerts(output_pillars)
+        final_alerts = self.generate_alerts(output_pillars, correction_msgs)
         final_alerts.extend(crisis_dates)
 
-        # 1. Données "LIVE" pour le site web
         current_state_data = {
             "date": datetime.now().strftime("%Y-%m-%d"),
             "stability_index": stability_index,
@@ -133,28 +185,16 @@ class PsychohistoryModel:
         }
         
         if not os.path.exists('data'): os.makedirs('data')
-        
-        # Sauvegarde pour le site
         with open(CURRENT_STATE_FILE, 'w', encoding='utf-8') as f: json.dump(current_state_data, f, indent=2)
         with open(PROJECTION_FILE, 'w', encoding='utf-8') as f: json.dump(projection, f, indent=2)
 
-        # 2. ARCHIVAGE (La "Boîte Noire")
         if not os.path.exists(ARCHIVE_DIR): os.makedirs(ARCHIVE_DIR)
-        
-        # Nom du fichier : rapport_2026-02-01.json (par exemple)
         archive_filename = f"rapport_{datetime.now().strftime('%Y-%m-%d')}.json"
         archive_path = os.path.join(ARCHIVE_DIR, archive_filename)
-        
-        full_archive = {
-            "meta_date": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-            "current_state": current_state_data,
-            "projection_10_years": projection
-        }
-        
-        with open(archive_path, 'w', encoding='utf-8') as f:
-            json.dump(full_archive, f, indent=2)
+        full_archive = { "meta_date": datetime.now().strftime("%Y-%m-%d %H:%M:%S"), "current_state": current_state_data, "projection_10_years": projection }
+        with open(archive_path, 'w', encoding='utf-8') as f: json.dump(full_archive, f, indent=2)
 
-        print(f"✅ Rapport généré et archivé dans : {archive_path}")
+        print(f"✅ Rapport généré avec Auto-Critique.")
 
 if __name__ == "__main__":
     PsychohistoryModel().run()
