@@ -6,13 +6,14 @@ from datetime import datetime
 # --- CONFIGURATION DU MODELE ---
 HISTORY_FILE = 'data/history_2020_2025.json'
 CURRENT_STATE_FILE = 'data/current_state.json'
-REPORT_OUTPUT = 'reports/rapport_mensuel.md'
+REPORT_DIR = 'reports'
+REPORT_OUTPUT = os.path.join(REPORT_DIR, 'rapport_mensuel.md')
 
 # Les 9 Piliers de la Psychohistoire
 PILLARS = [
-    "energie", "environnement", "espace",          # Physique
+    "energie", "environnement", "espace",              # Physique
     "demographie_social", "sante_bio", "geopolitique", # Humain
-    "technologie_ia", "finance", "information"     # Abstrait
+    "technologie_ia", "finance", "information"         # Abstrait
 ]
 
 class PsychohistoryModel:
@@ -21,6 +22,7 @@ class PsychohistoryModel:
         
     def load_json(self, filepath):
         if not os.path.exists(filepath):
+            print(f"Attention: Fichier {filepath} introuvable. Utilisation de données vides.")
             return []
         with open(filepath, 'r', encoding='utf-8') as f:
             return json.load(f)
@@ -32,7 +34,11 @@ class PsychohistoryModel:
         
         # Récupération des scores des 3 dernières années
         last_3_years = self.history[-3:]
-        scores = [year['pillars'][pillar_name]['score'] for year in last_3_years]
+        # Sécurité si un pilier manque dans l'historique
+        try:
+            scores = [year['pillars'][pillar_name]['score'] for year in last_3_years]
+        except KeyError:
+            return 0
         
         # Vélocité : (Dernière année - Année-2) + tendance récente
         velocity = (scores[2] - scores[0]) / 2
@@ -51,7 +57,7 @@ class PsychohistoryModel:
         if future_scores['technologie_ia'] > 90:
             future_scores['demographie_social'] -= 2
             future_scores['espace'] += 4
-            future_scores['information'] -= 5 (Confusion réel/virtuel)
+            future_scores['information'] -= 5 # (Confusion réel/virtuel)
 
         # Loi 3 : Si l'Énergie monte (>60), la Finance se stabilise
         if future_scores['energie'] > 60:
@@ -60,6 +66,11 @@ class PsychohistoryModel:
         return future_scores
 
     def predict_next_month(self):
+        # Sécurité si l'historique est vide
+        if not self.history:
+            print("Erreur critique : Pas d'historique chargé.")
+            return {}, 0
+
         last_year = self.history[-1]
         future_state = {}
         
@@ -128,15 +139,23 @@ class PsychohistoryModel:
 
     def run(self):
         print("Initialisation du modèle...")
+        
+        # Création du dossier reports s'il n'existe pas
+        if not os.path.exists(REPORT_DIR):
+            os.makedirs(REPORT_DIR)
+            
         future_state, stability_index = self.predict_next_month()
         
+        if not future_state:
+            return
+
         # Sauvegarde des données JSON
         output_data = {
             "date": datetime.now().strftime("%Y-%m-%d"),
             "stability_index": stability_index,
             "pillars": future_state
         }
-        with open(CURRENT_STATE_FILE, 'w') as f:
+        with open(CURRENT_STATE_FILE, 'w', encoding='utf-8') as f:
             json.dump(output_data, f, indent=2)
             
         # Génération du rapport Markdown
@@ -149,4 +168,4 @@ class PsychohistoryModel:
 if __name__ == "__main__":
     model = PsychohistoryModel()
     model.run()
-
+    
