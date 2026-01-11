@@ -8,26 +8,65 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
     
     <style>
-        /* CSS IDENTIQUE */
+        /* CSS IDENTIQUE BASE */
         * { box-sizing: border-box; }
         :root { --bg-dark: #05050b; --glass: rgba(20, 20, 35, 0.8); --glass-solid: #0d0d15; --border: rgba(255, 255, 255, 0.15); --neon-blue: #00f3ff; --neon-green: #00ff9d; --neon-red: #ff0055; --neon-yellow: #ffee00; }
         body { background-color: var(--bg-dark); background-image: radial-gradient(circle at 50% 0%, #1a1a3a 0%, var(--bg-dark) 80%); color: #e0e0e0; font-family: 'Rajdhani', sans-serif; margin: 0; padding: 20px; min-height: 100vh; overflow-x: hidden; }
         .container { max-width: 1400px; margin: 0 auto; width: 100%; }
 
-        /* TOOLTIP EVOLUÉE */
+        /* --- NOUVEAU : LE TERMINAL D'ALERTES --- */
+        .terminal-box {
+            background: rgba(0, 0, 0, 0.6);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--neon-blue);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 40px;
+            font-family: 'Courier New', Courier, monospace;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+        
+        .terminal-header {
+            color: var(--neon-blue);
+            font-family: 'Orbitron';
+            text-transform: uppercase;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 5px;
+        }
+
+        .analysis-text {
+            color: #fff;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            line-height: 1.5;
+        }
+
+        .alerts-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .alert-item {
+            padding: 8px 0;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            color: var(--neon-yellow); /* Par défaut jaune */
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        /* Animation clignotante pour les alertes graves */
+        .alert-critical { color: var(--neon-red); text-shadow: 0 0 5px var(--neon-red); }
+        
+        /* REST OF CSS */
         .info-icon { display: inline-flex; justify-content: center; align-items: center; width: 20px; height: 20px; border-radius: 50%; border: 1px solid #666; color: #aaa; font-size: 12px; margin-left: 10px; cursor: help; position: relative; transition: 0.3s; background: rgba(0,0,0,0.3); }
         .info-icon:hover { border-color: var(--neon-blue); color: #fff; background: var(--neon-blue); color: #000; }
-        .info-icon .tooltip-text { 
-            visibility: hidden; width: 280px; background-color: var(--glass-solid); color: #fff; 
-            border: 1px solid var(--neon-blue); padding: 15px; border-radius: 8px; 
-            position: absolute; z-index: 100; bottom: 135%; left: 50%; transform: translateX(-50%); 
-            opacity: 0; transition: all 0.3s ease; font-size: 0.9rem; line-height: 1.5;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.9); text-align: left;
-        }
-        .info-icon .tooltip-text::after { content: ""; position: absolute; top: 100%; left: 50%; margin-left: -5px; border-width: 5px; border-style: solid; border-color: var(--neon-blue) transparent transparent transparent; }
+        .info-icon .tooltip-text { visibility: hidden; width: 280px; background-color: var(--glass-solid); color: #fff; border: 1px solid var(--neon-blue); padding: 15px; border-radius: 8px; position: absolute; z-index: 100; bottom: 135%; left: 50%; transform: translateX(-50%); opacity: 0; transition: all 0.3s ease; box-shadow: 0 10px 40px rgba(0,0,0,0.9); }
         .info-icon:hover .tooltip-text { visibility: visible; opacity: 1; bottom: 125%; }
-
-        /* RESTE DU DESIGN */
+        
         header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 30px; flex-wrap: wrap; gap: 20px; }
         h1 { font-family: 'Orbitron', sans-serif; font-weight: 900; font-size: clamp(1.5rem, 4vw, 2.5rem); margin: 0; background: linear-gradient(90deg, #fff, var(--neon-blue)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-transform: uppercase; letter-spacing: 2px; }
         .status-pill { background: var(--glass); padding: 8px 16px; border-radius: 20px; border: 1px solid var(--border); font-size: 0.8em; color: var(--neon-blue); text-shadow: 0 0 10px rgba(0, 243, 255, 0.5); }
@@ -37,7 +76,6 @@
         .big-number { font-family: 'Orbitron', sans-serif; font-size: clamp(4rem, 8vw, 6rem); font-weight: 700; line-height: 1; margin-bottom: 10px; text-shadow: 0 0 30px rgba(255,255,255,0.2); }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
         .card { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 12px; padding: 20px; position: relative; transition: 0.3s; }
-        .card:hover { transform: translateY(-5px); background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.3); }
         .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
         .card-title-box { display: flex; align-items: center; }
         .card-title { font-size: 0.9em; text-transform: uppercase; letter-spacing: 1px; color: #888; font-weight: 700; }
@@ -55,7 +93,7 @@
         <header>
             <div>
                 <h1>Psychohistoire</h1>
-                <div style="color: #666; letter-spacing: 2px; font-size: 0.8rem;">ANALYSE DYNAMIQUE V2</div>
+                <div style="color: #666; letter-spacing: 2px; font-size: 0.8rem;">ANALYSE DYNAMIQUE V3</div>
             </div>
             <div id="last-update" class="status-pill">INITIALISATION...</div>
         </header>
@@ -67,10 +105,19 @@
         <div class="big-score-card">
             <div class="score-title-row">
                 INDICE DE STABILITÉ 2026
-                <div class="info-icon">?<span class="tooltip-text">Analyse globale de la résilience de la civilisation humaine face aux chocs technologiques et environnementaux.</span></div>
+                <div class="info-icon">?<span class="tooltip-text">Résilience globale.</span></div>
             </div>
-            <div id="global-score" class="big-number pulse-anim">--</div>
+            <div id="global-score" class="big-number pulse-anim">--%</div>
             <div id="global-status" style="font-size: 1.2em; letter-spacing: 2px;">CALCUL...</div>
+        </div>
+
+        <div class="terminal-box">
+            <div class="terminal-header">📊 Analyse du Noyau</div>
+            <div id="analysis-text" class="analysis-text">Chargement de l'analyse...</div>
+            
+            <div class="terminal-header" style="margin-top:20px; color:var(--neon-red)">🚨 Alertes Prioritaires</div>
+            <ul id="alerts-list" class="alerts-list">
+                </ul>
         </div>
 
         <div id="pillars-grid" class="grid"></div>
@@ -81,6 +128,7 @@
     <script>
         const names = { "energie": "⚡ ÉNERGIE", "environnement": "🌍 CLIMAT", "espace": "🚀 ESPACE", "demographie_social": "👥 SOCIAL", "sante_bio": "🧬 BIO-SANTÉ", "geopolitique": "⚔️ GÉOPOLITIQUE", "technologie_ia": "🤖 TECH & IA", "finance": "💰 FINANCE", "information": "🧠 NOOSPHÈRE" };
         const colors = { "energie": "#ffee00", "environnement": "#ff0055", "espace": "#00d4ff", "demographie_social": "#ff9100", "sante_bio": "#00ff9d", "geopolitique": "#ff0000", "technologie_ia": "#bc13fe", "finance": "#ffffff", "information": "#7a7a7a" };
+        const fallbackDesc = { "energie": "Abondance énergétique.", "environnement": "Stabilité écologique.", "espace": "Expansion hors-Terre.", "demographie_social": "Cohésion sociale.", "sante_bio": "Espérance de vie.", "geopolitique": "Risque de guerre.", "technologie_ia": "Vitesse innovation.", "finance": "Stabilité monétaire.", "information": "Vérité consensus." };
 
         function calculateStability(pillars) {
             let sum = 0, count = 0;
@@ -101,14 +149,42 @@
 
                 const history = await histRes.json();
                 const current = await currRes.json();
-                
-                let projection = [];
-                try { projection = await projRes.json(); } catch(e) { console.log("Projection pending..."); }
+                let projection = []; try { projection = await projRes.json(); } catch(e) {}
 
-                // --- CHART LOGIC ---
+                // --- INJECTION DES ALERTES (NOUVEAU) ---
+                // 1. Analyse Texte
+                const analysisEl = document.getElementById('analysis-text');
+                if(current.global_analysis) {
+                    analysisEl.textContent = current.global_analysis;
+                } else {
+                    analysisEl.textContent = "Données d'analyse non disponibles (Attente du prochain run).";
+                }
+
+                // 2. Liste Alertes
+                const alertsEl = document.getElementById('alerts-list');
+                alertsEl.innerHTML = ''; // Clean
+                
+                if(current.alerts && current.alerts.length > 0) {
+                    current.alerts.forEach(alert => {
+                        const li = document.createElement('li');
+                        
+                        // Détection gravité pour la couleur
+                        if(alert.includes("SINGULARITÉ") || alert.includes("CLIMAT") || alert.includes("GUERRE") || alert.includes("TENSION")) {
+                            li.className = 'alert-item alert-critical';
+                        } else {
+                            li.className = 'alert-item';
+                        }
+                        
+                        li.textContent = alert;
+                        alertsEl.appendChild(li);
+                    });
+                } else {
+                    alertsEl.innerHTML = '<li class="alert-item" style="color:#666">Aucune alerte prioritaire détectée.</li>';
+                }
+
+                // --- CHART LOGIC (Identique) ---
                 const labels = [...history.map(h => h.year), "2026"];
                 projection.forEach(p => labels.push(p.year));
-
                 const histData = history.map(h => calculateStability(h.pillars));
                 const currData = current.stability_index;
                 const projData = projection.map(p => p.stability_index);
@@ -122,15 +198,11 @@
                 }];
 
                 for (const key of Object.keys(names)) {
-                    // Attention: structure différente pour history vs current
                     const hData = history.map(h => h.pillars[key].score || h.pillars[key]);
-                    // Pour current, on doit accéder à .score maintenant !
-                    const cData = current.pillars[key].score;
+                    let cData; if(current.pillars[key].score !== undefined) cData = current.pillars[key].score; else cData = current.pillars[key];
                     const pData = projection.map(p => p.pillars[key]);
-                    
                     const fullData = [...hData, cData, ...pData];
                     let isVisible = (key === 'technologie_ia' || key === 'environnement');
-                    
                     datasets.push({
                         label: names[key], data: fullData, borderColor: colors[key],
                         borderWidth: 2, tension: 0.4, hidden: !isVisible,
@@ -144,12 +216,10 @@
                     options: { responsive: true, maintainAspectRatio: false, interaction: { mode: 'index', intersect: false }, plugins: { legend: { position: 'top', labels: { color: '#fff', usePointStyle: true, boxWidth: 6 } } }, scales: { y: { grid: { color: 'rgba(255,255,255,0.05)' }, beginAtZero: true, max: 100 }, x: { grid: { display: false } } } }
                 });
 
-                // --- DOM UPDATE ---
                 document.getElementById('last-update').textContent = "SCAN: " + current.date;
                 const score = current.stability_index;
                 const scoreEl = document.getElementById('global-score');
                 const statusEl = document.getElementById('global-status');
-                
                 scoreEl.textContent = score + "%";
                 if(score > 60) { scoreEl.className += " c-good"; statusEl.textContent = "STABLE"; statusEl.className = "c-good"; }
                 else if(score > 40) { scoreEl.className += " c-mid"; statusEl.textContent = "INCERTAIN"; statusEl.className = "c-mid"; }
@@ -157,35 +227,17 @@
 
                 const grid = document.getElementById('pillars-grid');
                 grid.innerHTML = '';
-                
                 for (const [key, valueObj] of Object.entries(current.pillars)) {
-                    // On récupère le score et le commentaire depuis l'objet
-                    const scoreVal = valueObj.score;
-                    const comment = valueObj.comment;
-                    
+                    let scoreVal, comment;
+                    if (typeof valueObj === 'object' && valueObj !== null && 'score' in valueObj) { scoreVal = valueObj.score; comment = valueObj.comment; } 
+                    else { scoreVal = valueObj; comment = fallbackDesc[key]; }
                     let cleanValue = Math.round(scoreVal);
                     let state = 'good';
                     if (cleanValue < 40) state = 'bad'; else if (cleanValue < 60) state = 'mid';
                     if (key === 'technologie_ia' && cleanValue > 90) state = 'mid';
 
                     const card = document.createElement('div'); card.className = `card`;
-                    
-                    // ON INJECTE LE COMMENTAIRE DYNAMIQUE DANS LA TOOLTIP
-                    card.innerHTML = `
-                        <div class="card-header">
-                            <div class="card-title-box">
-                                <span class="card-title">${names[key] || key}</span>
-                                <div class="info-icon">?
-                                    <span class="tooltip-text">
-                                        <strong style="color:var(--neon-blue); text-transform:uppercase; display:block; margin-bottom:5px;">${names[key]} (${cleanValue}%)</strong>
-                                        ${comment}
-                                    </span>
-                                </div>
-                            </div>
-                            <span class="card-score c-${state}">${cleanValue}%</span>
-                        </div>
-                        <div class="progress-container"><div class="progress-bar bg-${state}" style="width: ${cleanValue}%"></div></div>
-                    `;
+                    card.innerHTML = `<div class="card-header"><div class="card-title-box"><span class="card-title">${names[key] || key}</span><div class="info-icon">?<span class="tooltip-text"><strong style="color:var(--neon-blue); text-transform:uppercase; display:block; margin-bottom:5px;">${names[key]} (${cleanValue}%)</strong>${comment}</span></div></div><span class="card-score c-${state}">${cleanValue}%</span></div><div class="progress-container"><div class="progress-bar bg-${state}" style="width: ${cleanValue}%"></div></div>`;
                     grid.appendChild(card);
                 }
             } catch (error) { console.error(error); }
