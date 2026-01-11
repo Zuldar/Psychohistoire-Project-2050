@@ -1,6 +1,6 @@
 {
   "date": "2026-01-11",
-  "stability_index": 44.77,
+  "stability_index": 44.74,
   "global_analysis": "\u26a0\ufe0f STABILIT\u00c9 PR\u00c9CAIRE. La puissance technologique masque des fractures sociales et environnementales profondes. Risque de d\u00e9crochage.",
   "alerts": [
     "\u26a0\ufe0f ALERTE SINGULARIT\u00c9 (Tech) : L'IA atteint un seuil critique d'autonomie. Risque syst\u00e9mique pour l'emploi.",
@@ -11,39 +11,39 @@
   ],
   "pillars": {
     "energie": {
-      "score": 64.97,
+      "score": 65.27,
       "comment": "Transition difficile."
     },
     "environnement": {
-      "score": 13.97,
+      "score": 13.83,
       "comment": "Effondrement \u00e9cologique."
     },
     "espace": {
-      "score": 81.45,
+      "score": 81.49,
       "comment": "Multi-plan\u00e9taire."
     },
     "demographie_social": {
-      "score": 29.46,
+      "score": 30.69,
       "comment": "Guerre civile."
     },
     "sante_bio": {
-      "score": 85.27,
+      "score": 85.4,
       "comment": "Transhumanisme."
     },
     "geopolitique": {
-      "score": 24.94,
+      "score": 25.25,
       "comment": "Guerre Mondiale."
     },
     "technologie_ia": {
-      "score": 98.11,
+      "score": 98.61,
       "comment": "SINGULARIT\u00c9."
     },
     "finance": {
-      "score": 45.15,
+      "score": 43.82,
       "comment": "R\u00e9cession."
     },
     "information": {
-      "score": 10.23,
+      "score": 8.67,
       "comment": "Obscurantisme."
     }
   }
