@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seldon Project | Documentation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-dark: #05050b;
+            --glass: rgba(20, 20, 35, 0.9);
+            --border: rgba(255, 255, 255, 0.1);
+            --neon-blue: #00f3ff;
+            --neon-green: #00ff9d;
+            --neon-red: #ff0055;
+            --neon-yellow: #ffee00;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: #e0e0e0;
+            font-family: 'Rajdhani', sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        .container { max-width: 900px; margin: 0 auto; }
+
+        /* HEADER */
+        header {
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--neon-blue);
+            margin: 0;
+            text-transform: uppercase;
+        }
+
+        .btn-back {
+            text-decoration: none;
+            color: #fff;
+            border: 1px solid var(--border);
+            padding: 10px 20px;
+            border-radius: 4px;
+            transition: 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.8em;
+        }
+        .btn-back:hover { background: var(--neon-blue); color: #000; }
+
+        /* SECTIONS */
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5em;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            color: #fff;
+            border-left: 4px solid var(--neon-blue);
+            padding-left: 15px;
+        }
+
+        .doc-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+
+        .scale-explanation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+
+        .score-good { color: var(--neon-green); }
+        .score-bad { color: var(--neon-red); }
+        .score-warn { color: var(--neon-yellow); }
+
+        code {
+            background: #222;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+            color: var(--neon-yellow);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Guide des Métriques</h1>
+            <a href="index.html" class="btn-back">← Retour au Dashboard</a>
+        </header>
+
+        <p style="font-size: 1.2em; line-height: 1.6;">
+            Ce modèle psychohistorique agrège des milliers de points de données pour générer un score normalisé entre <b>0</b> et <b>100</b>. 
+            Voici comment interpréter ces chiffres pour chaque catégorie.
+        </p>
+
+        <div class="section-title">I. La Base Physique</div>
+        
+        <div class="doc-card">
+            <h3 style="margin-top: 0;">⚡ Énergie & 🚀 Espace</h3>
+            <p>Mesure l'abondance et la capacité technologique.</p>
+            <div class="scale-explanation">
+                <span class="score-bad">0% = Pénurie / Blackout</span>
+                <span class="score-good">100% = Abondance (Fusion/Colonisation)</span>
+            </div>
+        </div>
+
+        <div class="doc-card">
+            <h3 style="margin-top: 0;">🌍 Environnement</h3>
+            <p>Mesure la stabilité du climat et des ressources vitales (eau, agriculture).</p>
+            <div class="scale-explanation">
+                <span class="score-bad">0% = Effondrement Écologique</span>
+                <span class="score-good">100% = Équilibre / Régénération</span>
+            </div>
+        </div>
+
+        <div class="section-title">II. La Base Humaine</div>
+
+        <div class="doc-card">
+            <h3 style="margin-top: 0;">⚔️ Géopolitique & 👥 Social</h3>
+            <p>Indicateur de paix et de cohésion sociale.</p>
+            <div class="scale-explanation">
+                <span class="score-bad">0% = Guerre Totale / Guerre Civile</span>
+                <span class="score-good">100% = Paix Mondiale / Harmonie</span>
+            </div>
+        </div>
+
+        <div class="doc-card">
+            <h3 style="margin-top: 0;">🧬 Santé & Bio</h3>
+            <p>Vitalité de l'espèce humaine et résilience aux maladies.</p>
+            <div class="scale-explanation">
+                <span class="score-bad">0% = Pandémie Extinction</span>
+                <span class="score-good">100% = Longévité accrue / Santé parfaite</span>
+            </div>
+        </div>
+
+        <div class="section-title">III. La Base Abstraite (Attention !)</div>
+
+        <div class="doc-card" style="border-color: var(--neon-yellow);">
+            <h3 style="margin-top: 0; color: var(--neon-yellow);">🤖 Technologie & IA</h3>
+            <p>La vitesse de l'innovation. <br>⚠️ <b>Particularité :</b> Un score trop élevé (>90%) est considéré comme dangereux (Perte de contrôle).</p>
+            <div class="scale-explanation">
+                <span>0% = Stagnation</span>
+                <span class="score-good">50-80% = Progrès Maîtrisé</span>
+                <span class="score-warn">100% = Singularité (Danger)</span>
+            </div>
+        </div>
+
+        <div class="doc-card">
+            <h3 style="margin-top: 0;">🧠 Information (Noosphère)</h3>
+            <p>La fiabilité de la vérité et le consensus sur la réalité.</p>
+            <div class="scale-explanation">
+                <span class="score-bad">0% = Chaos / Fake News Totales</span>
+                <span class="score-good">100% = Vérité / Transparence</span>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
