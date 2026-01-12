@@ -1,12 +1,12 @@
 {
-    "date": "2026-01-11 22:49",
+    "date": "2026-01-12 11:16",
     "stability_index": 51,
     "global_analysis": "⚠️ STABILITÉ PRÉCAIRE.",
     "alerts": [
-        "⚠️ Ω_BIOSPHERE : Seuil critique atteint",
-        "⚔️ Σ_CONFLICT : Friction tectonique max",
+        "⚠️ Ω_BIOSPHERE : Seuil critique",
+        "⚔️ Σ_CONFLICT : Friction max",
         "📈 Δ_SINGULARITY : Variance exponentielle",
-        "📅 2028 : Les équations du Radiant sont formelles : la résonance entre la corruption de la noosphère et l'entropie climatique atteint un seuil critique, rendant la rupture systémique mathématiquement inévitable."
+        "📅 2028 : Les équations sont formelles : la résonance entre la corruption de la noosphère et l'entropie climatique atteint un seuil critique."
     ],
     "pillars": {
         "energie": {
@@ -45,5 +45,35 @@
             "score": 9.83,
             "comment": "🧠 Obscurantisme."
         }
-    }
+    },
+    "archives": [
+        {
+            "year": "1914",
+            "score": 30
+        },
+        {
+            "year": "1920",
+            "score": 27
+        },
+        {
+            "year": "1929",
+            "score": 20
+        },
+        {
+            "year": "1935",
+            "score": 26
+        },
+        {
+            "year": "1941",
+            "score": 21
+        },
+        {
+            "year": "1947",
+            "score": 14
+        },
+        {
+            "year": "1953",
+            "score": 29
+        }
+    ]
 }
