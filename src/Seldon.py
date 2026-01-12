@@ -4,14 +4,15 @@ import random
 from datetime import datetime
 
 # --- 1. CONFIGURATION ---
-HISTORY_FILE = 'data/history_full.json'
+# Changement de nom pour forcer la régénération propre avec les textes
+HISTORY_FILE = 'data/history_full_v2.json' 
 CURRENT_STATE_FILE = 'data/current_state.json'
 RECENT_HISTORY_FILE = 'data/recent_history.json'
 PROJECTION_FILE = 'data/projection_2036.json'
 MEMORY_FILE = 'data/bot_memory.json'
-WEIGHTS_FILE = 'data/weights.json' # NOUVEAU : Le cerveau mutable
+WEIGHTS_FILE = 'data/weights.json'
 
-# Vocabulaire Seldonien
+# Vocabulaire Seldonien (Futur)
 SELDON_TERMS = {
     "energie": "l'épuisement énergétique", "environnement": "l'entropie climatique",
     "espace": "la stagnation exosphérique", "demographie_social": "la dissonance sociale",
@@ -20,15 +21,26 @@ SELDON_TERMS = {
     "information": "la corruption de la noosphère"
 }
 
-# --- 2. GESTION DES POIDS (AUTO-ADAPTATION) ---
+# ARCHIVES HISTORIQUES (Passé) - NOUVEAU !
+HISTORICAL_EVENTS = {
+    "1914": "Rupture de l'équilibre des alliances (Guerre Totale)",
+    "1918": "Effondrement démographique viral (Grippe Espagnole)",
+    "1929": "Dislocation des vecteurs de crédit (Grande Dépression)",
+    "1939": "Friction cinétique globale (Conflit Majeur)",
+    "1945": "Entropie géopolitique maximale (Point Zéro)",
+    "1962": "Tension nucléaire critique (Crise des Missiles)",
+    "1973": "Choc des ressources fossiles (Crise Pétrolière)",
+    "2001": "Asymétrie sécuritaire globale (Choc Terroriste)",
+    "2008": "Toxicité des actifs financiers (Subprimes)",
+    "2020": "Pandémie systémique de classe 4 (Covid-19)",
+    "2022": "Retour de la guerre haute intensité (Ukraine)"
+}
+
+# --- 2. GESTION DES POIDS ---
 
 def get_weights():
-    # Si le fichier de poids existe, on le charge
     if os.path.exists(WEIGHTS_FILE):
-        with open(WEIGHTS_FILE, 'r') as f:
-            return json.load(f)
-    
-    # Sinon, on crée les poids par défaut
+        with open(WEIGHTS_FILE, 'r') as f: return json.load(f)
     default_weights = {
         "technologie_ia": 1.5, "environnement": 1.2, "energie": 1.0,
         "geopolitique": 1.3, "demographie_social": 1.0, "finance": 1.1,
@@ -38,42 +50,21 @@ def get_weights():
     return default_weights
 
 def recalibrate_weights(current_score, predicted_score, current_pillars):
-    """
-    C'est ici que le robot apprend.
-    Si l'écart est trop grand, il modifie l'importance des piliers.
-    """
     weights = get_weights()
     delta = current_score - predicted_score
+    if abs(delta) < 5: return weights, False
     
-    # Seuil d'apprentissage : on ne change rien si l'erreur est < 5 points
-    if abs(delta) < 5:
-        return weights, False
-
-    print(f"🧠 RECALIBRATION REQUISE (Delta: {delta})")
-    
-    # Si Réalité < Prédiction (Le robot était trop optimiste)
-    # -> Il faut donner plus de poids aux piliers qui vont mal (pour "voir" la crise venir)
-    if delta < 0:
-        # On trouve le pilier le plus faible actuellement
-        weakest_pillar = min(current_pillars, key=lambda k: current_pillars[k]['score'] if isinstance(current_pillars[k], dict) else current_pillars[k])
-        # On augmente son poids
-        weights[weakest_pillar] = round(weights[weakest_pillar] + 0.1, 2)
-        print(f"🔧 Ajustement : Importance de {weakest_pillar} augmentée à {weights[weakest_pillar]}")
-    
-    # Si Réalité > Prédiction (Le robot était trop pessimiste)
-    # -> Il faut donner moins de poids au pilier le plus fort (il nous a trop rassuré ?)
-    # Ou diminuer le poids du pilier qui plombait le score
-    else:
-        strongest_pillar = max(current_pillars, key=lambda k: current_pillars[k]['score'] if isinstance(current_pillars[k], dict) else current_pillars[k])
-        # On augmente son poids (car c'est lui qui tire vers le haut, on l'a sous-estimé)
-        weights[strongest_pillar] = round(weights[strongest_pillar] + 0.1, 2)
-        print(f"🔧 Ajustement : Importance de {strongest_pillar} augmentée à {weights[strongest_pillar]}")
-
+    print(f"🧠 RECALIBRATION (Delta: {delta})")
+    if delta < 0: # Trop optimiste
+        weakest = min(current_pillars, key=lambda k: current_pillars[k]['score'] if isinstance(current_pillars[k], dict) else current_pillars[k])
+        weights[weakest] = round(weights[weakest] + 0.1, 2)
+    else: # Trop pessimiste
+        strongest = max(current_pillars, key=lambda k: current_pillars[k]['score'] if isinstance(current_pillars[k], dict) else current_pillars[k])
+        weights[strongest] = round(weights[strongest] + 0.1, 2)
     save_json(WEIGHTS_FILE, weights)
     return weights, True
 
-# --- 3. FONCTIONS UTILITAIRES ---
-
+# --- 3. UTILITAIRES ---
 def load_json(filename):
     try:
         with open(filename, 'r') as f: return json.load(f)
@@ -91,24 +82,31 @@ def calculate_stability(pillars, weights):
         total += score * w; weight_sum += w
     return round(total / weight_sum)
 
-# --- 4. GÉNÉRATEUR D'HISTOIRE ---
+# --- 4. GÉNÉRATEUR D'HISTOIRE (V31 - NARRATIF) ---
 def generate_full_history():
-    print("📜 CRÉATION DES ARCHIVES (1900-2025)...")
+    print("📜 CRÉATION DES ARCHIVES NARRATIVES (1900-2025)...")
     history = []
-    key_events = { 1900:60, 1914:30, 1918:25, 1929:20, 1939:15, 1945:10, 1969:75, 1989:65, 2001:50, 2008:40, 2020:35, 2025:45 }
-    current_val = key_events[1900]
+    # Dates clés (Score)
+    key_scores = { 
+        1900:60, 1914:30, 1918:25, 1929:20, 1939:15, 1945:10, 
+        1962:40, 1969:75, 1989:65, 2001:50, 2008:40, 2020:35, 2025:45 
+    }
+    current_val = key_scores[1900]
     
     for year in range(1900, 2026):
-        if year in key_events: current_val = key_events[year]
+        # Calcul du score (Interpolation)
+        if year in key_scores: current_val = key_scores[year]
         else:
-            next_y = min([k for k in key_events if k > year], default=year)
-            prev_y = max([k for k in key_events if k < year], default=year)
+            next_y = min([k for k in key_scores if k > year], default=year)
+            prev_y = max([k for k in key_scores if k < year], default=year)
             if next_y != prev_y:
                 progress = (year - prev_y) / (next_y - prev_y)
-                current_val = key_events[prev_y] + (key_events[next_y] - key_events[prev_y]) * progress
-            current_val += random.uniform(-3, 3)
-
+                current_val = key_scores[prev_y] + (key_scores[next_y] - key_scores[prev_y]) * progress
+            current_val += random.uniform(-2, 2)
+        
         current_val = max(5, min(98, current_val))
+        
+        # Piliers
         pillars = {}
         for k in SELDON_TERMS.keys():
             var = random.uniform(-8, 8)
@@ -116,24 +114,29 @@ def generate_full_history():
             if year == 1929 and k == 'finance': var -= 30
             pillars[k] = max(5, min(100, current_val + var))
 
-        history.append({ "year": str(year), "stability_index": round(current_val), "pillars": pillars })
+        # NOUVEAU : Ajout de la description textuelle si elle existe
+        event_desc = HISTORICAL_EVENTS.get(str(year), "")
+        
+        history.append({ 
+            "year": str(year), 
+            "stability_index": round(current_val), 
+            "pillars": pillars,
+            "description": event_desc # Champ ajouté
+        })
     
     save_json(HISTORY_FILE, history)
     return history
 
-# --- 5. EXÉCUTION PRINCIPALE ---
-
+# --- 5. EXÉCUTION ---
 def update_seldon():
-    print("🔮 Démarrage Seldon Bot...")
-    
-    # 0. Charger les Poids (Le Cerveau)
+    print("🔮 Démarrage Seldon Bot V31...")
     weights = get_weights()
 
     # A. HISTOIRE
     history = load_json(HISTORY_FILE)
     if not history: history = generate_full_history()
     
-    # B. ÉTAT ACTUEL
+    # B. CURRENT
     current = load_json(CURRENT_STATE_FILE)
     if not current: return
 
@@ -142,51 +145,49 @@ def update_seldon():
     current['stability_index'] = new_score
     current['date'] = datetime.now().strftime("%Y-%m-%d %H:%M")
     
-    # D. AUTO-CORRECTION & MÉMOIRE
+    # D. AUTO-CORRECTION
     memory = load_json(MEMORY_FILE) or { "last_run_date": None, "predicted_score_for_today": None, "accuracy_history": [] }
-    
-    divergence_msg = None
     accuracy = 100
+    divergence_msg = None
     was_recalibrated = False
 
     if memory.get("predicted_score_for_today"):
         predicted = memory["predicted_score_for_today"]
         delta = abs(new_score - predicted)
-        accuracy = max(0, 100 - (delta * 3)) # Pénalité de précision
-        
+        accuracy = max(0, 100 - (delta * 3))
         memory["accuracy_history"].append(accuracy)
         if len(memory["accuracy_history"]) > 10: memory["accuracy_history"].pop(0)
         avg_acc = int(sum(memory["accuracy_history"]) / len(memory["accuracy_history"]))
-        
-        # --- C'EST ICI QUE LE ROBOT SE RÉAJUSTE SEUL ---
         weights, was_recalibrated = recalibrate_weights(new_score, predicted, current['pillars'])
-        
         if delta > 8: divergence_msg = f"⚠️ DIVERGENCE SELDON (Delta: {delta})"
         if was_recalibrated: divergence_msg = "🔧 PROTOCOLE DE RECALIBRATION ACTIVÉ"
-
         current['model_accuracy'] = avg_acc
-    else:
-        current['model_accuracy'] = 100
+    else: current['model_accuracy'] = 100
 
-    # Prédiction pour demain (pour la prochaine correction)
     memory["predicted_score_for_today"] = new_score + random.choice([-1, 0, 1])
     save_json(MEMORY_FILE, memory)
 
-    # E. ARCHIVES & UI
+    # E. ARCHIVES (AVEC TEXTES)
     past_crises = []
-    last_yr = 0
+    # On force l'ajout des années clés définies dans HISTORICAL_EVENTS
+    # + les années où le score est très bas, même sans texte
     for e in history:
-        yr = int(e['year'])
-        if e['stability_index'] < 38 and yr > last_yr + 5:
-            past_crises.append({"year": str(yr), "score": e['stability_index']})
-            last_yr = yr
+        yr = str(e['year'])
+        # Si c'est une année avec un événement nommé
+        if e.get('description'):
+            past_crises.append({"year": yr, "score": e['stability_index'], "desc": e['description']})
+        # Sinon, si c'est une crise grave non nommée (pour combler les trous)
+        elif e['stability_index'] < 30:
+            # On vérifie qu'on n'a pas déjà ajouté une année très proche (anti-doublon)
+            if not past_crises or int(yr) > int(past_crises[-1]['year']) + 5:
+                past_crises.append({"year": yr, "score": e['stability_index'], "desc": "Instabilité systémique critique"})
+
     current['archives'] = past_crises
     save_json(RECENT_HISTORY_FILE, history[-6:])
 
     # F. ALERTES
     alerts = []
     if divergence_msg: alerts.append(divergence_msg)
-    
     stress_factors = []
     for k, v in current['pillars'].items():
         s = v['score'] if isinstance(v, dict) else v
@@ -195,11 +196,10 @@ def update_seldon():
     stress_factors.sort(key=lambda x: x[1])
 
     if len(stress_factors) >= 2:
-        n1 = SELDON_TERMS.get(stress_factors[0][0], "facteur X")
-        n2 = SELDON_TERMS.get(stress_factors[1][0], "facteur Y")
+        n1 = SELDON_TERMS.get(stress_factors[0][0], "X")
+        n2 = SELDON_TERMS.get(stress_factors[1][0], "Y")
         alerts.append(f"📅 2028 : Les équations indiquent une résonance critique entre {n1} et {n2}.")
-    else:
-        alerts.append("📅 2028 : Aucune convergence systémique immédiate.")
+    else: alerts.append("📅 2028 : Aucune convergence systémique immédiate.")
 
     if current['pillars']['environnement']['score'] < 40: alerts.append("⚠️ Ω_BIOSPHERE : Seuil critique")
     if current['pillars']['geopolitique']['score'] < 35: alerts.append("⚔️ Σ_CONFLICT : Tensions maximales")
@@ -209,20 +209,18 @@ def update_seldon():
 
     # G. PROJECTIONS
     projections = { "optimiste": [], "tendantielle": [], "pessimiste": [] }
-    uncertainty = (100 - current.get('model_accuracy', 100)) / 5 # Plus on se trompe, plus le cône s'ouvre
-    
+    uncertainty = (100 - current.get('model_accuracy', 100)) / 5
     for i in range(1, 11):
         y = str(2026 + i)
         drift = -0.5 * i
         base = max(0, min(100, new_score + drift))
         if i in [2, 3]: base -= 6
-        
         projections["tendantielle"].append({ "year": y, "stability_index": round(base) })
         projections["optimiste"].append({ "year": y, "stability_index": round(min(98, base + i*(1.5 + uncertainty))) })
         projections["pessimiste"].append({ "year": y, "stability_index": round(max(5, base - i*(2.0 + uncertainty))) })
         
     save_json(PROJECTION_FILE, {"scenarios": projections})
-    print("✅ Cycle Seldon terminé. Poids recalibrés si nécessaire.")
+    print("✅ Seldon V31 terminé.")
 
 if __name__ == "__main__":
     update_seldon()
