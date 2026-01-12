@@ -1,7 +1,7 @@
 {
-    "date": "2026-01-12 11:44",
+    "date": "2026-01-12 11:56",
     "stability_index": 50,
-    "model_accuracy": 100,
+    "model_accuracy": 97,
     "global_analysis": "Initialisation du protocole Seldon V31. En attente de la première convergence des données historiques.",
     "pillars": {
         "technologie_ia": {
@@ -42,80 +42,65 @@
         }
     },
     "alerts": [
-        "📅 2028 : Les équations indiquent une résonance critique entre l'instabilité géopolitique et la stagnation exosphérique.",
-        "⚠️ Ω_BIOSPHERE : Seuil critique",
+        "📅 2031 : la Friction Géopolitique catalyse la Stagnation Exosphérique. Probabilité de rupture de la chaîne causale : 50%.",
+        "⚠️ Ω_BIOSPHERE : Seuil critique atteint",
         "⚔️ Σ_CONFLICT : Tensions maximales"
     ],
     "archives": [
         {
             "year": "1914",
             "score": 30,
-            "desc": "Rupture de l'équilibre des alliances (Guerre Totale)"
+            "desc": "Rupture de l'équilibre des alliances"
         },
         {
             "year": "1918",
-            "score": 25,
-            "desc": "Effondrement démographique viral (Grippe Espagnole)"
-        },
-        {
-            "year": "1924",
-            "score": 21,
-            "desc": "Instabilité systémique critique"
+            "score": 42,
+            "desc": "Effondrement démographique viral"
         },
         {
             "year": "1929",
-            "score": 20,
-            "desc": "Dislocation des vecteurs de crédit (Grande Dépression)"
-        },
-        {
-            "year": "1935",
-            "score": 17,
-            "desc": "Instabilité systémique critique"
+            "score": 45,
+            "desc": "Dislocation des vecteurs de crédit"
         },
         {
             "year": "1939",
-            "score": 15,
-            "desc": "Friction cinétique globale (Conflit Majeur)"
+            "score": 20,
+            "desc": "Friction cinétique globale"
         },
         {
             "year": "1945",
             "score": 10,
-            "desc": "Entropie géopolitique maximale (Point Zéro)"
-        },
-        {
-            "year": "1951",
-            "score": 19,
-            "desc": "Instabilité systémique critique"
+            "desc": "Entropie géopolitique maximale"
         },
         {
             "year": "1962",
-            "score": 40,
-            "desc": "Tension nucléaire critique (Crise des Missiles)"
+            "score": 62,
+            "desc": "Tension nucléaire critique"
         },
         {
             "year": "1973",
-            "score": 71,
-            "desc": "Choc des ressources fossiles (Crise Pétrolière)"
+            "score": 65,
+            "desc": "Choc des ressources fossiles"
         },
         {
             "year": "2001",
-            "score": 50,
-            "desc": "Asymétrie sécuritaire globale (Choc Terroriste)"
+            "score": 58,
+            "desc": "Asymétrie sécuritaire globale"
         },
         {
             "year": "2008",
-            "score": 40,
-            "desc": "Toxicité des actifs financiers (Subprimes)"
+            "score": 50,
+            "desc": "Toxicité des actifs financiers"
         },
         {
             "year": "2020",
-            "score": 35,
-            "desc": "Pandémie systémique de classe 4 (Covid-19)"
+            "score": 45,
+            "desc": "Pandémie systémique de classe 4"
         },
         {
             "year": "2022",
-            "score": 38,
-            "desc": "Retour de la guerre haute intensité (Ukraine)"
+            "score": 45,
+            "desc": "Retour de la guerre haute intensité"
         }
     ]
 }
