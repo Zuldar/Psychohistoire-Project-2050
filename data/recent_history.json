@@ -1,0 +1,98 @@
+[
+    {
+        "year": "2020",
+        "stability_index": 35,
+        "pillars": {
+            "energie": 41.03061843488393,
+            "environnement": 34.37331754361706,
+            "espace": 36.94634189238146,
+            "demographie_social": 35.66835036835408,
+            "sante_bio": 30.73970317159872,
+            "geopolitique": 42.29046134286533,
+            "technologie_ia": 35.2725598803257,
+            "finance": 33.22300053778994,
+            "information": 27.817200872694375
+        },
+        "description": "Pandémie systémique de classe 4 (Covid-19)"
+    },
+    {
+        "year": "2021",
+        "stability_index": 38,
+        "pillars": {
+            "energie": 33.72680373202856,
+            "environnement": 44.237864832230535,
+            "espace": 43.46016790176587,
+            "demographie_social": 39.5261484552735,
+            "sante_bio": 42.55882005130675,
+            "geopolitique": 34.06658170707728,
+            "technologie_ia": 35.07710533232769,
+            "finance": 42.06635569354471,
+            "information": 38.40729108565106
+        },
+        "description": ""
+    },
+    {
+        "year": "2022",
+        "stability_index": 38,
+        "pillars": {
+            "energie": 32.584120961674046,
+            "environnement": 39.93129583157848,
+            "espace": 29.823156367019678,
+            "demographie_social": 30.511097943184303,
+            "sante_bio": 45.12420694078797,
+            "geopolitique": 38.489947897502475,
+            "technologie_ia": 44.01039264557227,
+            "finance": 37.15369883778256,
+            "information": 35.280644540366104
+        },
+        "description": "Retour de la guerre haute intensité (Ukraine)"
+    },
+    {
+        "year": "2023",
+        "stability_index": 42,
+        "pillars": {
+            "energie": 41.69408710474565,
+            "environnement": 34.42285304754473,
+            "espace": 44.28632469971625,
+            "demographie_social": 42.512364947298245,
+            "sante_bio": 47.74429915762616,
+            "geopolitique": 38.935033024278745,
+            "technologie_ia": 34.87664845238638,
+            "finance": 38.672568821659276,
+            "information": 43.295456476716765
+        },
+        "description": ""
+    },
+    {
+        "year": "2024",
+        "stability_index": 45,
+        "pillars": {
+            "energie": 50.45220569064764,
+            "environnement": 47.134819098432274,
+            "espace": 37.30058885905929,
+            "demographie_social": 43.82603853915244,
+            "sante_bio": 40.984869938728124,
+            "geopolitique": 39.459419676850295,
+            "technologie_ia": 48.73669685610577,
+            "finance": 48.207710194949826,
+            "information": 38.122700480374675
+        },
+        "description": ""
+    },
+    {
+        "year": "2025",
+        "stability_index": 45,
+        "pillars": {
+            "energie": 44.74201894940816,
+            "environnement": 37.280143291389095,
+            "espace": 48.00129506407765,
+            "demographie_social": 44.42636949203832,
+            "sante_bio": 47.02776314215505,
+            "geopolitique": 50.81726748846832,
+            "technologie_ia": 38.59996260196819,
+            "finance": 51.88764864131696,
+            "information": 44.907827152472045
+        },
+        "description": ""
+    }
+]

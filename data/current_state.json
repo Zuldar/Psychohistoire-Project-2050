@@ -1,22 +1,121 @@
 {
-    "date": "2026-01-12 12:00",
-    "stability_index": 45,
+    "date": "2026-01-12 11:44",
+    "stability_index": 50,
     "model_accuracy": 100,
     "global_analysis": "Initialisation du protocole Seldon V31. En attente de la première convergence des données historiques.",
     "pillars": {
-        "technologie_ia": { "score": 88, "comment": "Risque de divergence algorithmique." },
-        "environnement": { "score": 38, "comment": "Instabilité biosphérique critique." },
-        "energie": { "score": 55, "comment": "Transition sous contrainte." },
-        "geopolitique": { "score": 30, "comment": "Friction tectonique élevée." },
-        "demographie_social": { "score": 42, "comment": "Dissonance civile." },
-        "finance": { "score": 48, "comment": "Volatilité des actifs." },
-        "sante_bio": { "score": 60, "comment": "Résilience virale stable." },
-        "espace": { "score": 35, "comment": "Stagnation orbitale." },
-        "information": { "score": 40, "comment": "Saturation de la noosphère." }
+        "technologie_ia": {
+            "score": 88,
+            "comment": "Risque de divergence algorithmique."
+        },
+        "environnement": {
+            "score": 38,
+            "comment": "Instabilité biosphérique critique."
+        },
+        "energie": {
+            "score": 55,
+            "comment": "Transition sous contrainte."
+        },
+        "geopolitique": {
+            "score": 30,
+            "comment": "Friction tectonique élevée."
+        },
+        "demographie_social": {
+            "score": 42,
+            "comment": "Dissonance civile."
+        },
+        "finance": {
+            "score": 48,
+            "comment": "Volatilité des actifs."
+        },
+        "sante_bio": {
+            "score": 60,
+            "comment": "Résilience virale stable."
+        },
+        "espace": {
+            "score": 35,
+            "comment": "Stagnation orbitale."
+        },
+        "information": {
+            "score": 40,
+            "comment": "Saturation de la noosphère."
+        }
     },
     "alerts": [
-        "✅ SYSTÈME EN LIGNE",
-        "⚠️ Calibration nécessaire"
+        "📅 2028 : Les équations indiquent une résonance critique entre l'instabilité géopolitique et la stagnation exosphérique.",
+        "⚠️ Ω_BIOSPHERE : Seuil critique",
+        "⚔️ Σ_CONFLICT : Tensions maximales"
     ],
-    "archives": []
+    "archives": [
+        {
+            "year": "1914",
+            "score": 30,
+            "desc": "Rupture de l'équilibre des alliances (Guerre Totale)"
+        },
+        {
+            "year": "1918",
+            "score": 25,
+            "desc": "Effondrement démographique viral (Grippe Espagnole)"
+        },
+        {
+            "year": "1924",
+            "score": 21,
+            "desc": "Instabilité systémique critique"
+        },
+        {
+            "year": "1929",
+            "score": 20,
+            "desc": "Dislocation des vecteurs de crédit (Grande Dépression)"
+        },
+        {
+            "year": "1935",
+            "score": 17,
+            "desc": "Instabilité systémique critique"
+        },
+        {
+            "year": "1939",
+            "score": 15,
+            "desc": "Friction cinétique globale (Conflit Majeur)"
+        },
+        {
+            "year": "1945",
+            "score": 10,
+            "desc": "Entropie géopolitique maximale (Point Zéro)"
+        },
+        {
+            "year": "1951",
+            "score": 19,
+            "desc": "Instabilité systémique critique"
+        },
+        {
+            "year": "1962",
+            "score": 40,
+            "desc": "Tension nucléaire critique (Crise des Missiles)"
+        },
+        {
+            "year": "1973",
+            "score": 71,
+            "desc": "Choc des ressources fossiles (Crise Pétrolière)"
+        },
+        {
+            "year": "2001",
+            "score": 50,
+            "desc": "Asymétrie sécuritaire globale (Choc Terroriste)"
+        },
+        {
+            "year": "2008",
+            "score": 40,
+            "desc": "Toxicité des actifs financiers (Subprimes)"
+        },
+        {
+            "year": "2020",
+            "score": 35,
+            "desc": "Pandémie systémique de classe 4 (Covid-19)"
+        },
+        {
+            "year": "2022",
+            "score": 38,
+            "desc": "Retour de la guerre haute intensité (Ukraine)"
+        }
+    ]
 }

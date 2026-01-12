@@ -1,0 +1,130 @@
+{
+    "scenarios": {
+        "optimiste": [
+            {
+                "year": "2027",
+                "stability_index": 51
+            },
+            {
+                "year": "2028",
+                "stability_index": 46
+            },
+            {
+                "year": "2029",
+                "stability_index": 47
+            },
+            {
+                "year": "2030",
+                "stability_index": 54
+            },
+            {
+                "year": "2031",
+                "stability_index": 55
+            },
+            {
+                "year": "2032",
+                "stability_index": 56
+            },
+            {
+                "year": "2033",
+                "stability_index": 57
+            },
+            {
+                "year": "2034",
+                "stability_index": 58
+            },
+            {
+                "year": "2035",
+                "stability_index": 59
+            },
+            {
+                "year": "2036",
+                "stability_index": 60
+            }
+        ],
+        "tendantielle": [
+            {
+                "year": "2027",
+                "stability_index": 50
+            },
+            {
+                "year": "2028",
+                "stability_index": 43
+            },
+            {
+                "year": "2029",
+                "stability_index": 42
+            },
+            {
+                "year": "2030",
+                "stability_index": 48
+            },
+            {
+                "year": "2031",
+                "stability_index": 48
+            },
+            {
+                "year": "2032",
+                "stability_index": 47
+            },
+            {
+                "year": "2033",
+                "stability_index": 46
+            },
+            {
+                "year": "2034",
+                "stability_index": 46
+            },
+            {
+                "year": "2035",
+                "stability_index": 46
+            },
+            {
+                "year": "2036",
+                "stability_index": 45
+            }
+        ],
+        "pessimiste": [
+            {
+                "year": "2027",
+                "stability_index": 48
+            },
+            {
+                "year": "2028",
+                "stability_index": 39
+            },
+            {
+                "year": "2029",
+                "stability_index": 36
+            },
+            {
+                "year": "2030",
+                "stability_index": 40
+            },
+            {
+                "year": "2031",
+                "stability_index": 38
+            },
+            {
+                "year": "2032",
+                "stability_index": 35
+            },
+            {
+                "year": "2033",
+                "stability_index": 32
+            },
+            {
+                "year": "2034",
+                "stability_index": 30
+            },
+            {
+                "year": "2035",
+                "stability_index": 28
+            },
+            {
+                "year": "2036",
+                "stability_index": 25
+            }
+        ]
+    }
+}
