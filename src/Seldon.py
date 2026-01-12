@@ -4,40 +4,42 @@ import random
 from datetime import datetime
 
 # --- 1. CONFIGURATION ---
-# Changement de nom pour forcer la régénération propre avec les textes
-HISTORY_FILE = 'data/history_full_v2.json' 
+HISTORY_FILE = 'data/history_full_v3.json' 
 CURRENT_STATE_FILE = 'data/current_state.json'
 RECENT_HISTORY_FILE = 'data/recent_history.json'
 PROJECTION_FILE = 'data/projection_2036.json'
 MEMORY_FILE = 'data/bot_memory.json'
 WEIGHTS_FILE = 'data/weights.json'
 
-# Vocabulaire Seldonien (Futur)
+# Vocabulaire Seldonien (Phrasé pour les alertes)
 SELDON_TERMS = {
-    "energie": "l'épuisement énergétique", "environnement": "l'entropie climatique",
-    "espace": "la stagnation exosphérique", "demographie_social": "la dissonance sociale",
-    "sante_bio": "la dégradation biologique", "geopolitique": "l'instabilité géopolitique",
-    "technologie_ia": "la variance technologique", "finance": "l'effondrement économique",
-    "information": "la corruption de la noosphère"
+    "energie": "l'Epuisement Energétique", 
+    "environnement": "l'Entropie Climatique",
+    "espace": "la Stagnation Exosphérique", 
+    "demographie_social": "la Dissonance Sociale",
+    "sante_bio": "la Dégradation Biologique", 
+    "geopolitique": "la Friction Géopolitique",
+    "technologie_ia": "la Variance Technologique", 
+    "finance": "la Volatilité Economique",
+    "information": "la Corruption de la Noosphère"
 }
 
-# ARCHIVES HISTORIQUES (Passé) - NOUVEAU !
+# Archives pour le bas de page (Le passé reste le passé)
 HISTORICAL_EVENTS = {
-    "1914": "Rupture de l'équilibre des alliances (Guerre Totale)",
-    "1918": "Effondrement démographique viral (Grippe Espagnole)",
-    "1929": "Dislocation des vecteurs de crédit (Grande Dépression)",
-    "1939": "Friction cinétique globale (Conflit Majeur)",
-    "1945": "Entropie géopolitique maximale (Point Zéro)",
-    "1962": "Tension nucléaire critique (Crise des Missiles)",
-    "1973": "Choc des ressources fossiles (Crise Pétrolière)",
-    "2001": "Asymétrie sécuritaire globale (Choc Terroriste)",
-    "2008": "Toxicité des actifs financiers (Subprimes)",
-    "2020": "Pandémie systémique de classe 4 (Covid-19)",
-    "2022": "Retour de la guerre haute intensité (Ukraine)"
+    "1914": "Rupture de l'équilibre des alliances",
+    "1918": "Effondrement démographique viral",
+    "1929": "Dislocation des vecteurs de crédit",
+    "1939": "Friction cinétique globale",
+    "1945": "Entropie géopolitique maximale",
+    "1962": "Tension nucléaire critique",
+    "1973": "Choc des ressources fossiles",
+    "2001": "Asymétrie sécuritaire globale",
+    "2008": "Toxicité des actifs financiers",
+    "2020": "Pandémie systémique de classe 4",
+    "2022": "Retour de la guerre haute intensité"
 }
 
 # --- 2. GESTION DES POIDS ---
-
 def get_weights():
     if os.path.exists(WEIGHTS_FILE):
         with open(WEIGHTS_FILE, 'r') as f: return json.load(f)
@@ -54,7 +56,6 @@ def recalibrate_weights(current_score, predicted_score, current_pillars):
     delta = current_score - predicted_score
     if abs(delta) < 5: return weights, False
     
-    print(f"🧠 RECALIBRATION (Delta: {delta})")
     if delta < 0: # Trop optimiste
         weakest = min(current_pillars, key=lambda k: current_pillars[k]['score'] if isinstance(current_pillars[k], dict) else current_pillars[k])
         weights[weakest] = round(weights[weakest] + 0.1, 2)
@@ -82,70 +83,59 @@ def calculate_stability(pillars, weights):
         total += score * w; weight_sum += w
     return round(total / weight_sum)
 
-# --- 4. GÉNÉRATEUR D'HISTOIRE (V31 - NARRATIF) ---
+# --- 4. GÉNÉRATEUR D'HISTOIRE ---
 def generate_full_history():
-    print("📜 CRÉATION DES ARCHIVES NARRATIVES (1900-2025)...")
+    # ... (Code identique à la V33 pour la génération d'histoire) ...
+    # Je le laisse pour qu'il régénère si besoin
+    print("📜 CRÉATION DES ARCHIVES...")
     history = []
-    # Dates clés (Score)
-    key_scores = { 
-        1900:60, 1914:30, 1918:25, 1929:20, 1939:15, 1945:10, 
-        1962:40, 1969:75, 1989:65, 2001:50, 2008:40, 2020:35, 2025:45 
-    }
-    current_val = key_scores[1900]
+    base_scores = { 1900:60, 1914:30, 1925:65, 1929:45, 1939:20, 1945:10, 1960:60, 1973:65, 1990:70, 2008:50, 2020:45, 2025:45 }
+    current_val = base_scores[1900]
     
     for year in range(1900, 2026):
-        # Calcul du score (Interpolation)
-        if year in key_scores: current_val = key_scores[year]
+        if year in base_scores: current_val = base_scores[year]
         else:
-            next_y = min([k for k in key_scores if k > year], default=year)
-            prev_y = max([k for k in key_scores if k < year], default=year)
+            next_y = min([k for k in base_scores if k > year], default=year)
+            prev_y = max([k for k in base_scores if k < year], default=year)
             if next_y != prev_y:
                 progress = (year - prev_y) / (next_y - prev_y)
-                current_val = key_scores[prev_y] + (key_scores[next_y] - key_scores[prev_y]) * progress
+                current_val = base_scores[prev_y] + (base_scores[next_y] - base_scores[prev_y]) * progress
             current_val += random.uniform(-2, 2)
-        
         current_val = max(5, min(98, current_val))
-        
-        # Piliers
         pillars = {}
         for k in SELDON_TERMS.keys():
-            var = random.uniform(-8, 8)
-            if year < 1940 and k == 'technologie_ia': var -= 20
-            if year == 1929 and k == 'finance': var -= 30
-            pillars[k] = max(5, min(100, current_val + var))
+            p_val = current_val + random.uniform(-10, 10)
+            pillars[k] = max(5, min(100, p_val))
 
-        # NOUVEAU : Ajout de la description textuelle si elle existe
-        event_desc = HISTORICAL_EVENTS.get(str(year), "")
+        # Injection des faiblesses historiques pour la cohérence
+        if str(year) == "1929": pillars["finance"] = 15
+        if str(year) == "1973": pillars["energie"] = 20
+        if str(year) == "2008": pillars["finance"] = 35
+        if str(year) == "2020": pillars["sante_bio"] = 30
         
-        history.append({ 
-            "year": str(year), 
-            "stability_index": round(current_val), 
-            "pillars": pillars,
-            "description": event_desc # Champ ajouté
-        })
+        event_desc = HISTORICAL_EVENTS.get(str(year), "")
+        history.append({ "year": str(year), "stability_index": round(current_val), "pillars": pillars, "description": event_desc })
     
     save_json(HISTORY_FILE, history)
     return history
 
 # --- 5. EXÉCUTION ---
 def update_seldon():
-    print("🔮 Démarrage Seldon Bot V31...")
+    print("🔮 Démarrage Seldon Bot V34 (Analyse Pure)...")
     weights = get_weights()
 
-    # A. HISTOIRE
+    # A. CHARGEMENT
     history = load_json(HISTORY_FILE)
     if not history: history = generate_full_history()
-    
-    # B. CURRENT
     current = load_json(CURRENT_STATE_FILE)
     if not current: return
 
-    # C. SCORE
+    # B. SCORE
     new_score = calculate_stability(current['pillars'], weights)
     current['stability_index'] = new_score
     current['date'] = datetime.now().strftime("%Y-%m-%d %H:%M")
     
-    # D. AUTO-CORRECTION
+    # C. AUTO-CORRECTION
     memory = load_json(MEMORY_FILE) or { "last_run_date": None, "predicted_score_for_today": None, "accuracy_history": [] }
     accuracy = 100
     divergence_msg = None
@@ -163,45 +153,60 @@ def update_seldon():
         if was_recalibrated: divergence_msg = "🔧 PROTOCOLE DE RECALIBRATION ACTIVÉ"
         current['model_accuracy'] = avg_acc
     else: current['model_accuracy'] = 100
-
     memory["predicted_score_for_today"] = new_score + random.choice([-1, 0, 1])
     save_json(MEMORY_FILE, memory)
 
-    # E. ARCHIVES (AVEC TEXTES)
-    past_crises = []
-    # On force l'ajout des années clés définies dans HISTORICAL_EVENTS
-    # + les années où le score est très bas, même sans texte
-    for e in history:
-        yr = str(e['year'])
-        # Si c'est une année avec un événement nommé
-        if e.get('description'):
-            past_crises.append({"year": yr, "score": e['stability_index'], "desc": e['description']})
-        # Sinon, si c'est une crise grave non nommée (pour combler les trous)
-        elif e['stability_index'] < 30:
-            # On vérifie qu'on n'a pas déjà ajouté une année très proche (anti-doublon)
-            if not past_crises or int(yr) > int(past_crises[-1]['year']) + 5:
-                past_crises.append({"year": yr, "score": e['stability_index'], "desc": "Instabilité systémique critique"})
+    # D. DATE CRISE DYNAMIQUE
+    current_year = 2026
+    years_until_crisis = max(1, min(9, int((new_score - 25) / 5)))
+    crisis_year = current_year + years_until_crisis
 
+    # E. ARCHIVES
+    past_crises = []
+    for e in history:
+        if e.get('description'):
+            past_crises.append({"year": str(e['year']), "score": e['stability_index'], "desc": e['description']})
     current['archives'] = past_crises
     save_json(RECENT_HISTORY_FILE, history[-6:])
 
-    # F. ALERTES
+    # F. ALERTES SELDONIENNES (V34)
     alerts = []
     if divergence_msg: alerts.append(divergence_msg)
+    
+    # 1. Identifier les piliers faibles pour construire la phrase
     stress_factors = []
     for k, v in current['pillars'].items():
         s = v['score'] if isinstance(v, dict) else v
-        if k != 'technologie_ia' and s < 50: stress_factors.append((k, s))
-        elif k == 'technologie_ia' and s > 85: stress_factors.append((k, s))
+        stress_factors.append((k, s))
+    
+    # On trie du plus faible au plus fort
     stress_factors.sort(key=lambda x: x[1])
+    
+    # On prend les 2 pires
+    worst_1 = stress_factors[0]
+    worst_2 = stress_factors[1]
+    
+    term_1 = SELDON_TERMS.get(worst_1[0], "Facteur Inconnu")
+    term_2 = SELDON_TERMS.get(worst_2[0], "Facteur Inconnu")
+    
+    # 2. Calcul du PSI (Probabilité de rupture)
+    # Plus le score global est bas, plus la proba est haute.
+    # Ex: Score 40 -> Psi 60%. Mais on ajoute un boost si les pires piliers sont vraiment bas.
+    psi_base = 100 - new_score
+    psi_boost = 0
+    if worst_1[1] < 30: psi_boost += 10
+    if worst_2[1] < 30: psi_boost += 10
+    psi_total = min(99, psi_base + psi_boost)
 
-    if len(stress_factors) >= 2:
-        n1 = SELDON_TERMS.get(stress_factors[0][0], "X")
-        n2 = SELDON_TERMS.get(stress_factors[1][0], "Y")
-        alerts.append(f"📅 2028 : Les équations indiquent une résonance critique entre {n1} et {n2}.")
-    else: alerts.append("📅 2028 : Aucune convergence systémique immédiate.")
+    # 3. Construction de la Prophétie
+    if new_score > 65:
+         alerts.append("📅 HORIZON STABLE : Aucune convergence systémique immédiate.")
+    else:
+        # Phrase type : "2028 : La Dissonance Sociale catalyse l'Effondrement Economique (Ψ: 85%)"
+        seldon_prophecy = f"📅 {crisis_year} : {term_1} catalyse {term_2}. Probabilité de rupture de la chaîne causale : {psi_total}%."
+        alerts.append(seldon_prophecy)
 
-    if current['pillars']['environnement']['score'] < 40: alerts.append("⚠️ Ω_BIOSPHERE : Seuil critique")
+    if current['pillars']['environnement']['score'] < 40: alerts.append("⚠️ Ω_BIOSPHERE : Seuil critique atteint")
     if current['pillars']['geopolitique']['score'] < 35: alerts.append("⚔️ Σ_CONFLICT : Tensions maximales")
     
     current['alerts'] = alerts
@@ -211,16 +216,17 @@ def update_seldon():
     projections = { "optimiste": [], "tendantielle": [], "pessimiste": [] }
     uncertainty = (100 - current.get('model_accuracy', 100)) / 5
     for i in range(1, 11):
-        y = str(2026 + i)
+        y = int(current_year + i)
         drift = -0.5 * i
         base = max(0, min(100, new_score + drift))
-        if i in [2, 3]: base -= 6
-        projections["tendantielle"].append({ "year": y, "stability_index": round(base) })
-        projections["optimiste"].append({ "year": y, "stability_index": round(min(98, base + i*(1.5 + uncertainty))) })
-        projections["pessimiste"].append({ "year": y, "stability_index": round(max(5, base - i*(2.0 + uncertainty))) })
+        if y == crisis_year: base -= 10
+        elif y == crisis_year + 1: base -= 5
+        projections["tendantielle"].append({ "year": str(y), "stability_index": round(base) })
+        projections["optimiste"].append({ "year": str(y), "stability_index": round(min(98, base + i*(1.5 + uncertainty))) })
+        projections["pessimiste"].append({ "year": str(y), "stability_index": round(max(5, base - i*(2.0 + uncertainty))) })
         
     save_json(PROJECTION_FILE, {"scenarios": projections})
-    print("✅ Seldon V31 terminé.")
+    print("✅ Seldon V34 terminé.")
 
 if __name__ == "__main__":
     update_seldon()
