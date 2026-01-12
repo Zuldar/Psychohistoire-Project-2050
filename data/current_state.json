@@ -1,0 +1,22 @@
+{
+    "date": "2026-01-12 12:00",
+    "stability_index": 45,
+    "model_accuracy": 100,
+    "global_analysis": "Initialisation du protocole Seldon V31. En attente de la première convergence des données historiques.",
+    "pillars": {
+        "technologie_ia": { "score": 88, "comment": "Risque de divergence algorithmique." },
+        "environnement": { "score": 38, "comment": "Instabilité biosphérique critique." },
+        "energie": { "score": 55, "comment": "Transition sous contrainte." },
+        "geopolitique": { "score": 30, "comment": "Friction tectonique élevée." },
+        "demographie_social": { "score": 42, "comment": "Dissonance civile." },
+        "finance": { "score": 48, "comment": "Volatilité des actifs." },
+        "sante_bio": { "score": 60, "comment": "Résilience virale stable." },
+        "espace": { "score": 35, "comment": "Stagnation orbitale." },
+        "information": { "score": 40, "comment": "Saturation de la noosphère." }
+    },
+    "alerts": [
+        "✅ SYSTÈME EN LIGNE",
+        "⚠️ Calibration nécessaire"
+    ],
+    "archives": []
+}
