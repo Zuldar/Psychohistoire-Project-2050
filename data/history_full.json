@@ -1,0 +1,1892 @@
+[
+    {
+        "year": "1900",
+        "stability_index": 60,
+        "pillars": {
+            "technologie_ia": 47.282790110608275,
+            "environnement": 66.90472586093613,
+            "energie": 57.90239327776505,
+            "geopolitique": 56.063653948947575,
+            "demographie_social": 60.801693659774784,
+            "finance": 63.20053564457997,
+            "sante_bio": 61.02639303092624,
+            "espace": 62.862703744889004,
+            "information": 61.65837103034333
+        }
+    },
+    {
+        "year": "1901",
+        "stability_index": 60,
+        "pillars": {
+            "technologie_ia": 45.361494002014815,
+            "environnement": 60.003073676849105,
+            "energie": 55.62513699464818,
+            "geopolitique": 65.60524662909208,
+            "demographie_social": 62.55056940612127,
+            "finance": 53.699014672677706,
+            "sante_bio": 52.201390864065246,
+            "espace": 60.264283011704094,
+            "information": 58.98271261231346
+        }
+    },
+    {
+        "year": "1902",
+        "stability_index": 57,
+        "pillars": {
+            "technologie_ia": 38.73156717643108,
+            "environnement": 65.41869229840901,
+            "energie": 60.366312333890036,
+            "geopolitique": 57.69577841868756,
+            "demographie_social": 58.738951840296366,
+            "finance": 62.09123137963055,
+            "sante_bio": 53.10509939379924,
+            "espace": 56.64679476045598,
+            "information": 58.315781580929496
+        }
+    },
+    {
+        "year": "1903",
+        "stability_index": 54,
+        "pillars": {
+            "technologie_ia": 30.849629148510648,
+            "environnement": 53.107231878046235,
+            "energie": 56.45101117610009,
+            "geopolitique": 61.53671792114445,
+            "demographie_social": 50.07504635531778,
+            "finance": 57.12026476043535,
+            "sante_bio": 53.371329173408455,
+            "espace": 55.881415783428935,
+            "information": 50.91374940220719
+        }
+    },
+    {
+        "year": "1904",
+        "stability_index": 52,
+        "pillars": {
+            "technologie_ia": 38.55245122398695,
+            "environnement": 48.4043510164865,
+            "energie": 44.748933492795175,
+            "geopolitique": 54.41276018976025,
+            "demographie_social": 53.89752303487366,
+            "finance": 52.39148576927338,
+            "sante_bio": 45.560969194511095,
+            "espace": 49.351674527519016,
+            "information": 52.29344703638346
+        }
+    },
+    {
+        "year": "1905",
+        "stability_index": 46,
+        "pillars": {
+            "technologie_ia": 27.7710146740188,
+            "environnement": 48.845203607899954,
+            "energie": 49.654280731416264,
+            "geopolitique": 48.87158985181271,
+            "demographie_social": 49.25406178989083,
+            "finance": 47.107895069743456,
+            "sante_bio": 44.600952200677334,
+            "espace": 51.770123771658156,
+            "information": 42.15561654904269
+        }
+    },
+    {
+        "year": "1906",
+        "stability_index": 46,
+        "pillars": {
+            "technologie_ia": 27.392468200911498,
+            "environnement": 45.732351177383485,
+            "energie": 43.42156307179527,
+            "geopolitique": 52.88248072685003,
+            "demographie_social": 40.12444198183367,
+            "finance": 41.013133603809145,
+            "sante_bio": 45.59858755119787,
+            "espace": 40.4701949360898,
+            "information": 43.43842100201345
+        }
+    },
+    {
+        "year": "1907",
+        "stability_index": 46,
+        "pillars": {
+            "technologie_ia": 32.13118744642663,
+            "environnement": 41.29835130106078,
+            "energie": 52.65274618946235,
+            "geopolitique": 52.48292108685393,
+            "demographie_social": 39.468363593016484,
+            "finance": 48.67546838781517,
+            "sante_bio": 52.17780924959826,
+            "espace": 44.61398961046402,
+            "information": 47.612759097531615
+        }
+    },
+    {
+        "year": "1908",
+        "stability_index": 43,
+        "pillars": {
+            "technologie_ia": 30.228094344898444,
+            "environnement": 42.12740393350303,
+            "energie": 44.496430502455304,
+            "geopolitique": 48.33161461181648,
+            "demographie_social": 43.3439586856509,
+            "finance": 40.75104657098456,
+            "sante_bio": 47.82759064079501,
+            "espace": 50.67130839483173,
+            "information": 45.59631424866945
+        }
+    },
+    {
+        "year": "1909",
+        "stability_index": 40,
+        "pillars": {
+            "technologie_ia": 13.85768465538903,
+            "environnement": 41.12117699041966,
+            "energie": 34.577483618384214,
+            "geopolitique": 39.76138003942901,
+            "demographie_social": 43.481725693048254,
+            "finance": 33.720099195604114,
+            "sante_bio": 47.79166726479318,
+            "espace": 36.17846788789519,
+            "information": 37.27357835942355
+        }
+    },
+    {
+        "year": "1910",
+        "stability_index": 41,
+        "pillars": {
+            "technologie_ia": 16.78946606443803,
+            "environnement": 35.73205725562456,
+            "energie": 40.19783517554302,
+            "geopolitique": 49.18201832573388,
+            "demographie_social": 49.27967864627338,
+            "finance": 40.962194802078244,
+            "sante_bio": 35.47721806555215,
+            "espace": 36.73229672121981,
+            "information": 46.860357486058994
+        }
+    },
+    {
+        "year": "1911",
+        "stability_index": 35,
+        "pillars": {
+            "technologie_ia": 20.687785114321144,
+            "environnement": 33.130108464146296,
+            "energie": 27.673775527936087,
+            "geopolitique": 28.81994249649701,
+            "demographie_social": 39.730706749175795,
+            "finance": 35.62659005910101,
+            "sante_bio": 30.79344785466969,
+            "espace": 42.26524225704587,
+            "information": 31.977955625348727
+        }
+    },
+    {
+        "year": "1912",
+        "stability_index": 32,
+        "pillars": {
+            "technologie_ia": 15.565103500284337,
+            "environnement": 32.47022147303194,
+            "energie": 25.264342299011545,
+            "geopolitique": 32.514495961585105,
+            "demographie_social": 25.12201773894012,
+            "finance": 25.14979425640754,
+            "sante_bio": 34.444460929053115,
+            "espace": 38.950935493076585,
+            "information": 27.577038332728122
+        }
+    },
+    {
+        "year": "1913",
+        "stability_index": 30,
+        "pillars": {
+            "technologie_ia": 5,
+            "environnement": 37.18309787779876,
+            "energie": 30.38653759344877,
+            "geopolitique": 25.060596967187486,
+            "demographie_social": 23.036390402024715,
+            "finance": 23.790985384838347,
+            "sante_bio": 28.935130700039835,
+            "espace": 36.4736860896658,
+            "information": 23.075212906609906
+        }
+    },
+    {
+        "year": "1914",
+        "stability_index": 30,
+        "pillars": {
+            "technologie_ia": 17.214928194654888,
+            "environnement": 33.55638438176856,
+            "energie": 24.51638568953156,
+            "geopolitique": 33.91912373906591,
+            "demographie_social": 32.70738961893022,
+            "finance": 36.621787630554266,
+            "sante_bio": 28.019078737543545,
+            "espace": 36.2668752303083,
+            "information": 31.206766472951777
+        }
+    },
+    {
+        "year": "1915",
+        "stability_index": 26,
+        "pillars": {
+            "technologie_ia": 5,
+            "environnement": 21.159940486378005,
+            "energie": 27.494436646762335,
+            "geopolitique": 29.296816984866858,
+            "demographie_social": 30.09549335908803,
+            "finance": 31.1463254499007,
+            "sante_bio": 31.60413581625039,
+            "espace": 18.288049410831338,
+            "information": 28.397001462035583
+        }
+    },
+    {
+        "year": "1916",
+        "stability_index": 28,
+        "pillars": {
+            "technologie_ia": 5.519072301370215,
+            "environnement": 25.179380294906437,
+            "energie": 22.60843688487941,
+            "geopolitique": 20.757051503693162,
+            "demographie_social": 30.98240820338644,
+            "finance": 26.853148485008305,
+            "sante_bio": 26.197578295676205,
+            "espace": 30.485839309497514,
+            "information": 34.09277714481869
+        }
+    },
+    {
+        "year": "1917",
+        "stability_index": 28,
+        "pillars": {
+            "technologie_ia": 8.291360972307249,
+            "environnement": 27.464662329308524,
+            "energie": 35.00046011803852,
+            "geopolitique": 29.65393258443746,
+            "demographie_social": 30.06947684504531,
+            "finance": 22.13860113681156,
+            "sante_bio": 33.61696723285833,
+            "espace": 35.758784128714225,
+            "information": 25.459274559334585
+        }
+    },
+    {
+        "year": "1918",
+        "stability_index": 25,
+        "pillars": {
+            "technologie_ia": 5.535761292648054,
+            "environnement": 20.27558565194651,
+            "energie": 20.23248257103633,
+            "geopolitique": 26.48405791512258,
+            "demographie_social": 19.165156732160575,
+            "finance": 30.54072421269826,
+            "sante_bio": 31.170759886600994,
+            "espace": 20.88878267223199,
+            "information": 18.07299226122489
+        }
+    },
+    {
+        "year": "1919",
+        "stability_index": 25,
+        "pillars": {
+            "technologie_ia": 5.557463795028795,
+            "environnement": 31.737724768478962,
+            "energie": 25.032319766756007,
+            "geopolitique": 26.515485725833724,
+            "demographie_social": 20.743222515074905,
+            "finance": 21.00402199996509,
+            "sante_bio": 24.130128638960592,
+            "espace": 24.07312150533607,
+            "information": 17.94287227335991
+        }
+    },
+    {
+        "year": "1920",
+        "stability_index": 24,
+        "pillars": {
+            "technologie_ia": 5,
+            "environnement": 24.37451063841885,
+            "energie": 26.624735962712535,
+            "geopolitique": 20.0956164706432,
+            "demographie_social": 18.780786475677964,
+            "finance": 30.057488510813897,
+            "sante_bio": 24.037428457347044,
+            "espace": 18.945489400626208,
+            "information": 20.381211881957107
+        }
+    },
+    {
+        "year": "1921",
+        "stability_index": 24,
+        "pillars": {
+            "technologie_ia": 9.801394407748381,
+            "environnement": 30.61574727575769,
+            "energie": 24.476981130988047,
+            "geopolitique": 24.791713688352125,
+            "demographie_social": 24.759261123449985,
+            "finance": 30.350932018470196,
+            "sante_bio": 22.407814165323742,
+            "espace": 24.76446351026114,
+            "information": 30.182369366651407
+        }
+    },
+    {
+        "year": "1922",
+        "stability_index": 24,
+        "pillars": {
+            "technologie_ia": 7.9126969883393805,
+            "environnement": 23.824308370396835,
+            "energie": 25.699433635137424,
+            "geopolitique": 22.494925445817202,
+            "demographie_social": 30.386860004179166,
+            "finance": 24.32386966997725,
+            "sante_bio": 22.664022783787352,
+            "espace": 19.50517728252901,
+            "information": 17.84341737083529
+        }
+    },
+    {
+        "year": "1923",
+        "stability_index": 24,
+        "pillars": {
+            "technologie_ia": 11.632015741125533,
+            "environnement": 29.02607010255697,
+            "energie": 29.715622548820797,
+            "geopolitique": 16.43194821282463,
+            "demographie_social": 21.93780624732579,
+            "finance": 25.995702648773694,
+            "sante_bio": 25.576933111402244,
+            "espace": 20.02557284857233,
+            "information": 16.42630293058863
+        }
+    },
+    {
+        "year": "1924",
+        "stability_index": 24,
+        "pillars": {
+            "technologie_ia": 10.73029335505428,
+            "environnement": 17.68344639900539,
+            "energie": 26.248189233232,
+            "geopolitique": 27.43719247791229,
+            "demographie_social": 18.962493794871648,
+            "finance": 19.3224668478534,
+            "sante_bio": 29.510802518878567,
+            "espace": 18.218517165215168,
+            "information": 16.531400805536443
+        }
+    },
+    {
+        "year": "1925",
+        "stability_index": 22,
+        "pillars": {
+            "technologie_ia": 8.864602148103128,
+            "environnement": 21.38441868490917,
+            "energie": 27.701904464212916,
+            "geopolitique": 28.534878045002486,
+            "demographie_social": 25.6044192363442,
+            "finance": 21.8483473450849,
+            "sante_bio": 25.699898733924805,
+            "espace": 19.18565848719148,
+            "information": 27.25245473519527
+        }
+    },
+    {
+        "year": "1926",
+        "stability_index": 23,
+        "pillars": {
+            "technologie_ia": 5,
+            "environnement": 19.159731920315416,
+            "energie": 29.583919813437912,
+            "geopolitique": 31.464531890485315,
+            "demographie_social": 31.03877511353219,
+            "finance": 24.097420534901236,
+            "sante_bio": 30.830657863100246,
+            "espace": 20.21621086966695,
+            "information": 16.549609511019867
+        }
+    },
+    {
+        "year": "1927",
+        "stability_index": 23,
+        "pillars": {
+            "technologie_ia": 5,
+            "environnement": 24.87183624700544,
+            "energie": 18.907725089373052,
+            "geopolitique": 27.94591843102522,
+            "demographie_social": 22.978503861763567,
+            "finance": 19.383129732917105,
+            "sante_bio": 18.354695712152065,
+            "espace": 27.442099206163224,
+            "information": 19.144694078842598
+        }
+    },
+    {
+        "year": "1928",
+        "stability_index": 18,
+        "pillars": {
+            "technologie_ia": 5,
+            "environnement": 23.583645816004562,
+            "energie": 18.9100336825696,
+            "geopolitique": 21.763631072348616,
+            "demographie_social": 13.430180021444594,
+            "finance": 22.190444226889603,
+            "sante_bio": 25.684904143390597,
+            "espace": 12.9481850599389,
+            "information": 18.21993708709
+        }
+    },
+    {
+        "year": "1929",
+        "stability_index": 20,
+        "pillars": {
+            "technologie_ia": 5,
+            "environnement": 21.66436172944165,
+            "energie": 22.772166352290974,
+            "geopolitique": 14.435821992113443,
+            "demographie_social": 17.245635750820647,
+            "finance": 5,
+            "sante_bio": 22.43785258885775,
+            "espace": 24.489650381570424,
+            "information": 13.977018144321368
+        }
+    },
+    {
+        "year": "1930",
+        "stability_index": 17,
+        "pillars": {
+            "technologie_ia": 5,
+            "environnement": 22.15345614145682,
+            "energie": 15.226107209323626,
+            "geopolitique": 18.9617605365932,
+            "demographie_social": 20.556216962292872,
+            "finance": 11.200359931161783,
+            "sante_bio": 23.54865203691403,
+            "espace": 22.830448190224573,
+            "information": 20.48982177944215
+        }
+    },
+    {
+        "year": "1931",
+        "stability_index": 22,
+        "pillars": {
+            "technologie_ia": 5,
+            "environnement": 16.241595419757974,
+            "energie": 17.362530719986335,
+            "geopolitique": 29.39190753765785,
+            "demographie_social": 26.092847659686836,
+            "finance": 19.458964288248012,
+            "sante_bio": 29.145974954087315,
+            "espace": 28.562898562288595,
+            "information": 24.64289386122266
+        }
+    },
+    {
+        "year": "1932",
+        "stability_index": 17,
+        "pillars": {
+            "technologie_ia": 5,
+            "environnement": 14.54818096263827,
+            "energie": 14.662805998166577,
+            "geopolitique": 17.199753485943145,
+            "demographie_social": 10.40666721209628,
+            "finance": 21.706032242781227,
+            "sante_bio": 10.168354636773522,
+            "espace": 24.426552332377625,
+            "information": 10.649827002801434
+        }
+    },
+    {
+        "year": "1933",
+        "stability_index": 16,
+        "pillars": {
+            "technologie_ia": 5,
+            "environnement": 16.972987474116493,
+            "energie": 21.501457724186594,
+            "geopolitique": 20.16957822351118,
+            "demographie_social": 10.708022609165111,
+            "finance": 9.486240865368337,
+            "sante_bio": 14.210137897613555,
+            "espace": 17.654169395917677,
+            "information": 19.23060994367752
+        }
+    },
+    {
+        "year": "1934",
+        "stability_index": 18,
+        "pillars": {
+            "technologie_ia": 5,
+            "environnement": 18.009639621645434,
+            "energie": 25.456720455584826,
+            "geopolitique": 14.013335053591623,
+            "demographie_social": 18.100757912614625,
+            "finance": 21.589759062578814,
+            "sante_bio": 24.71726962570194,
+            "espace": 15.267569176600661,
+            "information": 18.807640944175738
+        }
+    },
+    {
+        "year": "1935",
+        "stability_index": 19,
+        "pillars": {
+            "technologie_ia": 5,
+            "environnement": 24.29256774466524,
+            "energie": 24.853769810496214,
+            "geopolitique": 11.149682787622764,
+            "demographie_social": 25.69411686931774,
+            "finance": 18.30318900515128,
+            "sante_bio": 24.452500907550967,
+            "espace": 24.622250198395985,
+            "information": 24.44858556248567
+        }
+    },
+    {
+        "year": "1936",
+        "stability_index": 19,
+        "pillars": {
+            "technologie_ia": 5.09812274666745,
+            "environnement": 24.4882570078345,
+            "energie": 16.00745574480331,
+            "geopolitique": 16.48892972402743,
+            "demographie_social": 13.261269818503356,
+            "finance": 24.049921590722047,
+            "sante_bio": 15.904315626082303,
+            "espace": 18.558511773575393,
+            "information": 20.776949052277793
+        }
+    },
+    {
+        "year": "1937",
+        "stability_index": 19,
+        "pillars": {
+            "technologie_ia": 5,
+            "environnement": 14.136763996761811,
+            "energie": 23.5350735570023,
+            "geopolitique": 18.595040925221035,
+            "demographie_social": 10.654471623756914,
+            "finance": 14.058818981506295,
+            "sante_bio": 12.438172311823491,
+            "espace": 24.398121175746446,
+            "information": 15.318587410946387
+        }
+    },
+    {
+        "year": "1938",
+        "stability_index": 17,
+        "pillars": {
+            "technologie_ia": 5,
+            "environnement": 15.499961991455438,
+            "energie": 19.455950405591956,
+            "geopolitique": 21.242053039154506,
+            "demographie_social": 22.39623537297057,
+            "finance": 16.82935522878347,
+            "sante_bio": 16.85720781754663,
+            "espace": 21.112162705205073,
+            "information": 20.095868410298507
+        }
+    },
+    {
+        "year": "1939",
+        "stability_index": 15,
+        "pillars": {
+            "technologie_ia": 5,
+            "environnement": 14.010201231663123,
+            "energie": 8.6268083261273,
+            "geopolitique": 13.165055759892203,
+            "demographie_social": 8.99525834684055,
+            "finance": 10.552409181015603,
+            "sante_bio": 17.46567961412422,
+            "espace": 19.483267250221918,
+            "information": 17.835356163908003
+        }
+    },
+    {
+        "year": "1940",
+        "stability_index": 15,
+        "pillars": {
+            "technologie_ia": 11.817245871781342,
+            "environnement": 14.72708511156363,
+            "energie": 21.577979505022757,
+            "geopolitique": 20.87083195361666,
+            "demographie_social": 6.825057575048467,
+            "finance": 15.895889204014269,
+            "sante_bio": 20.560142204789358,
+            "espace": 15.38040005864496,
+            "information": 9.52070122384403
+        }
+    },
+    {
+        "year": "1941",
+        "stability_index": 14,
+        "pillars": {
+            "technologie_ia": 8.545907582456628,
+            "environnement": 15.258830453657932,
+            "energie": 19.392128201342565,
+            "geopolitique": 12.733291420362743,
+            "demographie_social": 10.432542557100604,
+            "finance": 20.890306279619413,
+            "sante_bio": 11.344683235583068,
+            "espace": 11.469246215385132,
+            "information": 19.30644979359252
+        }
+    },
+    {
+        "year": "1942",
+        "stability_index": 14,
+        "pillars": {
+            "technologie_ia": 18.868291933318034,
+            "environnement": 13.156563369697771,
+            "energie": 11.809222685482123,
+            "geopolitique": 20.72440025710485,
+            "demographie_social": 17.585305911267962,
+            "finance": 20.32648976489631,
+            "sante_bio": 11.21967575746782,
+            "espace": 19.3046285405106,
+            "information": 15.079150990638515
+        }
+    },
+    {
+        "year": "1943",
+        "stability_index": 11,
+        "pillars": {
+            "technologie_ia": 5,
+            "environnement": 18.145952334528932,
+            "energie": 14.187440044033487,
+            "geopolitique": 13.892689590861186,
+            "demographie_social": 11.536782890881987,
+            "finance": 11.96824936307968,
+            "sante_bio": 12.180884028391178,
+            "espace": 5.225969076288784,
+            "information": 13.176342168620414
+        }
+    },
+    {
+        "year": "1944",
+        "stability_index": 9,
+        "pillars": {
+            "technologie_ia": 5,
+            "environnement": 12.599486202818742,
+            "energie": 10.814679488839321,
+            "geopolitique": 11.617173306162652,
+            "demographie_social": 5,
+            "finance": 5,
+            "sante_bio": 13.952789191715526,
+            "espace": 8.360890126845929,
+            "information": 7.776431382496947
+        }
+    },
+    {
+        "year": "1945",
+        "stability_index": 10,
+        "pillars": {
+            "technologie_ia": 13.42020146829026,
+            "environnement": 10.403144433151326,
+            "energie": 12.866487844166418,
+            "geopolitique": 8.140550995995888,
+            "demographie_social": 5.912406547031878,
+            "finance": 5,
+            "sante_bio": 13.4814102310377,
+            "espace": 5,
+            "information": 10.715683823874157
+        }
+    },
+    {
+        "year": "1946",
+        "stability_index": 13,
+        "pillars": {
+            "technologie_ia": 10.32289167469522,
+            "environnement": 19.47034808023466,
+            "energie": 12.095483452219563,
+            "geopolitique": 6.377968540692606,
+            "demographie_social": 17.444494689835683,
+            "finance": 6.1257627991059245,
+            "sante_bio": 10.206727512775911,
+            "espace": 14.552760673083155,
+            "information": 7.8161218836700765
+        }
+    },
+    {
+        "year": "1947",
+        "stability_index": 16,
+        "pillars": {
+            "technologie_ia": 20.3856716804595,
+            "environnement": 19.04449638952196,
+            "energie": 14.18780572146381,
+            "geopolitique": 17.2528284579435,
+            "demographie_social": 8.78810581644735,
+            "finance": 9.74921786823391,
+            "sante_bio": 18.360519566535984,
+            "espace": 10.576557697260133,
+            "information": 20.095562966730753
+        }
+    },
+    {
+        "year": "1948",
+        "stability_index": 17,
+        "pillars": {
+            "technologie_ia": 16.79605678697275,
+            "environnement": 21.217337470641894,
+            "energie": 22.339903921971732,
+            "geopolitique": 18.129272216575764,
+            "demographie_social": 16.733551618451123,
+            "finance": 22.078923344305572,
+            "sante_bio": 22.40702243284058,
+            "espace": 17.849897485221195,
+            "information": 10.846242495140817
+        }
+    },
+    {
+        "year": "1949",
+        "stability_index": 18,
+        "pillars": {
+            "technologie_ia": 20.137321504136914,
+            "environnement": 20.289788327102706,
+            "energie": 16.42889150888493,
+            "geopolitique": 14.971740026785438,
+            "demographie_social": 24.288098732708455,
+            "finance": 17.85128645415452,
+            "sante_bio": 24.92191755563129,
+            "espace": 11.557570499060322,
+            "information": 13.295336507992998
+        }
+    },
+    {
+        "year": "1950",
+        "stability_index": 23,
+        "pillars": {
+            "technologie_ia": 28.951427952514738,
+            "environnement": 23.04973794003564,
+            "energie": 20.438071839864563,
+            "geopolitique": 15.10358979795515,
+            "demographie_social": 14.67787804947732,
+            "finance": 15.159846939902785,
+            "sante_bio": 29.09984787021758,
+            "espace": 24.46210306744896,
+            "information": 14.804105248061505
+        }
+    },
+    {
+        "year": "1951",
+        "stability_index": 28,
+        "pillars": {
+            "technologie_ia": 33.936871710203135,
+            "environnement": 28.901209713416428,
+            "energie": 24.440154958920473,
+            "geopolitique": 24.969400941019423,
+            "demographie_social": 29.887088657280636,
+            "finance": 28.800272244757736,
+            "sante_bio": 20.510726134530692,
+            "espace": 34.23680072115839,
+            "information": 29.387375743082366
+        }
+    },
+    {
+        "year": "1952",
+        "stability_index": 26,
+        "pillars": {
+            "technologie_ia": 24.761665434393922,
+            "environnement": 29.67452497151492,
+            "energie": 30.40355241103886,
+            "geopolitique": 22.214552708362284,
+            "demographie_social": 29.763913005275704,
+            "finance": 21.505612140275957,
+            "sante_bio": 29.921386967807067,
+            "espace": 20.990092726681425,
+            "information": 27.203888898672623
+        }
+    },
+    {
+        "year": "1953",
+        "stability_index": 34,
+        "pillars": {
+            "technologie_ia": 25.715358887721305,
+            "environnement": 37.05388096218856,
+            "energie": 30.03396139292552,
+            "geopolitique": 32.350880656037695,
+            "demographie_social": 26.23769541923468,
+            "finance": 27.08235314700233,
+            "sante_bio": 29.763174938599462,
+            "espace": 26.962387507493816,
+            "information": 33.3240728949251
+        }
+    },
+    {
+        "year": "1954",
+        "stability_index": 32,
+        "pillars": {
+            "technologie_ia": 26.95681383876957,
+            "environnement": 28.668907624466996,
+            "energie": 36.04280607455429,
+            "geopolitique": 27.397453403006658,
+            "demographie_social": 33.19789713729856,
+            "finance": 36.79397748618987,
+            "sante_bio": 36.2455464332128,
+            "espace": 35.64913676866597,
+            "information": 33.97327700391621
+        }
+    },
+    {
+        "year": "1955",
+        "stability_index": 39,
+        "pillars": {
+            "technologie_ia": 38.208213489116766,
+            "environnement": 36.10837138832535,
+            "energie": 42.05444599866816,
+            "geopolitique": 38.61804780500193,
+            "demographie_social": 44.215144415527114,
+            "finance": 33.04444632184103,
+            "sante_bio": 45.14837331431525,
+            "espace": 37.42089122848873,
+            "information": 46.885308194371355
+        }
+    },
+    {
+        "year": "1956",
+        "stability_index": 39,
+        "pillars": {
+            "technologie_ia": 34.260636645502025,
+            "environnement": 44.00549130145917,
+            "energie": 36.384429141404965,
+            "geopolitique": 42.96738496772073,
+            "demographie_social": 36.08997304567791,
+            "finance": 39.16057737645781,
+            "sante_bio": 41.270075381953625,
+            "espace": 40.57702894310097,
+            "information": 45.57170554463971
+        }
+    },
+    {
+        "year": "1957",
+        "stability_index": 43,
+        "pillars": {
+            "technologie_ia": 37.120638683316685,
+            "environnement": 36.04202050456466,
+            "energie": 35.3647162486931,
+            "geopolitique": 38.72778859741043,
+            "demographie_social": 41.78056964195674,
+            "finance": 47.96263629970163,
+            "sante_bio": 46.42577473179493,
+            "espace": 48.62316438194144,
+            "information": 47.37950836313375
+        }
+    },
+    {
+        "year": "1958",
+        "stability_index": 46,
+        "pillars": {
+            "technologie_ia": 39.474786182142836,
+            "environnement": 47.996663907340746,
+            "energie": 49.93031061828322,
+            "geopolitique": 52.38447362261137,
+            "demographie_social": 51.2259439573471,
+            "finance": 48.84747732480238,
+            "sante_bio": 40.580550302309206,
+            "espace": 49.705877195309256,
+            "information": 39.32791069977659
+        }
+    },
+    {
+        "year": "1959",
+        "stability_index": 48,
+        "pillars": {
+            "technologie_ia": 48.59813699577579,
+            "environnement": 39.6023078926636,
+            "energie": 48.05681746941412,
+            "geopolitique": 44.7730848395718,
+            "demographie_social": 43.111997720941574,
+            "finance": 45.72265812983969,
+            "sante_bio": 45.00576194664514,
+            "espace": 46.66891188272552,
+            "information": 40.1739000691731
+        }
+    },
+    {
+        "year": "1960",
+        "stability_index": 53,
+        "pillars": {
+            "technologie_ia": 54.39470323454944,
+            "environnement": 48.78698337533063,
+            "energie": 60.45943883040486,
+            "geopolitique": 56.521405909151525,
+            "demographie_social": 54.67542563339409,
+            "finance": 46.11362195986321,
+            "sante_bio": 51.196826487305444,
+            "espace": 58.79479758244065,
+            "information": 52.548763598275514
+        }
+    },
+    {
+        "year": "1961",
+        "stability_index": 53,
+        "pillars": {
+            "technologie_ia": 46.72364060651686,
+            "environnement": 55.1656601691067,
+            "energie": 49.83753940067246,
+            "geopolitique": 60.73190139842592,
+            "demographie_social": 45.84581236197796,
+            "finance": 56.49079676892191,
+            "sante_bio": 56.40161459172674,
+            "espace": 47.24526291336814,
+            "information": 55.319656571898165
+        }
+    },
+    {
+        "year": "1962",
+        "stability_index": 56,
+        "pillars": {
+            "technologie_ia": 48.63658195703714,
+            "environnement": 61.280124689761735,
+            "energie": 54.03791747277197,
+            "geopolitique": 63.51013625140723,
+            "demographie_social": 50.04823750234912,
+            "finance": 50.02421273772139,
+            "sante_bio": 52.829273371870514,
+            "espace": 51.1686617227904,
+            "information": 53.413499454842125
+        }
+    },
+    {
+        "year": "1963",
+        "stability_index": 59,
+        "pillars": {
+            "technologie_ia": 58.46215886498749,
+            "environnement": 65.38206173997125,
+            "energie": 56.527932569805685,
+            "geopolitique": 57.819832448615365,
+            "demographie_social": 51.46882278247338,
+            "finance": 57.78489564790695,
+            "sante_bio": 63.804857306907785,
+            "espace": 56.264807451704684,
+            "information": 57.686859767539175
+        }
+    },
+    {
+        "year": "1964",
+        "stability_index": 63,
+        "pillars": {
+            "technologie_ia": 60.416522334596536,
+            "environnement": 58.955134661345156,
+            "energie": 70.56073372525259,
+            "geopolitique": 54.74853557294648,
+            "demographie_social": 64.22242492994347,
+            "finance": 66.64232039599045,
+            "sante_bio": 70.30243713260846,
+            "espace": 68.44861693405475,
+            "information": 59.4088442499133
+        }
+    },
+    {
+        "year": "1965",
+        "stability_index": 65,
+        "pillars": {
+            "technologie_ia": 58.84857664468816,
+            "environnement": 64.63056800071053,
+            "energie": 69.73151677840997,
+            "geopolitique": 61.00479058560489,
+            "demographie_social": 62.2470104018264,
+            "finance": 67.81663818596469,
+            "sante_bio": 59.60945398731966,
+            "espace": 72.22416507540666,
+            "information": 59.573165503719586
+        }
+    },
+    {
+        "year": "1966",
+        "stability_index": 67,
+        "pillars": {
+            "technologie_ia": 71.2285858806133,
+            "environnement": 67.95101656705869,
+            "energie": 62.87830000541097,
+            "geopolitique": 74.00533804722873,
+            "demographie_social": 58.88548135847606,
+            "finance": 64.51591768116666,
+            "sante_bio": 59.139633157273025,
+            "espace": 73.06911709384218,
+            "information": 73.01176514005952
+        }
+    },
+    {
+        "year": "1967",
+        "stability_index": 69,
+        "pillars": {
+            "technologie_ia": 76.13506668972043,
+            "environnement": 61.3866121863684,
+            "energie": 72.65262724709737,
+            "geopolitique": 65.2989697264668,
+            "demographie_social": 75.62380117761123,
+            "finance": 73.91717707410479,
+            "sante_bio": 69.56467043067946,
+            "espace": 67.31669662579611,
+            "information": 69.70100877053093
+        }
+    },
+    {
+        "year": "1968",
+        "stability_index": 71,
+        "pillars": {
+            "technologie_ia": 78.85975529110641,
+            "environnement": 64.54076107641728,
+            "energie": 63.94938126859751,
+            "geopolitique": 63.873636946399124,
+            "demographie_social": 68.29510616388845,
+            "finance": 68.35598771714959,
+            "sante_bio": 69.7856229155853,
+            "espace": 76.2265672430227,
+            "information": 73.79983920527626
+        }
+    },
+    {
+        "year": "1969",
+        "stability_index": 75,
+        "pillars": {
+            "technologie_ia": 77.09760634277866,
+            "environnement": 79.02211713789887,
+            "energie": 74.53974175728364,
+            "geopolitique": 72.15695253247088,
+            "demographie_social": 68.03151319586559,
+            "finance": 81.86296281103317,
+            "sante_bio": 82.9933147587683,
+            "espace": 71.97656358157,
+            "information": 75.13997389265847
+        }
+    },
+    {
+        "year": "1970",
+        "stability_index": 72,
+        "pillars": {
+            "technologie_ia": 65.27610635950596,
+            "environnement": 75.72801607258222,
+            "energie": 77.96813803365265,
+            "geopolitique": 78.75580093494192,
+            "demographie_social": 69.35784094424281,
+            "finance": 65.46849811941588,
+            "sante_bio": 69.86954738813995,
+            "espace": 77.89376088805612,
+            "information": 67.32177351603877
+        }
+    },
+    {
+        "year": "1971",
+        "stability_index": 73,
+        "pillars": {
+            "technologie_ia": 72.43185177433955,
+            "environnement": 68.45630752652518,
+            "energie": 69.39654368326066,
+            "geopolitique": 73.22779788838729,
+            "demographie_social": 68.71850263178072,
+            "finance": 66.34360798682334,
+            "sante_bio": 68.0337039701829,
+            "espace": 76.59671443575131,
+            "information": 69.44600648324922
+        }
+    },
+    {
+        "year": "1972",
+        "stability_index": 75,
+        "pillars": {
+            "technologie_ia": 81.79445348586992,
+            "environnement": 81.78396126861986,
+            "energie": 81.63985288585685,
+            "geopolitique": 82.81142536634233,
+            "demographie_social": 71.25146240317736,
+            "finance": 71.17586301180765,
+            "sante_bio": 70.7442416102194,
+            "espace": 68.05944067112644,
+            "information": 70.26618144968657
+        }
+    },
+    {
+        "year": "1973",
+        "stability_index": 72,
+        "pillars": {
+            "technologie_ia": 76.04549935265726,
+            "environnement": 65.1659231317756,
+            "energie": 72.63662317059783,
+            "geopolitique": 65.17930190849992,
+            "demographie_social": 75.79126002569662,
+            "finance": 73.86936909229689,
+            "sante_bio": 65.06921630752629,
+            "espace": 76.16936205360207,
+            "information": 79.19743002969597
+        }
+    },
+    {
+        "year": "1974",
+        "stability_index": 70,
+        "pillars": {
+            "technologie_ia": 64.59405935156343,
+            "environnement": 73.01389979949742,
+            "energie": 73.61800109619203,
+            "geopolitique": 74.5658604834793,
+            "demographie_social": 63.44862673105554,
+            "finance": 65.80284647965858,
+            "sante_bio": 72.72837928320351,
+            "espace": 78.01661836026909,
+            "information": 62.4540069353567
+        }
+    },
+    {
+        "year": "1975",
+        "stability_index": 70,
+        "pillars": {
+            "technologie_ia": 66.89739206027954,
+            "environnement": 67.69234429347296,
+            "energie": 64.91545012401656,
+            "geopolitique": 66.80162544990955,
+            "demographie_social": 66.00944567139179,
+            "finance": 70.3758424707973,
+            "sante_bio": 69.01230744613811,
+            "espace": 77.20438661065118,
+            "information": 74.75176445263362
+        }
+    },
+    {
+        "year": "1976",
+        "stability_index": 71,
+        "pillars": {
+            "technologie_ia": 76.29638528887703,
+            "environnement": 67.20663563829994,
+            "energie": 78.50310936809522,
+            "geopolitique": 72.20445932693099,
+            "demographie_social": 64.17334929184803,
+            "finance": 66.99098993790663,
+            "sante_bio": 63.44902166006575,
+            "espace": 69.26969703817542,
+            "information": 71.83610768296413
+        }
+    },
+    {
+        "year": "1977",
+        "stability_index": 72,
+        "pillars": {
+            "technologie_ia": 80.00122945559613,
+            "environnement": 74.5747453355303,
+            "energie": 65.6271245069282,
+            "geopolitique": 78.07175911546372,
+            "demographie_social": 66.85908642325924,
+            "finance": 67.84329265401126,
+            "sante_bio": 79.35780014459587,
+            "espace": 79.08443181551726,
+            "information": 67.96919108169183
+        }
+    },
+    {
+        "year": "1978",
+        "stability_index": 71,
+        "pillars": {
+            "technologie_ia": 67.99303843076436,
+            "environnement": 78.98383713995104,
+            "energie": 74.68194935390892,
+            "geopolitique": 72.1460269057651,
+            "demographie_social": 76.26191944400065,
+            "finance": 63.87260429685217,
+            "sante_bio": 77.0454010456155,
+            "espace": 76.54376006599901,
+            "information": 78.00680678072843
+        }
+    },
+    {
+        "year": "1979",
+        "stability_index": 72,
+        "pillars": {
+            "technologie_ia": 75.44704445527445,
+            "environnement": 69.92319837604317,
+            "energie": 76.31046428762878,
+            "geopolitique": 66.5152174599258,
+            "demographie_social": 75.35230121281455,
+            "finance": 72.60079159719481,
+            "sante_bio": 77.63967641709337,
+            "espace": 78.07594562013287,
+            "information": 76.41614750830814
+        }
+    },
+    {
+        "year": "1980",
+        "stability_index": 71,
+        "pillars": {
+            "technologie_ia": 76.4080988733038,
+            "environnement": 73.88382820149346,
+            "energie": 74.87660976488851,
+            "geopolitique": 74.7371709904862,
+            "demographie_social": 76.0612603537122,
+            "finance": 76.3884429978628,
+            "sante_bio": 64.92143543878119,
+            "espace": 66.75643826471324,
+            "information": 76.72968379734581
+        }
+    },
+    {
+        "year": "1981",
+        "stability_index": 69,
+        "pillars": {
+            "technologie_ia": 75.63687775408401,
+            "environnement": 67.11721838795837,
+            "energie": 77.27511637188522,
+            "geopolitique": 72.92523998897197,
+            "demographie_social": 66.77498846678294,
+            "finance": 63.128677316078246,
+            "sante_bio": 62.168855533909934,
+            "espace": 69.08760790539733,
+            "information": 61.70318761587073
+        }
+    },
+    {
+        "year": "1982",
+        "stability_index": 66,
+        "pillars": {
+            "technologie_ia": 60.45497995481591,
+            "environnement": 62.67143950591592,
+            "energie": 72.89059517321708,
+            "geopolitique": 70.20310299513898,
+            "demographie_social": 64.50657499200793,
+            "finance": 72.11403292380315,
+            "sante_bio": 61.34812320178751,
+            "espace": 65.77456181418731,
+            "information": 67.43135588009993
+        }
+    },
+    {
+        "year": "1983",
+        "stability_index": 69,
+        "pillars": {
+            "technologie_ia": 68.25538167511625,
+            "environnement": 76.11988491909358,
+            "energie": 72.79176169129393,
+            "geopolitique": 61.836550169169215,
+            "demographie_social": 66.92275296697788,
+            "finance": 71.79322808417055,
+            "sante_bio": 75.62771130384255,
+            "espace": 73.3138104349392,
+            "information": 76.40955700233232
+        }
+    },
+    {
+        "year": "1984",
+        "stability_index": 66,
+        "pillars": {
+            "technologie_ia": 63.771997018105054,
+            "environnement": 69.99327261714818,
+            "energie": 65.27808322757426,
+            "geopolitique": 65.16714383109255,
+            "demographie_social": 64.81298257788765,
+            "finance": 61.32204398862768,
+            "sante_bio": 65.49565998599392,
+            "espace": 65.83741783838644,
+            "information": 68.88605007593358
+        }
+    },
+    {
+        "year": "1985",
+        "stability_index": 69,
+        "pillars": {
+            "technologie_ia": 67.1875485222442,
+            "environnement": 61.98814837284545,
+            "energie": 66.66495991367299,
+            "geopolitique": 75.56718239382731,
+            "demographie_social": 67.76407753046553,
+            "finance": 67.48284594836397,
+            "sante_bio": 76.22528170403743,
+            "espace": 74.99118514636402,
+            "information": 70.34739685740729
+        }
+    },
+    {
+        "year": "1986",
+        "stability_index": 68,
+        "pillars": {
+            "technologie_ia": 69.93839471670255,
+            "environnement": 75.04786509274618,
+            "energie": 72.99340049969834,
+            "geopolitique": 74.17105328701561,
+            "demographie_social": 72.86238934779954,
+            "finance": 60.54241908698031,
+            "sante_bio": 66.57566683462582,
+            "espace": 68.71788592692091,
+            "information": 72.04525453895931
+        }
+    },
+    {
+        "year": "1987",
+        "stability_index": 65,
+        "pillars": {
+            "technologie_ia": 63.73342481650468,
+            "environnement": 67.03745423667569,
+            "energie": 60.88162986270162,
+            "geopolitique": 57.93762004642084,
+            "demographie_social": 65.90696014723326,
+            "finance": 58.71652658807215,
+            "sante_bio": 58.89669734227289,
+            "espace": 67.23632827385796,
+            "information": 58.316363615424365
+        }
+    },
+    {
+        "year": "1988",
+        "stability_index": 64,
+        "pillars": {
+            "technologie_ia": 65.78432393290323,
+            "environnement": 61.392436135088836,
+            "energie": 66.5742659944717,
+            "geopolitique": 65.20008780088563,
+            "demographie_social": 56.755120463795556,
+            "finance": 66.32713907721752,
+            "sante_bio": 64.3632186699676,
+            "espace": 56.97110293946894,
+            "information": 57.0894245577563
+        }
+    },
+    {
+        "year": "1989",
+        "stability_index": 65,
+        "pillars": {
+            "technologie_ia": 69.99467411367125,
+            "environnement": 63.45920437052565,
+            "energie": 63.56482999696607,
+            "geopolitique": 71.88495197432322,
+            "demographie_social": 58.22354619890281,
+            "finance": 62.15289871045881,
+            "sante_bio": 71.70223800755797,
+            "espace": 63.678895885807975,
+            "information": 61.468006383652465
+        }
+    },
+    {
+        "year": "1990",
+        "stability_index": 66,
+        "pillars": {
+            "technologie_ia": 61.191773128856596,
+            "environnement": 61.62219743029272,
+            "energie": 63.865057879778185,
+            "geopolitique": 58.80734619985671,
+            "demographie_social": 73.35247750515973,
+            "finance": 66.27074644110826,
+            "sante_bio": 65.00411391734785,
+            "espace": 65.83968746227411,
+            "information": 60.13715186967255
+        }
+    },
+    {
+        "year": "1991",
+        "stability_index": 60,
+        "pillars": {
+            "technologie_ia": 60.88704211956076,
+            "environnement": 66.72891178805683,
+            "energie": 54.047754717320544,
+            "geopolitique": 61.3551676450151,
+            "demographie_social": 66.66277464883996,
+            "finance": 52.505855548324874,
+            "sante_bio": 53.83287024491928,
+            "espace": 55.64746400600403,
+            "information": 65.82675966917701
+        }
+    },
+    {
+        "year": "1992",
+        "stability_index": 60,
+        "pillars": {
+            "technologie_ia": 64.6908840390766,
+            "environnement": 61.21854392558939,
+            "energie": 52.53723069869165,
+            "geopolitique": 54.20775621223773,
+            "demographie_social": 55.874738949337946,
+            "finance": 63.33746542278421,
+            "sante_bio": 59.537569810260884,
+            "espace": 55.73100474821985,
+            "information": 65.07935761298837
+        }
+    },
+    {
+        "year": "1993",
+        "stability_index": 59,
+        "pillars": {
+            "technologie_ia": 62.31490155824956,
+            "environnement": 53.342223268501215,
+            "energie": 54.73110086622953,
+            "geopolitique": 55.45060060297534,
+            "demographie_social": 64.07650431221921,
+            "finance": 65.20808737093081,
+            "sante_bio": 58.51948535997827,
+            "espace": 65.50535714488356,
+            "information": 66.75010634748227
+        }
+    },
+    {
+        "year": "1994",
+        "stability_index": 56,
+        "pillars": {
+            "technologie_ia": 55.338487171797084,
+            "environnement": 56.070269612998516,
+            "energie": 51.146609998030414,
+            "geopolitique": 59.162233327012366,
+            "demographie_social": 63.740738873526496,
+            "finance": 51.680215932689606,
+            "sante_bio": 61.72086915866319,
+            "espace": 50.89452018299302,
+            "information": 60.62728805801407
+        }
+    },
+    {
+        "year": "1995",
+        "stability_index": 60,
+        "pillars": {
+            "technologie_ia": 55.11867929475808,
+            "environnement": 55.60773332419703,
+            "energie": 65.29519450762211,
+            "geopolitique": 53.720142656444814,
+            "demographie_social": 55.016118794582574,
+            "finance": 54.94476512334246,
+            "sante_bio": 66.67714317714672,
+            "espace": 55.894554737855074,
+            "information": 57.242857643133775
+        }
+    },
+    {
+        "year": "1996",
+        "stability_index": 55,
+        "pillars": {
+            "technologie_ia": 49.629258767880884,
+            "environnement": 57.22565463509038,
+            "energie": 57.68645465875433,
+            "geopolitique": 62.2588130303269,
+            "demographie_social": 59.737931504587884,
+            "finance": 55.56137642546689,
+            "sante_bio": 50.305800269119,
+            "espace": 51.505936606909025,
+            "information": 55.231265407183315
+        }
+    },
+    {
+        "year": "1997",
+        "stability_index": 53,
+        "pillars": {
+            "technologie_ia": 46.42890452307076,
+            "environnement": 57.452601104850565,
+            "energie": 47.45640024866968,
+            "geopolitique": 54.96240990371948,
+            "demographie_social": 56.51365087288731,
+            "finance": 52.34702722779613,
+            "sante_bio": 47.746551684198394,
+            "espace": 58.445430240266134,
+            "information": 52.48138149037662
+        }
+    },
+    {
+        "year": "1998",
+        "stability_index": 53,
+        "pillars": {
+            "technologie_ia": 50.55924483505772,
+            "environnement": 48.52505880923771,
+            "energie": 52.371954255358695,
+            "geopolitique": 55.20448924902738,
+            "demographie_social": 48.704836251296804,
+            "finance": 45.86160315367193,
+            "sante_bio": 56.923363781966806,
+            "espace": 49.884969878368054,
+            "information": 54.45721281466635
+        }
+    },
+    {
+        "year": "1999",
+        "stability_index": 52,
+        "pillars": {
+            "technologie_ia": 53.32270532550295,
+            "environnement": 58.887613033865286,
+            "energie": 59.274761180239686,
+            "geopolitique": 58.196875741639055,
+            "demographie_social": 56.758118797944555,
+            "finance": 58.901862701570224,
+            "sante_bio": 48.02554552911568,
+            "espace": 58.01659350889412,
+            "information": 47.60605303076268
+        }
+    },
+    {
+        "year": "2000",
+        "stability_index": 50,
+        "pillars": {
+            "technologie_ia": 53.53057860460046,
+            "environnement": 50.887586748976716,
+            "energie": 44.79202087268423,
+            "geopolitique": 54.76340168987809,
+            "demographie_social": 45.49797790176988,
+            "finance": 56.3725134481835,
+            "sante_bio": 50.15844476335989,
+            "espace": 56.27263787400216,
+            "information": 49.75399534254192
+        }
+    },
+    {
+        "year": "2001",
+        "stability_index": 50,
+        "pillars": {
+            "technologie_ia": 48.64897640470669,
+            "environnement": 46.70923288967953,
+            "energie": 53.92538512620676,
+            "geopolitique": 57.701936809118436,
+            "demographie_social": 52.279702022679366,
+            "finance": 56.62394771674164,
+            "sante_bio": 51.49864907013494,
+            "espace": 45.35383265373619,
+            "information": 47.49626406914897
+        }
+    },
+    {
+        "year": "2002",
+        "stability_index": 46,
+        "pillars": {
+            "technologie_ia": 47.123001026249646,
+            "environnement": 47.506192438392986,
+            "energie": 48.929160216946535,
+            "geopolitique": 50.97303226618614,
+            "demographie_social": 46.63985007093269,
+            "finance": 50.99327918009944,
+            "sante_bio": 44.11227926601343,
+            "espace": 51.43975602717967,
+            "information": 47.67674707028688
+        }
+    },
+    {
+        "year": "2003",
+        "stability_index": 47,
+        "pillars": {
+            "technologie_ia": 44.1748100673758,
+            "environnement": 49.48040383378071,
+            "energie": 50.75637338368144,
+            "geopolitique": 43.951301730077724,
+            "demographie_social": 43.16655602234475,
+            "finance": 53.73228835627037,
+            "sante_bio": 47.66803513393188,
+            "espace": 43.0712069570655,
+            "information": 53.73625346775562
+        }
+    },
+    {
+        "year": "2004",
+        "stability_index": 45,
+        "pillars": {
+            "technologie_ia": 52.414352486064885,
+            "environnement": 37.118398477869576,
+            "energie": 47.89226834559739,
+            "geopolitique": 46.393644845827,
+            "demographie_social": 52.26046857856217,
+            "finance": 49.68105215643065,
+            "sante_bio": 50.904524036774085,
+            "espace": 37.88938702677473,
+            "information": 37.7517869108578
+        }
+    },
+    {
+        "year": "2005",
+        "stability_index": 46,
+        "pillars": {
+            "technologie_ia": 42.53349025264788,
+            "environnement": 50.26792362666576,
+            "energie": 49.86978491009493,
+            "geopolitique": 47.58022037052713,
+            "demographie_social": 47.00216393098926,
+            "finance": 52.22727617846661,
+            "sante_bio": 42.89522297336812,
+            "espace": 40.819134289128314,
+            "information": 53.660276581554776
+        }
+    },
+    {
+        "year": "2006",
+        "stability_index": 40,
+        "pillars": {
+            "technologie_ia": 40.20080757666527,
+            "environnement": 32.89446242492001,
+            "energie": 38.23547637612691,
+            "geopolitique": 39.6017958440856,
+            "demographie_social": 37.33800504295944,
+            "finance": 48.04115293861541,
+            "sante_bio": 39.70061285592073,
+            "espace": 34.930400604799274,
+            "information": 42.4813514802928
+        }
+    },
+    {
+        "year": "2007",
+        "stability_index": 41,
+        "pillars": {
+            "technologie_ia": 38.39491645076406,
+            "environnement": 39.824018159960644,
+            "energie": 47.811723938289305,
+            "geopolitique": 37.226441862913774,
+            "demographie_social": 36.276749301204845,
+            "finance": 39.714962676060665,
+            "sante_bio": 43.65176235122361,
+            "espace": 48.760530290148296,
+            "information": 47.90095813038658
+        }
+    },
+    {
+        "year": "2008",
+        "stability_index": 40,
+        "pillars": {
+            "technologie_ia": 42.0479019363437,
+            "environnement": 45.214740232261,
+            "energie": 34.84148642967672,
+            "geopolitique": 45.01704058949862,
+            "demographie_social": 44.28995288571525,
+            "finance": 34.98075089299272,
+            "sante_bio": 39.17580752108684,
+            "espace": 34.05508285780124,
+            "information": 47.403790878815386
+        }
+    },
+    {
+        "year": "2009",
+        "stability_index": 39,
+        "pillars": {
+            "technologie_ia": 46.29281657066881,
+            "environnement": 32.14660019626811,
+            "energie": 41.324705255513564,
+            "geopolitique": 42.36987131128793,
+            "demographie_social": 45.86659187220374,
+            "finance": 37.77393655213206,
+            "sante_bio": 42.044346899826046,
+            "espace": 35.65038672480656,
+            "information": 41.27000522883595
+        }
+    },
+    {
+        "year": "2010",
+        "stability_index": 38,
+        "pillars": {
+            "technologie_ia": 32.71590936284905,
+            "environnement": 44.851941611695416,
+            "energie": 44.52043209491803,
+            "geopolitique": 39.52814912618315,
+            "demographie_social": 39.18870938233631,
+            "finance": 33.12576199575286,
+            "sante_bio": 34.272322225663515,
+            "espace": 43.76432795813788,
+            "information": 31.408363341768165
+        }
+    },
+    {
+        "year": "2011",
+        "stability_index": 39,
+        "pillars": {
+            "technologie_ia": 31.078897856503104,
+            "environnement": 44.951087776423016,
+            "energie": 34.112750609032474,
+            "geopolitique": 32.7745378023844,
+            "demographie_social": 45.283928373173154,
+            "finance": 36.179297633300095,
+            "sante_bio": 35.2082181355474,
+            "espace": 36.60414587364368,
+            "information": 39.79642865194094
+        }
+    },
+    {
+        "year": "2012",
+        "stability_index": 35,
+        "pillars": {
+            "technologie_ia": 36.909385354490105,
+            "environnement": 28.982125600075467,
+            "energie": 32.97295788191081,
+            "geopolitique": 37.27034125783633,
+            "demographie_social": 40.52122188568674,
+            "finance": 35.73112669564061,
+            "sante_bio": 40.04256933165426,
+            "espace": 31.380148652693823,
+            "information": 30.848455213183573
+        }
+    },
+    {
+        "year": "2013",
+        "stability_index": 38,
+        "pillars": {
+            "technologie_ia": 37.9278531450889,
+            "environnement": 34.889559065239375,
+            "energie": 39.26711389470162,
+            "geopolitique": 31.581438938242997,
+            "demographie_social": 42.91617710712417,
+            "finance": 32.244281101971936,
+            "sante_bio": 32.050037893800436,
+            "espace": 34.1866150664343,
+            "information": 45.50360492880414
+        }
+    },
+    {
+        "year": "2014",
+        "stability_index": 36,
+        "pillars": {
+            "technologie_ia": 38.28412508866193,
+            "environnement": 43.59420037522307,
+            "energie": 29.314144320920615,
+            "geopolitique": 31.46597494245244,
+            "demographie_social": 36.099128269635266,
+            "finance": 36.35652068401592,
+            "sante_bio": 31.315970698232242,
+            "espace": 38.37323376033502,
+            "information": 41.03315984059896
+        }
+    },
+    {
+        "year": "2015",
+        "stability_index": 37,
+        "pillars": {
+            "technologie_ia": 39.00161491333844,
+            "environnement": 30.982998366279787,
+            "energie": 35.41651126122957,
+            "geopolitique": 33.458948940994176,
+            "demographie_social": 29.40498287198595,
+            "finance": 33.98918237953715,
+            "sante_bio": 30.699987082220275,
+            "espace": 40.10732572009215,
+            "information": 38.23944408356713
+        }
+    },
+    {
+        "year": "2016",
+        "stability_index": 37,
+        "pillars": {
+            "technologie_ia": 32.112432709377224,
+            "environnement": 44.20013430015498,
+            "energie": 32.89769365963254,
+            "geopolitique": 44.69380405708924,
+            "demographie_social": 43.65062536653949,
+            "finance": 43.123536241924455,
+            "sante_bio": 37.06208531910218,
+            "espace": 43.20919553730107,
+            "information": 36.87398090524849
+        }
+    },
+    {
+        "year": "2017",
+        "stability_index": 38,
+        "pillars": {
+            "technologie_ia": 41.68718553664719,
+            "environnement": 41.40833312854285,
+            "energie": 36.46102860177843,
+            "geopolitique": 32.83504936896521,
+            "demographie_social": 42.55460605566796,
+            "finance": 41.53381257986799,
+            "sante_bio": 30.37444031281529,
+            "espace": 31.750930826088467,
+            "information": 39.549587407295995
+        }
+    },
+    {
+        "year": "2018",
+        "stability_index": 33,
+        "pillars": {
+            "technologie_ia": 33.58469366428076,
+            "environnement": 39.5778514644374,
+            "energie": 33.71922765172791,
+            "geopolitique": 37.28778003447886,
+            "demographie_social": 39.688788255038645,
+            "finance": 29.955783926087904,
+            "sante_bio": 31.58576702003121,
+            "espace": 35.556411773057405,
+            "information": 34.78484044538162
+        }
+    },
+    {
+        "year": "2019",
+        "stability_index": 38,
+        "pillars": {
+            "technologie_ia": 31.860724466687618,
+            "environnement": 43.98298818879366,
+            "energie": 44.49835802101663,
+            "geopolitique": 40.10203880544712,
+            "demographie_social": 36.278797369194024,
+            "finance": 34.22035241388383,
+            "sante_bio": 42.187035811224625,
+            "espace": 44.04186968577976,
+            "information": 36.262691699993645
+        }
+    },
+    {
+        "year": "2020",
+        "stability_index": 35,
+        "pillars": {
+            "technologie_ia": 36.87343707972763,
+            "environnement": 27.149602272570853,
+            "energie": 41.56826341361091,
+            "geopolitique": 37.17051988363283,
+            "demographie_social": 28.051687041455295,
+            "finance": 31.057597190688313,
+            "sante_bio": 29.738318323835745,
+            "espace": 36.64363369431956,
+            "information": 31.767662873012746
+        }
+    },
+    {
+        "year": "2021",
+        "stability_index": 39,
+        "pillars": {
+            "technologie_ia": 33.16686588769872,
+            "environnement": 38.25775177101347,
+            "energie": 31.55216473082265,
+            "geopolitique": 46.535101952585165,
+            "demographie_social": 38.09634462749649,
+            "finance": 45.552397747083226,
+            "sante_bio": 33.36404076436382,
+            "espace": 41.42775826287441,
+            "information": 33.58058706811882
+        }
+    },
+    {
+        "year": "2022",
+        "stability_index": 39,
+        "pillars": {
+            "technologie_ia": 36.92090177044197,
+            "environnement": 43.78115137886339,
+            "energie": 45.75623004146836,
+            "geopolitique": 45.38994266360507,
+            "demographie_social": 39.350271166486024,
+            "finance": 36.20033069097384,
+            "sante_bio": 31.89592067720442,
+            "espace": 42.065154079677725,
+            "information": 43.41391082768454
+        }
+    },
+    {
+        "year": "2023",
+        "stability_index": 44,
+        "pillars": {
+            "technologie_ia": 43.63772064212637,
+            "environnement": 37.39979228317882,
+            "energie": 41.056534726686515,
+            "geopolitique": 43.05392343564348,
+            "demographie_social": 51.150271710325356,
+            "finance": 38.65037051586578,
+            "sante_bio": 47.18306720101607,
+            "espace": 46.22265928424816,
+            "information": 41.88295365930027
+        }
+    },
+    {
+        "year": "2024",
+        "stability_index": 41,
+        "pillars": {
+            "technologie_ia": 43.45712081788155,
+            "environnement": 41.97870457130166,
+            "energie": 44.23074221830249,
+            "geopolitique": 40.38727899080376,
+            "demographie_social": 35.44608936689156,
+            "finance": 41.401642646461056,
+            "sante_bio": 37.65149013366519,
+            "espace": 35.775607385822596,
+            "information": 38.14679572383771
+        }
+    },
+    {
+        "year": "2025",
+        "stability_index": 45,
+        "pillars": {
+            "technologie_ia": 37.238241557894426,
+            "environnement": 46.39239412872634,
+            "energie": 45.687998856806416,
+            "geopolitique": 46.585218413899234,
+            "demographie_social": 38.10444874020485,
+            "finance": 45.65154644979627,
+            "sante_bio": 45.73086133760593,
+            "espace": 41.00068156758014,
+            "information": 42.714672457935684
+        }
+    }
+]
