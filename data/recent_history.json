@@ -1,21 +1,5 @@
 [
     {
-        "year": "2020",
-        "stability_index": 45,
-        "pillars": {
-            "energie": 40.85654958059529,
-            "environnement": 38.173948312436636,
-            "espace": 51.06106049442636,
-            "demographie_social": 45.2310107444403,
-            "sante_bio": 30,
-            "geopolitique": 41.556819650913184,
-            "technologie_ia": 47.08910328691048,
-            "finance": 44.28060626843465,
-            "information": 47.191606786918975
-        },
-        "description": "Pandémie systémique de classe 4"
-    },
-    {
         "year": "2021",
         "stability_index": 44,
         "pillars": {
@@ -92,6 +76,22 @@
             "technologie_ia": 46.45239879927986,
             "finance": 43.450562850348504,
             "information": 37.582705813771334
+        },
+        "description": ""
+    },
+    {
+        "year": "2026",
+        "stability_index": 50,
+        "pillars": {
+            "technologie_ia": 88,
+            "environnement": 38,
+            "energie": 55,
+            "geopolitique": 30,
+            "demographie_social": 42,
+            "finance": 48,
+            "sante_bio": 60,
+            "espace": 35,
+            "information": 40
         },
         "description": ""
     }

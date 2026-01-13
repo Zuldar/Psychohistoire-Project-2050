@@ -2014,5 +2014,21 @@
             "information": 37.582705813771334
         },
         "description": ""
+    },
+    {
+        "year": "2026",
+        "stability_index": 50,
+        "pillars": {
+            "technologie_ia": 88,
+            "environnement": 38,
+            "energie": 55,
+            "geopolitique": 30,
+            "demographie_social": 42,
+            "finance": 48,
+            "sante_bio": 60,
+            "espace": 35,
+            "information": 40
+        },
+        "description": ""
     }
 ]
