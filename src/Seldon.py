@@ -11,7 +11,6 @@ PROJECTION_FILE = 'data/projection_2036.json'
 MEMORY_FILE = 'data/bot_memory.json'
 WEIGHTS_FILE = 'data/weights.json'
 
-# Vocabulaire Seldonien (Phrasé pour les alertes)
 SELDON_TERMS = {
     "energie": "l'Epuisement Energétique", 
     "environnement": "l'Entropie Climatique",
@@ -24,7 +23,6 @@ SELDON_TERMS = {
     "information": "la Corruption de la Noosphère"
 }
 
-# Archives pour le bas de page (Le passé reste le passé)
 HISTORICAL_EVENTS = {
     "1914": "Rupture de l'équilibre des alliances",
     "1918": "Effondrement démographique viral",
@@ -85,9 +83,7 @@ def calculate_stability(pillars, weights):
 
 # --- 4. GÉNÉRATEUR D'HISTOIRE ---
 def generate_full_history():
-    # ... (Code identique à la V33 pour la génération d'histoire) ...
-    # Je le laisse pour qu'il régénère si besoin
-    print("📜 CRÉATION DES ARCHIVES...")
+    print("📜 GÉNÉRATION INITIALE DES ARCHIVES...")
     history = []
     base_scores = { 1900:60, 1914:30, 1925:65, 1929:45, 1939:20, 1945:10, 1960:60, 1973:65, 1990:70, 2008:50, 2020:45, 2025:45 }
     current_val = base_scores[1900]
@@ -107,7 +103,6 @@ def generate_full_history():
             p_val = current_val + random.uniform(-10, 10)
             pillars[k] = max(5, min(100, p_val))
 
-        # Injection des faiblesses historiques pour la cohérence
         if str(year) == "1929": pillars["finance"] = 15
         if str(year) == "1973": pillars["energie"] = 20
         if str(year) == "2008": pillars["finance"] = 35
@@ -119,9 +114,46 @@ def generate_full_history():
     save_json(HISTORY_FILE, history)
     return history
 
-# --- 5. EXÉCUTION ---
+# --- 5. FONCTION D'ARCHIVAGE (NOUVEAU V35) ---
+def archive_current_year(history, current_score, current_pillars):
+    """Met à jour ou ajoute l'année en cours dans le fichier historique"""
+    current_year_str = str(datetime.now().year)
+    
+    # On cherche si l'année existe déjà
+    found = False
+    for entry in history:
+        if entry['year'] == current_year_str:
+            # Mise à jour de l'entrée existante
+            entry['stability_index'] = current_score
+            # On simplifie les piliers pour l'historique (juste le score, pas les commentaires)
+            simple_pillars = {}
+            for k, v in current_pillars.items():
+                simple_pillars[k] = v['score'] if isinstance(v, dict) else v
+            entry['pillars'] = simple_pillars
+            found = True
+            break
+    
+    if not found:
+        # Création de la nouvelle entrée
+        simple_pillars = {}
+        for k, v in current_pillars.items():
+            simple_pillars[k] = v['score'] if isinstance(v, dict) else v
+            
+        history.append({
+            "year": current_year_str,
+            "stability_index": current_score,
+            "pillars": simple_pillars,
+            "description": "" # Pas encore d'histoire écrite pour cette année
+        })
+    
+    # Sauvegarde définitive dans le fichier V3
+    save_json(HISTORY_FILE, history)
+    print(f"💾 Archivage : L'année {current_year_str} a été sauvegardée dans l'Histoire (Score: {current_score}%).")
+    return history
+
+# --- 6. EXÉCUTION ---
 def update_seldon():
-    print("🔮 Démarrage Seldon Bot V34 (Analyse Pure)...")
+    print("🔮 Démarrage Seldon Bot V35 (Archiviste)...")
     weights = get_weights()
 
     # A. CHARGEMENT
@@ -161,48 +193,43 @@ def update_seldon():
     years_until_crisis = max(1, min(9, int((new_score - 25) / 5)))
     crisis_year = current_year + years_until_crisis
 
-    # E. ARCHIVES
+    # E. ARCHIVES & SAUVEGARDE DU PRÉSENT (V35)
+    # C'est ici qu'on écrit le présent dans le passé
+    history = archive_current_year(history, new_score, current['pillars'])
+
     past_crises = []
     for e in history:
         if e.get('description'):
             past_crises.append({"year": str(e['year']), "score": e['stability_index'], "desc": e['description']})
     current['archives'] = past_crises
+    
+    # On met à jour le fichier pour le graphique (les 6 dernières années de l'histoire qu'on vient de mettre à jour)
     save_json(RECENT_HISTORY_FILE, history[-6:])
 
-    # F. ALERTES SELDONIENNES (V34)
+    # F. ALERTES SELDONIENNES
     alerts = []
     if divergence_msg: alerts.append(divergence_msg)
     
-    # 1. Identifier les piliers faibles pour construire la phrase
     stress_factors = []
     for k, v in current['pillars'].items():
         s = v['score'] if isinstance(v, dict) else v
         stress_factors.append((k, s))
-    
-    # On trie du plus faible au plus fort
     stress_factors.sort(key=lambda x: x[1])
     
-    # On prend les 2 pires
     worst_1 = stress_factors[0]
     worst_2 = stress_factors[1]
-    
     term_1 = SELDON_TERMS.get(worst_1[0], "Facteur Inconnu")
     term_2 = SELDON_TERMS.get(worst_2[0], "Facteur Inconnu")
     
-    # 2. Calcul du PSI (Probabilité de rupture)
-    # Plus le score global est bas, plus la proba est haute.
-    # Ex: Score 40 -> Psi 60%. Mais on ajoute un boost si les pires piliers sont vraiment bas.
     psi_base = 100 - new_score
     psi_boost = 0
     if worst_1[1] < 30: psi_boost += 10
     if worst_2[1] < 30: psi_boost += 10
     psi_total = min(99, psi_base + psi_boost)
 
-    # 3. Construction de la Prophétie
     if new_score > 65:
          alerts.append("📅 HORIZON STABLE : Aucune convergence systémique immédiate.")
     else:
-        # Phrase type : "2028 : La Dissonance Sociale catalyse l'Effondrement Economique (Ψ: 85%)"
         seldon_prophecy = f"📅 {crisis_year} : {term_1} catalyse {term_2}. Probabilité de rupture de la chaîne causale : {psi_total}%."
         alerts.append(seldon_prophecy)
 
@@ -226,7 +253,7 @@ def update_seldon():
         projections["pessimiste"].append({ "year": str(y), "stability_index": round(max(5, base - i*(2.0 + uncertainty))) })
         
     save_json(PROJECTION_FILE, {"scenarios": projections})
-    print("✅ Seldon V34 terminé.")
+    print("✅ Seldon V35 terminé (Sauvegarde mi-mois effectuée).")
 
 if __name__ == "__main__":
     update_seldon()
