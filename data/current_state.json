@@ -1,50 +1,52 @@
 {
-    "date": "2026-01-13 12:35",
-    "stability_index": 50,
+    "date": "2026-02-15 14:20",
+    "stability_index": 47,
     "model_accuracy": 97,
-    "global_analysis": "Initialisation du protocole Seldon V31. En attente de la première convergence des données historiques.",
+    "global_analysis": "Aggravation des tensions géopolitiques. L'ordre mondial se fragmente tandis que les conflits régionaux s'intensifient. La transition énergétique marque le pas sous pressions économiques.",
     "pillars": {
         "technologie_ia": {
-            "score": 88,
-            "comment": "Risque de divergence algorithmique."
+            "score": 85,
+            "comment": "Pragmatisation de l'IA. Transition vers modèles spécialisés et agentic AI. Ralentissement scaling."
         },
         "environnement": {
-            "score": 38,
-            "comment": "Instabilité biosphérique critique."
+            "score": 36,
+            "comment": "2025 = 3ème année la plus chaude. Administration Trump démantèle protections climatiques."
         },
         "energie": {
-            "score": 55,
-            "comment": "Transition sous contrainte."
+            "score": 52,
+            "comment": "Prix pétroliers en chute (Brent ~55$/b). Surplus d'offre. Demande électricité AI explose."
         },
         "geopolitique": {
-            "score": 30,
-            "comment": "Friction tectonique élevée."
+            "score": 28,
+            "comment": "Tensions Inde-Pakistan. Guerre Ukraine enlisée. Conflits Soudan, Gaza, Sahel. Fragmentation accélérée."
         },
         "demographie_social": {
-            "score": 42,
-            "comment": "Dissonance civile."
+            "score": 40,
+            "comment": "Crise migratoire. Montée populisme Europe. Gen Z rebellion. Polarisation sociétale."
         },
         "finance": {
-            "score": 48,
-            "comment": "Volatilité des actifs."
+            "score": 45,
+            "comment": "Dette mondiale → 100% PIB d'ici 2029. Valorisations élevées. Risque corrections. Tarifs Trump."
         },
         "sante_bio": {
-            "score": 60,
-            "comment": "Résilience virale stable."
+            "score": 62,
+            "comment": "Situation stable post-pandémie. Pas de nouvelles menaces majeures détectées."
         },
         "espace": {
-            "score": 35,
-            "comment": "Stagnation orbitale."
+            "score": 38,
+            "comment": "Militarisation orbitale accrue. Tensions Russie-OTAN. Stagnation exploration commerciale."
         },
         "information": {
-            "score": 40,
-            "comment": "Saturation de la noosphère."
+            "score": 38,
+            "comment": "Guerre hybride numérique Russie-OTAN. Désinformation massive. Contrôle narratif autoritaire."
         }
     },
     "alerts": [
-        "📅 2031 : la Friction Géopolitique catalyse la Stagnation Exosphérique. Probabilité de rupture de la chaîne causale : 50%.",
-        "⚠️ Ω_BIOSPHERE : Seuil critique atteint",
-        "⚔️ Σ_CONFLICT : Tensions maximales"
+        "⚔️ ALERTE ROUGE : Inde-Pakistan tensions Kashmir + terrorisme. Risque d'escalade nucléaire.",
+        "🌍 Σ_CLIMATE : Administration Trump quitte Accord Paris + GIEC. Recul historique.",
+        "💰 Ω_DEBT : Trajectoire dette insoutenable. Global debt → 100% PIB. Risque crise systémique.",
+        "🔥 Conflits multiples : Soudan (El Fasher), Gaza, Ukraine, Sahel. Instabilité généralisée.",
+        "⚡ Paradoxe énergétique : Surplus pétrole vs pénurie électricité fiable pour IA."
     ],
     "archives": [
         {
@@ -101,6 +103,16 @@
             "year": "2022",
             "score": 45,
             "desc": "Retour de la guerre haute intensité"
+        },
+        {
+            "year": "2026-01",
+            "score": 50,
+            "desc": "Initialisation protocole Seldon V31"
+        },
+        {
+            "year": "2026-02",
+            "score": 47,
+            "desc": "Fragmentation accélérée de l'ordre mondial"
         }
     ]
 }
