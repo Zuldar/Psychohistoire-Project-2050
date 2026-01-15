@@ -1,7 +1,7 @@
 {
-    "date": "2026-02-15 14:20",
-    "stability_index": 47,
-    "model_accuracy": 97,
+    "date": "2026-01-15 11:52",
+    "stability_index": 48,
+    "model_accuracy": 96,
     "global_analysis": "Aggravation des tensions géopolitiques. L'ordre mondial se fragmente tandis que les conflits régionaux s'intensifient. La transition énergétique marque le pas sous pressions économiques.",
     "pillars": {
         "technologie_ia": {
@@ -42,11 +42,9 @@
         }
     },
     "alerts": [
-        "⚔️ ALERTE ROUGE : Inde-Pakistan tensions Kashmir + terrorisme. Risque d'escalade nucléaire.",
-        "🌍 Σ_CLIMATE : Administration Trump quitte Accord Paris + GIEC. Recul historique.",
-        "💰 Ω_DEBT : Trajectoire dette insoutenable. Global debt → 100% PIB. Risque crise systémique.",
-        "🔥 Conflits multiples : Soudan (El Fasher), Gaza, Ukraine, Sahel. Instabilité généralisée.",
-        "⚡ Paradoxe énergétique : Surplus pétrole vs pénurie électricité fiable pour IA."
+        "📅 2030 : la Friction Géopolitique catalyse l'Entropie Climatique. Probabilité de rupture de la chaîne causale : 62%.",
+        "⚠️ Ω_BIOSPHERE : Seuil critique atteint",
+        "⚔️ Σ_CONFLICT : Tensions maximales"
     ],
     "archives": [
         {
@@ -103,16 +101,6 @@
             "year": "2022",
             "score": 45,
             "desc": "Retour de la guerre haute intensité"
-        },
-        {
-            "year": "2026-01",
-            "score": 50,
-            "desc": "Initialisation protocole Seldon V31"
-        },
-        {
-            "year": "2026-02",
-            "score": 47,
-            "desc": "Fragmentation accélérée de l'ordre mondial"
         }
     ]
 }
