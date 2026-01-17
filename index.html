@@ -81,17 +81,30 @@
         const definitions = { "energie": "Indice de disponibilité énergétique globale.", "environnement": "État d'intégrité de la biosphère.", "espace": "Vecteur d'expansion exosphérique.", "demographie_social": "Cohésion du tissu social.", "sante_bio": "Résilience biologique.", "geopolitique": "Tension tectonique.", "technologie_ia": "Accélération technologique.", "finance": "Fluidité des flux de crédits.", "information": "Hygiène de la Noosphère." };
         const alertTranslator = { "Ω_BIOSPHERE": "CLIMAT", "Σ_CONFLICT": "GÉOPOLITIQUE", "Δ_SINGULARITY": "TECH & IA", "Ψ_MASS": "SOCIAL", "⚡_ENTROPY": "ÉNERGIE", "📉_CREDIT_FLOW": "FINANCE" };
 
-        function calculateStability(pillars) {
-            let sum = 0, count = 0; for (const key in pillars) { sum += pillars[key].score || pillars[key]; count++; }
-            sum += (pillars['geopolitique'].score || pillars['geopolitique']); sum += (pillars['environnement'].score || pillars['environnement']);
-            return Math.round(sum / (count + 2));
-        }
+        async function calculateStability(pillars, weights) {
+    let weightedSum = 0;
+    let totalWeight = 0;
+    
+    for (const [key, data] of Object.entries(pillars)) {
+        const score = (typeof data === 'object' && data.score) ? data.score : data;
+        const weight = weights[key] || 1.0;
+        
+        weightedSum += score * weight;
+        totalWeight += weight;
+    }
+    
+    return Math.round(weightedSum / totalWeight);
+}
 
         async function loadData() {
-            try {
-                const time = new Date().getTime(); 
-                let response_current = await fetch('data/current_state.json?v=' + time);
-                const current = await response_current.json();
+    try {
+        const time = new Date().getTime(); 
+        let response_current = await fetch('data/current_state.json?v=' + time);
+        const current = await response_current.json();
+        
+        // AJOUT : Charger les poids
+        let response_weights = await fetch('data/weights.json?v=' + time);
+        const weights = await response_weights.json();
 
                 let history = [];
                 try {
@@ -169,8 +182,8 @@
                 } else { archivesDiv.textContent = "Synchronisation des archives..."; }
 
                 const histLabels = history.map(h => h.year);
-                const histData = history.map(h => calculateStability(h.pillars));
-                const currentScore = current.stability_index;
+const histData = await Promise.all(history.map(async h => await calculateStability(h.pillars, weights)));
+const currentScore = current.stability_index;
                 const labels = [...histLabels, "2026"];
                 const dataCommon = [...histData, currentScore];
                 if(scenarios.tendantielle) scenarios.tendantielle.forEach(p => labels.push(p.year));
