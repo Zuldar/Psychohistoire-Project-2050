@@ -95,7 +95,31 @@
     
     return Math.round(weightedSum / totalWeight);
 }
-
+function updateInterfaceLabels(terminology) {
+    // Mettre à jour le titre principal
+    const stabilityLabel = document.querySelector('.hud-label[style*="color:var(--neon-blue)"]');
+    if (stabilityLabel) {
+        const seldonTerm = terminology.interface_labels.stability_index.seldon;
+        const classicTerm = terminology.interface_labels.stability_index.classic;
+        
+        stabilityLabel.innerHTML = `
+            <span class="seldon-term">${seldonTerm}</span>
+            <span class="tooltip-inline">(${classicTerm})</span>
+        `;
+    }
+    
+    // Mettre à jour "RADIANT ACCURACY"
+    const accuracyLabel = document.querySelector('.accuracy-label');
+    if (accuracyLabel) {
+        accuracyLabel.textContent = terminology.interface_labels.model_accuracy.seldon.toUpperCase();
+    }
+    
+    // Mettre à jour le footer
+    const footer = document.querySelector('footer');
+    if (footer) {
+        footer.innerHTML = terminology.seldon_phrases.footer;
+    }
+}
         async function loadData() {
     try {
         const time = new Date().getTime();
