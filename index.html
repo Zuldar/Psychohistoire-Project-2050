@@ -98,6 +98,23 @@
 
         async function loadData() {
     try {
+        const time = new Date().getTime();
+        
+        // Charger current_state
+        let response_current = await fetch('data/current_state.json?v=' + time);
+        const current = await response_current.json();
+        
+        // Charger weights
+        let response_weights = await fetch('data/weights.json?v=' + time);
+        const weights = await response_weights.json();
+        
+        // ✅ NOUVEAU : Charger terminologie
+        let response_terms = await fetch('data/seldon_terminology.json?v=' + time);
+        const terminology = await response_terms.json();
+        
+        // Utiliser la terminologie
+        updateInterfaceLabels(terminology);
+        
         const time = new Date().getTime(); 
         let response_current = await fetch('data/current_state.json?v=' + time);
         const current = await response_current.json();
