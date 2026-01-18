@@ -168,7 +168,34 @@
             
             return Math.round(weightedSum / totalWeight);
         }
-
+function updateEquations(current) {
+    // Équation #42 - Prédiction de rupture
+    const currentYear = new Date().getFullYear();
+    const yearsUntilCrisis = Math.max(1, Math.min(9, Math.floor((current.stability_index - 25) / 5)));
+    const crisisYear = currentYear + yearsUntilCrisis;
+    
+    const eq42 = document.getElementById('equation-crisis');
+    if (eq42) {
+        eq42.innerHTML = `
+            T<sub>crise</sub> = ${currentYear} + max(1, min(9, ⌊(${current.stability_index} - 25)/5⌋)) = <span style="color: var(--gold); font-weight: bold;">${crisisYear}</span>
+        `;
+    }
+    
+    // Équation #17 - Probabilité de rupture
+    const geopolitiqueScore = current.pillars['geopolitique']?.score || 50;
+    const environnementScore = current.pillars['environnement']?.score || 50;
+    
+    const stressFactor = geopolitiqueScore < 30 ? 10 : 0;
+    const envFactor = environnementScore < 30 ? 10 : 0;
+    const probability = Math.min(99, (100 - current.stability_index) + stressFactor + envFactor);
+    
+    const eq17 = document.getElementById('equation-probability');
+    if (eq17) {
+        eq17.innerHTML = `
+            P<sub>rupture</sub> = min(99, (100 - ${current.stability_index}) + ${stressFactor + envFactor}) = <span style="color: var(--neon-red); font-weight: bold;">${probability}%</span>
+        `;
+    }
+}
         async function loadData() {
             try {
                 const time = new Date().getTime(); 
@@ -301,7 +328,9 @@
                 document.getElementById('last-update').style.color = "var(--neon-green)";
                 document.getElementById('last-update').style.borderColor = "var(--neon-green)";
                 document.getElementById('global-score').textContent = currentScore + "%";
+                updateEquations(current)
                 const st = document.getElementById('global-status');
+                
                 if(currentScore>60) { st.textContent="SYSTEM STABLE"; st.style.color="var(--neon-green)"; }
                 else if(currentScore>40) { st.textContent="SYSTEM UNSTABLE"; st.style.color="var(--neon-yellow)"; }
                 else { st.textContent="CRITICAL FAILURE"; st.style.color="var(--neon-red)"; }
