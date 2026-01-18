@@ -51,7 +51,48 @@
         </div>
 
         <div class="chart-wrapper"><canvas id="trendChart" height="300"></canvas></div>
+<!-- ✅ ÉQUATIONS PSYCHOHISTORIQUES -->
+<div class="seldon-equations-box">
+    <div class="equation-header">
+        <span class="blink">█</span> ÉQUATIONS PSYCHOHISTORIQUES — PROTOCOLE V36
+    </div>
+    
+    <div class="equation-container">
+        <div class="equation-title">ÉQUATION SELDON #31 — ENTROPIE SOCIALE</div>
+        <div class="equation-formula">
+            Ψ(t) = ∫₀ᵗ [∑ᵢ₌₁ⁿ ωᵢ·Pᵢ(τ)] dτ + ε(t)
+        </div>
+        <div class="equation-legend">
+            <span class="var">Ψ(t)</span> = Coefficient d'Entropie Sociale au temps t<br>
+            <span class="var">ωᵢ</span> = Poids du vecteur historique i<br>
+            <span class="var">Pᵢ(τ)</span> = Valeur psychohistorique du vecteur i<br>
+            <span class="var">ε(t)</span> = Terme d'incertitude stochastique
+        </div>
+    </div>
 
+    <div class="equation-container">
+        <div class="equation-title">ÉQUATION SELDON #42 — PRÉDICTION DE RUPTURE</div>
+        <div class="equation-formula" id="equation-crisis">
+            T_crise = T₀ + max(1, min(9, ⌊(Ψ - 25)/5⌋))
+        </div>
+        <div class="equation-legend">
+            <span class="var">T_crise</span> = Année de convergence systémique<br>
+            <span class="var">T₀</span> = Année actuelle<br>
+            <span class="var">Ψ</span> = Coefficient d'Entropie Sociale actuel
+        </div>
+    </div>
+
+    <div class="equation-container">
+        <div class="equation-title">ÉQUATION SELDON #17 — PROBABILITÉ DE RUPTURE</div>
+        <div class="equation-formula" id="equation-probability">
+            P_rupture = min(99, (100 - Ψ) + ∑ᵢ₌₁² δᵢ)
+        </div>
+        <div class="equation-legend">
+            <span class="var">P_rupture</span> = Probabilité de rupture de la chaîne causale (%)<br>
+            <span class="var">δᵢ</span> = Bonus si vecteur critique i &lt; 30 (+10 par vecteur)
+        </div>
+    </div>
+</div>
         <div class="terminal-box">
             <div class="terminal-header"><span class="blink">█</span> ANALYSE STRATÉGIQUE DU NOYAU</div>
             <div id="analysis-text" class="analysis-text">Chargement...</div>
