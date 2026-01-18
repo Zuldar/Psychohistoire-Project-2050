@@ -205,3 +205,25 @@ h1 {
 @media (max-width: 600px) { #floating-tooltip { max-width: 250px; } }
 
 footer { margin-top: 60px; text-align: center; color: #444; font-family: 'Share Tech Mono'; font-size: 0.7em; letter-spacing: 2px; }
+
+/* TERMINOLOGIE SELDONIENNE */
+.seldon-term {
+    color: var(--neon-blue);
+    font-family: 'Orbitron';
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px rgba(0, 243, 255, 0.3);
+}
+
+.tooltip-inline {
+    font-size: 0.7em;
+    color: #666;
+    font-family: 'Share Tech Mono';
+    margin-left: 10px;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.hud-label:hover .tooltip-inline {
+    opacity: 1;
+    color: var(--neon-blue);
+}
