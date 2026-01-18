@@ -73,79 +73,70 @@
 
     <script>
         window.onerror = function(msg, url, lineNo, columnNo, error) {
-            const errorBox = document.getElementById('error-box'); errorBox.style.display = 'block';
-            errorBox.innerHTML += `<strong>⛔ ERREUR :</strong> ${msg}<br>`; return false; 
+            const errorBox = document.getElementById('error-box'); 
+            errorBox.style.display = 'block';
+            errorBox.innerHTML += `<strong>⛔ ERREUR :</strong> ${msg}<br>Ligne: ${lineNo}<br>Fichier: ${url}<br><br>`; 
+            console.error('Erreur détectée:', msg, error);
+            return false; 
         };
 
-        const names = { "energie": "⚡ ÉNERGIE", "environnement": "🌍 CLIMAT", "espace": "🚀 ESPACE", "demographie_social": "👥 SOCIAL", "sante_bio": "🧬 BIO-SANTÉ", "geopolitique": "⚔️ GÉOPOLITIQUE", "technologie_ia": "🤖 TECH & IA", "finance": "💰 FINANCE", "information": "🧠 NOOSPHÈRE" };
-        const definitions = { "energie": "Indice de disponibilité énergétique globale.", "environnement": "État d'intégrité de la biosphère.", "espace": "Vecteur d'expansion exosphérique.", "demographie_social": "Cohésion du tissu social.", "sante_bio": "Résilience biologique.", "geopolitique": "Tension tectonique.", "technologie_ia": "Accélération technologique.", "finance": "Fluidité des flux de crédits.", "information": "Hygiène de la Noosphère." };
-        const alertTranslator = { "Ω_BIOSPHERE": "CLIMAT", "Σ_CONFLICT": "GÉOPOLITIQUE", "Δ_SINGULARITY": "TECH & IA", "Ψ_MASS": "SOCIAL", "⚡_ENTROPY": "ÉNERGIE", "📉_CREDIT_FLOW": "FINANCE" };
+        const names = { 
+            "energie": "⚡ ÉNERGIE", 
+            "environnement": "🌍 CLIMAT", 
+            "espace": "🚀 ESPACE", 
+            "demographie_social": "👥 SOCIAL", 
+            "sante_bio": "🧬 BIO-SANTÉ", 
+            "geopolitique": "⚔️ GÉOPOLITIQUE", 
+            "technologie_ia": "🤖 TECH & IA", 
+            "finance": "💰 FINANCE", 
+            "information": "🧠 NOOSPHÈRE" 
+        };
+        
+        const definitions = { 
+            "energie": "Indice de disponibilité énergétique globale.", 
+            "environnement": "État d'intégrité de la biosphère.", 
+            "espace": "Vecteur d'expansion exosphérique.", 
+            "demographie_social": "Cohésion du tissu social.", 
+            "sante_bio": "Résilience biologique.", 
+            "geopolitique": "Tension tectonique.", 
+            "technologie_ia": "Accélération technologique.", 
+            "finance": "Fluidité des flux de crédits.", 
+            "information": "Hygiène de la Noosphère." 
+        };
+        
+        const alertTranslator = { 
+            "Ω_BIOSPHERE": "CLIMAT", 
+            "Σ_CONFLICT": "GÉOPOLITIQUE", 
+            "Δ_SINGULARITY": "TECH & IA", 
+            "Ψ_MASS": "SOCIAL", 
+            "⚡_ENTROPY": "ÉNERGIE", 
+            "📉_CREDIT_FLOW": "FINANCE" 
+        };
 
         async function calculateStability(pillars, weights) {
-    let weightedSum = 0;
-    let totalWeight = 0;
-    
-    for (const [key, data] of Object.entries(pillars)) {
-        const score = (typeof data === 'object' && data.score) ? data.score : data;
-        const weight = weights[key] || 1.0;
-        
-        weightedSum += score * weight;
-        totalWeight += weight;
-    }
-    
-    return Math.round(weightedSum / totalWeight);
-}
-function updateInterfaceLabels(terminology) {
-    // Mettre à jour le titre principal
-    const stabilityLabel = document.querySelector('.hud-label[style*="color:var(--neon-blue)"]');
-    if (stabilityLabel) {
-        const seldonTerm = terminology.interface_labels.stability_index.seldon;
-        const classicTerm = terminology.interface_labels.stability_index.classic;
-        
-        stabilityLabel.innerHTML = `
-            <span class="seldon-term">${seldonTerm}</span>
-            <span class="tooltip-inline">(${classicTerm})</span>
-        `;
-    }
-    
-    // Mettre à jour "RADIANT ACCURACY"
-    const accuracyLabel = document.querySelector('.accuracy-label');
-    if (accuracyLabel) {
-        accuracyLabel.textContent = terminology.interface_labels.model_accuracy.seldon.toUpperCase();
-    }
-    
-    // Mettre à jour le footer
-    const footer = document.querySelector('footer');
-    if (footer) {
-        footer.innerHTML = terminology.seldon_phrases.footer;
-    }
-}
+            let weightedSum = 0;
+            let totalWeight = 0;
+            
+            for (const [key, data] of Object.entries(pillars)) {
+                const score = (typeof data === 'object' && data.score) ? data.score : data;
+                const weight = weights[key] || 1.0;
+                
+                weightedSum += score * weight;
+                totalWeight += weight;
+            }
+            
+            return Math.round(weightedSum / totalWeight);
+        }
+
         async function loadData() {
-    try {
-        const time = new Date().getTime();
-        
-        // Charger current_state
-        let response_current = await fetch('data/current_state.json?v=' + time);
-        const current = await response_current.json();
-        
-        // Charger weights
-        let response_weights = await fetch('data/weights.json?v=' + time);
-        const weights = await response_weights.json();
-        
-        // ✅ NOUVEAU : Charger terminologie
-        let response_terms = await fetch('data/seldon_terminology.json?v=' + time);
-        const terminology = await response_terms.json();
-        
-        // Utiliser la terminologie
-        updateInterfaceLabels(terminology);
-        
-        const time = new Date().getTime(); 
-        let response_current = await fetch('data/current_state.json?v=' + time);
-        const current = await response_current.json();
-        
-        // AJOUT : Charger les poids
-        let response_weights = await fetch('data/weights.json?v=' + time);
-        const weights = await response_weights.json();
+            try {
+                const time = new Date().getTime(); 
+                let response_current = await fetch('data/current_state.json?v=' + time);
+                const current = await response_current.json();
+                
+                // Charger les poids
+                let response_weights = await fetch('data/weights.json?v=' + time);
+                const weights = await response_weights.json();
 
                 let history = [];
                 try {
@@ -158,7 +149,12 @@ function updateInterfaceLabels(terminology) {
                 } catch(e) { console.warn("Erreur historique", e); }
 
                 let scenarios = {};
-                try { let r = await fetch('data/projection_2036.json?v=' + time); if (r.ok) scenarios = (await r.json()).scenarios || {}; } catch(e) {}
+                try { 
+                    let r = await fetch('data/projection_2036.json?v=' + time); 
+                    if (r.ok) scenarios = (await r.json()).scenarios || {}; 
+                } catch(e) {
+                    console.warn("Erreur projections", e);
+                }
 
                 if(current.global_analysis) document.getElementById('analysis-text').textContent = current.global_analysis;
 
@@ -204,14 +200,13 @@ function updateInterfaceLabels(terminology) {
                 document.getElementById('container-warning').style.display = hasWarn?'block':'none';
                 document.getElementById('container-info').style.display = hasInfo?'block':'none';
 
-                // --- ARCHIVES NARRATIVES (V31) ---
+                // ARCHIVES NARRATIVES
                 const archivesDiv = document.getElementById('archives-list');
                 if (current.archives && current.archives.length > 0) {
                     archivesDiv.innerHTML = "";
                     current.archives.forEach(arc => {
                         const div = document.createElement('div');
                         div.className = 'archive-item';
-                        // On gère le cas où la description n'existe pas encore
                         let desc = arc.desc ? arc.desc : "Donnée historique non classifiée.";
                         div.innerHTML = `
                             <span class="archive-year">${arc.year}</span>
@@ -223,8 +218,8 @@ function updateInterfaceLabels(terminology) {
                 } else { archivesDiv.textContent = "Synchronisation des archives..."; }
 
                 const histLabels = history.map(h => h.year);
-const histData = await Promise.all(history.map(async h => await calculateStability(h.pillars, weights)));
-const currentScore = current.stability_index;
+                const histData = await Promise.all(history.map(async h => await calculateStability(h.pillars, weights)));
+                const currentScore = current.stability_index;
                 const labels = [...histLabels, "2026"];
                 const dataCommon = [...histData, currentScore];
                 if(scenarios.tendantielle) scenarios.tendantielle.forEach(p => labels.push(p.year));
@@ -243,7 +238,23 @@ const currentScore = current.stability_index;
 
                 if(window.myChart) window.myChart.destroy();
                 Chart.defaults.color = '#555'; Chart.defaults.font.family = "'Share Tech Mono', monospace";
-                window.myChart = new Chart(document.getElementById('trendChart'), { type:'line', data:{labels, datasets}, options:{ responsive:true, maintainAspectRatio:false, interaction:{mode:'index', intersect:false}, plugins:{ legend:{position:'bottom', labels:{usePointStyle:true, color:'#aaa', font:{family:'Orbitron', size:10}}}, tooltip:{callbacks:{label:c=>c.dataset.label+": "+c.raw+"%"}} }, scales:{ y:{grid:{color:'rgba(255,255,255,0.05)'}, beginAtZero:true, max:100}, x:{grid:{display:false}} } } });
+                window.myChart = new Chart(document.getElementById('trendChart'), { 
+                    type:'line', 
+                    data:{labels, datasets}, 
+                    options:{ 
+                        responsive:true, 
+                        maintainAspectRatio:false, 
+                        interaction:{mode:'index', intersect:false}, 
+                        plugins:{ 
+                            legend:{position:'bottom', labels:{usePointStyle:true, color:'#aaa', font:{family:'Orbitron', size:10}}}, 
+                            tooltip:{callbacks:{label:c=>c.dataset.label+": "+c.raw+"%"}} 
+                        }, 
+                        scales:{ 
+                            y:{grid:{color:'rgba(255,255,255,0.05)'}, beginAtZero:true, max:100}, 
+                            x:{grid:{display:false}} 
+                        } 
+                    } 
+                });
 
                 document.getElementById('last-update').textContent = "DATA: " + current.date;
                 document.getElementById('last-update').style.color = "var(--neon-green)";
@@ -266,8 +277,15 @@ const currentScore = current.stability_index;
                     c.innerHTML = `<div class="card-header"><div class="card-title-box"><span class="card-title">${names[key]||key}</span><div class="info-icon">?<div class="tooltip-data"><strong style="color:var(--neon-blue); text-transform:uppercase; display:block; margin-bottom:5px;">${names[key]} (${cv}%)</strong>${def}</div></div></div><span class="card-score c-${st}">${cv}%</span></div><div class="progress-container"><div class="progress-bar bg-${st}" style="width: ${cv}%"></div></div>`;
                     grid.appendChild(c);
                 }
-            } catch(e) { throw e; }
+            } catch(e) { 
+                console.error("Erreur dans loadData:", e);
+                const errorBox = document.getElementById('error-box');
+                errorBox.style.display = 'block';
+                errorBox.innerHTML += `<strong>⛔ ERREUR CRITIQUE :</strong> ${e.message}<br>`;
+                throw e; 
+            }
         }
+        
         loadData();
 
         const tb = document.createElement('div'); tb.id = 'floating-tooltip'; document.body.appendChild(tb);
