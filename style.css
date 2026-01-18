@@ -163,8 +163,8 @@ h1 {
 }
 
 .card::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--neon-blue); opacity: 0.5; }
-
 .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+.card-title-box { display: flex; align-items: center; }
 .card-title { font-family: 'Orbitron'; font-size: 0.8em; letter-spacing: 1px; color: #888; }
 .card-score { font-family: 'Orbitron'; font-size: 1.8em; font-weight: bold; text-shadow: 0 0 10px currentColor; }
 
@@ -204,9 +204,7 @@ h1 {
 }
 @media (max-width: 600px) { #floating-tooltip { max-width: 250px; } }
 
-footer { margin-top: 60px; text-align: center; color: #444; font-family: 'Share Tech Mono'; font-size: 0.7em; letter-spacing: 2px; }
-
-/* TERMINOLOGIE SELDONIENNE */
+/* 10. TERMINOLOGIE SELDONIENNE (NOUVEAU) */
 .seldon-term {
     color: var(--neon-blue);
     font-family: 'Orbitron';
@@ -226,4 +224,14 @@ footer { margin-top: 60px; text-align: center; color: #444; font-family: 'Share 
 .hud-label:hover .tooltip-inline {
     opacity: 1;
     color: var(--neon-blue);
+}
+
+/* 11. FOOTER */
+footer { 
+    margin-top: 60px; 
+    text-align: center; 
+    color: #444; 
+    font-family: 'Share Tech Mono'; 
+    font-size: 0.7em; 
+    letter-spacing: 2px; 
 }
