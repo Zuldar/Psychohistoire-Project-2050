@@ -1,0 +1,385 @@
+{
+    "metadata": {
+        "version": "V40-PHI",
+        "model_name": "Protocole Seldon",
+        "pillar_count": 13,
+        "golden_ratio": 1.618,
+        "last_update": "2026-02-01",
+        "description": "Terminologie psychohistorique basée sur Foundation (Isaac Asimov)"
+    },
+    
+    "interface_labels": {
+        "stability_index": {
+            "seldon": "Coefficient d'Entropie Sociale",
+            "classic": "Indice de Stabilité Mondiale",
+            "short": "CES",
+            "symbol": "Ψ",
+            "description": "Mesure normalisée du degré de chaos systémique. 0 = Effondrement total, 100 = Équilibre parfait.",
+            "unit": "%"
+        },
+        "model_accuracy": {
+            "seldon": "Précision du Radiant",
+            "classic": "Précision du Modèle",
+            "short": "PR",
+            "symbol": "ρ",
+            "description": "Fiabilité prédictive des équations psychohistoriques. Calculée par comparaison prédiction/réalité.",
+            "unit": "%"
+        },
+        "prediction": {
+            "seldon": "Projection du Radiant",
+            "classic": "Prédiction",
+            "short": "PROJ",
+            "description": "Événement futur calculé par les équations de Seldon."
+        },
+        "timeline": {
+            "seldon": "Chronologie Psychohistorique",
+            "classic": "Ligne Temporelle",
+            "short": "CHRONO"
+        },
+        "scenario": {
+            "seldon": "Trajectoire Radiant",
+            "classic": "Scénario",
+            "short": "TRAJ"
+        }
+    },
+    
+    "alert_types": {
+        "critical": {
+            "seldon": "Variance Seldonnienne Critique",
+            "classic": "Alerte Critique",
+            "icon": "🚨",
+            "color": "#ff0055"
+        },
+        "warning": {
+            "seldon": "Dérive Psychohistorique",
+            "classic": "Avertissement",
+            "icon": "⚠️",
+            "color": "#ffee00"
+        },
+        "info": {
+            "seldon": "État Stable",
+            "classic": "Information",
+            "icon": "ℹ️",
+            "color": "#00ff9d"
+        },
+        "prediction": {
+            "seldon": "Projection du Radiant",
+            "classic": "Prédiction",
+            "icon": "🔮",
+            "color": "#ffd700"
+        },
+        "divergence": {
+            "seldon": "Divergence Calculée",
+            "classic": "Écart au Modèle",
+            "icon": "⚡",
+            "color": "#00f3ff"
+        }
+    },
+    
+    "pillars": {
+        "vecteur_energetique": {
+            "seldon": "Vecteur Énergétique",
+            "classic": "Énergie",
+            "icon": "⚡",
+            "category": "I. Base Physique",
+            "definition": "Flux de disponibilité énergétique planétaire. Mesure la capacité du système à maintenir son métabolisme industriel.",
+            "description_extended": "Le Vecteur Énergétique quantifie l'accès de la civilisation aux sources d'énergie (fossiles, renouvelables, nucléaires). Un effondrement de ce vecteur provoque une cascade systémique immédiate.",
+            "indicators": [
+                "Prix du baril de pétrole (Brent, WTI)",
+                "Coût du kWh électrique moyen global",
+                "Part des énergies renouvelables dans le mix",
+                "Capacité de production électrique vs demande",
+                "Avancées en fusion nucléaire (ITER, NIF)"
+            ],
+            "interpretation": {
+                "80_100": "Énergie abondante, transition réussie vers sources durables",
+                "60_79": "Ressources suffisantes, transition en cours",
+                "40_59": "Tensions sur l'offre, prix volatils, dépendance fossile",
+                "20_39": "Pénuries régionales, risque de blackouts",
+                "0_19": "Crise énergétique majeure, effondrement de la production"
+            }
+        },
+        
+        "biosphere_ressources": {
+            "seldon": "Intégrité Biosphérique",
+            "classic": "Environnement & Ressources",
+            "icon": "🌍",
+            "category": "I. Base Physique",
+            "definition": "État d'équilibre des systèmes écologiques et disponibilité des ressources stratégiques. Contrainte physique indépassable.",
+            "description_extended": "Mesure la stabilité des écosystèmes terrestres (climat, biodiversité) et l'accès aux ressources critiques (lithium, terres rares, matériaux stratégiques). Point de non-retour climatique = effondrement irréversible.",
+            "indicators": [
+                "Anomalie de température globale vs ère préindustrielle (+°C)",
+                "Nombre d'événements climatiques extrêmes (NOAA)",
+                "Politiques climatiques (Accord de Paris, COP)",
+                "Réserves de métaux critiques (lithium, cobalt, terres rares)",
+                "Taux d'extinction d'espèces (UICN)"
+            ],
+            "interpretation": {
+                "80_100": "Objectifs climatiques atteints, ressources abondantes",
+                "60_79": "Trajectoire 1.5°C respectée, extraction soutenable",
+                "40_59": "Dépassement probable, épuisement des réserves critiques",
+                "20_39": "Points de bascule franchis, pénuries stratégiques",
+                "0_19": "Effondrement écosystémique, guerre des ressources"
+            }
+        },
+        
+        "cycle_hydrique": {
+            "seldon": "Cycle Hydrique",
+            "classic": "Ressources en Eau",
+            "icon": "💧",
+            "category": "I. Base Physique",
+            "definition": "Stabilité du cycle de l'eau et accès aux ressources hydriques. Vecteur critique de survie.",
+            "description_extended": "Quantifie le stress hydrique global et la disponibilité d'eau douce pour l'agriculture, l'industrie et la consommation humaine. L'eau est le facteur limitant de la civilisation.",
+            "indicators": [
+                "Stress hydrique global (WRI Aqueduct)",
+                "Nombre de bassins hydrographiques en conflit",
+                "Niveau des nappes phréatiques (aquifères majeurs)",
+                "Sécheresses et inondations (fréquence et intensité)",
+                "Accès à l'eau potable (% population)"
+            ],
+            "interpretation": {
+                "80_100": "Eau abondante, gestion durable",
+                "60_79": "Ressources suffisantes, tensions localisées",
+                "40_59": "Stress hydrique régional, conflits émergents",
+                "20_39": "Pénuries majeures, guerres de l'eau",
+                "0_19": "Effondrement hydrique, migrations massives"
+            }
+        },
+        
+        "expansion_exospherique": {
+            "seldon": "Expansion Exosphérique",
+            "classic": "Espace",
+            "icon": "🚀",
+            "category": "I. Base Physique",
+            "definition": "Capacité d'expansion au-delà de la gravité terrestre. Frontière économique émergente.",
+            "description_extended": "Mesure le degré de développement orbital et interplanétaire : satellites, stations spatiales, exploitation minière astéroïde, colonies lunaires/martiennes. Une militarisation excessive menace l'accès à l'orbite (Syndrome de Kessler).",
+            "indicators": [
+                "Nombre de satellites actifs (commercial vs militaire)",
+                "Lancements orbitaux annuels",
+                "Débris spatiaux > 10cm (risque collision)",
+                "Progrès colonisation (Lune, Mars)",
+                "Traités de démilitarisation spatiale"
+            ],
+            "interpretation": {
+                "80_100": "Colonisation active, économie orbitale florissante",
+                "60_79": "Expansion commerciale, coopération internationale",
+                "40_59": "Militarisation, compétition géopolitique",
+                "20_39": "Débris critiques, accès restreint",
+                "0_19": "Syndrome de Kessler, orbite inaccessible"
+            }
+        },
+        
+        "capacite_industrielle": {
+            "seldon": "Capacité Industrielle",
+            "classic": "Production Manufacturière",
+            "icon": "🏭",
+            "category": "I. Base Physique",
+            "definition": "Potentiel de production manufacturière et transformation matérielle.",
+            "description_extended": "Quantifie la capacité de l'humanité à transformer les ressources en biens. Inclut les chaînes d'approvisionnement mondiales, l'automatisation, et la résilience face aux chocs.",
+            "indicators": [
+                "Production industrielle mondiale (% variation)",
+                "Taux d'utilisation des capacités (manufacturing)",
+                "Résilience des chaînes d'approvisionnement (GSCI)",
+                "Taux d'automatisation (robots/10k travailleurs)",
+                "Délocalisation vs relocalisation"
+            ],
+            "interpretation": {
+                "80_100": "Production abondante, chaînes résilientes",
+                "60_79": "Capacités suffisantes, quelques tensions",
+                "40_59": "Fragilité des chaînes, pénuries sectorielles",
+                "20_39": "Ruptures majeures, effondrement logistique",
+                "0_19": "Paralysie industrielle globale"
+            }
+        },
+        
+        "masse_demographique": {
+            "seldon": "Masse Démographique",
+            "classic": "Démographie",
+            "icon": "👥",
+            "category": "II. Base Humaine",
+            "definition": "Distribution et dynamique des populations humaines. Inertie des masses selon Seldon.",
+            "description_extended": "La Psychohistoire d'Asimov repose sur les lois statistiques des grandes masses. Ce vecteur mesure les flux migratoires, le vieillissement, et les tensions démographiques (surpeuplement vs déclin).",
+            "indicators": [
+                "Taux de migration forcée (réfugiés climatiques, guerres)",
+                "Ratio dépendance démographique (actifs/inactifs)",
+                "Taux de fécondité global",
+                "Mouvements de foule (manifestations, révoltes)",
+                "Urbanisation galopante vs exode rural"
+            ],
+            "interpretation": {
+                "80_100": "Équilibre démographique, migrations contrôlées",
+                "60_79": "Tensions gérables, vieillissement géré",
+                "40_59": "Flux migratoires importants, déséquilibres",
+                "20_39": "Migrations massives, crises humanitaires",
+                "0_19": "Effondrements démographiques, chaos migratoire"
+            }
+        },
+        
+        "noogenese": {
+            "seldon": "Noogenèse",
+            "classic": "Éducation & Culture",
+            "icon": "🎓",
+            "category": "II. Base Humaine",
+            "definition": "Évolution de la sphère cognitive collective. Éducation, culture, et transmission du savoir.",
+            "description_extended": "Terme de Teilhard de Chardin repris ici pour désigner la capacité de la civilisation à éduquer, innover, et transmettre le savoir. Une dégradation de la Noogenèse mène à l'obscurantisme (Fondation → Âge sombre).",
+            "indicators": [
+                "Taux d'alphabétisation global",
+                "Accès à l'éducation supérieure (% population)",
+                "Budget R&D (% du PIB mondial)",
+                "Indice de développement humain (IDH)",
+                "Capacité à distinguer info/désinformation (media literacy)"
+            ],
+            "interpretation": {
+                "80_100": "Renaissance cognitive, savoir universel",
+                "60_79": "Éducation solide, culture florissante",
+                "40_59": "Fragmentation éducative, anti-intellectualisme",
+                "20_39": "Régression cognitive, montée obscurantisme",
+                "0_19": "Âge sombre, perte du savoir (scenario Fondation)"
+            }
+        },
+        
+        "resilience_biologique": {
+            "seldon": "Résilience Biologique",
+            "classic": "Santé & Biologie",
+            "icon": "🧬",
+            "category": "II. Base Humaine",
+            "definition": "Robustesse sanitaire de l'espèce face aux pathogènes et stress environnementaux.",
+            "description_extended": "Mesure la vitalité de l'espèce humaine : espérance de vie, résistance aux pandémies, santé mentale, bio-ingénierie. Une dégradation biologique compromet la survie même de la civilisation.",
+            "indicators": [
+                "Espérance de vie globale",
+                "Taux de surmortalité vs baseline",
+                "Prévalence troubles mentaux (OMS)",
+                "Risques pandémiques (OMS R0, létalité)",
+                "Avancées en bio-ingénierie (CRISPR, thérapies géniques)"
+            ],
+            "interpretation": {
+                "80_100": "Espérance de vie croissante, santé optimale",
+                "60_79": "Santé publique robuste, risques gérés",
+                "40_59": "Épidémies régionales, santé mentale dégradée",
+                "20_39": "Pandémies multiples, surmortalité",
+                "0_19": "Catastrophe sanitaire, extinction partielle"
+            }
+        },
+        
+        "friction_geopolitique": {
+            "seldon": "Friction Géopolitique",
+            "classic": "Géopolitique",
+            "icon": "⚔️",
+            "category": "II. Base Humaine",
+            "definition": "Tensions tectoniques entre blocs civilisationnels. Vecteur de rupture cinétique.",
+            "description_extended": "Quantifie l'intensité des frictions entre États et blocs de pouvoir. Une friction élevée peut mener à une guerre totale (cinétique ou nucléaire), provoquant un effondrement systémique immédiat.",
+            "indicators": [
+                "Nombre de conflits armés actifs (ACLED)",
+                "Risque nucléaire (Doomsday Clock)",
+                "Stabilité des alliances (OTAN, BRICS, SCO)",
+                "Incidents militaires majeurs (mer de Chine, etc.)",
+                "Dépenses militaires (% PIB mondial)"
+            ],
+            "interpretation": {
+                "80_100": "Paix durable, coopération multilatérale",
+                "60_79": "Tensions diplomatiques, conflits limités",
+                "40_59": "Guerres régionales, risque d'escalade",
+                "20_39": "Conflits généralisés, blocs antagonistes",
+                "0_19": "Guerre mondiale, usage d'armes de destruction massive"
+            }
+        },
+        
+        "architecture_gouvernementale": {
+            "seldon": "Architecture Gouvernementale",
+            "classic": "Gouvernance & Régulation",
+            "icon": "⚖️",
+            "category": "II. Base Humaine",
+            "definition": "Efficacité et légitimité des structures de régulation collective.",
+            "description_extended": "Mesure la capacité des institutions (nationales et internationales) à réguler, arbitrer, et maintenir l'ordre. Un effondrement institutionnel mène à l'anarchie ou à l'autoritarisme.",
+            "indicators": [
+                "Force des institutions internationales (ONU, OMS, FMI)",
+                "État de droit (Rule of Law Index)",
+                "Corruption (Transparency International)",
+                "Efficacité gouvernementale (World Bank)",
+                "Montée des autoritarismes vs démocraties"
+            ],
+            "interpretation": {
+                "80_100": "Institutions fortes, légitimité élevée",
+                "60_79": "Gouvernance efficace, corruption limitée",
+                "40_59": "Institutions affaiblies, corruption croissante",
+                "20_39": "Délitement institutionnel, autoritarisme",
+                "0_19": "Effondrement des structures, anarchie ou dictature"
+            }
+        },
+        
+        "variance_technologique": {
+            "seldon": "Variance Technologique",
+            "classic": "Technologie & IA",
+            "icon": "🤖",
+            "category": "III. Base Abstraite",
+            "definition": "Taux d'accélération de l'innovation. Multiplicateur temporel de la Psychohistoire.",
+            "description_extended": "La technologie accélère ou ralentit la vitesse du changement historique. Une IA non alignée (score > 90) représente un risque existentiel. Une stagnation technologique mène au déclin civilisationnel.",
+            "indicators": [
+                "Capacités des LLMs (benchmarks MMLU, etc.)",
+                "Taux d'automatisation (emplois remplacés)",
+                "Régulations IA (EU AI Act, USA, Chine)",
+                "Investissements R&D en IA (% PIB)",
+                "Avancées en informatique quantique (qubits, correction d'erreurs)"
+            ],
+            "interpretation": {
+                "90_100": "⚠️ DANGER : Singularité non contrôlée, perte de contrôle humain",
+                "70_89": "Progrès rapides, IA maîtrisée, bénéfices partagés",
+                "50_69": "Innovation stable, régulations adaptées",
+                "30_49": "Ralentissement, course aux armements IA",
+                "0_29": "Stagnation technologique, déclin civilisationnel"
+            }
+        },
+        
+        "flux_monetaires": {
+            "seldon": "Flux Monétaires",
+            "classic": "Finance",
+            "icon": "💰",
+            "category": "III. Base Abstraite",
+            "definition": "Fluidité et stabilité des vecteurs de crédit. Sang du système économique.",
+            "description_extended": "La finance est le système circulatoire de la civilisation moderne. Un effondrement financier (2008, 1929) provoque une cascade systémique immédiate sur TOUS les autres vecteurs.",
+            "indicators": [
+                "Dette mondiale (% du PIB global)",
+                "Valorisations boursières (P/E ratios)",
+                "Stabilité bancaire (stress tests)",
+                "Taux d'inflation",
+                "Crypto-monnaies (stabilité vs volatilité)"
+            ],
+            "interpretation": {
+                "80_100": "Croissance stable, dette soutenable",
+                "60_79": "Volatilité modérée, système résilient",
+                "40_59": "Bulles spéculatives, dette élevée",
+                "20_39": "Crise financière, défauts souverains",
+                "0_19": "Effondrement monétaire global (1929, 2008++)"
+            }
+        },
+        
+        "corruption_noosphere": {
+            "seldon": "Corruption de la Noosphère",
+            "classic": "Information",
+            "icon": "🧠",
+            "category": "III. Base Abstraite",
+            "definition": "Dégradation de l'hygiène informationnelle. Ratio signal/bruit de la perception collective.",
+            "description_extended": "La Noosphère (Teilhard de Chardin) désigne la sphère de la pensée humaine. Sa corruption (fake news, propagande, censure) empêche la prise de décision rationnelle et fragilise la démocratie.",
+            "indicators": [
+                "Indice de liberté de la presse (RSF)",
+                "Volume de désinformation (fact-checkers)",
+                "Censure numérique (Freedom House)",
+                "Cyberattaques majeures (guerre hybride)",
+                "Polarisation médiatique (biais idéologique)"
+            ],
+            "interpretation": {
+                "80_100": "Presse libre, fact-checking robuste, consensus sur les faits",
+                "60_79": "Pluralisme médiatique, désinformation limitée",
+                "40_59": "Polarisation, fake news virales, bulles informationnelles",
+                "20_39": "Censure généralisée, guerre hybride, manipulation massive",
+                "0_19": "Contrôle totalitaire de l'information, vérité inaccessible"
+            }
+        }
+    },
+    
+    "seldon_phrases": {
+        "intro": "Les équations psychohistoriques ne prédisent pas l'individu, mais les masses.",
+        "warning": "Une variance de plus de 15% invalide les projections du Radiant.",
+        "crisis": "Point de convergence systémique détecté. Intervention recommandée.",
+        "stable": "Trajectoire nominale maintenue. Entropie sous contrôle.",
+        "casc
