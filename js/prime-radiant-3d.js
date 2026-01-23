@@ -1,6 +1,7 @@
 // PRIME RADIANT 3D VISUALIZATION
 // Inspiré de Foundation (Isaac Asimov)
 // Fichier : js/prime-radiant-3d.js
+// Version corrigée sans boutons RESET/PAUSE
 
 let scene, camera, renderer, sphere, raycaster, mouse;
 let eventPoints = [];
@@ -206,6 +207,8 @@ function animate() {
 
 function onMouseMove(event) {
     const container = document.getElementById('prime-radiant-sphere');
+    if (!container) return;
+    
     const rect = container.getBoundingClientRect();
     
     mouse.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
@@ -215,6 +218,7 @@ function onMouseMove(event) {
     const intersects = raycaster.intersectObjects(eventPoints);
     
     const tooltip = document.getElementById('event-tooltip');
+    if (!tooltip) return;
     
     if (intersects.length > 0) {
         const point = intersects[0].object;
@@ -246,6 +250,8 @@ function onMouseMove(event) {
 
 function onMouseClick(event) {
     const container = document.getElementById('prime-radiant-sphere');
+    if (!container) return;
+    
     const rect = container.getBoundingClientRect();
     
     mouse.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
