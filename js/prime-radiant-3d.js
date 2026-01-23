@@ -60,9 +60,6 @@ function initPrimeRadiant() {
     container.addEventListener('mousemove', onMouseMove, false);
     container.addEventListener('click', onMouseClick, false);
     
-    const resetBtn = document.getElementById('reset-view');
-    const toggleBtn = document.getElementById('toggle-rotation');
-    
     if (resetBtn) resetBtn.addEventListener('click', resetView);
     if (toggleBtn) toggleBtn.addEventListener('click', toggleRotation);
     
@@ -273,19 +270,6 @@ function onMouseClick(event) {
         }, 200);
         
         console.log(`Événement sélectionné : ${data.year} - ${data.description}`);
-    }
-}
-
-function resetView() {
-    camera.position.set(0, 0, 15);
-    camera.lookAt(0, 0, 0);
-}
-
-function toggleRotation() {
-    isRotating = !isRotating;
-    const btn = document.getElementById('toggle-rotation');
-    if (btn) {
-        btn.textContent = isRotating ? '⏸️ PAUSE' : '▶️ PLAY';
     }
 }
 
