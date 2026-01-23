@@ -60,9 +60,6 @@ function initPrimeRadiant() {
     container.addEventListener('mousemove', onMouseMove, false);
     container.addEventListener('click', onMouseClick, false);
     
-    if (resetBtn) resetBtn.addEventListener('click', resetView);
-    if (toggleBtn) toggleBtn.addEventListener('click', toggleRotation);
-    
     window.addEventListener('resize', onWindowResize, false);
     
     // Load historical events
