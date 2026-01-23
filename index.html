@@ -51,50 +51,6 @@
         </div>
 
         <div class="chart-wrapper"><canvas id="trendChart" height="300"></canvas></div>
-<!-- ✅ ÉQUATIONS PSYCHOHISTORIQUES -->
-<div class="seldon-equations-box">
-    <div class="equation-header">
-        <span class="blink">█</span> ÉQUATIONS PSYCHOHISTORIQUES — PROTOCOLE V36
-    </div>
-    
-    <div class="equation-container">
-        <div class="equation-title">ÉQUATION SELDON #31 — ENTROPIE SOCIALE</div>
-        <div class="equation-formula">
-            Ψ(t) = ∫₀ᵗ [∑ᵢ₌₁ⁿ ωᵢ·Pᵢ(τ)] dτ + ε(t)
-        </div>
-        <div class="equation-legend">
-            <span class="var">Ψ(t)</span> = Coefficient d'Entropie Sociale au temps t<br>
-            <span class="var">ωᵢ</span> = Poids du vecteur historique i<br>
-            <span class="var">Pᵢ(τ)</span> = Valeur psychohistorique du vecteur i<br>
-            <span class="var">ε(t)</span> = Terme d'incertitude stochastique
-        </div>
-    </div>
-
-    <div class="equation-container">
-        <div class="equation-title">ÉQUATION SELDON #42 — PRÉDICTION DE RUPTURE</div>
-        <div class="equation-formula" id="equation-crisis">
-            T_crise = T₀ + max(1, min(9, ⌊(Ψ - 25)/5⌋))
-        </div>
-        <div class="equation-legend">
-            <span class="var">T_crise</span> = Année de convergence systémique<br>
-            <span class="var">T₀</span> = Année actuelle<br>
-            <span class="var">Ψ</span> = Coefficient d'Entropie Sociale actuel
-        </div>
-    </div>
-
-    <div class="equation-container">
-        <div class="equation-title">ÉQUATION SELDON #17 — PROBABILITÉ DE RUPTURE</div>
-        <div class="equation-formula" id="equation-probability">
-            P_rupture = min(99, (100 - Ψ) + ∑ᵢ₌₁² δᵢ)
-        </div>
-        <div class="equation-legend">
-            <span class="var">P_rupture</span> = Probabilité de rupture de la chaîne causale (%)<br>
-            <span class="var">δᵢ</span> = Bonus si vecteur critique i &lt; 30 (+10 par vecteur)
-        </div>
-    </div>
-</div>
-        <!-- AJOUTER APRÈS LA SECTION "ÉQUATIONS PSYCHOHISTORIQUES" -->
-<!-- ET AVANT <div class="terminal-box"> -->
 
 <!-- ✅ PRIME RADIANT 3D -->
 <div class="radiant-3d-wrapper">
@@ -214,34 +170,7 @@
             
             return Math.round(weightedSum / totalWeight);
         }
-function updateEquations(current) {
-    // Équation #42 - Prédiction de rupture
-    const currentYear = new Date().getFullYear();
-    const yearsUntilCrisis = Math.max(1, Math.min(9, Math.floor((current.stability_index - 25) / 5)));
-    const crisisYear = currentYear + yearsUntilCrisis;
-    
-    const eq42 = document.getElementById('equation-crisis');
-    if (eq42) {
-        eq42.innerHTML = `
-            T<sub>crise</sub> = ${currentYear} + max(1, min(9, ⌊(${current.stability_index} - 25)/5⌋)) = <span style="color: var(--gold); font-weight: bold;">${crisisYear}</span>
-        `;
-    }
-    
-    // Équation #17 - Probabilité de rupture
-    const geopolitiqueScore = current.pillars['geopolitique']?.score || 50;
-    const environnementScore = current.pillars['environnement']?.score || 50;
-    
-    const stressFactor = geopolitiqueScore < 30 ? 10 : 0;
-    const envFactor = environnementScore < 30 ? 10 : 0;
-    const probability = Math.min(99, (100 - current.stability_index) + stressFactor + envFactor);
-    
-    const eq17 = document.getElementById('equation-probability');
-    if (eq17) {
-        eq17.innerHTML = `
-            P<sub>rupture</sub> = min(99, (100 - ${current.stability_index}) + ${stressFactor + envFactor}) = <span style="color: var(--neon-red); font-weight: bold;">${probability}%</span>
-        `;
-    }
-}
+
         async function loadData() {
             try {
                 const time = new Date().getTime(); 
