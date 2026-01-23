@@ -93,6 +93,52 @@
         </div>
     </div>
 </div>
+        <!-- AJOUTER APRÈS LA SECTION "ÉQUATIONS PSYCHOHISTORIQUES" -->
+<!-- ET AVANT <div class="terminal-box"> -->
+
+<!-- ✅ PRIME RADIANT 3D -->
+<div class="radiant-3d-wrapper">
+    <div class="radiant-3d-header">
+        <span class="blink">█</span> PRIME RADIANT CORE — VISUALISATION HOLOGRAPHIQUE
+    </div>
+    
+    <div class="radiant-3d-container">
+        <canvas id="prime-radiant-sphere"></canvas>
+        
+        <div class="radiant-controls">
+            <button id="reset-view" class="radiant-btn">🔄 RESET</button>
+            <button id="toggle-rotation" class="radiant-btn">⏸️ PAUSE</button>
+            <div class="radiant-info">
+                <span id="event-count">0</span> événements cartographiés
+            </div>
+        </div>
+        
+        <div id="event-tooltip" class="event-tooltip" style="display: none;">
+            <div class="event-year"></div>
+            <div class="event-score"></div>
+            <div class="event-desc"></div>
+        </div>
+    </div>
+    
+    <div class="radiant-legend">
+        <div class="legend-item">
+            <span class="legend-dot" style="background: var(--neon-green);"></span>
+            Stabilité élevée (60-100)
+        </div>
+        <div class="legend-item">
+            <span class="legend-dot" style="background: var(--neon-yellow);"></span>
+            Instabilité (40-59)
+        </div>
+        <div class="legend-item">
+            <span class="legend-dot" style="background: var(--neon-red);"></span>
+            Crise majeure (0-39)
+        </div>
+    </div>
+</div>
+
+<!-- Three.js CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="js/prime-radiant-3d.js"></script>
         <div class="terminal-box">
             <div class="terminal-header"><span class="blink">█</span> ANALYSE STRATÉGIQUE DU NOYAU</div>
             <div id="analysis-text" class="analysis-text">Chargement...</div>
