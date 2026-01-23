@@ -1,50 +1,52 @@
 {
-    "date": "2026-01-17 23:32",
-    "stability_index": 48,
+    "date": "2026-02-15 10:00",
+    "stability_index": 46,
     "model_accuracy": 96,
-    "global_analysis": "Aggravation des tensions géopolitiques. L'ordre mondial se fragmente tandis que les conflits régionaux s'intensifient. La transition énergétique marque le pas sous pressions économiques.",
+    "global_analysis": "Détérioration continue. Tensions géopolitiques maintenues, climat hors de contrôle (USA toujours hors Accord de Paris), finance fragile. Seule la tech reste dynamique.",
     "pillars": {
         "technologie_ia": {
-            "score": 85,
-            "comment": "Pragmatisation de l'IA. Transition vers modèles spécialisés et agentic AI. Ralentissement scaling."
+            "score": 83,
+            "comment": "Pragmatisation continue. Modèles spécialisés dominent. Fin de l'ère du scaling aveugle."
         },
         "environnement": {
-            "score": 36,
-            "comment": "2025 = 3ème année la plus chaude. Administration Trump démantèle protections climatiques."
+            "score": 34,
+            "comment": "Février 2026 = 0.8°C au-dessus de la moyenne. USA maintient le retrait de l'Accord de Paris. Recul historique."
         },
         "energie": {
-            "score": 52,
-            "comment": "Prix pétroliers en chute (Brent ~55$/b). Surplus d'offre. Demande électricité AI explose."
+            "score": 51,
+            "comment": "Prix pétrole stable (~58$/b). Demande électrique IA en hausse. Tensions sur les grilles électriques."
         },
         "geopolitique": {
-            "score": 28,
-            "comment": "Tensions Inde-Pakistan. Guerre Ukraine enlisée. Conflits Soudan, Gaza, Sahel. Fragmentation accélérée."
+            "score": 27,
+            "comment": "Stagnation Ukraine. Tensions accrues en Mer de Chine (incidents navals). Inde-Pakistan toujours volatiles."
         },
         "demographie_social": {
-            "score": 40,
-            "comment": "Crise migratoire. Montée populisme Europe. Gen Z rebellion. Polarisation sociétale."
+            "score": 39,
+            "comment": "Manifestations massives en Europe (agriculteurs). Polarisation politique accrue. Migrations climatiques en hausse."
         },
         "finance": {
-            "score": 45,
-            "comment": "Dette mondiale → 100% PIB d'ici 2029. Valorisations élevées. Risque corrections. Tarifs Trump."
+            "score": 43,
+            "comment": "Volatilité boursière (+3% puis -2%). Dette mondiale → 98% PIB. Valorisations tech surévaluées."
         },
         "sante_bio": {
             "score": 62,
-            "comment": "Situation stable post-pandémie. Pas de nouvelles menaces majeures détectées."
+            "comment": "Situation stable post-pandémique. Surveillance H5N1 renforcée (cas humains sporadiques)."
         },
         "espace": {
-            "score": 38,
-            "comment": "Militarisation orbitale accrue. Tensions Russie-OTAN. Stagnation exploration commerciale."
+            "score": 37,
+            "comment": "Militarisation orbitale continue (satellites militaires +12% vs 2025). Starship vols commerciaux stagnants."
         },
         "information": {
-            "score": 38,
-            "comment": "Guerre hybride numérique Russie-OTAN. Désinformation massive. Contrôle narratif autoritaire."
+            "score": 36,
+            "comment": "Guerre hybride Russie-OTAN intensifiée. Deepfakes électoraux massifs. Censure numérique en expansion."
         }
     },
     "alerts": [
-        "📅 2030 : la Friction Géopolitique catalyse l'Entropie Climatique. Probabilité de rupture de la chaîne causale : 62%.",
-        "⚠️ Ω_BIOSPHERE : Seuil critique atteint",
-        "⚔️ Σ_CONFLICT : Tensions maximales"
+        "📅 2030 : la Corruption de la Noosphère catalyse la Friction Géopolitique. Probabilité de rupture : 56%.",
+        "⚠️ Ω_BIOSPHERE : Seuil critique dépassé (USA hors Accord de Paris)",
+        "⚔️ Σ_CONFLICT : Tensions maximales maintenues",
+        "🧠 Δ_NOOSPHERE : Dégradation informationnelle accélérée",
+        "💰 Ω_DEBT : Trajectoire insoutenable (98% PIB mondial)"
     ],
     "archives": [
         {
