@@ -1,10 +1,11 @@
 {
     "last_run_date": null,
-    "predicted_score_for_today": 47,
+    "predicted_score_for_today": 48,
     "accuracy_history": [
         97,
         97,
         94,
+        97,
         97
     ]
 }

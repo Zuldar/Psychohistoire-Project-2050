@@ -1,44 +1,46 @@
 {
-    "date": "2026-01-17 23:32",
+    "date": "2026-01-30 17:52",
     "stability_index": 48,
+    "stability_delta": 0,
+    "previous_stability": 48,
     "model_accuracy": 96,
-    "global_analysis": "Aggravation des tensions géopolitiques. L'ordre mondial se fragmente tandis que les conflits régionaux s'intensifient. La transition énergétique marque le pas sous pressions économiques.",
+    "global_analysis": "Fin janvier 2026 : Stagnation généralisée. Tensions géopolitiques maintenues, climat en dérive (2025 = année la plus chaude), finance volatile. Tech/IA consolidation. Pas d'amélioration notable.",
     "pillars": {
         "technologie_ia": {
             "score": 85,
-            "comment": "Pragmatisation de l'IA. Transition vers modèles spécialisés et agentic AI. Ralentissement scaling."
+            "comment": "Consolidation post-hyper-scaling. Modèles spécialisés (médecine, code). Régulations européennes renforcées."
         },
         "environnement": {
             "score": 36,
-            "comment": "2025 = 3ème année la plus chaude. Administration Trump démantèle protections climatiques."
+            "comment": "2025 confirmée année la plus chaude (+1.5°C). USA toujours hors Accord de Paris. Objectifs climatiques hors d'atteinte."
         },
         "energie": {
             "score": 52,
-            "comment": "Prix pétroliers en chute (Brent ~55$/b). Surplus d'offre. Demande électricité AI explose."
+            "comment": "Prix pétrole stable (~58$/b). Demande électricité IA croissante. Tensions sur réseaux électriques (Texas, Californie)."
         },
         "geopolitique": {
             "score": 28,
-            "comment": "Tensions Inde-Pakistan. Guerre Ukraine enlisée. Conflits Soudan, Gaza, Sahel. Fragmentation accélérée."
+            "comment": "Ukraine : guerre d'usure. Mer de Chine : incidents navals USA-Chine. Inde-Pakistan : tensions Kashmir maintenues."
         },
         "demographie_social": {
             "score": 40,
-            "comment": "Crise migratoire. Montée populisme Europe. Gen Z rebellion. Polarisation sociétale."
+            "comment": "Polarisation politique croissante (USA, Europe). Manifestations agriculteurs européens. Migrations climatiques +15%."
         },
         "finance": {
             "score": 45,
-            "comment": "Dette mondiale → 100% PIB d'ici 2029. Valorisations élevées. Risque corrections. Tarifs Trump."
+            "comment": "Marchés volatils (tech surévaluée). Dette mondiale 97.2% PIB. Inflation USA 3.2%, Europe 2.8%. Risque correction."
         },
         "sante_bio": {
             "score": 62,
-            "comment": "Situation stable post-pandémie. Pas de nouvelles menaces majeures détectées."
+            "comment": "Post-COVID stable. Surveillance H5N1 active (cas humains rares). Santé mentale : détérioration continue (Gen Z)."
         },
         "espace": {
             "score": 38,
-            "comment": "Militarisation orbitale accrue. Tensions Russie-OTAN. Stagnation exploration commerciale."
+            "comment": "Militarisation orbitale continue. SpaceX Starship vols réguliers. Débris spatiaux : risque Kessler croissant."
         },
         "information": {
             "score": 38,
-            "comment": "Guerre hybride numérique Russie-OTAN. Désinformation massive. Contrôle narratif autoritaire."
+            "comment": "Deepfakes électoraux massifs (élections USA 2026). Guerre hybride Russie-OTAN. Censure Chine/Iran/Russie accrue."
         }
     },
     "alerts": [
