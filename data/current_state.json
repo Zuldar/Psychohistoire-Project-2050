@@ -1,52 +1,55 @@
 {
-    "date": "2026-02-15 10:00",
-    "stability_index": 46,
+    "date": "2026-01-30 10:00",
+    "stability_index": 48,
+    "stability_delta": 0,
+    "previous_stability": 48,
     "model_accuracy": 96,
-    "global_analysis": "Détérioration continue. Tensions géopolitiques maintenues, climat hors de contrôle (USA toujours hors Accord de Paris), finance fragile. Seule la tech reste dynamique.",
+    "global_analysis": "Fin janvier 2026 : Stagnation généralisée. Tensions géopolitiques maintenues, climat en dérive (2025 = année la plus chaude), finance volatile. Tech/IA consolidation. Pas d'amélioration notable.",
     "pillars": {
         "technologie_ia": {
-            "score": 83,
-            "comment": "Pragmatisation continue. Modèles spécialisés dominent. Fin de l'ère du scaling aveugle."
+            "score": 85,
+            "comment": "Consolidation post-hyper-scaling. Modèles spécialisés (médecine, code). Régulations européennes renforcées."
         },
         "environnement": {
-            "score": 34,
-            "comment": "Février 2026 = 0.8°C au-dessus de la moyenne. USA maintient le retrait de l'Accord de Paris. Recul historique."
+            "score": 36,
+            "comment": "2025 confirmée année la plus chaude (+1.5°C). USA toujours hors Accord de Paris. Objectifs climatiques hors d'atteinte."
         },
         "energie": {
-            "score": 51,
-            "comment": "Prix pétrole stable (~58$/b). Demande électrique IA en hausse. Tensions sur les grilles électriques."
+            "score": 52,
+            "comment": "Prix pétrole stable (~58$/b). Demande électricité IA croissante. Tensions sur réseaux électriques (Texas, Californie)."
         },
         "geopolitique": {
-            "score": 27,
-            "comment": "Stagnation Ukraine. Tensions accrues en Mer de Chine (incidents navals). Inde-Pakistan toujours volatiles."
+            "score": 28,
+            "comment": "Ukraine : guerre d'usure. Mer de Chine : incidents navals USA-Chine. Inde-Pakistan : tensions Kashmir maintenues."
         },
         "demographie_social": {
-            "score": 39,
-            "comment": "Manifestations massives en Europe (agriculteurs). Polarisation politique accrue. Migrations climatiques en hausse."
+            "score": 40,
+            "comment": "Polarisation politique croissante (USA, Europe). Manifestations agriculteurs européens. Migrations climatiques +15%."
         },
         "finance": {
-            "score": 43,
-            "comment": "Volatilité boursière (+3% puis -2%). Dette mondiale → 98% PIB. Valorisations tech surévaluées."
+            "score": 45,
+            "comment": "Marchés volatils (tech surévaluée). Dette mondiale 97.2% PIB. Inflation USA 3.2%, Europe 2.8%. Risque correction."
         },
         "sante_bio": {
             "score": 62,
-            "comment": "Situation stable post-pandémique. Surveillance H5N1 renforcée (cas humains sporadiques)."
+            "comment": "Post-COVID stable. Surveillance H5N1 active (cas humains rares). Santé mentale : détérioration continue (Gen Z)."
         },
         "espace": {
-            "score": 37,
-            "comment": "Militarisation orbitale continue (satellites militaires +12% vs 2025). Starship vols commerciaux stagnants."
+            "score": 38,
+            "comment": "Militarisation orbitale continue. SpaceX Starship vols réguliers. Débris spatiaux : risque Kessler croissant."
         },
         "information": {
-            "score": 36,
-            "comment": "Guerre hybride Russie-OTAN intensifiée. Deepfakes électoraux massifs. Censure numérique en expansion."
+            "score": 38,
+            "comment": "Deepfakes électoraux massifs (élections USA 2026). Guerre hybride Russie-OTAN. Censure Chine/Iran/Russie accrue."
         }
     },
     "alerts": [
-        "📅 2030 : la Corruption de la Noosphère catalyse la Friction Géopolitique. Probabilité de rupture : 56%.",
-        "⚠️ Ω_BIOSPHERE : Seuil critique dépassé (USA hors Accord de Paris)",
-        "⚔️ Σ_CONFLICT : Tensions maximales maintenues",
-        "🧠 Δ_NOOSPHERE : Dégradation informationnelle accélérée",
-        "💰 Ω_DEBT : Trajectoire insoutenable (98% PIB mondial)"
+        "📅 2030 : la Corruption de la Noosphère catalyse la Friction Géopolitique. Probabilité de rupture : 54%.",
+        "⚠️ Ω_BIOSPHERE : Seuil critique dépassé (2025 = +1.5°C confirmé)",
+        "⚔️ Σ_CONFLICT : Tensions géopolitiques maximales (Ukraine, Mer de Chine, Kashmir)",
+        "🧠 Δ_NOOSPHERE : Dégradation informationnelle accélérée (deepfakes électoraux)",
+        "💰 Ω_DEBT : Dette mondiale 97.2% PIB, trajectoire insoutenable",
+        "🔥 Ψ_CLIMATE : 2025 = année la plus chaude jamais enregistrée (+1.5°C baseline)"
     ],
     "archives": [
         {
