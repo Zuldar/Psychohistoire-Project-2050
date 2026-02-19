@@ -1,52 +1,51 @@
 {
-    "date": "2026-02-15 10:24",
-    "stability_index": 48,
-    "stability_delta": 0,
-    "previous_stability": 48,
-    "model_accuracy": 97,
-    "global_analysis": "Fin janvier 2026 : Stagnation généralisée. Tensions géopolitiques maintenues, climat en dérive (2025 = année la plus chaude), finance volatile. Tech/IA consolidation. Pas d'amélioration notable.",
+    "date": "2026-02-19 10:00",
+    "stability_index": 44,
+    "model_accuracy": 96,
+    "global_analysis": "Le système mondial entre dans une phase de 'choc différé' : les décisions prises en 2024-2025 (tarifs Trump, fin du New START, effondrement de l'aide multilatérale) produisent leurs effets de second ordre simultanément. La multipolarité s'accélère sans architecture de remplacement, créant un vide de gouvernance critique à l'intersection du nucléaire, du climat et de la finance fragmentée.",
     "pillars": {
         "technologie_ia": {
             "score": 85,
-            "comment": "Consolidation post-hyper-scaling. Modèles spécialisés (médecine, code). Régulations européennes renforcées."
+            "comment": "L'IA reste le seul vecteur de croissance consensuel. La course sino-américaine aux puces et aux modèles s'intensifie via les contrôles à l'export, mais les déploiements productifs (santé, énergie, défense) maintiennent une dynamique positive. Risque principal : fragmentation réglementaire et concentration des capacités de calcul entre trois acteurs souverains."
         },
         "environnement": {
-            "score": 36,
-            "comment": "2025 confirmée année la plus chaude (+1.5°C). USA toujours hors Accord de Paris. Objectifs climatiques hors d'atteinte."
+            "score": 33,
+            "comment": "Post-COP30, le financement climatique reste structurellement insuffisant, aggravant les tensions Nord-Sud. Les engagements de réduction s'effacent au profit de l'adaptation, signal d'une capitulation implicite sur les 1,5°C. Les événements extrêmes de 2025 (sécheresses, inondations de classe 4) ont saturé les capacités d'assurance mondiales."
         },
         "energie": {
-            "score": 52,
-            "comment": "Prix pétrole stable (~58$/b). Demande électricité IA croissante. Tensions sur réseaux électriques (Texas, Californie)."
+            "score": 50,
+            "comment": "La transition énergétique progresse en volume (2,2 T$ sur 3,3 T$ investis en propre) mais la géopolitique domine l'agenda : contrôle chinois des terres rares, pivot européen hors du gaz russe, compétition sur les minéraux critiques au Venezuela et au Groenland. La sécurité énergétique prime sur la décarbonation dans tous les discours gouvernementaux."
         },
         "geopolitique": {
-            "score": 28,
-            "comment": "Ukraine : guerre d'usure. Mer de Chine : incidents navals USA-Chine. Inde-Pakistan : tensions Kashmir maintenues."
+            "score": 24,
+            "comment": "Niveau d'alerte maximal : expiration du traité New START en février 2026 sans successeur, laissant USA et Russie sans contrôle bilatéral des armes nucléaires pour la première fois depuis 50 ans. Programme nucléaire iranien en progression après l'échec des frappes américaines de juin 2025. Ukraine : fatigue des soutiens occidentaux et incertitude américaine. Multipolarité sans règles du jeu."
         },
         "demographie_social": {
-            "score": 40,
-            "comment": "Polarisation politique croissante (USA, Europe). Manifestations agriculteurs européens. Migrations climatiques +15%."
+            "score": 38,
+            "comment": "La montée des partis populistes et d'extrême droite (élections au Danemark, Hongrie, Slovénie, Suède en 2026) fragilise les centres politiques européens. Les coupes dans l'aide humanitaire mondiale impactent prioritairement les femmes et les populations vulnérables. Les tensions entre classes moyennes appauvries et élites technologiques alimentent une instabilité sociale diffuse."
         },
         "finance": {
-            "score": 45,
-            "comment": "Marchés volatils (tech surévaluée). Dette mondiale 97.2% PIB. Inflation USA 3.2%, Europe 2.8%. Risque correction."
+            "score": 42,
+            "comment": "La fragmentation du système financier mondial s'accélère : primes de terme structurellement plus élevées, volatilité des devises, marchés de capitaux régionalisés. Les tarifs Trump restent une variable d'incertitude majeure sur la chaîne de valeur globale. 83% des grandes entreprises ont reconfiguré leurs investissements en réponse aux risques géopolitiques — signal de défiance systémique."
         },
         "sante_bio": {
-            "score": 62,
-            "comment": "Post-COVID stable. Surveillance H5N1 active (cas humains rares). Santé mentale : détérioration continue (Gen Z)."
+            "score": 60,
+            "comment": "Pas de menace pandémique immédiate identifiée, mais les systèmes de santé restent fragilisés post-Covid et les capacités de surveillance mondiale se dégradent avec la réduction des financements multilatéraux. Les avancées biotech (ARNm, édition génomique) progressent mais accentuent les inégalités d'accès Nord-Sud."
         },
         "espace": {
-            "score": 38,
-            "comment": "Militarisation orbitale continue. SpaceX Starship vols réguliers. Débris spatiaux : risque Kessler croissant."
+            "score": 36,
+            "comment": "La militarisation de l'orbite basse s'intensifie dans un contexte d'absence de cadre juridique contraignant. La course aux ressources lunaires (Artémis vs programme chinois) ajoute une dimension d'extraterritorialité à la compétition géopolitique. Les méga-constellations satellitaires (Starlink, etc.) créent des dépendances stratégiques asymétriques."
         },
         "information": {
-            "score": 38,
-            "comment": "Deepfakes électoraux massifs (élections USA 2026). Guerre hybride Russie-OTAN. Censure Chine/Iran/Russie accrue."
+            "score": 35,
+            "comment": "L'écosystème informationnel atteint un seuil critique : les campagnes d'influence russes exploitent les fractures électorales européennes (Bulgarie, Hongrie), les deepfakes générés par IA saturent les cycles médiatiques, et la fragmentation des plateformes en blocs géopolitiques rend toute vérification transnationale quasi impossible. La confiance épistémique collective s'effondre."
         }
     },
     "alerts": [
-        "📅 2030 : la Friction Géopolitique catalyse l'Entropie Climatique. Probabilité de rupture de la chaîne causale : 62%.",
-        "⚠️ Ω_BIOSPHERE : Seuil critique atteint",
-        "⚔️ Σ_CONFLICT : Tensions maximales"
+        "☢️ NEW START expiré (fév. 2026) : premier vide de contrôle nucléaire USA-Russie en 50 ans. Risque de course aux armements stratégiques : 73%.",
+        "📅 2030 : l'Entropie Climatique catalyse la Friction Géopolitique. Probabilité de rupture systémique : 61%.",
+        "⚠️ Ω_BIOSPHERE : Seuil d'adaptation dépassé — financement climatique structurellement insuffisant",
+        "⚔️ Σ_CONFLICT : Tensions maximales sur arc Iran / Ukraine / Indo-Pacifique simultanément"
     ],
     "archives": [
         {
@@ -103,6 +102,11 @@
             "year": "2022",
             "score": 45,
             "desc": "Retour de la guerre haute intensité"
+        },
+        {
+            "year": "2026",
+            "score": 44,
+            "desc": "Vide de gouvernance multidomaine"
         }
     ]
 }
