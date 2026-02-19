@@ -1,51 +1,52 @@
 {
     "date": "2026-02-19 10:00",
-    "stability_index": 44,
-    "model_accuracy": 96,
-    "global_analysis": "Le système mondial entre dans une phase de 'choc différé' : les décisions prises en 2024-2025 (tarifs Trump, fin du New START, effondrement de l'aide multilatérale) produisent leurs effets de second ordre simultanément. La multipolarité s'accélère sans architecture de remplacement, créant un vide de gouvernance critique à l'intersection du nucléaire, du climat et de la finance fragmentée.",
+    "stability_index": 43,
+    "model_accuracy": 97,
+    "global_analysis": "Le monde entre en février 2026 dans une zone de turbulence structurelle inédite depuis 1945 : pour la première fois en plus d'un demi-siècle, les arsenaux nucléaires américain et russe ne sont plus soumis à aucune contrainte juridique contraignante après l'expiration du traité New START le 5 février. Simultanément, les négociations Ukraine-Russie-USA à Genève butent sur les exigences territoriales russes sans percée en vue, pendant que les chocs différés des tarifs Trump 2025 fragilisent la croissance mondiale. La multipolarité s'installe sans architecture de remplacement, et la fragmentation informationnelle — amplifiée par l'IA et les opérations d'influence russes — érode les fondements épistémiques communs des démocraties occidentales.",
     "pillars": {
         "technologie_ia": {
-            "score": 85,
-            "comment": "L'IA reste le seul vecteur de croissance consensuel. La course sino-américaine aux puces et aux modèles s'intensifie via les contrôles à l'export, mais les déploiements productifs (santé, énergie, défense) maintiennent une dynamique positive. Risque principal : fragmentation réglementaire et concentration des capacités de calcul entre trois acteurs souverains."
+            "score": 82,
+            "comment": "La course sino-américaine s'intensifie avec un tournant majeur : les modèles open-source chinois (DeepSeek, Kimi K2.5, GLM-5) réduisent chaque mois leur écart avec les frontaliers américains tout en étant 7 à 27 fois moins chers. Environ 80% des startups mondiales construisent désormais sur des modèles open-source chinois, érodant l'avantage de contrôle occidental. Les agents autonomes passent des démos à la production. Côté gouvernance : Trump a révoqué le cadre Biden sur la sécurité IA, créant un vide réglementaire que les États américains tentent de combler — source d'un bras de fer fédéral-état sans précédent. Le score recule légèrement : la concentration du pouvoir et les risques de bulle d'investissement IA (valorisation US 226% du PIB) créent une fragilité systémique."
         },
         "environnement": {
-            "score": 33,
-            "comment": "Post-COP30, le financement climatique reste structurellement insuffisant, aggravant les tensions Nord-Sud. Les engagements de réduction s'effacent au profit de l'adaptation, signal d'une capitulation implicite sur les 1,5°C. Les événements extrêmes de 2025 (sécheresses, inondations de classe 4) ont saturé les capacités d'assurance mondiales."
+            "score": 31,
+            "comment": "22 des 34 signes vitaux planétaires sont à des niveaux record selon le rapport BioScience 2025. 2025 est dans le top 3 des années les plus chaudes de l'histoire instrumentale. CO₂ atmosphérique a franchi 430 ppm pour la première fois en juin 2025. L'EPA américaine a formellement révoqué l'Endangerment Finding le 12 février 2026, signalant la capitulation réglementaire américaine sur le climat. Unique note positive : en 2025, solaire et éolien ont produit 30% de l'électricité européenne, dépassant les fossiles (29%) pour la première fois. Mais le financement climatique mondial reste structurellement insuffisant, et les événements extrêmes saturent les systèmes d'assurance."
         },
         "energie": {
-            "score": 50,
-            "comment": "La transition énergétique progresse en volume (2,2 T$ sur 3,3 T$ investis en propre) mais la géopolitique domine l'agenda : contrôle chinois des terres rares, pivot européen hors du gaz russe, compétition sur les minéraux critiques au Venezuela et au Groenland. La sécurité énergétique prime sur la décarbonation dans tous les discours gouvernementaux."
+            "score": 49,
+            "comment": "La transition progresse en volume (les renouvelables ont produit plus d'électricité que le charbon pour la première fois en H1 2025), mais la sécurité des approvisionnements en minéraux critiques devient le nouveau champ de bataille géopolitique. L'IEA projette un déficit de 30% en minéraux critiques d'ici 2035. La Chine contrôle 60-80% des capacités de raffinage de terres rares, cobalt et graphite. Les data centers IA créent une demande électrique qui pourrait doubler d'ici 2030 (vers 945 TWh). Le prix du baril est attendu autour de 62 $/baril en 2026 selon le FMI — facteur de stabilisation relatif, mais insuffisant pour compenser les tensions sur les minéraux."
         },
         "geopolitique": {
-            "score": 24,
-            "comment": "Niveau d'alerte maximal : expiration du traité New START en février 2026 sans successeur, laissant USA et Russie sans contrôle bilatéral des armes nucléaires pour la première fois depuis 50 ans. Programme nucléaire iranien en progression après l'échec des frappes américaines de juin 2025. Ukraine : fatigue des soutiens occidentaux et incertitude américaine. Multipolarité sans règles du jeu."
+            "score": 22,
+            "comment": "Score au plus bas depuis la conception du modèle. Trois événements majeurs convergent : (1) Expiration du New START le 5 février 2026 — premier vide de contrôle nucléaire USA-Russie depuis plus de 50 ans, avec arsenaux respectifs de 5 177 et 5 459 ogives désormais sans plafond contraignant ; (2) Négociations Ukraine à Genève (17-18 février) terminées sans percée, les deux armées restent engagées sur 1 250 km de front avec des bombardements russes quotidiens ; (3) Washington exige l'inclusion de la Chine dans tout futur traité, Pékin refuse, Moscou exige d'y inclure France et Royaume-Uni — triangulation insoluble à court terme. Atténuation légère : Lavrov a déclaré le 11 février que Moscou respecterait volontairement les limites New START si Washington en fait autant."
         },
         "demographie_social": {
-            "score": 38,
-            "comment": "La montée des partis populistes et d'extrême droite (élections au Danemark, Hongrie, Slovénie, Suède en 2026) fragilise les centres politiques européens. Les coupes dans l'aide humanitaire mondiale impactent prioritairement les femmes et les populations vulnérables. Les tensions entre classes moyennes appauvries et élites technologiques alimentent une instabilité sociale diffuse."
+            "score": 37,
+            "comment": "La montée des partis populistes en Europe se confirme avec les élections municipales françaises de mars 2026 déjà ciblées par 141 faux sites d'information locale liés à des réseaux d'influence russes (étude Insikt). L'Ukraine révèle une fracture sociale interne critique : 200 000 soldats en AWOL, 2 millions de Ukrainiens recherchés pour violations de mobilisation, taux de désertion record en octobre 2025. Les coupes dans l'aide humanitaire internationale (sous l'administration Trump) fragilisent les populations les plus vulnérables. La polarisation politique s'étend via l'ingérence informationnelle à presque tous les scrutins occidentaux."
         },
         "finance": {
-            "score": 42,
-            "comment": "La fragmentation du système financier mondial s'accélère : primes de terme structurellement plus élevées, volatilité des devises, marchés de capitaux régionalisés. Les tarifs Trump restent une variable d'incertitude majeure sur la chaîne de valeur globale. 83% des grandes entreprises ont reconfiguré leurs investissements en réponse aux risques géopolitiques — signal de défiance systémique."
+            "score": 46,
+            "comment": "Résilience surprenante selon le FMI : croissance mondiale à 3,2% en 2025, 3,1% en 2026 (révision janvier 2026 à 3,3%). Le taux de tarif américain effectif est redescendu à 18,5% après les accords commerciaux et exemptions. Mais les fragilités sous-jacentes persistent : la dette publique reste sous pression structurelle, la part de marché des capitaux US représente 226% du PIB (risque bulle), et Goldman Sachs maintient une probabilité de récession US à 20% en 2026. L'euro souffre des incertitudes commerciales. Côté positif : l'investissement IA est un moteur réel de croissance, en particulier en Amérique du Nord et Asie."
         },
         "sante_bio": {
-            "score": 60,
-            "comment": "Pas de menace pandémique immédiate identifiée, mais les systèmes de santé restent fragilisés post-Covid et les capacités de surveillance mondiale se dégradent avec la réduction des financements multilatéraux. Les avancées biotech (ARNm, édition génomique) progressent mais accentuent les inégalités d'accès Nord-Sud."
+            "score": 61,
+            "comment": "Aucune menace pandémique émergente identifiée à ce stade. Les systèmes de santé restent fragilisés structurellement, et le retrait américain des financements multilatéraux (OMS, fonds d'aide globale) dégrade les capacités de surveillance mondiale. Les avancées biotech (ARNm, CRISPR) continuent, avec un accroissement des inégalités d'accès Nord-Sud. Le score reste stable par rapport à la période précédente, faute de signal d'alerte nouveau."
         },
         "espace": {
-            "score": 36,
-            "comment": "La militarisation de l'orbite basse s'intensifie dans un contexte d'absence de cadre juridique contraignant. La course aux ressources lunaires (Artémis vs programme chinois) ajoute une dimension d'extraterritorialité à la compétition géopolitique. Les méga-constellations satellitaires (Starlink, etc.) créent des dépendances stratégiques asymétriques."
+            "score": 40,
+            "comment": "Année record pour les lancements orbitaux : 324 tentatives en 2025 (+25% vs 2024), tirées par SpaceX (165 vols Falcon 9) et les opérateurs chinois. La Chine prépare Chang'e-7 (pôle sud lunaire, août 2026), développe des méga-constellations rivales de Starlink (Guowang, G60, objectif 25 000 satellites), et travaille sur un premier étage réutilisable. Blue Origin vise un alunissage cargo en 2026. La militarisation progresse sans cadre juridique contraignant : la dualité civile-militaire des satellites chinois est documentée. Score légèrement relevé par le dynamisme du secteur privé."
         },
         "information": {
-            "score": 35,
-            "comment": "L'écosystème informationnel atteint un seuil critique : les campagnes d'influence russes exploitent les fractures électorales européennes (Bulgarie, Hongrie), les deepfakes générés par IA saturent les cycles médiatiques, et la fragmentation des plateformes en blocs géopolitiques rend toute vérification transnationale quasi impossible. La confiance épistémique collective s'effondre."
+            "score": 32,
+            "comment": "Détérioration marquée. En France, 141 faux sites d'information locale générés par IA et liés à des réseaux russes (Storm-1516) ont été actifs entre février et juin 2025, ciblant les municipales 2026. En Europe, 42% des citoyens (Eurobaromètre janvier 2026) identifient la manipulation informationnelle étrangère comme la 2e menace pour la démocratie. La révocation du cadre Biden sur la sécurité IA par Trump réduit les obligations des plateformes américaines. X (Twitter) ne traite que 29% des contenus signalés comme désinformation selon l'ONG Maldita. La confiance épistémique collective s'effondre précisément au moment où les élections municipales françaises (mars 2026) offrent une cible privilégiée aux acteurs malveillants."
         }
     },
     "alerts": [
-        "☢️ NEW START expiré (fév. 2026) : premier vide de contrôle nucléaire USA-Russie en 50 ans. Risque de course aux armements stratégiques : 73%.",
-        "📅 2030 : l'Entropie Climatique catalyse la Friction Géopolitique. Probabilité de rupture systémique : 61%.",
-        "⚠️ Ω_BIOSPHERE : Seuil d'adaptation dépassé — financement climatique structurellement insuffisant",
-        "⚔️ Σ_CONFLICT : Tensions maximales sur arc Iran / Ukraine / Indo-Pacifique simultanément"
+        "☢️ NEW START expiré le 5 févr. 2026 : premier vide de contrôle nucléaire USA-Russie depuis 50 ans. USA (5 177) + Russie (5 459) ogives sans plafond légal. Probabilité de course aux armements à 5 ans : 68%.",
+        "🇺🇦 Genève 17-18 févr. 2026 : 3e round de négociations Ukraine-Russie-USA sans percée. Frontlines actives sur 1 250 km. Exigences russes (retrait Donbas + neutralité OTAN) jugées inacceptables par Kyiv.",
+        "🌡️ Ω_BIOSPHERE : 22/34 signaux vitaux à niveau record. EPA révoque l'Endangerment Finding (12 févr. 2026). CO₂ > 430 ppm pour la première fois.",
+        "🗳️ Σ_INFORMATION : 141 faux médias locaux IA-générés ciblant les municipales françaises mars 2026, liés au réseau russe Storm-1516. Guerre informationnelle documentée sur l'ensemble des scrutins occidentaux.",
+        "📅 2030 : convergence Entropie Climatique × Friction Géopolitique × Disruption IA. Probabilité de rupture systémique multi-domaine : 64%."
     ],
     "archives": [
         {
@@ -105,8 +106,8 @@
         },
         {
             "year": "2026",
-            "score": 44,
-            "desc": "Vide de gouvernance multidomaine"
+            "score": 43,
+            "desc": "Vide de gouvernance nucléaire et informationnel"
         }
     ]
 }
