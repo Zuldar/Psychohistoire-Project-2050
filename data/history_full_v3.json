@@ -2017,17 +2017,17 @@
     },
     {
         "year": "2026",
-        "stability_index": 48,
+        "stability_index": 39,
         "pillars": {
-            "technologie_ia": 85,
-            "environnement": 36,
-            "energie": 52,
-            "geopolitique": 28,
-            "demographie_social": 40,
-            "finance": 45,
-            "sante_bio": 62,
-            "espace": 38,
-            "information": 38
+            "technologie_ia": 80,
+            "environnement": 29,
+            "energie": 28,
+            "geopolitique": 14,
+            "demographie_social": 34,
+            "finance": 31,
+            "sante_bio": 57,
+            "espace": 40,
+            "information": 30
         },
         "description": ""
     }
