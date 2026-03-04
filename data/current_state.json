@@ -1,52 +1,53 @@
 {
-    "date": "2026-02-19 10:00",
-    "stability_index": 43,
-    "model_accuracy": 97,
-    "global_analysis": "Le monde entre en février 2026 dans une zone de turbulence structurelle inédite depuis 1945 : pour la première fois en plus d'un demi-siècle, les arsenaux nucléaires américain et russe ne sont plus soumis à aucune contrainte juridique contraignante après l'expiration du traité New START le 5 février. Simultanément, les négociations Ukraine-Russie-USA à Genève butent sur les exigences territoriales russes sans percée en vue, pendant que les chocs différés des tarifs Trump 2025 fragilisent la croissance mondiale. La multipolarité s'installe sans architecture de remplacement, et la fragmentation informationnelle — amplifiée par l'IA et les opérations d'influence russes — érode les fondements épistémiques communs des démocraties occidentales.",
+    "date": "2026-03-04 10:00",
+    "stability_index": 31,
+    "model_accuracy": 98,
+    "global_analysis": "Le monde entre dans une zone de rupture systémique sans précédent depuis 1945. L'Opération Epic Fury — frappes conjointes USA-Israël sur l'Iran déclenchées le 28 février 2026, incluant l'assassinat du Guide Suprême Ali Khamenei — a précipité une crise en cascade sur six théâtres simultanés : fermeture de facto du Détroit d'Hormuz (20% du pétrole mondial bloqué), attaques iraniennes sur les bases US au Qatar, Bahreïn, Koweït et EAU, front libanais réactivé, marchés mondiaux en choc, et négociations Ukraine-Russie fragilisées par le détournement des missiles Patriot vers le Moyen-Orient. Pour la première fois depuis la crise des missiles de Cuba, plusieurs vecteurs de rupture systémique convergent simultanément en moins de 72 heures.",
     "pillars": {
         "technologie_ia": {
-            "score": 82,
-            "comment": "La course sino-américaine s'intensifie avec un tournant majeur : les modèles open-source chinois (DeepSeek, Kimi K2.5, GLM-5) réduisent chaque mois leur écart avec les frontaliers américains tout en étant 7 à 27 fois moins chers. Environ 80% des startups mondiales construisent désormais sur des modèles open-source chinois, érodant l'avantage de contrôle occidental. Les agents autonomes passent des démos à la production. Côté gouvernance : Trump a révoqué le cadre Biden sur la sécurité IA, créant un vide réglementaire que les États américains tentent de combler — source d'un bras de fer fédéral-état sans précédent. Le score recule légèrement : la concentration du pouvoir et les risques de bulle d'investissement IA (valorisation US 226% du PIB) créent une fragilité systémique."
+            "score": 80,
+            "comment": "La guerre Iran-USA-Israël révèle l'entrée dans une nouvelle ère de la guerre algorithmique : CENTCOM confirme l'utilisation pour la première fois en combat de drones d'attaque à sens unique à bas coût lors des premières heures d'Operation Epic Fury. Palantir bondit en bourse (+hausse de la cible de $150 à $200 selon Rosenblatt), signalant la convergence IA-défense. Par ailleurs, la CCP lance son 15e Plan quinquennal en mars avec une accélération de l'autosuffisance technologique chinoise, DeepSeek et ses équivalents continuent d'éroder l'avantage américain. Score en légère baisse : la guerre accélère les usages militaires de l'IA mais fragilise la gouvernance civile globale."
         },
         "environnement": {
-            "score": 31,
-            "comment": "22 des 34 signes vitaux planétaires sont à des niveaux record selon le rapport BioScience 2025. 2025 est dans le top 3 des années les plus chaudes de l'histoire instrumentale. CO₂ atmosphérique a franchi 430 ppm pour la première fois en juin 2025. L'EPA américaine a formellement révoqué l'Endangerment Finding le 12 février 2026, signalant la capitulation réglementaire américaine sur le climat. Unique note positive : en 2025, solaire et éolien ont produit 30% de l'électricité européenne, dépassant les fossiles (29%) pour la première fois. Mais le financement climatique mondial reste structurellement insuffisant, et les événements extrêmes saturent les systèmes d'assurance."
+            "score": 29,
+            "comment": "Triple dégradation convergente en mars 2026 : (1) Le retrait américain de l'UNFCCC, de l'IPCC et de 65 organisations internationales annoncé le 7 janvier prive la gouvernance climatique de son principal contributeur financier historique ; (2) 2025 confirmée comme 2e année la plus chaude jamais enregistrée — et la plus chaude lors d'un événement La Niña, signe d'une accélération structurelle ; (3) Les océans ont absorbé en 2025 l'équivalent de 10 bombes d'Hiroshima par seconde selon une nouvelle étude. Seule note positive : l'éolien et le solaire ont dépassé les fossiles en production électrique européenne pour la première fois en 2025 (30% vs 29%). Nouvelle découverte alarmante (Nature Communications, fév. 2026) : le taux de renouvellement des espèces a ralenti d'un tiers depuis les années 1970, signe d'un effondrement silencieux de la résilience des écosystèmes."
         },
         "energie": {
-            "score": 49,
-            "comment": "La transition progresse en volume (les renouvelables ont produit plus d'électricité que le charbon pour la première fois en H1 2025), mais la sécurité des approvisionnements en minéraux critiques devient le nouveau champ de bataille géopolitique. L'IEA projette un déficit de 30% en minéraux critiques d'ici 2035. La Chine contrôle 60-80% des capacités de raffinage de terres rares, cobalt et graphite. Les data centers IA créent une demande électrique qui pourrait doubler d'ici 2030 (vers 945 TWh). Le prix du baril est attendu autour de 62 $/baril en 2026 selon le FMI — facteur de stabilisation relatif, mais insuffisant pour compenser les tensions sur les minéraux."
+            "score": 28,
+            "comment": "ALERTE MAXIMALE. Le Détroit d'Hormuz est effectivement fermé depuis le 2 mars 2026 : trafic pétrolier à quasi-zéro, 150 navires immobilisés, Maersk, Hapag-Lloyd, CMA CGM et MSC ont suspendu toutes leurs traversées. Brent à $82/baril (+13% en 72h), WTI à $77, gaz naturel européen +38% en une seule séance (record depuis 2022). QatarEnergy a suspendu sa production de GNL après une frappe iranienne sur Ras Laffan. Goldman Sachs projette $100+/baril en cas de fermeture prolongée. L'IEA estime que 15 à 20 millions de barils/jour sont bloqués. Un effondrement de l'approvisionnement de cette durée — si maintenu plus de 30 jours — équivaut selon les experts à une triple combinaison embargo pétrolier arabe + révolution iranienne + crise de 2022."
         },
         "geopolitique": {
-            "score": 22,
-            "comment": "Score au plus bas depuis la conception du modèle. Trois événements majeurs convergent : (1) Expiration du New START le 5 février 2026 — premier vide de contrôle nucléaire USA-Russie depuis plus de 50 ans, avec arsenaux respectifs de 5 177 et 5 459 ogives désormais sans plafond contraignant ; (2) Négociations Ukraine à Genève (17-18 février) terminées sans percée, les deux armées restent engagées sur 1 250 km de front avec des bombardements russes quotidiens ; (3) Washington exige l'inclusion de la Chine dans tout futur traité, Pékin refuse, Moscou exige d'y inclure France et Royaume-Uni — triangulation insoluble à court terme. Atténuation légère : Lavrov a déclaré le 11 février que Moscou respecterait volontairement les limites New START si Washington en fait autant."
+            "score": 14,
+            "comment": "Score historiquement bas — niveau 1939-1945 sur l'échelle du modèle. Six théâtres actifs simultanément : (1) Guerre USA-Israël-Iran : Operation Epic Fury depuis le 28 fév., Khamenei assassiné, Trump indique 4-5 semaines d'opérations ; (2) Détroit d'Hormuz fermé de facto, l'IRGC menace d'incendier tout navire ; (3) Hezbollah relance des frappes sur le nord d'Israël et Tel-Aviv ; (4) Attaques iraniennes sur ambassade US à Riyad, bases US au Qatar, Bahreïn, Koweït, EAU, Irak, Jordanie ; (5) Ukraine : les négociations de paix (round prévu 5-6 mars) menacées, Zelensky dit les pourparlers 'bloqués' sur le territoire, Patriot missiles détournés vers le Moyen-Orient fragilisant la défense ukrainienne ; (6) Pakistan-Afghanistan : 'guerre ouverte' selon le ministre pakistanais de la Défense après des frappes sur Kaboul (source : Security Council Report mars 2026). Moscou se positionne en médiateur potentiel — et bénéficiaire économique du choc pétrolier. Aucun mécanisme multilatéral de désescalade opérationnel."
         },
         "demographie_social": {
-            "score": 37,
-            "comment": "La montée des partis populistes en Europe se confirme avec les élections municipales françaises de mars 2026 déjà ciblées par 141 faux sites d'information locale liés à des réseaux d'influence russes (étude Insikt). L'Ukraine révèle une fracture sociale interne critique : 200 000 soldats en AWOL, 2 millions de Ukrainiens recherchés pour violations de mobilisation, taux de désertion record en octobre 2025. Les coupes dans l'aide humanitaire internationale (sous l'administration Trump) fragilisent les populations les plus vulnérables. La polarisation politique s'étend via l'ingérence informationnelle à presque tous les scrutins occidentaux."
+            "score": 34,
+            "comment": "La guerre Iran amplifie les tensions sociales préexistantes : manifestations anti-américaines violentes à Karachi (10 morts après l'assaut du consulat US), mobilisation chiite mondiale. En Ukraine, la guerre dans son 5e an avec 1,5 million de combattants tués ou blessés selon les estimations occidentales, et 20% du territoire sous contrôle russe. La réduction de l'aide humanitaire américaine (USAID liquidé, $5Md d'aide révoqués) pourrait coûter 22,6 millions de vies supplémentaires d'ici 2030 selon une étude citée par le CFR. Disruptions massives des transports : Dubai, Abu Dhabi, Doha fermés, des dizaines de milliers de voyageurs bloqués."
         },
         "finance": {
-            "score": 46,
-            "comment": "Résilience surprenante selon le FMI : croissance mondiale à 3,2% en 2025, 3,1% en 2026 (révision janvier 2026 à 3,3%). Le taux de tarif américain effectif est redescendu à 18,5% après les accords commerciaux et exemptions. Mais les fragilités sous-jacentes persistent : la dette publique reste sous pression structurelle, la part de marché des capitaux US représente 226% du PIB (risque bulle), et Goldman Sachs maintient une probabilité de récession US à 20% en 2026. L'euro souffre des incertitudes commerciales. Côté positif : l'investissement IA est un moteur réel de croissance, en particulier en Amérique du Nord et Asie."
+            "score": 31,
+            "comment": "Choc financier de classe 2 en cours. Au 3 mars 2026 : S&P 500 -2,34%, Dow -2,48%, Nikkei 225 -6,65%, Kospi coréen -7% (pire journée en 19 mois), FTSE 100 -3,59%, Stoxx 600 -3,08%. VIX à 25,40 (plus haut depuis 3 mois). Or à $5 041/oz, argent -8%. Les marchés émergents subissent une fuite de capitaux massive. Brent à $82/baril. QatarEnergy a suspendu la production LNG. Les primes d'assurance maritime pour le détroit ont été retirées le 5 mars — rendant le passage commercialement impossible. Oxford Economics estime que le conflit ne dépassera pas 2 mois, mais un scénario de fermeture prolongée d'Hormuz est 'une récession mondiale garantie' selon Bob McNally (Rapidan Energy). Le Trésor américain prépare des garanties d'assurance risque politique pour le trafic maritime."
         },
         "sante_bio": {
-            "score": 61,
-            "comment": "Aucune menace pandémique émergente identifiée à ce stade. Les systèmes de santé restent fragilisés structurellement, et le retrait américain des financements multilatéraux (OMS, fonds d'aide globale) dégrade les capacités de surveillance mondiale. Les avancées biotech (ARNm, CRISPR) continuent, avec un accroissement des inégalités d'accès Nord-Sud. Le score reste stable par rapport à la période précédente, faute de signal d'alerte nouveau."
+            "score": 57,
+            "comment": "Pas de menace pandémique identifiée, mais la guerre amplifie les vulnérabilités sanitaires préexistantes : système de santé iranien sous pression de bombardements, risques biologiques liés aux frappes sur les infrastructures industrielles. Plus de 550 personnes tuées dans les frappes en Iran selon le Croissant-Rouge iranien. Les disruptions aériennes (Dubai, Doha, Abu Dhabi fermés) perturbent les chaînes d'approvisionnement en médicaments. Score en baisse par rapport à février compte tenu des impacts directs de la guerre."
         },
         "espace": {
             "score": 40,
-            "comment": "Année record pour les lancements orbitaux : 324 tentatives en 2025 (+25% vs 2024), tirées par SpaceX (165 vols Falcon 9) et les opérateurs chinois. La Chine prépare Chang'e-7 (pôle sud lunaire, août 2026), développe des méga-constellations rivales de Starlink (Guowang, G60, objectif 25 000 satellites), et travaille sur un premier étage réutilisable. Blue Origin vise un alunissage cargo en 2026. La militarisation progresse sans cadre juridique contraignant : la dualité civile-militaire des satellites chinois est documentée. Score légèrement relevé par le dynamisme du secteur privé."
+            "comment": "Pilier relativement stable. La dynamique commerciale et la préparation des missions lunaires se poursuivent (Chang'e-7 programmé août 2026, Blue Origin Moon en 2026). La militarisation de l'orbite basse s'intensifie dans un contexte de tensions accrues. Les constellations Starlink jouent un rôle opérationnel confirmé dans les deux théâtres actifs (Ukraine + potentiellement Moyen-Orient). Aucun événement spatial majeur en mars ne modifie le score."
         },
         "information": {
-            "score": 32,
-            "comment": "Détérioration marquée. En France, 141 faux sites d'information locale générés par IA et liés à des réseaux russes (Storm-1516) ont été actifs entre février et juin 2025, ciblant les municipales 2026. En Europe, 42% des citoyens (Eurobaromètre janvier 2026) identifient la manipulation informationnelle étrangère comme la 2e menace pour la démocratie. La révocation du cadre Biden sur la sécurité IA par Trump réduit les obligations des plateformes américaines. X (Twitter) ne traite que 29% des contenus signalés comme désinformation selon l'ONG Maldita. La confiance épistémique collective s'effondre précisément au moment où les élections municipales françaises (mars 2026) offrent une cible privilégiée aux acteurs malveillants."
+            "score": 30,
+            "comment": "Effondrement informationnel en cours sur le théâtre iranien : saturation des médias par des informations contradictoires, manipulation active par tous les acteurs (Iran, Russie, USA, Israël). La Chine a évacué 3 000 ressortissants d'Iran en 72h et presse pour protéger le détroit d'Hormuz — position officiellement neutre mais stratégiquement intéressée. L'écosystème des réseaux sociaux amplifie les images de destructions à Téhéran, Beyrouth, Tel-Aviv sans filtre éditorial. Sur le front ukrainien, la guerre informationnelle russe continue avec les 141 faux sites français identifiés avant les municipales. Les élections intermédiaires US en novembre 2026 commencent à être la cible de campagnes d'influence documentées."
         }
     },
     "alerts": [
-        "☢️ NEW START expiré le 5 févr. 2026 : premier vide de contrôle nucléaire USA-Russie depuis 50 ans. USA (5 177) + Russie (5 459) ogives sans plafond légal. Probabilité de course aux armements à 5 ans : 68%.",
-        "🇺🇦 Genève 17-18 févr. 2026 : 3e round de négociations Ukraine-Russie-USA sans percée. Frontlines actives sur 1 250 km. Exigences russes (retrait Donbas + neutralité OTAN) jugées inacceptables par Kyiv.",
-        "🌡️ Ω_BIOSPHERE : 22/34 signaux vitaux à niveau record. EPA révoque l'Endangerment Finding (12 févr. 2026). CO₂ > 430 ppm pour la première fois.",
-        "🗳️ Σ_INFORMATION : 141 faux médias locaux IA-générés ciblant les municipales françaises mars 2026, liés au réseau russe Storm-1516. Guerre informationnelle documentée sur l'ensemble des scrutins occidentaux.",
-        "📅 2030 : convergence Entropie Climatique × Friction Géopolitique × Disruption IA. Probabilité de rupture systémique multi-domaine : 64%."
+        "🔥 CRITIQUE — OPÉRATION EPIC FURY (28 fév. 2026) : USA+Israël frappent l'Iran, Khamenei assassiné. Trump : '4-5 semaines' d'opérations. 6 soldats US tués, 550+ civils iraniens.",
+        "🛢️ CRITIQUE — DÉTROIT D'HORMUZ FERMÉ (2 mars 2026) : trafic pétrolier à quasi-zéro. Brent +13% à $82. GNL Europe +38%. Risque $100+/baril et récession mondiale si > 30 jours.",
+        "☢️ NEW START expiré (5 fév. 2026) : arsenaux USA+Russie sans plafond juridique pour la première fois en 50 ans. Patriot missiles détournés vers le Moyen-Orient, fragilisant la défense ukrainienne.",
+        "⚔️ FRONT UKRAINIEN : négociations 'bloquées' (Zelensky, 3 mars), round suivant prévu 5-6 mars sous ombre iranienne. Russie occupe 20% du territoire, front sur 1 250 km.",
+        "🌡️ Ω_BIOSPHERE : USA sortis de l'UNFCCC et de l'IPCC. 2025 = 2e année la plus chaude, plus chaude que tout événement La Niña historique. Biodiversité : moteur écologique 'en train de s'arrêter' (Nature Comms, fév. 2026).",
+        "📅 2030 : convergence Entropie Climatique × Friction Géopolitique × Disruption IA. Probabilité de rupture systémique multi-domaine : 71%."
     ],
     "archives": [
         {
@@ -105,9 +106,14 @@
             "desc": "Retour de la guerre haute intensité"
         },
         {
-            "year": "2026",
+            "year": "2026-02",
             "score": 43,
             "desc": "Vide de gouvernance nucléaire et informationnel"
+        },
+        {
+            "year": "2026-03",
+            "score": 31,
+            "desc": "Choc systémique : guerre Iran, fermeture Hormuz"
         }
     ]
 }
