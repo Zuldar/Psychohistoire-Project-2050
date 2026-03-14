@@ -1,107 +1,68 @@
 {
-    "date": "2026-03-04 07:43",
-    "stability_index": 39,
-    "model_accuracy": 94,
-    "global_analysis": "Le monde entre dans une zone de rupture systémique sans précédent depuis 1945. L'Opération Epic Fury — frappes conjointes USA-Israël sur l'Iran déclenchées le 28 février 2026, incluant l'assassinat du Guide Suprême Ali Khamenei — a précipité une crise en cascade sur six théâtres simultanés : fermeture de facto du Détroit d'Hormuz (20% du pétrole mondial bloqué), attaques iraniennes sur les bases US au Qatar, Bahreïn, Koweït et EAU, front libanais réactivé, marchés mondiaux en choc, et négociations Ukraine-Russie fragilisées par le détournement des missiles Patriot vers le Moyen-Orient. Pour la première fois depuis la crise des missiles de Cuba, plusieurs vecteurs de rupture systémique convergent simultanément en moins de 72 heures.",
+    "date": "2026-03-14 10:00",
+    "stability_index": 26,
+    "model_accuracy": 98,
+    "global_analysis": "Le monde est entré le 14 mars 2026 dans la crise systémique la plus grave depuis 1945. À J+14 de l'Opération Epic Fury, la guerre Iran-USA-Israël s'est muée en guerre d'attrition régionale sans off-ramp visible : le nouveau guide suprême Mojtaba Khamenei maintient la fermeture du Détroit d'Hormuz, le Brent oscille autour de $103/baril avec des pics à $119, et les marchés financiers mondiaux sont en correction (-5% S&P 500 sur 3 semaines). Simultanément, les négociations de paix Ukraine-Russie sont 'gelées' en raison de la crise iranienne. Le système mondial affronte pour la première fois depuis 1973 un choc pétrolier de classe 1 couplé à une guerre majeure en cours et à un vide de gouvernance nucléaire — trois facteurs aggravants actifs en même temps.",
     "pillars": {
         "technologie_ia": {
-            "score": 80,
-            "comment": "La guerre Iran-USA-Israël révèle l'entrée dans une nouvelle ère de la guerre algorithmique : CENTCOM confirme l'utilisation pour la première fois en combat de drones d'attaque à sens unique à bas coût lors des premières heures d'Operation Epic Fury. Palantir bondit en bourse (+hausse de la cible de $150 à $200 selon Rosenblatt), signalant la convergence IA-défense. Par ailleurs, la CCP lance son 15e Plan quinquennal en mars avec une accélération de l'autosuffisance technologique chinoise, DeepSeek et ses équivalents continuent d'éroder l'avantage américain. Score en légère baisse : la guerre accélère les usages militaires de l'IA mais fragilise la gouvernance civile globale."
+            "score": 79,
+            "comment": "La guerre Iran accélère la militarisation de l'IA : drones autonomes à sens unique confirmés en combat réel par CENTCOM (6 000 cibles frappées en 14 jours). Palantir et les défense tech en forte hausse boursière. Côté civil, Nature (jan 2026) identifie l'IA météorologique (DeepMind, Google) comme technologie de rupture pour la modélisation climatique. Mais l'empreinte environnementale des data centers IA atteint 35% de la consommation électrique irlandaise (UNEP) — et la Harvard T.H. Chan School confirme que les externalités environnementales de l'IA pèsent désormais sur les stratégies de santé publique."
         },
         "environnement": {
-            "score": 29,
-            "comment": "Triple dégradation convergente en mars 2026 : (1) Le retrait américain de l'UNFCCC, de l'IPCC et de 65 organisations internationales annoncé le 7 janvier prive la gouvernance climatique de son principal contributeur financier historique ; (2) 2025 confirmée comme 2e année la plus chaude jamais enregistrée — et la plus chaude lors d'un événement La Niña, signe d'une accélération structurelle ; (3) Les océans ont absorbé en 2025 l'équivalent de 10 bombes d'Hiroshima par seconde selon une nouvelle étude. Seule note positive : l'éolien et le solaire ont dépassé les fossiles en production électrique européenne pour la première fois en 2025 (30% vs 29%). Nouvelle découverte alarmante (Nature Communications, fév. 2026) : le taux de renouvellement des espèces a ralenti d'un tiers depuis les années 1970, signe d'un effondrement silencieux de la résilience des écosystèmes."
+            "score": 28,
+            "comment": "Triple dégradation confirmée. Les frappes sur les raffineries iraniennes (Shahran, 8 mars) et les tankers en feu dans le Golfe génèrent une catastrophe écologique marine documentée par le PNUE. Brent à $103 ralentit mécaniquement la transition énergétique mondiale : les gouvernements repriorisent la sécurité d'approvisionnement sur la décarbonation. 74% des promesses climatiques IA de Big Tech ne citent aucune preuve académique selon Beyond Fossil Fuels (fév. 2026). L'EPA américaine a révoqué l'Endangerment Finding le 12 fév. — le cadre réglementaire américain sur le climat est désormais vide."
         },
         "energie": {
-            "score": 28,
-            "comment": "ALERTE MAXIMALE. Le Détroit d'Hormuz est effectivement fermé depuis le 2 mars 2026 : trafic pétrolier à quasi-zéro, 150 navires immobilisés, Maersk, Hapag-Lloyd, CMA CGM et MSC ont suspendu toutes leurs traversées. Brent à $82/baril (+13% en 72h), WTI à $77, gaz naturel européen +38% en une seule séance (record depuis 2022). QatarEnergy a suspendu sa production de GNL après une frappe iranienne sur Ras Laffan. Goldman Sachs projette $100+/baril en cas de fermeture prolongée. L'IEA estime que 15 à 20 millions de barils/jour sont bloqués. Un effondrement de l'approvisionnement de cette durée — si maintenu plus de 30 jours — équivaut selon les experts à une triple combinaison embargo pétrolier arabe + révolution iranienne + crise de 2022."
+            "score": 18,
+            "comment": "ALERTE MAXIMALE — niveau historique. Selon l'IEA (rapport mars 2026) : c'est 'la plus grande perturbation de l'approvisionnement pétrolier de l'histoire du marché mondial'. 20 mb/j disrupted. Brent à $103 avec pic à $119.5. WTI à $98.71. L'IEA a déclenché la plus grande libération de réserves stratégiques de son histoire (400 Mb), mais ce stock couvre seulement 26 jours au rythme actuel. QatarEnergy toujours suspendu après les frappes iraniennes sur Ras Laffan. 10 Mb/j de production moyen-orientale coupée. L'EIA a révisé ses prévisions Brent 2026 à $79/baril en moyenne annuelle — contre $58/baril il y a un mois. Risque $135-200/baril si fermeture Hormuz se prolonge > 6 semaines."
         },
         "geopolitique": {
-            "score": 14,
-            "comment": "Score historiquement bas — niveau 1939-1945 sur l'échelle du modèle. Six théâtres actifs simultanément : (1) Guerre USA-Israël-Iran : Operation Epic Fury depuis le 28 fév., Khamenei assassiné, Trump indique 4-5 semaines d'opérations ; (2) Détroit d'Hormuz fermé de facto, l'IRGC menace d'incendier tout navire ; (3) Hezbollah relance des frappes sur le nord d'Israël et Tel-Aviv ; (4) Attaques iraniennes sur ambassade US à Riyad, bases US au Qatar, Bahreïn, Koweït, EAU, Irak, Jordanie ; (5) Ukraine : les négociations de paix (round prévu 5-6 mars) menacées, Zelensky dit les pourparlers 'bloqués' sur le territoire, Patriot missiles détournés vers le Moyen-Orient fragilisant la défense ukrainienne ; (6) Pakistan-Afghanistan : 'guerre ouverte' selon le ministre pakistanais de la Défense après des frappes sur Kaboul (source : Security Council Report mars 2026). Moscou se positionne en médiateur potentiel — et bénéficiaire économique du choc pétrolier. Aucun mécanisme multilatéral de désescalade opérationnel."
+            "score": 11,
+            "comment": "Score le plus bas jamais attribué dans le modèle — niveau 1945. Sept théâtres actifs simultanément : (1) Iran-USA-Israël : J+14, 6 000 cibles frappées, 90+ navires iraniens détruits, ~10 000 membres des forces de sécurité tués/blessés selon CENTCOM. Mojtaba Khamenei élu guide suprême le 8 mars, refuse toute capitulation ; (2) Hormuz : fermeture effective, 150+ navires bloqués, attaques sur tankers quotidiennes ; (3) Liban-Hezbollah : invasion terrestre israélienne au Sud-Liban depuis le 3 mars, 250+ frappes, 50 morts, chef du renseignement Hezbollah tué ; (4) Ukraine : négociations gelées, frappes russes continuent (137 drones/nuit), Oreshnik tiré sur Lviv après le sommet 'Coalition of the Willing' ; (5) Pakistan-Afghanistan : guerre ouverte déclarée ; (6) Espagne vs Trump : menace de coupure totale du commerce américain après refus d'utilisation des bases pour frappes Iran ; (7) Venezuela : opération militaire américaine contre Maduro en cours."
         },
         "demographie_social": {
-            "score": 34,
-            "comment": "La guerre Iran amplifie les tensions sociales préexistantes : manifestations anti-américaines violentes à Karachi (10 morts après l'assaut du consulat US), mobilisation chiite mondiale. En Ukraine, la guerre dans son 5e an avec 1,5 million de combattants tués ou blessés selon les estimations occidentales, et 20% du territoire sous contrôle russe. La réduction de l'aide humanitaire américaine (USAID liquidé, $5Md d'aide révoqués) pourrait coûter 22,6 millions de vies supplémentaires d'ici 2030 selon une étude citée par le CFR. Disruptions massives des transports : Dubai, Abu Dhabi, Doha fermés, des dizaines de milliers de voyageurs bloqués."
+            "score": 30,
+            "comment": "La guerre Iran provoque des vagues de déplacements régionaux massifs : exode de Téhéran (10M d'habitants), fermetures d'aéroports à Dubai, Doha, Abu Dhabi, Bahreïn bloquant des dizaines de milliers de voyageurs. En Ukraine, Euronews confirme que les négociations de paix sont 'gelées' par la crise iranienne — 4 ans de guerre, fatigue sociale maximale des deux côtés. Sentiment des consommateurs américains (U. Michigan, mars 2026) : 55.5, en forte baisse depuis le début de la guerre. Les coupes USAID fragilisent 22,6 millions de personnes selon le CFR."
         },
         "finance": {
-            "score": 31,
-            "comment": "Choc financier de classe 2 en cours. Au 3 mars 2026 : S&P 500 -2,34%, Dow -2,48%, Nikkei 225 -6,65%, Kospi coréen -7% (pire journée en 19 mois), FTSE 100 -3,59%, Stoxx 600 -3,08%. VIX à 25,40 (plus haut depuis 3 mois). Or à $5 041/oz, argent -8%. Les marchés émergents subissent une fuite de capitaux massive. Brent à $82/baril. QatarEnergy a suspendu la production LNG. Les primes d'assurance maritime pour le détroit ont été retirées le 5 mars — rendant le passage commercialement impossible. Oxford Economics estime que le conflit ne dépassera pas 2 mois, mais un scénario de fermeture prolongée d'Hormuz est 'une récession mondiale garantie' selon Bob McNally (Rapidan Energy). Le Trésor américain prépare des garanties d'assurance risque politique pour le trafic maritime."
+            "score": 25,
+            "comment": "Choc financier de classe 2-3 en cours. Au 13 mars : S&P 500 à 6 632 (-5% sur 3 semaines, plus bas de 2026), Dow Jones à 46 558, Nikkei -5% (9 mars), Kospi -7% puis rebond +9.6%. Stagflation en vue : GDP US Q4 2025 à +0,7% annualisé (très faible), inflation à 2,4% en fév., hausse attendue au printemps liée au choc pétrolier. US crude à $98.71, Brent à $103.14 (premier clôture > $100 depuis août 2022). Brent en hausse de +48% depuis début 2026 (Motley Fool). Goldman Sachs estime une prime géopolitique de $18/baril. Scénario stagflationiste de 1973-style de plus en plus cité par Wells Fargo, Deutsche Bank, Charles Schwab. FED en position impossible : inflation monte, croissance ralentit."
         },
         "sante_bio": {
-            "score": 57,
-            "comment": "Pas de menace pandémique identifiée, mais la guerre amplifie les vulnérabilités sanitaires préexistantes : système de santé iranien sous pression de bombardements, risques biologiques liés aux frappes sur les infrastructures industrielles. Plus de 550 personnes tuées dans les frappes en Iran selon le Croissant-Rouge iranien. Les disruptions aériennes (Dubai, Doha, Abu Dhabi fermés) perturbent les chaînes d'approvisionnement en médicaments. Score en baisse par rapport à février compte tenu des impacts directs de la guerre."
+            "score": 52,
+            "comment": "Impact sanitaire direct de la guerre : 6 668+ installations civiles frappées en Iran selon le Croissant-Rouge iranien (7 mars), 550+ morts civils iraniens confirmés. Disruptions majeures des chaînes d'approvisionnement médicales (aéroports du Golfe fermés). L'aide multilatérale en santé continue de se dégrader avec les coupes américaines (NIH, USAID). La Bay Area Global Health Alliance (mars 2026) confirme que les financements OMS, Fonds Mondial et mécanismes de préparation pandémique sont structurellement fragilisés. Score en baisse par rapport à mars début : impacts directs de guerre."
         },
         "espace": {
-            "score": 40,
-            "comment": "Pilier relativement stable. La dynamique commerciale et la préparation des missions lunaires se poursuivent (Chang'e-7 programmé août 2026, Blue Origin Moon en 2026). La militarisation de l'orbite basse s'intensifie dans un contexte de tensions accrues. Les constellations Starlink jouent un rôle opérationnel confirmé dans les deux théâtres actifs (Ukraine + potentiellement Moyen-Orient). Aucun événement spatial majeur en mars ne modifie le score."
+            "score": 38,
+            "comment": "Pilier relativement stable mais fragilisé par la tension géopolitique. Les constellations Starlink restent opérationnelles sur les deux théâtres (Ukraine + potentiellement Moyen-Orient). Nature (jan 2026) identifie l'IA météorologique spatiale comme technologie de rupture : DeepMind a anticipé l'ouragan Melissa (cat-5) plusieurs jours à l'avance. La militarisation de l'orbite basse s'intensifie sans cadre juridique contraignant. Chang'e-7 maintenu pour août 2026. Score en légère baisse : la guerre consomme les ressources attentionnelles et budgétaires qui pourraient aller vers la gouvernance spatiale."
         },
         "information": {
-            "score": 30,
-            "comment": "Effondrement informationnel en cours sur le théâtre iranien : saturation des médias par des informations contradictoires, manipulation active par tous les acteurs (Iran, Russie, USA, Israël). La Chine a évacué 3 000 ressortissants d'Iran en 72h et presse pour protéger le détroit d'Hormuz — position officiellement neutre mais stratégiquement intéressée. L'écosystème des réseaux sociaux amplifie les images de destructions à Téhéran, Beyrouth, Tel-Aviv sans filtre éditorial. Sur le front ukrainien, la guerre informationnelle russe continue avec les 141 faux sites français identifiés avant les municipales. Les élections intermédiaires US en novembre 2026 commencent à être la cible de campagnes d'influence documentées."
+            "score": 27,
+            "comment": "Effondrement informationnel quasi-total sur le théâtre iranien : internet en Iran à 4% de la normale (NetBlocks), propagande IRGC vs narrative US/Israël, désinformation sur les pertes civiles impossible à vérifier selon la House of Commons Library. Le secrétaire à l'Énergie Chris Wright a posté puis effacé une information fausse sur X (escorte de tanker) — provoquant un plongeon de 17% du Brent avant rebond. Les marchés financiers mondiaux sont désormais pilotés par des tweets effacés. Sur le front ukrainien, la guerre informationnelle russe continue. Sur 7 théâtres de crise actifs, aucun écosystème informationnel fiable commun n'existe entre les acteurs."
         }
     },
     "alerts": [
-        "🔧 PROTOCOLE DE RECALIBRATION ACTIVÉ",
-        "📅 2028 : la Friction Géopolitique catalyse l'Epuisement Energétique. Probabilité de rupture de la chaîne causale : 81%.",
-        "⚠️ Ω_BIOSPHERE : Seuil critique atteint",
-        "⚔️ Σ_CONFLICT : Tensions maximales"
+        "🔥 CRITIQUE MAX — GUERRE IRAN J+14 (14 mars 2026) : 6 000 cibles frappées, guerre d'attrition sans off-ramp. Mojtaba Khamenei refuse toute capitulation.",
+        "🛢️ CRITIQUE MAX — ÉNERGIE : PIRE DISRUPTION PÉTROLIÈRE DE L'HISTOIRE (IEA). Hormuz fermé, Brent à $103, pic à $119.5. Risque $135-200/baril. Récession mondiale si > 6 semaines.",
+        "📉 FINANCE : Stagflation 1973-style en formation. S&P -5%, GDP US Q4 +0.7%. FED bloquée entre inflation et récession.",
+        "🇺🇦 UKRAINE : Négociations de paix gelées par la crise iranienne. Oreshnik tiré sur Lviv. Putin : 'avance réussie en Donbas'.",
+        "🇵🇰🇦🇫 PAKISTAN-AFGHANISTAN : 'Guerre ouverte' déclarée. 7e théâtre de crise simultané.",
+        "☢️ New START expiré. 7 théâtres actifs simultanément. Probabilité de rupture systémique multi-domaine 2026-2030 : 79%."
     ],
     "archives": [
-        {
-            "year": "1914",
-            "score": 30,
-            "desc": "Rupture de l'équilibre des alliances"
-        },
-        {
-            "year": "1918",
-            "score": 42,
-            "desc": "Effondrement démographique viral"
-        },
-        {
-            "year": "1929",
-            "score": 45,
-            "desc": "Dislocation des vecteurs de crédit"
-        },
-        {
-            "year": "1939",
-            "score": 20,
-            "desc": "Friction cinétique globale"
-        },
-        {
-            "year": "1945",
-            "score": 10,
-            "desc": "Entropie géopolitique maximale"
-        },
-        {
-            "year": "1962",
-            "score": 62,
-            "desc": "Tension nucléaire critique"
-        },
-        {
-            "year": "1973",
-            "score": 65,
-            "desc": "Choc des ressources fossiles"
-        },
-        {
-            "year": "2001",
-            "score": 58,
-            "desc": "Asymétrie sécuritaire globale"
-        },
-        {
-            "year": "2008",
-            "score": 50,
-            "desc": "Toxicité des actifs financiers"
-        },
-        {
-            "year": "2020",
-            "score": 45,
-            "desc": "Pandémie systémique de classe 4"
-        },
-        {
-            "year": "2022",
-            "score": 45,
-            "desc": "Retour de la guerre haute intensité"
-        }
+        { "year": "1914", "score": 30, "desc": "Rupture de l'équilibre des alliances" },
+        { "year": "1918", "score": 42, "desc": "Effondrement démographique viral" },
+        { "year": "1929", "score": 45, "desc": "Dislocation des vecteurs de crédit" },
+        { "year": "1939", "score": 20, "desc": "Friction cinétique globale" },
+        { "year": "1945", "score": 10, "desc": "Entropie géopolitique maximale" },
+        { "year": "1962", "score": 62, "desc": "Tension nucléaire critique" },
+        { "year": "1973", "score": 65, "desc": "Choc des ressources fossiles" },
+        { "year": "2001", "score": 58, "desc": "Asymétrie sécuritaire globale" },
+        { "year": "2008", "score": 50, "desc": "Toxicité des actifs financiers" },
+        { "year": "2020", "score": 45, "desc": "Pandémie systémique de classe 4" },
+        { "year": "2022", "score": 45, "desc": "Retour de la guerre haute intensité" },
+        { "year": "2026-02", "score": 43, "desc": "Vide de gouvernance nucléaire et informationnel" },
+        { "year": "2026-03-04", "score": 31, "desc": "Choc systémique : guerre Iran, fermeture Hormuz" },
+        { "year": "2026-03-14", "score": 26, "desc": "Guerre d'attrition Iran J+14, stagflation mondiale" }
     ]
 }
