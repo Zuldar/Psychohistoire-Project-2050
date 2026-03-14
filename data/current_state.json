@@ -1,7 +1,7 @@
 {
-    "date": "2026-03-14 10:00",
-    "stability_index": 26,
-    "model_accuracy": 98,
+    "date": "2026-03-14 09:10",
+    "stability_index": 35,
+    "model_accuracy": 92,
     "global_analysis": "Le monde est entré le 14 mars 2026 dans la crise systémique la plus grave depuis 1945. À J+14 de l'Opération Epic Fury, la guerre Iran-USA-Israël s'est muée en guerre d'attrition régionale sans off-ramp visible : le nouveau guide suprême Mojtaba Khamenei maintient la fermeture du Détroit d'Hormuz, le Brent oscille autour de $103/baril avec des pics à $119, et les marchés financiers mondiaux sont en correction (-5% S&P 500 sur 3 semaines). Simultanément, les négociations de paix Ukraine-Russie sont 'gelées' en raison de la crise iranienne. Le système mondial affronte pour la première fois depuis 1973 un choc pétrolier de classe 1 couplé à une guerre majeure en cours et à un vide de gouvernance nucléaire — trois facteurs aggravants actifs en même temps.",
     "pillars": {
         "technologie_ia": {
@@ -42,27 +42,66 @@
         }
     },
     "alerts": [
-        "🔥 CRITIQUE MAX — GUERRE IRAN J+14 (14 mars 2026) : 6 000 cibles frappées, guerre d'attrition sans off-ramp. Mojtaba Khamenei refuse toute capitulation.",
-        "🛢️ CRITIQUE MAX — ÉNERGIE : PIRE DISRUPTION PÉTROLIÈRE DE L'HISTOIRE (IEA). Hormuz fermé, Brent à $103, pic à $119.5. Risque $135-200/baril. Récession mondiale si > 6 semaines.",
-        "📉 FINANCE : Stagflation 1973-style en formation. S&P -5%, GDP US Q4 +0.7%. FED bloquée entre inflation et récession.",
-        "🇺🇦 UKRAINE : Négociations de paix gelées par la crise iranienne. Oreshnik tiré sur Lviv. Putin : 'avance réussie en Donbas'.",
-        "🇵🇰🇦🇫 PAKISTAN-AFGHANISTAN : 'Guerre ouverte' déclarée. 7e théâtre de crise simultané.",
-        "☢️ New START expiré. 7 théâtres actifs simultanément. Probabilité de rupture systémique multi-domaine 2026-2030 : 79%."
+        "🔧 PROTOCOLE DE RECALIBRATION ACTIVÉ",
+        "📅 2028 : la Friction Géopolitique catalyse l'Epuisement Energétique. Probabilité de rupture de la chaîne causale : 85%.",
+        "⚠️ Ω_BIOSPHERE : Seuil critique atteint",
+        "⚔️ Σ_CONFLICT : Tensions maximales"
     ],
     "archives": [
-        { "year": "1914", "score": 30, "desc": "Rupture de l'équilibre des alliances" },
-        { "year": "1918", "score": 42, "desc": "Effondrement démographique viral" },
-        { "year": "1929", "score": 45, "desc": "Dislocation des vecteurs de crédit" },
-        { "year": "1939", "score": 20, "desc": "Friction cinétique globale" },
-        { "year": "1945", "score": 10, "desc": "Entropie géopolitique maximale" },
-        { "year": "1962", "score": 62, "desc": "Tension nucléaire critique" },
-        { "year": "1973", "score": 65, "desc": "Choc des ressources fossiles" },
-        { "year": "2001", "score": 58, "desc": "Asymétrie sécuritaire globale" },
-        { "year": "2008", "score": 50, "desc": "Toxicité des actifs financiers" },
-        { "year": "2020", "score": 45, "desc": "Pandémie systémique de classe 4" },
-        { "year": "2022", "score": 45, "desc": "Retour de la guerre haute intensité" },
-        { "year": "2026-02", "score": 43, "desc": "Vide de gouvernance nucléaire et informationnel" },
-        { "year": "2026-03-04", "score": 31, "desc": "Choc systémique : guerre Iran, fermeture Hormuz" },
-        { "year": "2026-03-14", "score": 26, "desc": "Guerre d'attrition Iran J+14, stagflation mondiale" }
+        {
+            "year": "1914",
+            "score": 30,
+            "desc": "Rupture de l'équilibre des alliances"
+        },
+        {
+            "year": "1918",
+            "score": 42,
+            "desc": "Effondrement démographique viral"
+        },
+        {
+            "year": "1929",
+            "score": 45,
+            "desc": "Dislocation des vecteurs de crédit"
+        },
+        {
+            "year": "1939",
+            "score": 20,
+            "desc": "Friction cinétique globale"
+        },
+        {
+            "year": "1945",
+            "score": 10,
+            "desc": "Entropie géopolitique maximale"
+        },
+        {
+            "year": "1962",
+            "score": 62,
+            "desc": "Tension nucléaire critique"
+        },
+        {
+            "year": "1973",
+            "score": 65,
+            "desc": "Choc des ressources fossiles"
+        },
+        {
+            "year": "2001",
+            "score": 58,
+            "desc": "Asymétrie sécuritaire globale"
+        },
+        {
+            "year": "2008",
+            "score": 50,
+            "desc": "Toxicité des actifs financiers"
+        },
+        {
+            "year": "2020",
+            "score": 45,
+            "desc": "Pandémie systémique de classe 4"
+        },
+        {
+            "year": "2022",
+            "score": 45,
+            "desc": "Retour de la guerre haute intensité"
+        }
     ]
 }
