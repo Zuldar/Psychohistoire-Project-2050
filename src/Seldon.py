@@ -140,7 +140,22 @@ def generate_full_history():
             "description": event_desc 
         })
     
-    save_json(HISTORY_FILE, history)
+    monthly_dir = "data/monthly"
+recent = []
+if os.path.exists(monthly_dir):
+    files = sorted([
+        f for f in os.listdir(monthly_dir) if f.endswith('.json')
+    ])[-12:]  # 12 derniers mois
+    for f in files:
+        snap = load_json(f"{monthly_dir}/{f}")
+        if snap:
+            recent.append({
+                "year": snap.get("date", f.replace(".json", "")),
+                "stability_index": snap.get("stability_index", 0),
+                "pillars": {k: (v['score'] if isinstance(v, dict) else v)
+                            for k, v in snap.get("pillars", {}).items()}
+            })
+            save_json(RECENT_HISTORY_FILE, recent)
     return history
 
 # --- 5. FONCTION D'ARCHIVAGE ANNUEL (V35) ---
