@@ -1,107 +1,69 @@
 {
-    "date": "2026-03-14 09:10",
-    "stability_index": 35,
-    "model_accuracy": 92,
-    "global_analysis": "Le monde est entré le 14 mars 2026 dans la crise systémique la plus grave depuis 1945. À J+14 de l'Opération Epic Fury, la guerre Iran-USA-Israël s'est muée en guerre d'attrition régionale sans off-ramp visible : le nouveau guide suprême Mojtaba Khamenei maintient la fermeture du Détroit d'Hormuz, le Brent oscille autour de $103/baril avec des pics à $119, et les marchés financiers mondiaux sont en correction (-5% S&P 500 sur 3 semaines). Simultanément, les négociations de paix Ukraine-Russie sont 'gelées' en raison de la crise iranienne. Le système mondial affronte pour la première fois depuis 1973 un choc pétrolier de classe 1 couplé à une guerre majeure en cours et à un vide de gouvernance nucléaire — trois facteurs aggravants actifs en même temps.",
+    "date": "2026-04-05 10:00",
+    "stability_index": 27,
+    "model_accuracy": 98,
+    "global_analysis": "À J+36 de l'Opération Epic Fury, le monde se trouve dans un équilibre précaire entre guerre d'attrition et diplomatie de la dernière chance. Trump a fixé un ultimatum au 6 avril pour la réouverture d'Hormuz, menaçant de détruire les infrastructures électriques et les usines de dessalement iraniennes. Pendant ce temps, l'IRGC a de facto pris le contrôle du gouvernement iranien, rendant Pezeshkian incapable de négocier. Le directeur de l'IEA avertit qu'avril sera 'bien pire que mars' — les pétroliers ayant transité avant la guerre sont désormais épuisés. En parallèle, les tarifs Trump 2025 continuent de peser sur la croissance mondiale, la Fed est bloquée entre inflation et récession, et l'Ukraine propose un cessez-le-feu de Pâques rejeté par Moscou.",
     "pillars": {
         "technologie_ia": {
-            "score": 79,
-            "comment": "La guerre Iran accélère la militarisation de l'IA : drones autonomes à sens unique confirmés en combat réel par CENTCOM (6 000 cibles frappées en 14 jours). Palantir et les défense tech en forte hausse boursière. Côté civil, Nature (jan 2026) identifie l'IA météorologique (DeepMind, Google) comme technologie de rupture pour la modélisation climatique. Mais l'empreinte environnementale des data centers IA atteint 35% de la consommation électrique irlandaise (UNEP) — et la Harvard T.H. Chan School confirme que les externalités environnementales de l'IA pèsent désormais sur les stratégies de santé publique."
+            "score": 78,
+            "comment": "La convergence IA-défense s'accélère : drones autonomes IA désormais standard opérationnel dans la guerre Iran. Côté civil, émergence du concept de 'Planetary Intelligence' (WEF jan. 2026) — IA entraînée sur données satellites pour détecter en temps réel les anomalies climatiques, économiques et sécuritaires. Weill Cornell Medicine lance AIM pour intégrer l'IA en médecine de précision. MIT développe l'IA pour concevoir des médicaments à base de protéines. Université d'Hawaï publie un algorithme IA 'physics-informed' pour la modélisation climatique. Score légèrement en baisse : la fragmentation géopolitique de l'IA s'approfondit, et la guerre consomme des ressources technologiques militairement."
         },
         "environnement": {
-            "score": 28,
-            "comment": "Triple dégradation confirmée. Les frappes sur les raffineries iraniennes (Shahran, 8 mars) et les tankers en feu dans le Golfe génèrent une catastrophe écologique marine documentée par le PNUE. Brent à $103 ralentit mécaniquement la transition énergétique mondiale : les gouvernements repriorisent la sécurité d'approvisionnement sur la décarbonation. 74% des promesses climatiques IA de Big Tech ne citent aucune preuve académique selon Beyond Fossil Fuels (fév. 2026). L'EPA américaine a révoqué l'Endangerment Finding le 12 fév. — le cadre réglementaire américain sur le climat est désormais vide."
+            "score": 27,
+            "comment": "Double choc environnemental en avril. D'abord, les frappes sur les infrastructures pétrolières iraniennes (raffineries, dépôts Shahran, Mahshahr) créent une catastrophe écologique documentée dans le Golfe Persique — nappes de pétrole, incendies industriels, contamination marine. Ensuite, le choc pétrolier à $112/baril ralentit structurellement la transition énergétique : les gouvernements repriorisent la sécurité d'approvisionnement fossile. L'ESA publie 10 nouvelles découvertes climatiques critiques. Le retrait américain de l'UNFCCC et de l'IPCC demeure effectif, privant la gouvernance climatique de son principal contributeur."
         },
         "energie": {
-            "score": 18,
-            "comment": "ALERTE MAXIMALE — niveau historique. Selon l'IEA (rapport mars 2026) : c'est 'la plus grande perturbation de l'approvisionnement pétrolier de l'histoire du marché mondial'. 20 mb/j disrupted. Brent à $103 avec pic à $119.5. WTI à $98.71. L'IEA a déclenché la plus grande libération de réserves stratégiques de son histoire (400 Mb), mais ce stock couvre seulement 26 jours au rythme actuel. QatarEnergy toujours suspendu après les frappes iraniennes sur Ras Laffan. 10 Mb/j de production moyen-orientale coupée. L'EIA a révisé ses prévisions Brent 2026 à $79/baril en moyenne annuelle — contre $58/baril il y a un mois. Risque $135-200/baril si fermeture Hormuz se prolonge > 6 semaines."
+            "score": 16,
+            "comment": "NIVEAU HISTORIQUE BAS. Le directeur de l'IEA Fatih Birol confirme : 'C'est la pire crise énergétique de l'histoire — pire que 1973 et 1979 combinés. Nous avons perdu 12 mb/j.' Brent à $112/baril le 3 avril (+60% depuis janvier), pic à $166 le 19 mars pour le Dubai crude. Avril sera 'bien pire que mars' car les stocks constitués avant guerre sont épuisés. 400 Mb de réserves IEA libérés ne couvrent que 26 jours. L'OPEC+ prévoit +206 000 b/j en avril — insuffisant face à -12 mb/j disrupted. Oxford Economics : si le Brent moyenne $140/baril pendant 2 mois, récession mondiale et inflation à 5,8%. L'IRGC maintient Hormuz fermé comme 'outil de pression'. Deadline Trump : 6 avril 20h EST pour réouverture."
         },
         "geopolitique": {
-            "score": 11,
-            "comment": "Score le plus bas jamais attribué dans le modèle — niveau 1945. Sept théâtres actifs simultanément : (1) Iran-USA-Israël : J+14, 6 000 cibles frappées, 90+ navires iraniens détruits, ~10 000 membres des forces de sécurité tués/blessés selon CENTCOM. Mojtaba Khamenei élu guide suprême le 8 mars, refuse toute capitulation ; (2) Hormuz : fermeture effective, 150+ navires bloqués, attaques sur tankers quotidiennes ; (3) Liban-Hezbollah : invasion terrestre israélienne au Sud-Liban depuis le 3 mars, 250+ frappes, 50 morts, chef du renseignement Hezbollah tué ; (4) Ukraine : négociations gelées, frappes russes continuent (137 drones/nuit), Oreshnik tiré sur Lviv après le sommet 'Coalition of the Willing' ; (5) Pakistan-Afghanistan : guerre ouverte déclarée ; (6) Espagne vs Trump : menace de coupure totale du commerce américain après refus d'utilisation des bases pour frappes Iran ; (7) Venezuela : opération militaire américaine contre Maduro en cours."
+            "score": 12,
+            "comment": "Situation en légère stabilisation relative par rapport à mi-mars — mais toujours au niveau le plus bas. Éléments de décompression : Trump a accordé 2 pauses successives sur les frappes des infrastructures énergétiques iraniennes (la dernière jusqu'au 6 avril), des signaux de négociation émergent via Pakistan, Oman, Arabie Saoudite. Éléments d'aggravation : l'IRGC a pris de facto le contrôle du gouvernement iranien (Pezeshkian coupé du guide suprême), les Houthis reprennent les frappes sur Israël, un drone frappe le QG de l'IDF à Tel-Aviv, un journaliste américain est kidnappé en Irak par des miliciens pro-iraniens, explosions à la centrale nucléaire de Bushehr le 4 avril. Ukraine : Moscou rejette le cessez-le-feu de Pâques proposé par Zelensky, exige le retrait ukrainien du Donbas sous 2 mois. Pakistan-Afghanistan : conflit toujours actif."
         },
         "demographie_social": {
-            "score": 30,
-            "comment": "La guerre Iran provoque des vagues de déplacements régionaux massifs : exode de Téhéran (10M d'habitants), fermetures d'aéroports à Dubai, Doha, Abu Dhabi, Bahreïn bloquant des dizaines de milliers de voyageurs. En Ukraine, Euronews confirme que les négociations de paix sont 'gelées' par la crise iranienne — 4 ans de guerre, fatigue sociale maximale des deux côtés. Sentiment des consommateurs américains (U. Michigan, mars 2026) : 55.5, en forte baisse depuis le début de la guerre. Les coupes USAID fragilisent 22,6 millions de personnes selon le CFR."
+            "score": 31,
+            "comment": "Escalade des tensions sociales mondiales liées à la guerre. La hausse des prix de l'essence au-dessus de $4/gallon aux USA déclenche du mécontentement populaire. En Iran, la population est sous double pression : frappes militaires et black-out internet à 4% de la normale. Le sentiment des consommateurs américains (U. Michigan mars 2026) chute à 55.5 (-1.9% vs fév.). Les élections de mi-mandat US en novembre créent une pression politique additionnelle sur Trump pour résoudre la crise rapidement. L'Australie, l'Espagne et d'autres alliés expriment publiquement leur opposition à la gestion américaine de la crise."
         },
         "finance": {
-            "score": 25,
-            "comment": "Choc financier de classe 2-3 en cours. Au 13 mars : S&P 500 à 6 632 (-5% sur 3 semaines, plus bas de 2026), Dow Jones à 46 558, Nikkei -5% (9 mars), Kospi -7% puis rebond +9.6%. Stagflation en vue : GDP US Q4 2025 à +0,7% annualisé (très faible), inflation à 2,4% en fév., hausse attendue au printemps liée au choc pétrolier. US crude à $98.71, Brent à $103.14 (premier clôture > $100 depuis août 2022). Brent en hausse de +48% depuis début 2026 (Motley Fool). Goldman Sachs estime une prime géopolitique de $18/baril. Scénario stagflationiste de 1973-style de plus en plus cité par Wells Fargo, Deutsche Bank, Charles Schwab. FED en position impossible : inflation monte, croissance ralentit."
+            "score": 23,
+            "comment": "Aggravation financière notable. Brent à $112 le 3 avril, pic à $166 le 19 mars. JPMorgan estime à 60% la probabilité de récession mondiale (contexte tarifs + guerre). La Fed maintient les taux à 3,5-3,75% le 18 mars — bloquée entre inflation (pétrole) et récession (emploi : -92 000 jobs en fév.). La Cour suprême a annulé la plupart des tarifs Trump 2025 (IEEPA), mais l'administration instaure un tarif global de 10% en remplacement. Le déficit budgétaire US atteint $697Md en 4 mois. Oxford Economics : récession si $140/baril pendant 2 mois. Risque de stagflation style 1973 : inflation + croissance nulle. La 'Liberation Day' de 2025 reste dans les mémoires comme premier choc — la guerre Iran est le deuxième."
         },
         "sante_bio": {
-            "score": 52,
-            "comment": "Impact sanitaire direct de la guerre : 6 668+ installations civiles frappées en Iran selon le Croissant-Rouge iranien (7 mars), 550+ morts civils iraniens confirmés. Disruptions majeures des chaînes d'approvisionnement médicales (aéroports du Golfe fermés). L'aide multilatérale en santé continue de se dégrader avec les coupes américaines (NIH, USAID). La Bay Area Global Health Alliance (mars 2026) confirme que les financements OMS, Fonds Mondial et mécanismes de préparation pandémique sont structurellement fragilisés. Score en baisse par rapport à mars début : impacts directs de guerre."
+            "score": 51,
+            "comment": "Les frappes sur Mahshahr (4 avril : 5 morts, 170 blessés) et les zones pétrochimiques iraniennes créent des risques de contamination chimique industrielle non évalués. Les disruptions de la chaîne d'approvisionnement médicale persistent (aéroports du Golfe partiellement fermés). Côté positif : Weill Cornell Medicine lance AIM (IA pour médecine de précision), MIT développe un outil IA pour les médicaments à protéines. L'Université de Waterloo publie que l'impact climatique de l'IA est 'bien plus faible que prévu' — nuance importante pour les décideurs santé-environnement."
         },
         "espace": {
-            "score": 38,
-            "comment": "Pilier relativement stable mais fragilisé par la tension géopolitique. Les constellations Starlink restent opérationnelles sur les deux théâtres (Ukraine + potentiellement Moyen-Orient). Nature (jan 2026) identifie l'IA météorologique spatiale comme technologie de rupture : DeepMind a anticipé l'ouragan Melissa (cat-5) plusieurs jours à l'avance. La militarisation de l'orbite basse s'intensifie sans cadre juridique contraignant. Chang'e-7 maintenu pour août 2026. Score en légère baisse : la guerre consomme les ressources attentionnelles et budgétaires qui pourraient aller vers la gouvernance spatiale."
+            "score": 39,
+            "comment": "Activité spatiale maintenue malgré la crise. Lancement prévu le 8 avril de ClimCam (caméra IA d'observation climatique de l'Afrique de l'Est) via Falcon 9 vers l'ISS. ESA organise l'Earth Action Info Day (avril 2026) pour l'observation climatique par satellite. Le concept de 'Planetary Intelligence' (WEF) — IA sur données satellites pour surveiller en temps réel Hormuz, les cultures, les glaciers — gagne en pertinence opérationnelle. La militarisation de l'orbite basse s'intensifie dans le contexte de la guerre. Score stable : le secteur commercial progresse indépendamment de la crise."
         },
         "information": {
-            "score": 27,
-            "comment": "Effondrement informationnel quasi-total sur le théâtre iranien : internet en Iran à 4% de la normale (NetBlocks), propagande IRGC vs narrative US/Israël, désinformation sur les pertes civiles impossible à vérifier selon la House of Commons Library. Le secrétaire à l'Énergie Chris Wright a posté puis effacé une information fausse sur X (escorte de tanker) — provoquant un plongeon de 17% du Brent avant rebond. Les marchés financiers mondiaux sont désormais pilotés par des tweets effacés. Sur le front ukrainien, la guerre informationnelle russe continue. Sur 7 théâtres de crise actifs, aucun écosystème informationnel fiable commun n'existe entre les acteurs."
+            "score": 26,
+            "comment": "Chaos informationnel atteint un nouveau niveau. Trump affirme que l'Iran a demandé un cessez-le-feu — Téhéran dément immédiatement. Le secrétaire à l'Énergie poste puis efface une fausse information sur l'escorte de tankers. L'IRGC a pris le contrôle de facto du gouvernement iranien, rendant toute communication officielle iranienne non fiable. Internet en Iran à 4% de la normale. Un journaliste américain (Shelly Kittleson) kidnappé en Irak. Les marchés mondiaux bougent sur des tweets effacés. En Ukraine, Moscou mène des campagnes d'influence actives pour diviser la coalition. Élections de mi-mandat US en novembre 2026 : déjà ciblées par des opérations d'influence."
         }
     },
     "alerts": [
-        "🔧 PROTOCOLE DE RECALIBRATION ACTIVÉ",
-        "📅 2028 : la Friction Géopolitique catalyse l'Epuisement Energétique. Probabilité de rupture de la chaîne causale : 85%.",
-        "⚠️ Ω_BIOSPHERE : Seuil critique atteint",
-        "⚔️ Σ_CONFLICT : Tensions maximales"
+        "⏰ ULTIMATUM 6 AVRIL 20h EST : Trump menace de détruire les infrastructures électriques et usines de dessalement iraniennes si Hormuz n'est pas rouvert. L'IRGC contrôle de facto le gouvernement — Pezeshkian ne peut pas négocier.",
+        "🛢️ ÉNERGIE CRITIQUE — IEA : 'Pire crise pétrolière de l'histoire, pire que 1973+1979 combinés.' Brent $112, pic $166. Avril sera pire que mars. JPMorgan : récession mondiale à 60%.",
+        "💰 FINANCE : Stagflation en formation. FED bloquée. -92 000 emplois US en fév. Tarifs Trump persistants. Oxford Economics : récession certaine si $140/baril × 2 mois.",
+        "🇺🇦 UKRAINE : Moscou rejette le cessez-le-feu de Pâques. Exige retrait ukrainien du Donbas sous 2 mois. Russie a capturé 1 927 km² en un an.",
+        "☢️ BUSHEHR : Explosions signalées à la centrale nucléaire le 4 avril. Risques radiologiques non confirmés.",
+        "📅 2028 : la Friction Géopolitique catalyse l'Epuisement Energétique. Probabilité de rupture de la chaîne causale : 86%."
     ],
     "archives": [
-        {
-            "year": "1914",
-            "score": 30,
-            "desc": "Rupture de l'équilibre des alliances"
-        },
-        {
-            "year": "1918",
-            "score": 42,
-            "desc": "Effondrement démographique viral"
-        },
-        {
-            "year": "1929",
-            "score": 45,
-            "desc": "Dislocation des vecteurs de crédit"
-        },
-        {
-            "year": "1939",
-            "score": 20,
-            "desc": "Friction cinétique globale"
-        },
-        {
-            "year": "1945",
-            "score": 10,
-            "desc": "Entropie géopolitique maximale"
-        },
-        {
-            "year": "1962",
-            "score": 62,
-            "desc": "Tension nucléaire critique"
-        },
-        {
-            "year": "1973",
-            "score": 65,
-            "desc": "Choc des ressources fossiles"
-        },
-        {
-            "year": "2001",
-            "score": 58,
-            "desc": "Asymétrie sécuritaire globale"
-        },
-        {
-            "year": "2008",
-            "score": 50,
-            "desc": "Toxicité des actifs financiers"
-        },
-        {
-            "year": "2020",
-            "score": 45,
-            "desc": "Pandémie systémique de classe 4"
-        },
-        {
-            "year": "2022",
-            "score": 45,
-            "desc": "Retour de la guerre haute intensité"
-        }
+        { "year": "1914", "score": 30, "desc": "Rupture de l'équilibre des alliances" },
+        { "year": "1918", "score": 42, "desc": "Effondrement démographique viral" },
+        { "year": "1929", "score": 45, "desc": "Dislocation des vecteurs de crédit" },
+        { "year": "1939", "score": 20, "desc": "Friction cinétique globale" },
+        { "year": "1945", "score": 10, "desc": "Entropie géopolitique maximale" },
+        { "year": "1962", "score": 62, "desc": "Tension nucléaire critique" },
+        { "year": "1973", "score": 65, "desc": "Choc des ressources fossiles" },
+        { "year": "2001", "score": 58, "desc": "Asymétrie sécuritaire globale" },
+        { "year": "2008", "score": 50, "desc": "Toxicité des actifs financiers" },
+        { "year": "2020", "score": 45, "desc": "Pandémie systémique de classe 4" },
+        { "year": "2022", "score": 45, "desc": "Retour de la guerre haute intensité" },
+        { "year": "2026-02", "score": 43, "desc": "Vide de gouvernance nucléaire et informationnel" },
+        { "year": "2026-03-04", "score": 31, "desc": "Choc systémique : guerre Iran, fermeture Hormuz" },
+        { "year": "2026-03-14", "score": 26, "desc": "Guerre d'attrition Iran J+14, stagflation mondiale" },
+        { "year": "2026-04", "score": 27, "desc": "Ultimatum Hormuz, pire crise pétrolière de l'histoire" }
     ]
 }
