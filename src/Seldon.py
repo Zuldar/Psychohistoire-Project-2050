@@ -62,10 +62,10 @@ def recalibrate_weights(current_score, predicted_score, current_pillars):
     if abs(delta) < 5: 
         return weights, False
     
-    if delta < 0: # Trop optimiste
+    if delta < 0:
         weakest = min(current_pillars, key=lambda k: current_pillars[k]['score'] if isinstance(current_pillars[k], dict) else current_pillars[k])
         weights[weakest] = round(weights[weakest] + 0.1, 2)
-    else: # Trop pessimiste
+    else:
         strongest = max(current_pillars, key=lambda k: current_pillars[k]['score'] if isinstance(current_pillars[k], dict) else current_pillars[k])
         weights[strongest] = round(weights[strongest] + 0.1, 2)
     
@@ -89,13 +89,11 @@ def calculate_stability(pillars, weights):
     """Calcul de l'ISM avec pondération"""
     total = 0
     weight_sum = 0
-    
     for k, v in pillars.items():
         score = v['score'] if isinstance(v, dict) else v
         w = weights.get(k, 1.0)
         total += score * w
         weight_sum += w
-    
     return round(total / weight_sum)
 
 # --- 4. GÉNÉRATEUR D'HISTOIRE ---
@@ -126,7 +124,6 @@ def generate_full_history():
             p_val = current_val + random.uniform(-10, 10)
             pillars[k] = max(5, min(100, p_val))
 
-        # Événements spéciaux
         if str(year) == "1929": pillars["finance"] = 15
         if str(year) == "1973": pillars["energie"] = 20
         if str(year) == "2008": pillars["finance"] = 35
@@ -140,36 +137,16 @@ def generate_full_history():
             "description": event_desc 
         })
     
-    monthly_dir = "data/monthly"
-recent = []
-if os.path.exists(monthly_dir):
-    files = sorted([
-        f for f in os.listdir(monthly_dir) if f.endswith('.json')
-    ])[-12:]  # 12 derniers mois
-    for f in files:
-        snap = load_json(f"{monthly_dir}/{f}")
-        if snap:
-            recent.append({
-                "year": snap.get("date", f.replace(".json", "")),
-                "stability_index": snap.get("stability_index", 0),
-                "pillars": {k: (v['score'] if isinstance(v, dict) else v)
-                            for k, v in snap.get("pillars", {}).items()}
-            })
-            save_json(RECENT_HISTORY_FILE, recent)
+    save_json(HISTORY_FILE, history)
     return history
 
-# --- 5. FONCTION D'ARCHIVAGE ANNUEL (V35) ---
+# --- 5. ARCHIVAGE ANNUEL ---
 def archive_current_year(history, current_score, current_pillars):
-    """Met à jour ou ajoute l'année en cours dans le fichier historique"""
     current_year_str = str(datetime.now().year)
-    
-    # On cherche si l'année existe déjà
     found = False
     for entry in history:
         if entry['year'] == current_year_str:
-            # Mise à jour de l'entrée existante
             entry['stability_index'] = current_score
-            # On simplifie les piliers pour l'historique (juste le score, pas les commentaires)
             simple_pillars = {}
             for k, v in current_pillars.items():
                 simple_pillars[k] = v['score'] if isinstance(v, dict) else v
@@ -178,30 +155,25 @@ def archive_current_year(history, current_score, current_pillars):
             break
     
     if not found:
-        # Création de la nouvelle entrée
         simple_pillars = {}
         for k, v in current_pillars.items():
             simple_pillars[k] = v['score'] if isinstance(v, dict) else v
-            
         history.append({
             "year": current_year_str,
             "stability_index": current_score,
             "pillars": simple_pillars,
-            "description": "" # Pas encore d'histoire écrite pour cette année
+            "description": ""
         })
     
-    # Sauvegarde définitive dans le fichier V3
     save_json(HISTORY_FILE, history)
-    print(f"💾 Archivage annuel : L'année {current_year_str} a été sauvegardée dans l'Histoire (Score: {current_score}%).")
+    print(f"💾 Archivage annuel : {current_year_str} sauvegardé (Score: {current_score}%).")
     return history
 
-# --- 6. ARCHIVAGE MENSUEL (NOUVEAU V36) ---
+# --- 6. ARCHIVAGE MENSUEL ---
 def archive_monthly_snapshot(current_state):
-    """Sauvegarde l'état actuel dans une archive mensuelle"""
     year_month = datetime.now().strftime("%Y-%m")
     monthly_dir = "data/monthly"
     os.makedirs(monthly_dir, exist_ok=True)
-    
     monthly_file = f"{monthly_dir}/{year_month}.json"
     save_json(monthly_file, current_state)
     print(f"📅 Archive mensuelle créée : {monthly_file}")
@@ -209,7 +181,7 @@ def archive_monthly_snapshot(current_state):
 
 # --- 7. EXÉCUTION PRINCIPALE ---
 def update_seldon():
-    print("🔮 Démarrage Seldon Bot V36 (Archiviste + Mensuel)...")
+    print("🔮 Démarrage Seldon Bot V37...")
     weights = get_weights()
 
     # A. CHARGEMENT
@@ -234,7 +206,6 @@ def update_seldon():
         "accuracy_history": [] 
     }
     
-    accuracy = 100
     divergence_msg = None
     was_recalibrated = False
 
@@ -243,18 +214,14 @@ def update_seldon():
         delta = abs(new_score - predicted)
         accuracy = max(0, 100 - (delta * 3))
         memory["accuracy_history"].append(accuracy)
-        
         if len(memory["accuracy_history"]) > 10: 
             memory["accuracy_history"].pop(0)
-        
         avg_acc = int(sum(memory["accuracy_history"]) / len(memory["accuracy_history"]))
         weights, was_recalibrated = recalibrate_weights(new_score, predicted, current['pillars'])
-        
         if delta > 8: 
             divergence_msg = f"⚠️ DIVERGENCE SELDON (Delta: {delta})"
         if was_recalibrated: 
             divergence_msg = "🔧 PROTOCOLE DE RECALIBRATION ACTIVÉ"
-        
         current['model_accuracy'] = avg_acc
     else: 
         current['model_accuracy'] = 100
@@ -262,12 +229,12 @@ def update_seldon():
     memory["predicted_score_for_today"] = new_score + random.choice([-1, 0, 1])
     save_json(MEMORY_FILE, memory)
 
-    # D. CALCUL DE LA DATE DE CRISE DYNAMIQUE
+    # D. DATE DE CRISE
     current_year = datetime.now().year
     years_until_crisis = max(1, min(9, int((new_score - 25) / 5)))
     crisis_year = current_year + years_until_crisis
 
-    # E. ARCHIVES & SAUVEGARDE DU PRÉSENT
+    # E. ARCHIVES
     history = archive_current_year(history, new_score, current['pillars'])
 
     past_crises = []
@@ -279,19 +246,33 @@ def update_seldon():
                 "desc": e['description']
             })
     current['archives'] = past_crises
-    
-    # Mise à jour du fichier pour le graphique (les 6 dernières années)
-    save_json(RECENT_HISTORY_FILE, history[-6:])
 
-    # F. ALERTES SELDONIENNES
+    # Mise à jour recent_history depuis archives mensuelles
+    monthly_dir = "data/monthly"
+    recent = []
+    if os.path.exists(monthly_dir):
+        files = sorted([f for f in os.listdir(monthly_dir) if f.endswith('.json')])[-12:]
+        for f in files:
+            snap = load_json(f"{monthly_dir}/{f}")
+            if snap:
+                recent.append({
+                    "year": snap.get("date", f.replace(".json", "")),
+                    "stability_index": snap.get("stability_index", 0),
+                    "pillars": {k: (v['score'] if isinstance(v, dict) else v)
+                                for k, v in snap.get("pillars", {}).items()}
+                })
+    
+    if recent:
+        save_json(RECENT_HISTORY_FILE, recent)
+    else:
+        save_json(RECENT_HISTORY_FILE, history[-6:])
+
+    # F. ALERTES
     alerts = []
     if divergence_msg: 
         alerts.append(divergence_msg)
     
-    stress_factors = []
-    for k, v in current['pillars'].items():
-        s = v['score'] if isinstance(v, dict) else v
-        stress_factors.append((k, s))
+    stress_factors = [(k, v['score'] if isinstance(v, dict) else v) for k, v in current['pillars'].items()]
     stress_factors.sort(key=lambda x: x[1])
     
     worst_1 = stress_factors[0]
@@ -308,8 +289,7 @@ def update_seldon():
     if new_score > 65:
         alerts.append("📅 HORIZON STABLE : Aucune convergence systémique immédiate.")
     else:
-        seldon_prophecy = f"📅 {crisis_year} : {term_1} catalyse {term_2}. Probabilité de rupture de la chaîne causale : {psi_total}%."
-        alerts.append(seldon_prophecy)
+        alerts.append(f"📅 {crisis_year} : {term_1} catalyse {term_2}. Probabilité de rupture de la chaîne causale : {psi_total}%.")
 
     if current['pillars']['environnement']['score'] < 40: 
         alerts.append("⚠️ Ω_BIOSPHERE : Seuil critique atteint")
@@ -319,44 +299,30 @@ def update_seldon():
     current['alerts'] = alerts
     save_json(CURRENT_STATE_FILE, current)
 
-    # G. PROJECTIONS
-    projections = { 
-        "optimiste": [], 
-        "tendantielle": [], 
-        "pessimiste": [] 
-    }
-    
-    uncertainty = (100 - current.get('model_accuracy', 100)) / 5
-    
+    # G. PROJECTIONS CONTRASTÉES
+    projections = {"optimiste": [], "tendantielle": [], "pessimiste": []}
+    uncertainty = (100 - current.get('model_accuracy', 96)) / 5
+
     for i in range(1, 11):
-        y = int(current_year + i)
-        drift = -0.5 * i
+        y = str(int(current_year) + i)
+        drift = -0.3 * i
         base = max(0, min(100, new_score + drift))
-        
-        if y == crisis_year: 
-            base -= 10
-        elif y == crisis_year + 1: 
-            base -= 5
-        
-        projections["tendantielle"].append({ 
-            "year": str(y), 
-            "stability_index": round(base) 
-        })
-        projections["optimiste"].append({ 
-            "year": str(y), 
-            "stability_index": round(min(98, base + i * (1.5 + uncertainty))) 
-        })
-        projections["pessimiste"].append({ 
-            "year": str(y), 
-            "stability_index": round(max(5, base - i * (2.0 + uncertainty))) 
-        })
-        
+
+        if int(y) == crisis_year:
+            base -= 12
+        elif int(y) == crisis_year + 1:
+            base -= 6
+
+        projections["tendantielle"].append({"year": y, "stability_index": round(base)})
+        projections["optimiste"].append({"year": y, "stability_index": round(min(98, base + i * (2.5 + uncertainty)))})
+        projections["pessimiste"].append({"year": y, "stability_index": round(max(3, base - i * (2.8 + uncertainty)))})
+
     save_json(PROJECTION_FILE, {"scenarios": projections})
 
-    # H. ARCHIVAGE MENSUEL (V36)
+    # H. ARCHIVAGE MENSUEL
     archive_monthly_snapshot(current)
     
-    print("✅ Seldon V36 terminé (Archives annuelles + mensuelles sauvegardées).")
+    print("✅ Seldon V37 terminé.")
 
 if __name__ == "__main__":
     update_seldon()
