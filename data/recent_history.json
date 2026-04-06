@@ -1,86 +1,36 @@
 [
     {
-        "year": "2021",
-        "stability_index": 44,
+        "year": "2026-01-30 17:52",
+        "stability_index": 48,
         "pillars": {
-            "energie": 52.942514441187015,
-            "environnement": 48.13046407377128,
-            "espace": 51.988878025680336,
-            "demographie_social": 45.046002699141845,
-            "sante_bio": 35.07722518278021,
-            "geopolitique": 38.67129155354653,
-            "technologie_ia": 46.85925558820129,
-            "finance": 38.12410412992435,
-            "information": 40.86160708102719
-        },
-        "description": ""
+            "technologie_ia": 85,
+            "environnement": 36,
+            "energie": 52,
+            "geopolitique": 28,
+            "demographie_social": 40,
+            "finance": 45,
+            "sante_bio": 62,
+            "espace": 38,
+            "information": 38
+        }
     },
     {
-        "year": "2022",
-        "stability_index": 45,
+        "year": "2026-02-15 10:24",
+        "stability_index": 48,
         "pillars": {
-            "energie": 49.99600153284367,
-            "environnement": 42.904806900639585,
-            "espace": 35.44978114852546,
-            "demographie_social": 45.754042090026886,
-            "sante_bio": 42.51050536641222,
-            "geopolitique": 36.00460631379421,
-            "technologie_ia": 47.75165304246451,
-            "finance": 49.92522683573807,
-            "information": 50.31404730593106
-        },
-        "description": "Retour de la guerre haute intensité"
+            "technologie_ia": 85,
+            "environnement": 36,
+            "energie": 52,
+            "geopolitique": 28,
+            "demographie_social": 40,
+            "finance": 45,
+            "sante_bio": 62,
+            "espace": 38,
+            "information": 38
+        }
     },
     {
-        "year": "2023",
-        "stability_index": 45,
-        "pillars": {
-            "energie": 50.64095332003316,
-            "environnement": 41.06047361666466,
-            "espace": 53.268290403609754,
-            "demographie_social": 36.4659297463659,
-            "sante_bio": 53.57727765807967,
-            "geopolitique": 45.14341415270863,
-            "technologie_ia": 43.94731814412751,
-            "finance": 54.14386704961804,
-            "information": 37.80667095557349
-        },
-        "description": ""
-    },
-    {
-        "year": "2024",
-        "stability_index": 45,
-        "pillars": {
-            "energie": 49.43210515294419,
-            "environnement": 48.616053060119555,
-            "espace": 39.73922498635314,
-            "demographie_social": 37.63721039576063,
-            "sante_bio": 44.35806891871691,
-            "geopolitique": 43.8655540327357,
-            "technologie_ia": 50.49062638643348,
-            "finance": 41.75706391399993,
-            "information": 41.193810973187325
-        },
-        "description": ""
-    },
-    {
-        "year": "2025",
-        "stability_index": 45,
-        "pillars": {
-            "energie": 54.04464966569907,
-            "environnement": 35.74739084748142,
-            "espace": 42.200416760314916,
-            "demographie_social": 49.82369759020947,
-            "sante_bio": 49.366422789842446,
-            "geopolitique": 53.759622200826556,
-            "technologie_ia": 46.45239879927986,
-            "finance": 43.450562850348504,
-            "information": 37.582705813771334
-        },
-        "description": ""
-    },
-    {
-        "year": "2026",
+        "year": "2026-03-14 09:10",
         "stability_index": 35,
         "pillars": {
             "technologie_ia": 79,
@@ -92,7 +42,6 @@
             "sante_bio": 52,
             "espace": 38,
             "information": 27
-        },
-        "description": ""
+        }
     }
 ]
