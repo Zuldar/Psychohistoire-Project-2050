@@ -1,7 +1,7 @@
 {
-    "date": "2026-04-27 10:00",
-    "stability_index": 27,
-    "model_accuracy": 98,
+    "date": "2026-04-27 21:03",
+    "stability_index": 35,
+    "model_accuracy": 94,
     "global_analysis": "À J+58 de l'Opération Epic Fury, le monde est entré dans une phase de guerre d'attrition diplomatique sans précédent : un cessez-le-feu fragile tient depuis début avril, mais le Détroit d'Hormuz reste effectivement fermé dans un contexte de double blocus — Iran bloquant le trafic commercial, USA bloquant les ports iraniens. Le Brent oscille à $107/baril. Le FMI a publié son WEO d'avril sous le titre 'Global Economy in the Shadow of War' : croissance mondiale révisée à 3,1%, inflation à 4,4%, avec un scénario sévère à 6% si la fermeture d'Hormuz persiste. L'Ukraine est en suspens diplomatique, Washington étant absorbé par la crise iranienne. La NPT Review Conference s'ouvre le 27 avril 2026 — ironiquement au moment où le cadre de non-prolifération est le plus fragilisé depuis 1968.",
     "pillars": {
         "technologie_ia": {
@@ -42,28 +42,65 @@
         }
     },
     "alerts": [
-        "🛢️ DOUBLE BLOCUS HORMUZ (27 avril) : Iran = péages $1M+/navire, USA = blocus des ports iraniens. Brent à $107. Nouvelle proposition iranienne via Pakistan examinée par Trump. Résolution incertaine.",
-        "📉 FMI WEO AVRIL 2026 : 'Global Economy in the Shadow of War'. Croissance 3,1%, inflation 4,4%. Scénario sévère : croissance 2%, inflation 6%+ si conflit prolongé.",
-        "☢️ NPT REVIEW CONFERENCE ouvre le 27 avril 2026 : cadre de non-prolifération le plus fragilisé depuis 1968. New START expiré, Iran nucléaire actif, RPDC non-signataire.",
-        "🇺🇦 UKRAINE : Cessez-le-feu de Pâques de 32h tenu (11-12 avril). Négociations toujours bloquées sur le territoire. Washington absorbé par l'Iran — Zelensky avertit d'un printemps-été 'très difficile'.",
-        "🤖 IA SURVEILLANCE : Politique nationale IA US (20 mars) accélère collecte données fédérales + privées. NAACP vs xAI (Clean Air Act). Personas IA infiltrent les débats publics à grande échelle.",
-        "📅 2028 : la Friction Géopolitique catalyse l'Epuisement Energétique. Probabilité de rupture de la chaîne causale : 86%."
+        "📅 2028 : la Friction Géopolitique catalyse l'Epuisement Energétique. Probabilité de rupture de la chaîne causale : 85%.",
+        "⚠️ Ω_BIOSPHERE : Seuil critique atteint",
+        "⚔️ Σ_CONFLICT : Tensions maximales"
     ],
     "archives": [
-        { "year": "1914", "score": 30, "desc": "Rupture de l'équilibre des alliances" },
-        { "year": "1918", "score": 42, "desc": "Effondrement démographique viral" },
-        { "year": "1929", "score": 45, "desc": "Dislocation des vecteurs de crédit" },
-        { "year": "1939", "score": 20, "desc": "Friction cinétique globale" },
-        { "year": "1945", "score": 10, "desc": "Entropie géopolitique maximale" },
-        { "year": "1962", "score": 62, "desc": "Tension nucléaire critique" },
-        { "year": "1973", "score": 65, "desc": "Choc des ressources fossiles" },
-        { "year": "2001", "score": 58, "desc": "Asymétrie sécuritaire globale" },
-        { "year": "2008", "score": 50, "desc": "Toxicité des actifs financiers" },
-        { "year": "2020", "score": 45, "desc": "Pandémie systémique de classe 4" },
-        { "year": "2022", "score": 45, "desc": "Retour de la guerre haute intensité" },
-        { "year": "2026-02", "score": 43, "desc": "Vide de gouvernance nucléaire et informationnel" },
-        { "year": "2026-03-04", "score": 31, "desc": "Choc systémique : guerre Iran, fermeture Hormuz" },
-        { "year": "2026-03-14", "score": 26, "desc": "Guerre d'attrition Iran J+14, stagflation mondiale" },
-        { "year": "2026-04", "score": 27, "desc": "Double blocus Hormuz, FMI 'Shadow of War'" }
+        {
+            "year": "1914",
+            "score": 30,
+            "desc": "Rupture de l'équilibre des alliances"
+        },
+        {
+            "year": "1918",
+            "score": 42,
+            "desc": "Effondrement démographique viral"
+        },
+        {
+            "year": "1929",
+            "score": 45,
+            "desc": "Dislocation des vecteurs de crédit"
+        },
+        {
+            "year": "1939",
+            "score": 20,
+            "desc": "Friction cinétique globale"
+        },
+        {
+            "year": "1945",
+            "score": 10,
+            "desc": "Entropie géopolitique maximale"
+        },
+        {
+            "year": "1962",
+            "score": 62,
+            "desc": "Tension nucléaire critique"
+        },
+        {
+            "year": "1973",
+            "score": 65,
+            "desc": "Choc des ressources fossiles"
+        },
+        {
+            "year": "2001",
+            "score": 58,
+            "desc": "Asymétrie sécuritaire globale"
+        },
+        {
+            "year": "2008",
+            "score": 50,
+            "desc": "Toxicité des actifs financiers"
+        },
+        {
+            "year": "2020",
+            "score": 45,
+            "desc": "Pandémie systémique de classe 4"
+        },
+        {
+            "year": "2022",
+            "score": 45,
+            "desc": "Retour de la guerre haute intensité"
+        }
     ]
 }

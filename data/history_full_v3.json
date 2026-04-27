@@ -2019,15 +2019,15 @@
         "year": "2026",
         "stability_index": 35,
         "pillars": {
-            "technologie_ia": 78,
-            "environnement": 27,
-            "energie": 16,
-            "geopolitique": 12,
-            "demographie_social": 31,
-            "finance": 23,
-            "sante_bio": 51,
-            "espace": 39,
-            "information": 26
+            "technologie_ia": 77,
+            "environnement": 26,
+            "energie": 19,
+            "geopolitique": 14,
+            "demographie_social": 30,
+            "finance": 24,
+            "sante_bio": 50,
+            "espace": 40,
+            "information": 25
         },
         "description": ""
     }
