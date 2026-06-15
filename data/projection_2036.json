@@ -3,95 +3,95 @@
         "optimiste": [
             {
                 "year": "2027",
-                "stability_index": 38
+                "stability_index": 45
             },
             {
                 "year": "2028",
-                "stability_index": 29
+                "stability_index": 49
             },
             {
                 "year": "2029",
-                "stability_index": 39
+                "stability_index": 40
             },
             {
                 "year": "2030",
-                "stability_index": 48
+                "stability_index": 50
             },
             {
                 "year": "2031",
-                "stability_index": 51
+                "stability_index": 59
             },
             {
                 "year": "2032",
-                "stability_index": 54
+                "stability_index": 62
             },
             {
                 "year": "2033",
-                "stability_index": 57
+                "stability_index": 66
             },
             {
                 "year": "2034",
-                "stability_index": 61
+                "stability_index": 69
             },
             {
                 "year": "2035",
-                "stability_index": 64
+                "stability_index": 73
             },
             {
                 "year": "2036",
-                "stability_index": 67
+                "stability_index": 76
             }
         ],
         "tendantielle": [
             {
                 "year": "2027",
-                "stability_index": 35
+                "stability_index": 42
             },
             {
                 "year": "2028",
-                "stability_index": 22
+                "stability_index": 41
             },
             {
                 "year": "2029",
-                "stability_index": 28
+                "stability_index": 29
             },
             {
                 "year": "2030",
-                "stability_index": 34
+                "stability_index": 35
             },
             {
                 "year": "2031",
-                "stability_index": 34
+                "stability_index": 40
             },
             {
                 "year": "2032",
-                "stability_index": 33
+                "stability_index": 40
             },
             {
                 "year": "2033",
-                "stability_index": 33
+                "stability_index": 40
             },
             {
                 "year": "2034",
-                "stability_index": 33
+                "stability_index": 40
             },
             {
                 "year": "2035",
-                "stability_index": 32
+                "stability_index": 39
             },
             {
                 "year": "2036",
-                "stability_index": 32
+                "stability_index": 39
             }
         ],
         "pessimiste": [
             {
                 "year": "2027",
-                "stability_index": 31
+                "stability_index": 38
             },
             {
                 "year": "2028",
-                "stability_index": 15
+                "stability_index": 33
             },
             {
                 "year": "2029",
@@ -103,19 +103,19 @@
             },
             {
                 "year": "2031",
-                "stability_index": 14
+                "stability_index": 20
             },
             {
                 "year": "2032",
-                "stability_index": 10
+                "stability_index": 16
             },
             {
                 "year": "2033",
-                "stability_index": 6
+                "stability_index": 12
             },
             {
                 "year": "2034",
-                "stability_index": 3
+                "stability_index": 8
             },
             {
                 "year": "2035",
