@@ -1,106 +1,71 @@
 {
-    "date": "2026-06-15 15:44",
-    "stability_index": 35,
+    "date": "2026-06-15 10:00",
+    "stability_index": 38,
     "model_accuracy": 95,
-    "global_analysis": "À J+58 de l'Opération Epic Fury, le monde est entré dans une phase de guerre d'attrition diplomatique sans précédent : un cessez-le-feu fragile tient depuis début avril, mais le Détroit d'Hormuz reste effectivement fermé dans un contexte de double blocus — Iran bloquant le trafic commercial, USA bloquant les ports iraniens. Le Brent oscille à $107/baril. Le FMI a publié son WEO d'avril sous le titre 'Global Economy in the Shadow of War' : croissance mondiale révisée à 3,1%, inflation à 4,4%, avec un scénario sévère à 6% si la fermeture d'Hormuz persiste. L'Ukraine est en suspens diplomatique, Washington étant absorbé par la crise iranienne. La NPT Review Conference s'ouvre le 27 avril 2026 — ironiquement au moment où le cadre de non-prolifération est le plus fragilisé depuis 1968.",
+    "global_analysis": "Coup de théâtre : le 15 juin 2026, les États-Unis et l'Iran ont annoncé un accord pour mettre fin aux hostilités et rouvrir le Détroit d'Hormuz, avec signature prévue le 19 juin via médiation pakistanaise. Le Brent a chuté de 5% sous $83 — déjà deux tiers du chemin vers les niveaux d'avant-guerre. Mais la prudence domine : les marchés savent que la normalisation des flux pétroliers prendra des mois, le déminage d'Hormuz reste à faire, et un échange de tirs Israël-Iran le 7 juin a rappelé la fragilité du cessez-le-feu existant depuis avril. Pendant ce temps, le front ukrainien reste figé — une trêve de mai pour le Jour de la Victoire n'a pas débouché sur des négociations sérieuses, Moscou refusant de présenter son mémorandum. Paradoxe frappant : alors que la géopolitique respire un peu, les marchés financiers américains atteignent des records historiques portés par l'IA, créant une dissonance entre l'économie réelle sous tension et la valorisation des marchés.",
     "pillars": {
         "technologie_ia": {
-            "score": 77,
-            "comment": "La convergence IA-défense atteint un nouveau seuil : politique nationale IA US publiée le 20 mars 2026, favorisant le déploiement industriel et la collecte de données fédérales pour l'entraînement. La CIA accélère son cadre d'acquisition IA avec le secteur privé — frontière civil/militaire de plus en plus floue. Harvard Chan School (8 avril) documente les impacts sanitaires des data centers IA : pollution aux particules fines, risques de santé publique non pris en compte dans la planification. NAACP poursuit xAI pour violation du Clean Air Act (turbines sans permis, communautés noires de Memphis impactées). Le concept de 'Planetary Intelligence' (WEO janv. 2026) prend corps opérationnellement : IA satellite pour surveiller Hormuz, flux agricoles, glaciers en temps réel. Score en légère baisse : militarisation, surveillance et impacts sanitaires contrebalancent les avancées scientifiques."
+            "score": 80,
+            "comment": "Rebond du score : le S&P 500 a dépassé 7 600 points début juin, porté par l'IA, avant un repli de 4% suite à une correction technologique (Raspberry Pi -11%, SAP -3.6% en Europe le 10 juin). Le consensus Wall Street reste 'AI supercycle' comme principal moteur de l'expansion 2026 (JPMorgan, BlackRock). Risque structurel confirmé : concentration de capitalisation sans précédent dans quelques entreprises liées à l'IA, valorisations proches des niveaux de la bulle dot-com. Les IPO attendues de SpaceX, OpenAI et Anthropic pourraient absorber des capitaux et accentuer la volatilité sectorielle. Intel présente 'Hala Point', avancée majeure pour l'efficacité énergétique de l'IA — signal positif pour le pilier énergie/IA combiné."
         },
         "environnement": {
-            "score": 26,
-            "comment": "Catastrophe environnementale en cours dans le Golfe Persique : frappes sur raffineries iraniennes, incendies de puits, nappes de pétrole documentées par le PNUE. Le Lancet Countdown Europe (publié 21 avril 2026) identifie une 'fenêtre se rétrécissant pour des actions décisives sur la santé climatique'. Nature (9 avril) : le consensus de Stern sur le coût de l'inaction climatique fracturé politiquement, risquant des factures encore plus lourdes pour les générations futures. ScienceDaily (24 avril) : les deltas fluviaux — où vivent des centaines de millions de personnes — s'enfoncent plus vite que la montée des mers. Les baleines grises brisent leurs routes migratoires historiques (25 avril), signal d'un effondrement des écosystèmes marins arctiques. La crise pétrolière ralentit mécaniquement la transition énergétique mondiale."
+            "score": 30,
+            "comment": "Légère amélioration relative : la perspective de réouverture d'Hormuz réduit la pression immédiate sur la demande de production fossile d'urgence. Mais les dégâts environnementaux cumulés depuis février (incendies de puits, marées noires dans le Golfe, dommages à au moins 40 infrastructures énergétiques dans 9 pays) restent non résorbés. La crise a durablement détourné l'attention politique mondiale de l'agenda climatique. Le boom de l'IA continue de peser sur la consommation électrique mondiale, partiellement compensé par les avancées en efficacité énergétique (Intel Hala Point)."
         },
         "energie": {
-            "score": 19,
-            "comment": "Situation toujours critique mais légère décompression par rapport au pic de mars. Brent à $107/baril le 27 avril (vs $119 au pic du 19 mars), WTI à $96,5. Le double blocus persiste : Iran contrôle le trafic dans Hormuz avec des péages de $1M+/navire, US Navy bloque les ports iraniens depuis le 13 avril. Seuls 12 navires/jour transitent (vs 20-25 normalement). 230 pétroliers chargés toujours bloqués dans le Golfe. Iran a soumis une nouvelle proposition via le Pakistan le 27 avril : réouverture d'Hormuz en échange de la levée du blocus américain et du report des discussions nucléaires. Même si Hormuz rouvre, les analystes estiment que les flux pétroliers pourraient mettre des mois à se normaliser. Le FMI chiffre l'impact à une hausse de 80% des prix de l'énergie dans son scénario de référence Q2 2026."
+            "score": 42,
+            "comment": "AMÉLIORATION MAJEURE. Le 15 juin, accord USA-Iran annoncé pour mettre fin au conflit et rouvrir le Détroit d'Hormuz — signature prévue le 19 juin via médiation pakistanaise (Premier ministre Sharif). Brent chute de 5% sous $83/baril, WTI à ~$80 — plus bas niveau depuis début mars, mais encore +40% depuis janvier. Accord en 14 points : levée des sanctions pétrolières, engagement iranien de rouvrir Hormuz dans les 30 jours, démantèlement du programme nucléaire en échange d'incitations économiques (probabilité estimée à 80% par un officiel US). Les contrats à terme à février 2027 restent autour de $80 — les marchés savent que la normalisation prendra du temps : déminage du détroit, redémarrage des champs pétroliers, réparation des infrastructures endommagées. Score en forte hausse mais prudence de mise."
         },
         "geopolitique": {
-            "score": 14,
-            "comment": "Score au niveau historique bas maintenu. Cessez-le-feu fragile Iran-USA-Israël depuis le 8 avril, prolongé par Trump le 21 avril 'pending negotiations', mais négociations bloquées : Trump a annulé la mission Witkoff/Kushner au Pakistan le 26 avril après qu'Araghchi a refusé de négocier 'sous blocus'. Iran soumet une nouvelle proposition le 27 avril via Pakistan — Trump l'examine avec son équipe de sécurité nationale. Front libanais : Israël continue ses frappes malgré le cessez-le-feu étendu de 3 semaines, Hezbollah contre-attaque. NPT Review Conference ouvre le 27 avril 2026 — contexte le plus difficile depuis 1968 (New START expiré, Iran nucléaire en cours, RPDC). Ukraine : cessez-le-feu de Pâques de 32h tenu (11-12 avril), échange de 175 prisonniers, mais négociations toujours bloquées sur le territoire. Pakistan-Afghanistan : conflit actif. Venezuela : opération militaire US en cours."
+            "score": 24,
+            "comment": "Première amélioration significative depuis février. L'accord USA-Iran du 15 juin (signature prévue le 19 juin, fin formelle du conflit visée dans les 60 jours) marque un tournant potentiel après plus de 3 mois de guerre. Cependant, fragilité confirmée le 7 juin : Israël a frappé le sud de Beyrouth, provoquant des tirs de missiles balistiques iraniens vers Israël — première confrontation directe Iran-Israël depuis le cessef-feu d'avril, désamorcée in extremis par intervention américaine le 14 juin pour permettre la signature du protocole. L'AIEA n'a toujours pas pu reprendre les inspections nucléaires en Iran depuis juin 2025 — Grossi (AIEA) avertit qu'un accord sans inspections serait une 'illusion'. Côté Ukraine : trêve du 9-11 mai (Jour de la Victoire) tenue mais sans suite diplomatique ; Zelensky doute des pourparlers du 2 juin, Moscou n'ayant pas présenté son mémorandum promis. Marchés de prédiction : seulement 9.5% de probabilité d'un cessez-le-feu Ukraine d'ici fin juin."
         },
         "demographie_social": {
-            "score": 30,
-            "comment": "Iran : 3 400 morts depuis le début des frappes le 28 février (Croissant-Rouge iranien, 24 avril). Les perturbations sociales persistent : internet en Iran à niveau très bas, exode partiel de Téhéran. En Ukraine, fatigue de guerre maximale après 4+ ans — Zelensky avertit que 'ce printemps-été sera très difficile politiquement et diplomatiquement'. Sentiment des consommateurs américains en dégradation continue liée aux prix du carburant et à l'incertitude. Élections de mi-mandat US en novembre 2026 créent une pression politique additionnelle. La fracture sociale sur les data centers IA s'intensifie aux USA : protestations citoyennes documentées, NAACP en justice contre xAI, Potomac River déclaré 'plus menacé' des USA à cause des data centers. Surveillance de masse IA documentée par Live Science (27 avril) — frontière légale civil/sécurité nationale de plus en plus floue."
+            "score": 35,
+            "comment": "Amélioration modeste liée à la désescalade Iran. Mais les fractures sociales restent profondes : un sondage Chatham House de mars 2026 montre que 46% des Ukrainiens craignent qu'un cessez-le-feu génère une instabilité interne accrue (fractures entre mobilisés et 'évadés', entre exilés et restés). En Iran, la reconstruction post-conflit sera massive après 3 400+ morts et destructions d'infrastructures dans 9 pays. Le déplacement de l'attention diplomatique US vers l'Iran a réduit le soutien à l'Ukraine, un facteur que les marchés de prédiction citent explicitement comme renforçant la position russe."
         },
         "finance": {
-            "score": 24,
-            "comment": "Dégradation confirmée par le FMI. WEO avril 2026 : croissance mondiale à 3,1% (vs 3,4% prévu en janvier), inflation mondiale à 4,4%, scénario sévère à 6%+ si conflit prolongé. Brent à $107 — hausse de ~$40 sur un an. L'IEA décrit la crise comme 'le plus grand choc d'approvisionnement énergétique de l'histoire'. Dépenses de défense mondiales en hausse structurelle : le FMI estime qu'un boom de défense typique augmente la dette publique de 7 points de PIB en 3 ans et réduit les dépenses sociales. FED bloquée entre inflation persistante (core PCE US 3,1%) et risque de ralentissement. Scénario de stagflation 1973 toujours le plus cité. L'impact sera 'particulièrement prononcé pour les économies émergentes importatrices de commodités avec des vulnérabilités préexistantes' (FMI)."
+            "score": 36,
+            "comment": "Amélioration nette grâce à la chute pétrolière. Le S&P 500 a dépassé les 7 600 points début juin (record historique, +16% depuis son point bas de mars), porté par l'IA, malgré un repli de 4% lié à une correction technologique. La baisse du Brent sous $83 réduit immédiatement la pression inflationniste liée à l'énergie. Mais les risques structurels demeurent : tarifs Trump toujours en place, valorisations IA proches des niveaux de la bulle dot-com selon LSEG Datastream, et plus de la moitié des stratèges actions s'attendent à une correction dans les prochains mois (sondage Reuters). 'Disconnect entre l'environnement positif de court terme pour les actifs à risque et une instabilité structurelle plus large' (Fidelity)."
         },
         "sante_bio": {
-            "score": 50,
-            "comment": "Nouveau variant COVID BA.3.2 en circulation aux USA depuis début avril (impact modéré selon PHCC). RFK Jr. affirme le 17 avril que les USA ont 'contenu' les foyers de rougeole — affirmation contestée. Hausse des cas de rotavirus. Le Lancet Countdown Europe (21 avril) : fenêtre d'action climatique pour la santé qui se rétrécit. Harvard Chan School (8 avril) : impacts sanitaires des data centers IA sur la santé publique sous-évalués. Les disruptions humanitaires liées à la guerre Iran (3 400 morts, systèmes de santé sous pression, chaînes médicales perturbées) pèsent sur le score global. Legère baisse vs mars en raison de la montée des risques sanitaires secondaires."
+            "score": 54,
+            "comment": "Légère amélioration : la désescalade Iran réduit les risques sanitaires directs liés au conflit (bombardements, disruptions de chaînes médicales). Cependant, la reconstruction sanitaire post-conflit en Iran et au Liban (2 000+ morts, 1 million de déplacés au Liban selon Wikipedia) représente un défi humanitaire majeur à venir. Aucune alerte pandémique nouvelle identifiée."
         },
         "espace": {
-            "score": 40,
-            "comment": "Nature (9 avril) : appel à un modèle d'exploration spatiale fondé sur la gestion responsable ('stewardship') et non l'exploitation, dans le contexte de la nouvelle course à l'espace. Découverte astronomique majeure : une deuxième planète en formation autour d'une jeune étoile observée (Nature, 9 avril) — seulement le 2e exemple connu. Le concept de 'Planetary Intelligence' (WEF) converge avec l'observation spatiale : IA satellite pour surveiller Hormuz, agriculture, glaces en temps réel. La militarisation de l'orbite basse progresse sans cadre juridique contraignant. Score stable : la dynamique scientifique et commerciale résiste à la crise géopolitique."
+            "score": 41,
+            "comment": "Pilier stable à légèrement positif. Les IPO attendues de SpaceX, OpenAI et Anthropic en 2026 sont citées par les analystes comme des événements majeurs pouvant redistribuer les flux de capitaux mondiaux. Intel 'Hala Point' représente une avancée significative pour l'IA embarquée et potentiellement les applications spatiales/satellite. La dynamique commerciale du secteur reste robuste malgré le contexte géopolitique."
         },
         "information": {
-            "score": 25,
-            "comment": "Dégradation notable. ScienceDaily (20 avril) : les personas IA sont 'devenus si réalistes qu'ils peuvent infiltrer des communautés en ligne et orienter subtilement l'opinion publique — contrairement aux bots traditionnels, ils s'adaptent, coordonnent et affinent leurs messages à grande échelle'. Cour d'appel californienne (25 mars) : jury populaire contre YouTube et Meta pour exploitation délibérée des enfants. Surveillance de masse IA accélérée par le gouvernement US (Live Science, 27 avril). Le chaos informationnel persiste autour d'Hormuz : Trump annonce puis annule des négociations en l'espace de 24h. La NPT Review Conference du 27 avril 2026 se tient dans un contexte où aucun consensus international sur la non-prolifération n'est atteignable. Désinformation structurelle sur 7 théâtres de crise simultanés."
+            "score": 30,
+            "comment": "Légère amélioration mais fragilité persistante. L'accord USA-Iran du 15 juin doit encore être signé le 19 juin — un délai de 4 jours dans un contexte où les annonces de cessez-le-feu ont déjà été suivies de violations (cf. avril). La confrontation Iran-Israël du 7 juin, désamorcée par intervention américaine in extremis le 14 juin pour 'sauver' la signature, illustre la fragilité informationnelle et diplomatique persistante. Trump a publiquement affirmé le 5 juin que l'armée iranienne était 'complètement détruite' — rhétorique de victoire qui pourrait compliquer la mise en œuvre de l'accord si Téhéran la perçoit comme humiliante."
         }
     },
     "alerts": [
-        "📅 2028 : la Friction Géopolitique catalyse l'Epuisement Energétique. Probabilité de rupture de la chaîne causale : 85%.",
-        "⚠️ Ω_BIOSPHERE : Seuil critique atteint",
-        "⚔️ Σ_CONFLICT : Tensions maximales"
+        "🕊️ ACCORD USA-IRAN ANNONCÉ (15 juin) : fin des hostilités + réouverture d'Hormuz dans les 30 jours, signature prévue le 19 juin (médiation Pakistan). Probabilité de succès estimée à 80% par un officiel US — mais fin formelle du conflit visée dans 60 jours seulement.",
+        "🛢️ ÉNERGIE EN DÉTENTE : Brent -5% sous $83 (vs pic $119 en mars). Contrats à terme fév. 2027 restent à $80 — normalisation des flux estimée à plusieurs mois (déminage, réparations infrastructures).",
+        "⚠️ FRAGILITÉ CONFIRMÉE (7 juin) : échange de tirs Israël-Iran après frappe sur Beyrouth — 1ère confrontation directe depuis le cessez-le-feu d'avril, désamorcée le 14 juin in extremis pour permettre la signature.",
+        "☢️ AIEA (Grossi) : inspections nucléaires iraniennes toujours impossibles depuis juin 2025. Un accord sans inspections serait une 'illusion d'accord'.",
+        "🇺🇦 UKRAINE : trêve du 9-11 mai tenue, mais pourparlers du 2 juin sans résultat (Moscou n'a pas livré son mémorandum). Marchés de prédiction : 9,5% de probabilité de cessez-le-feu d'ici fin juin.",
+        "📈 DISSONANCE MARCHÉS : S&P 500 à un record (7 600+ pts, +16% depuis mars) porté par l'IA, malgré une instabilité géopolitique mondiale persistante. Risque de correction cité par +50% des stratèges (Reuters).",
+        "📅 2028 : la Friction Géopolitique catalyse l'Epuisement Energétique. Probabilité de rupture de la chaîne causale : 71% (en baisse grâce à la désescalade partielle)."
     ],
     "archives": [
-        {
-            "year": "1914",
-            "score": 30,
-            "desc": "Rupture de l'équilibre des alliances"
-        },
-        {
-            "year": "1918",
-            "score": 42,
-            "desc": "Effondrement démographique viral"
-        },
-        {
-            "year": "1929",
-            "score": 45,
-            "desc": "Dislocation des vecteurs de crédit"
-        },
-        {
-            "year": "1939",
-            "score": 20,
-            "desc": "Friction cinétique globale"
-        },
-        {
-            "year": "1945",
-            "score": 10,
-            "desc": "Entropie géopolitique maximale"
-        },
-        {
-            "year": "1962",
-            "score": 62,
-            "desc": "Tension nucléaire critique"
-        },
-        {
-            "year": "1973",
-            "score": 65,
-            "desc": "Choc des ressources fossiles"
-        },
-        {
-            "year": "2001",
-            "score": 58,
-            "desc": "Asymétrie sécuritaire globale"
-        },
-        {
-            "year": "2008",
-            "score": 50,
-            "desc": "Toxicité des actifs financiers"
-        },
-        {
-            "year": "2020",
-            "score": 45,
-            "desc": "Pandémie systémique de classe 4"
-        },
-        {
-            "year": "2022",
-            "score": 45,
-            "desc": "Retour de la guerre haute intensité"
-        }
+        { "year": "1914", "score": 30, "desc": "Rupture de l'équilibre des alliances" },
+        { "year": "1918", "score": 42, "desc": "Effondrement démographique viral" },
+        { "year": "1929", "score": 45, "desc": "Dislocation des vecteurs de crédit" },
+        { "year": "1939", "score": 20, "desc": "Friction cinétique globale" },
+        { "year": "1945", "score": 10, "desc": "Entropie géopolitique maximale" },
+        { "year": "1962", "score": 62, "desc": "Tension nucléaire critique" },
+        { "year": "1973", "score": 65, "desc": "Choc des ressources fossiles" },
+        { "year": "2001", "score": 58, "desc": "Asymétrie sécuritaire globale" },
+        { "year": "2008", "score": 50, "desc": "Toxicité des actifs financiers" },
+        { "year": "2020", "score": 45, "desc": "Pandémie systémique de classe 4" },
+        { "year": "2022", "score": 45, "desc": "Retour de la guerre haute intensité" },
+        { "year": "2026-02", "score": 43, "desc": "Vide de gouvernance nucléaire et informationnel" },
+        { "year": "2026-03-04", "score": 31, "desc": "Choc systémique : guerre Iran, fermeture Hormuz" },
+        { "year": "2026-03-14", "score": 26, "desc": "Guerre d'attrition Iran J+14, stagflation mondiale" },
+        { "year": "2026-04", "score": 27, "desc": "Double blocus Hormuz, FMI 'Shadow of War'" },
+        { "year": "2026-06", "score": 38, "desc": "Accord USA-Iran, désescalade partielle, marchés en dissonance" }
     ]
 }
