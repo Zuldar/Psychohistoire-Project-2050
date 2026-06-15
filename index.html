@@ -25,6 +25,17 @@
         .accuracy-label { font-size: 0.7em; color: #555; font-family: 'Share Tech Mono'; letter-spacing: 1px; }
         .accuracy-val { font-family: 'Orbitron'; font-size: 1.2em; font-weight: bold; }
         @media (max-width: 600px) { .accuracy-box { position: relative; top: 0; right: 0; text-align: center; margin-top: 10px; } }
+
+        /* FLÈCHES DE TENDANCE */
+        .trend-arrow { 
+            font-size: 0.55em; 
+            margin-left: 6px; 
+            vertical-align: middle;
+            display: inline-block;
+        }
+        .trend-up { color: var(--neon-green); }
+        .trend-down { color: var(--neon-red); }
+        .trend-stable { color: #666; }
     </style>
 </head>
 <body>
@@ -146,6 +157,18 @@
             "Ψ_MASS": "SOCIAL", 
             "⚡_ENTROPY": "ÉNERGIE", 
             "📉_CREDIT_FLOW": "FINANCE" 
+        };
+
+        // Icônes et couleurs pour les tendances
+        const trendIcons = {
+            "up": "▲",
+            "down": "▼",
+            "stable": "▬"
+        };
+        const trendClasses = {
+            "up": "trend-up",
+            "down": "trend-down",
+            "stable": "trend-stable"
         };
 
         async function calculateStability(pillars, weights) {
@@ -306,12 +329,15 @@
                 for (const [key, val] of Object.entries(current.pillars)) {
                     let sVal = (typeof val === 'object' && val.score) ? val.score : val;
                     let com = (typeof val === 'object' && val.comment) ? val.comment : "";
+                    let trend = (typeof val === 'object' && val.trend) ? val.trend : "stable";
                     let def = definitions[key] || "Donnée classifiée.";
                     if(com) def += "<br><hr style='border:0; border-top:1px solid #444; margin:8px 0;'>👉 <em style='color:var(--neon-blue)'>" + com + "</em>";
                     let cv = Math.round(sVal);
                     let st = 'good'; if(cv<40) st='bad'; else if(cv<60) st='mid'; if(key==='technologie_ia' && cv>90) st='mid';
+                    let trendIcon = trendIcons[trend] || trendIcons.stable;
+                    let trendClass = trendClasses[trend] || trendClasses.stable;
                     const c = document.createElement('div'); c.className = 'card';
-                    c.innerHTML = `<div class="card-header"><div class="card-title-box"><span class="card-title">${names[key]||key}</span><div class="info-icon">?<div class="tooltip-data"><strong style="color:var(--neon-blue); text-transform:uppercase; display:block; margin-bottom:5px;">${names[key]} (${cv}%)</strong>${def}</div></div></div><span class="card-score c-${st}">${cv}%</span></div><div class="progress-container"><div class="progress-bar bg-${st}" style="width: ${cv}%"></div></div>`;
+                    c.innerHTML = `<div class="card-header"><div class="card-title-box"><span class="card-title">${names[key]||key}</span><div class="info-icon">?<div class="tooltip-data"><strong style="color:var(--neon-blue); text-transform:uppercase; display:block; margin-bottom:5px;">${names[key]} (${cv}%)</strong>${def}</div></div></div><span class="card-score c-${st}">${cv}%<span class="trend-arrow ${trendClass}">${trendIcon}</span></span></div><div class="progress-container"><div class="progress-bar bg-${st}" style="width: ${cv}%"></div></div>`;
                     grid.appendChild(c);
                 }
             } catch(e) { 
