@@ -198,7 +198,33 @@ def update_seldon():
     new_score = calculate_stability(current['pillars'], weights)
     current['stability_index'] = new_score
     current['date'] = datetime.now().strftime("%Y-%m-%d %H:%M")
-    
+
+    # B2. CALCUL DES TENDANCES PAR PILIER (vs mois précédent)
+    monthly_dir_check = "data/monthly"
+    previous_pillars = None
+    if os.path.exists(monthly_dir_check):
+        prev_files = sorted([f for f in os.listdir(monthly_dir_check) if f.endswith('.json')])
+        if prev_files:
+            last_month = load_json(f"{monthly_dir_check}/{prev_files[-1]}")
+            if last_month:
+                previous_pillars = last_month.get('pillars', {})
+
+    for k, v in current['pillars'].items():
+        score = v['score'] if isinstance(v, dict) else v
+        trend = "stable"
+        if previous_pillars and k in previous_pillars:
+            prev_entry = previous_pillars[k]
+            prev_score = prev_entry['score'] if isinstance(prev_entry, dict) else prev_entry
+            diff = score - prev_score
+            if diff > 1:
+                trend = "up"
+            elif diff < -1:
+                trend = "down"
+        if isinstance(v, dict):
+            v['trend'] = trend
+        else:
+            current['pillars'][k] = {"score": score, "trend": trend}
+
     # C. AUTO-CORRECTION
     memory = load_json(MEMORY_FILE) or { 
         "last_run_date": None, 
@@ -326,3 +352,4 @@ def update_seldon():
 
 if __name__ == "__main__":
     update_seldon()
+    
