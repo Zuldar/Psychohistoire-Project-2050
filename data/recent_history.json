@@ -75,18 +75,18 @@
         }
     },
     {
-        "year": "2026-06-15 15:44",
-        "stability_index": 35,
+        "year": "2026-06-15 17:03",
+        "stability_index": 42,
         "pillars": {
-            "technologie_ia": 77,
-            "environnement": 26,
-            "energie": 19,
-            "geopolitique": 14,
-            "demographie_social": 30,
-            "finance": 24,
-            "sante_bio": 50,
-            "espace": 40,
-            "information": 25
+            "technologie_ia": 80,
+            "environnement": 30,
+            "energie": 42,
+            "geopolitique": 24,
+            "demographie_social": 35,
+            "finance": 36,
+            "sante_bio": 54,
+            "espace": 41,
+            "information": 30
         }
     }
 ]
