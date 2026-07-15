@@ -2,7 +2,6 @@
     "last_run_date": null,
     "predicted_score_for_today": 44,
     "accuracy_history": [
-        76,
         85,
         100,
         100,
@@ -10,6 +9,7 @@
         100,
         100,
         82,
+        97,
         97,
         97
     ]
