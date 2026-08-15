@@ -88,5 +88,20 @@
             "espace": 41,
             "information": 30
         }
+    },
+    {
+        "year": "2026-07-15 11:26",
+        "stability_index": 43,
+        "pillars": {
+            "technologie_ia": 80,
+            "environnement": 30,
+            "energie": 42,
+            "geopolitique": 24,
+            "demographie_social": 35,
+            "finance": 36,
+            "sante_bio": 54,
+            "espace": 41,
+            "information": 30
+        }
     }
 ]
