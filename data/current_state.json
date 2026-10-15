@@ -1,23 +1,23 @@
 {
-    "date": "2026-09-20 14:56",
+    "date": "2026-10-15 14:37",
     "stability_index": 48,
-    "model_accuracy": 95,
+    "model_accuracy": 94,
     "global_analysis": "Mise à jour Février 2026. L'accélération technologique (Variance IA) découple le progrès technique de la stabilité sociale. La Noosphère subit une corruption critique.",
     "pillars": {
         "technologie_ia": {
             "score": 89,
             "comment": "Déploiement d'agents autonomes de niveau 2.",
-            "trend": "up"
+            "trend": "stable"
         },
         "environnement": {
             "score": 32,
             "comment": "Anomalie thermique persistante (+1.6°C).",
-            "trend": "up"
+            "trend": "stable"
         },
         "energie": {
             "score": 55,
             "comment": "Réseaux stables, stockage en progrès.",
-            "trend": "up"
+            "trend": "stable"
         },
         "geopolitique": {
             "score": 25,
@@ -27,17 +27,17 @@
         "demographie_social": {
             "score": 37,
             "comment": "Friction sociale anti-automatisation.",
-            "trend": "up"
+            "trend": "stable"
         },
         "finance": {
             "score": 47,
             "comment": "Stabilisation par assouplissement monétaire.",
-            "trend": "up"
+            "trend": "stable"
         },
         "sante_bio": {
             "score": 60,
             "comment": "Vigilance zoonotique élevée.",
-            "trend": "up"
+            "trend": "stable"
         },
         "espace": {
             "score": 40,
@@ -47,11 +47,10 @@
         "information": {
             "score": 33,
             "comment": "Saturation par deepfakes indétectables.",
-            "trend": "up"
+            "trend": "stable"
         }
     },
     "alerts": [
-        "🔧 PROTOCOLE DE RECALIBRATION ACTIVÉ",
         "📅 2030 : la Friction Géopolitique catalyse l'Entropie Climatique. Probabilité de rupture de la chaîne causale : 62%.",
         "⚠️ Ω_BIOSPHERE : Seuil critique atteint",
         "⚔️ Σ_CONFLICT : Tensions maximales"

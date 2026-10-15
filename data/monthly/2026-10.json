@@ -1,0 +1,115 @@
+{
+    "date": "2026-10-15 14:37",
+    "stability_index": 48,
+    "model_accuracy": 94,
+    "global_analysis": "Mise à jour Février 2026. L'accélération technologique (Variance IA) découple le progrès technique de la stabilité sociale. La Noosphère subit une corruption critique.",
+    "pillars": {
+        "technologie_ia": {
+            "score": 89,
+            "comment": "Déploiement d'agents autonomes de niveau 2.",
+            "trend": "stable"
+        },
+        "environnement": {
+            "score": 32,
+            "comment": "Anomalie thermique persistante (+1.6°C).",
+            "trend": "stable"
+        },
+        "energie": {
+            "score": 55,
+            "comment": "Réseaux stables, stockage en progrès.",
+            "trend": "stable"
+        },
+        "geopolitique": {
+            "score": 25,
+            "comment": "Fragmentation en blocs hostiles.",
+            "trend": "stable"
+        },
+        "demographie_social": {
+            "score": 37,
+            "comment": "Friction sociale anti-automatisation.",
+            "trend": "stable"
+        },
+        "finance": {
+            "score": 47,
+            "comment": "Stabilisation par assouplissement monétaire.",
+            "trend": "stable"
+        },
+        "sante_bio": {
+            "score": 60,
+            "comment": "Vigilance zoonotique élevée.",
+            "trend": "stable"
+        },
+        "espace": {
+            "score": 40,
+            "comment": "Expansion commerciale orbitale.",
+            "trend": "stable"
+        },
+        "information": {
+            "score": 33,
+            "comment": "Saturation par deepfakes indétectables.",
+            "trend": "stable"
+        }
+    },
+    "alerts": [
+        "📅 2030 : la Friction Géopolitique catalyse l'Entropie Climatique. Probabilité de rupture de la chaîne causale : 62%.",
+        "⚠️ Ω_BIOSPHERE : Seuil critique atteint",
+        "⚔️ Σ_CONFLICT : Tensions maximales"
+    ],
+    "archives": [
+        {
+            "year": "1914",
+            "score": 30,
+            "desc": "Rupture de l'équilibre des alliances"
+        },
+        {
+            "year": "1918",
+            "score": 42,
+            "desc": "Effondrement démographique viral"
+        },
+        {
+            "year": "1929",
+            "score": 45,
+            "desc": "Dislocation des vecteurs de crédit"
+        },
+        {
+            "year": "1939",
+            "score": 20,
+            "desc": "Friction cinétique globale"
+        },
+        {
+            "year": "1945",
+            "score": 10,
+            "desc": "Entropie géopolitique maximale"
+        },
+        {
+            "year": "1962",
+            "score": 62,
+            "desc": "Tension nucléaire critique"
+        },
+        {
+            "year": "1973",
+            "score": 65,
+            "desc": "Choc des ressources fossiles"
+        },
+        {
+            "year": "2001",
+            "score": 58,
+            "desc": "Asymétrie sécuritaire globale"
+        },
+        {
+            "year": "2008",
+            "score": 50,
+            "desc": "Toxicité des actifs financiers"
+        },
+        {
+            "year": "2020",
+            "score": 45,
+            "desc": "Pandémie systémique de classe 4"
+        },
+        {
+            "year": "2022",
+            "score": 45,
+            "desc": "Retour de la guerre haute intensité"
+        }
+    ]
+}
